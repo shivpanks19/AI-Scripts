@@ -1,0 +1,119 @@
+(async () => {
+  // Aggressive scroller + extractor for Spotify Liked Songs
+  const SCROLL_DELAY_MS = 900;     // increase if your network/browser is slow
+  const STABLE_ITERATIONS = 10;    // how many checks with no new rows before stopping
+  const MAX_ITER = 3000;
+
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const rowsSel = '[data-testid="tracklist-row"]';
+
+  // find first row
+  const firstRow = document.querySelector(rowsSel);
+  if (!firstRow) {
+    console.warn('No track rows found. Make sure you are on /collection/tracks and logged in.');
+    return;
+  }
+
+  // helper to find a likely scroll container
+  function getScrollParent(el) {
+    let cur = el;
+    while (cur && cur !== document.body) {
+      const style = getComputedStyle(cur);
+      const oy = style.overflowY;
+      const isScrollable = (oy === 'auto' || oy === 'scroll') && cur.scrollHeight > cur.clientHeight + 2;
+      if (isScrollable) return cur;
+      cur = cur.parentElement;
+    }
+    return document.scrollingElement || document.documentElement;
+  }
+
+  const scrollContainer = getScrollParent(firstRow);
+  const useWindow = (scrollContainer === document.scrollingElement || scrollContainer === document.documentElement);
+
+  console.log('Detected scroll container:', scrollContainer === document.scrollingElement ? 'window' : scrollContainer);
+
+  let lastCount = 0;
+  let stable = 0;
+  let iter = 0;
+
+  // ensure container focused (helps some virtual lists)
+  try { (useWindow ? window : scrollContainer).focus(); } catch(e){}
+
+  while (stable < STABLE_ITERATIONS && iter < MAX_ITER) {
+    iter++;
+
+    // 1) scroll container to bottom
+    try {
+      if (useWindow) window.scrollTo(0, document.body.scrollHeight);
+      else scrollContainer.scrollTop = scrollContainer.scrollHeight;
+    } catch(e){}
+
+    // 2) scroll last row into view (forces virtual list to materialize next chunk)
+    const rows = document.querySelectorAll(rowsSel);
+    const lastRow = rows[rows.length - 1];
+    if (lastRow) {
+      try { lastRow.scrollIntoView({block: 'end', behavior: 'auto'}); } catch(e){}
+    }
+
+    // 3) send a PageDown key event to the container (some apps respond to keyboard)
+    try {
+      const target = useWindow ? document.body : scrollContainer;
+      const ev = new KeyboardEvent('keydown', {key: 'PageDown', code: 'PageDown', bubbles: true, cancelable: true});
+      target.dispatchEvent(ev);
+    } catch(e){}
+
+    await sleep(SCROLL_DELAY_MS);
+
+    const currCount = document.querySelectorAll(rowsSel).length;
+    if (currCount === lastCount) stable++;
+    else {
+      lastCount = currCount;
+      stable = 0;
+      console.log(`Loaded rows: ${currCount} (iter ${iter})`);
+    }
+  }
+
+  console.log('Scrolling finished. Total rows detected:', lastCount);
+  await sleep(500);
+
+  // extract items
+  const rows = [...document.querySelectorAll(rowsSel)];
+  const items = rows.map((r, i) => {
+    const title = r.querySelector('[data-testid="track-name"]')?.textContent?.trim() || '';
+    const artists = [...r.querySelectorAll('a[href*="/artist/"]')].map(a => a.textContent.trim()).filter(Boolean).join(', ');
+    const album = r.querySelector('a[href*="/album/"]')?.textContent?.trim() || '';
+    const duration = r.querySelector('[data-testid="track-duration"]')?.textContent?.trim() || '';
+    const trackUrl = r.querySelector('a[href*="/track/"]')?.href?.split('?')[0] || '';
+    return { index: i+1, title, artists, album, duration, trackUrl };
+  });
+
+  console.log('Extracted items:', items.length);
+
+  // CSV build & download
+  const esc = v => `"${String(v == null ? '' : v).replace(/"/g,'""')}"`;
+  const header = ['index','title','artists','album','duration','track_url'];
+  const csv = [header.map(esc).join(',')].concat(items.map(it => [
+    it.index, it.title, it.artists, it.album, it.duration, it.trackUrl
+  ].map(esc).join(','))).join('\r\n');
+
+  try {
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'liked_songs_spotify_full.csv';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    console.log('CSV downloaded: liked_songs_spotify_full.csv');
+  } catch(e) {
+    console.warn('Download failed; CSV printed to console start only.');
+    console.log(csv.slice(0,2000)+'...');
+  }
+
+  try { await navigator.clipboard.writeText(csv); console.log('CSV copied to clipboard.'); } catch(e){}
+
+  window.__SPOTIFY_LIKED_SONGS = items;
+  console.log('Done. If the count is still low, read the note below.');
+})();

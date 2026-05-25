@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "calendar": {
+      "url": "REPLACE_WITH_CALENDAR_MCP_URL_FROM_CURSOR_OR_PROVIDER",
+      "auth": {
+        "CLIENT_ID": "${env:MCP_CALENDAR_CLIENT_ID}",
+        "CLIENT_SECRET": "${env:MCP_CALENDAR_CLIENT_SECRET}"
+      }
+    }
+  }
+}

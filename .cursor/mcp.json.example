@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "calendar": {
+      "url": "https://calendarmcp.googleapis.com/mcp/v1",
+      "auth": {
+        "CLIENT_ID": "${env:GOOGLE_CALENDAR_MCP_CLIENT_ID}",
+        "CLIENT_SECRET": "${env:GOOGLE_CALENDAR_MCP_CLIENT_SECRET}",
+        "scopes": [
+          "https://www.googleapis.com/auth/calendar.calendarlist.readonly",
+          "https://www.googleapis.com/auth/calendar.events.freebusy",
+          "https://www.googleapis.com/auth/calendar.events"
+        ]
+      }
+    }
+  }
+}

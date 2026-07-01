@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "calendar": {
+      "url": "https://calendarmcp.googleapis.com/mcp/v1",
+      "auth": {
+        "CLIENT_ID": "${env:GOOGLE_CALENDAR_MCP_CLIENT_ID}",
+        "CLIENT_SECRET": "${env:GOOGLE_CALENDAR_MCP_CLIENT_SECRET}"
+      }
+    }
+  }
+}

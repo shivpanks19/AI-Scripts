@@ -210,6 +210,7 @@ The parent trust conversation will shift from "our results" to "our responsivene
 ## Image
 
 - **File**: `docs/assets/swayam/swayam-message-five-minute-gap-aug-2026.png`
+- **Hosted URL**: `https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786003158820-image.png`
 - **Headline**: Reply in 5 Minutes. Or Lose the Seat.
 - **Dimensions**: 1080x1080
 

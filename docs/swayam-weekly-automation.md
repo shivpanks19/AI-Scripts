@@ -85,43 +85,88 @@ Phase 1 Research → Phase 2 Content → Phase 3 Template → Phase 4 Image → 
 
 | Field | Use for |
 | --- | --- |
-| `imagePrompt` / `prompt` | **Layout plot only** — composition, palette, typography zones; strip stale example headline/body |
-| `imageUrl` | **Style reference only** — do **not** pass to image-function (see Phase 4) |
-| `aspectRatio` | Inform local render palette/composition; enforce **1:1** on final output |
+| `imagePrompt` / `prompt` | **Base generation prompt** — keep design, formatting, palette, typography, layout zones, brand mood |
+| `imageUrl` | Optional **visual reference** when generating in Phase 4b — do **not** pass to image-function as upload source |
+| `aspectRatio` | Carry into modified prompt; enforce **1:1** (1080×1080) on final output unless brief overrides |
 
-**Output:** One selected template + extracted layout plot fields (palette, zones, mood).
+**Output:** One selected template + full outlet `imagePrompt` / `prompt` text.
 
 ---
 
 ### Phase 4 — Image generation
 
-**Goal:** Render a **1080×1080** poster with **exact on-poster copy** from Phase 2, then upload via image-function.
+**Goal:** Build a **modified outlet prompt** from Phase 3 + Phase 2, generate the poster with AI using that prompt, then upload via image-function.
 
-**Critical rule:** image-function reproduces reference `imageUrl` text when given a finished template thumbnail. **Always render locally first.**
+**Critical rules**
 
-#### Phase 4a — Local render (MANDATORY, before image-function)
+- **Never** pass the raw outlet `imagePrompt` unchanged to image generation — it contains stale example copy.
+- **Never** pass the template `imageUrl` to image-function as `imageUrl` — that reproduces baked-in template text.
+- The agent **generates the image in Phase 4b** using the modified prompt — not a Python render script.
 
-```bash
-python3 scripts/generate_swayam_image.py \
-  --headline "<headline>" \
-  --subline "<subline>" \
-  --stat "<stat>" \
-  --cta "<cta>" \
-  --slug "<url-safe-slug>"
+#### Phase 4a — Build modified generation prompt (MANDATORY, before any image call)
+
+Start from the outlet template `imagePrompt` / `prompt` selected in Phase 3.
+
+1. **Keep** all design and formatting instructions: canvas size, aspect ratio, palette, gradients, typography style, layout zones (headline block, stat block, CTA placement), decorative elements, brand/footer treatment, mood.
+2. **Remove** placeholder / example copy from the template prompt (old headlines, sample stats, demo CTAs, product names from prior weeks).
+3. **Insert** this week’s Phase 2 on-poster fields as the only visible text the image should render:
+
+| Replace in prompt with | Source |
+| --- | --- |
+| Headline | Phase 2 `headline` (≤ 8 words) |
+| Stat / key number | Phase 2 `stat` |
+| Supporting line | Phase 2 `subline` |
+| CTA | Phase 2 `cta` |
+
+4. **Append** explicit render rules:
+
+```
+All visible on-poster text must be exactly:
+- Headline: "{headline}"
+- Stat: "{stat}"
+- Subline: "{subline}"
+- CTA: "{cta}"
+
+Do not reuse any placeholder wording from the original template prompt.
+Preserve the original template's design system, layout structure, colors, and typography placement.
+Aspect ratio: 1:1. 1080×1080.
 ```
 
-- Output: `docs/assets/swayam/{slug}.png` at **1080×1080**
-- **Verify** visible text matches Phase 2 on-poster fields exactly (open the PNG or describe it)
-- Template `imageUrl` is for palette/composition inspiration in the script only — **never** as `imageUrl` in the image-function POST
+**Output:** `modifiedImagePrompt` — a single complete prompt ready for AI image generation. Save this verbatim for Firestore `imagePrompt` in Phase 5.
 
-#### Phase 4b — Make local PNG publicly reachable
+**Wrong:** pass outlet `imagePrompt` unchanged, or only pass weekly copy without the template's design instructions.
 
-Push the asset to the working branch so `raw.githubusercontent.com` can serve it:
+**Right:** outlet design/formatting + weekly copy merged into one `modifiedImagePrompt`.
+
+#### Phase 4b — AI image generation (agent, using modified prompt)
+
+The running agent **creates the image directly** using `modifiedImagePrompt` from Phase 4a.
+
+- Call the agent's **image generation capability** (e.g. GenerateImage) with the full `modifiedImagePrompt`.
+- If supported, pass the template `imageUrl` as a **style reference** only — for layout and palette, not as the final asset.
+- Save output to `docs/assets/swayam/{slug}.png` at **1080×1080** (or 1:1).
+- **Verify** visible text on the generated image matches Phase 2 headline, stat, subline, and CTA. If text is wrong, revise `modifiedImagePrompt` and regenerate — do not proceed to 4c.
+
+**Output:** Local AI-generated PNG path + `modifiedImagePrompt` used.
+
+#### Phase 4c — Upload via image-function (storage only)
+
+Make the Phase 4b PNG publicly reachable, then upload to GCS:
 
 ```bash
 git add docs/assets/swayam/{slug}.png
 git commit -m "Add swayam weekly poster {slug}"
 git push -u origin <branch>
+```
+
+`POST https://image-function-926896730665.europe-west1.run.app`
+
+```json
+{
+  "imageUrl": "<public URL of AI-generated PNG from 4b>",
+  "slug": "<url-safe slug from weekly title>",
+  "prompt": "Upload this image to Firebase Storage exactly as provided. Preserve all visible text verbatim. Do not replace headline, stat, subline, or CTA. Minor compression only. Aspect ratio 1:1 1080x1080."
+}
 ```
 
 Public source URL pattern:
@@ -130,31 +175,15 @@ Public source URL pattern:
 https://raw.githubusercontent.com/shivpanks19/AI-Scripts/<branch>/docs/assets/swayam/{slug}.png
 ```
 
-Or use `scripts/publish_swayam_image.py` which orchestrates 4a + 4b + 4c.
-
-#### Phase 4c — Upload via image-function (storage only)
-
-`POST https://image-function-926896730665.europe-west1.run.app`
-
-```json
-{
-  "imageUrl": "<public URL of locally rendered PNG from 4b>",
-  "slug": "<url-safe slug from weekly title>",
-  "prompt": "Upload this image to Firebase Storage exactly as provided. Preserve all visible text verbatim. Do not replace headline, stat, subline, or CTA. Minor compression only. Aspect ratio 1:1 1080x1080."
-}
-```
-
 | Input | Source | Role |
 | --- | --- | --- |
-| **On-poster copy** | Phase 2 — headline, stat, subline, CTA | Rendered locally in 4a |
-| **Layout plot** | Phase 3 — palette, zones, mood | Applied in `generate_swayam_image.py` styling |
-| **imageUrl in POST** | Local PNG public URL | Upload source — **not** template thumbnail |
+| **On-poster copy** | Phase 2 — headline, stat, subline, CTA | Embedded in `modifiedImagePrompt` (4a), rendered by AI (4b) |
+| **Design / formatting** | Phase 3 outlet `imagePrompt` | Preserved in `modifiedImagePrompt` (4a) |
+| **imageUrl in POST** | AI-generated PNG public URL from 4b | Upload source — **not** template thumbnail |
 
-**Wrong:** pass template `imageUrl` to image-function and expect new text to appear.
+**Output:** GCS `imageUrl` + `modifiedImagePrompt` for Firestore.
 
-**Right:** local PNG with correct text → image-function uploads to GCS unchanged.
-
-**Output:** Generated `imageUrl` (GCS) + record of local path + merged `imagePrompt` (layout plot + weekly copy) for Firestore.
+> **Optional fallback:** `scripts/generate_swayam_image.py` exists for PIL-based renders if AI generation fails text verification. It is **not** the primary Phase 4a path.
 
 ---
 
@@ -170,8 +199,8 @@ Or use `scripts/publish_swayam_image.py` which orchestrates 4a + 4b + 4c.
 **Firestore body (minimum)**
 
 - `outletId`, `title`, `content`, `excerpt`
-- **Merged** `imagePrompt` (layout plot + weekly copy from Phase 4)
-- Generated `imageUrl` from Phase 4c (GCS URL, not local path)
+- **Merged** `imagePrompt` (`modifiedImagePrompt` from Phase 4a)
+- Generated `imageUrl` from Phase 4c (GCS URL, not template reference)
 - Do **not** set `showAsTemplate` on weekly drafts
 
 ---
@@ -187,7 +216,7 @@ Check response includes:
 - [ ] `slug`
 - [ ] `title`
 
-**Image text check (mandatory):** Open GCS `imageUrl` and confirm headline, stat, and CTA match Phase 2. If text is wrong, do **not** mark Phase 4 complete — re-run from 4a.
+**Image text check (mandatory):** Confirm headline, stat, subline, and CTA on the GCS image match Phase 2. If text is wrong, do **not** mark Phase 4 complete — revise `modifiedImagePrompt` in 4a and regenerate in 4b.
 
 ---
 

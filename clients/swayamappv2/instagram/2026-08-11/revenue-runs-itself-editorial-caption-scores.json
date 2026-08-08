@@ -1,0 +1,21 @@
+{
+  "slug": "revenue-runs-itself-editorial",
+  "platform": "instagram",
+  "captionScore": 85,
+  "captionScores": {
+    "overall": 85,
+    "hook": 84,
+    "clarity": 86,
+    "cta": 84,
+    "hashtagFit": 82,
+    "brandVoice": 88,
+    "platformFit": 84
+  },
+  "notes": {
+    "hook": "Brand promise contrast with traditional CRM reminders.",
+    "cta": "Dual CTA (demo + free) fits Friday brand-promise slot."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T22:50:00+00:00",
+  "sourceFile": "revenue-runs-itself-editorial-post.md"
+}

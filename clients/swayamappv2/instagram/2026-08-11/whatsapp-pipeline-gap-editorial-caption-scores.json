@@ -1,0 +1,21 @@
+{
+  "slug": "whatsapp-pipeline-gap-editorial",
+  "platform": "instagram",
+  "captionScore": 83,
+  "captionScores": {
+    "overall": 83,
+    "hook": 86,
+    "clarity": 84,
+    "cta": 80,
+    "hashtagFit": 79,
+    "brandVoice": 86,
+    "platformFit": 82
+  },
+  "notes": {
+    "hook": "Relatable three-tool pain point earns the read.",
+    "cta": "Start free account matches leads goal."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T22:50:00+00:00",
+  "sourceFile": "whatsapp-pipeline-gap-editorial-post.md"
+}

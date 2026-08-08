@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "type": "pinterest_reference_manifest",
+    "version": "1.0",
+    "client_slug": "swayamappv2",
+    "source": "../../BRAND_IDENTITY.md",
+    "search_brief": "./search-brief.json",
+    "fetched": "2026-08-08",
+    "pin_count": 5
+  },
+  "brand_signals": {
+    "product_category": "Agentic CRM",
+    "industry": "B2B SaaS",
+    "audience": "growth owners, revenue leaders",
+    "visual_tone": "dark editorial, contrarian headlines"
+  },
+  "searches_run": [
+    {
+      "query": "webhook pinterest_urls (3 provided)",
+      "pinterest_search_url": null,
+      "candidates_reviewed": 3
+    },
+    {
+      "query": "saas crm social media post design dark editorial",
+      "pinterest_search_url": "https://www.pinterest.com/search/pins/?q=saas+crm+social+media+post+design+dark+editorial",
+      "candidates_reviewed": 4
+    }
+  ],
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "./pin-01-editorial-quote-hero.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1039979738966705253/",
+      "image_source_url": "https://i.pinimg.com/736x/65/e9/13/65e913a64dcb3b8483a96e74caf530f2.jpg",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "editorial-quote-hero",
+      "layout_notes": "Provocative all-caps headline left, speech-bubble subline, person hero right with questioning gesture",
+      "suggested_structure_type": "editorial-quote-hero",
+      "reference_prompt_file": "./pin-01-editorial-quote-hero-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-02",
+      "file": "./pin-02-contrarian-editorial.jpg",
+      "source_pin_url": "https://in.pinterest.com/pin/1150951248552605042/",
+      "image_source_url": "https://i.pinimg.com/originals/ef/ea/62/efea627ec3f8193a4f12751e23d5a35b.jpg",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "contrarian-editorial",
+      "layout_notes": "Bold headline with accent blocks, grayscale cutout hero with colored shadow, thought-bubble subline",
+      "suggested_structure_type": "contrarian-editorial-hero",
+      "reference_prompt_file": "./pin-02-contrarian-editorial-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-03",
+      "file": "./pin-03-editorial-split-hero.jpg",
+      "source_pin_url": "https://in.pinterest.com/pin/1111474383086724279/",
+      "image_source_url": "https://i.pinimg.com/originals/fe/12/1a/fe121ab9c2e003df1efe6d92e678b714.jpg",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "editorial-split-hero",
+      "layout_notes": "Headline top with accent block, cutout character hero center with callout arrows, footer bar",
+      "suggested_structure_type": "editorial-split-hero",
+      "reference_prompt_file": "./pin-03-editorial-split-hero-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-04",
+      "file": "./pin-04-contrarian-editorial.png",
+      "source_pin_url": "https://in.pinterest.com/pin/2040762329647627/",
+      "image_source_url": "https://i.pinimg.com/736x/",
+      "search_query": "B2B CRM instagram post contrarian headline",
+      "inferred_layout": "contrarian-editorial",
+      "layout_notes": "Split headline upper-left, accent subline, photo hero among crowd lower half",
+      "suggested_structure_type": "contrarian-editorial-hero",
+      "reference_prompt_file": "./pin-04-contrarian-editorial-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-05",
+      "file": "./pin-05-dark-bold-editorial.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1124351863243884803/",
+      "image_source_url": "https://i.pinimg.com/736x/",
+      "search_query": "saas crm social media post design dark editorial",
+      "inferred_layout": "dark-bold-editorial",
+      "layout_notes": "All-caps headline top, serif subline, cutout photo hero center, micro CTA footer",
+      "suggested_structure_type": "dark-bold-editorial",
+      "reference_prompt_file": "./pin-05-dark-bold-editorial-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    }
+  ],
+  "selection_rationale": "Three webhook pins (provocative editorial, meme-style contrarian, split character hero) plus two auto-searched CRM SaaS dark editorial pins for layout diversity — all single-frame dark editorial, no carousels or stat cards."
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "crm-stores-leads-editorial",
+  "platform": "instagram",
+  "captionScore": 84,
+  "captionScores": {
+    "overall": 84,
+    "hook": 88,
+    "clarity": 85,
+    "cta": 82,
+    "hashtagFit": 80,
+    "brandVoice": 87,
+    "platformFit": 83
+  },
+  "notes": {
+    "hook": "Strong contrarian opener — CRM limitation vs revenue outcome.",
+    "cta": "Book a Demo aligns with brand DNA voice.cta_primary."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T22:50:00+00:00",
+  "sourceFile": "crm-stores-leads-editorial-post.md"
+}

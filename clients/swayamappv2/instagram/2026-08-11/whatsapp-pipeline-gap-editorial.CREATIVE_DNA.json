@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "whatsapp-pipeline-gap-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-02-contrarian-editorial.jpg",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-02-contrarian-editorial-reference-prompt.md",
+    "prompt_ref": "./whatsapp-pipeline-gap-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-13"
+  },
+  "concept": {
+    "topic": "WhatsApp replies disconnected from pipeline",
+    "vertical": "product-capability",
+    "metaphor": "Relatable operator frustration — conversations in one app, pipeline elsewhere",
+    "message": "Swayam links WhatsApp inbox to every lead record",
+    "persona": "Founder juggling Meta ads, WhatsApp replies, and spreadsheet follow-ups"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "contrarian-editorial-hero",
+  "composition": {
+    "layout_flow": "headline-top-hero-bottom",
+    "zones": {
+      "headline": { "position": "upper-center", "scale": "dominant", "z_index": "foreground" },
+      "subline": { "position": "mid-right-bubble", "scale": "medium", "z_index": "foreground" },
+      "hero": { "position": "lower-left", "scale": "large", "z_index": "midground" },
+      "footer": { "position": "bottom-left", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "faint grid texture on primary_dark"
+  },
+  "elements": [
+    { "type": "headline", "role": "headline", "content": "Replies on\nWhatsApp.", "typography": "display", "color_role": "text_on_dark" },
+    { "type": "subheadline", "role": "subheadline", "content": "Pipeline elsewhere.", "typography": "h2", "color_role": "secondary_light" },
+    { "type": "footer", "role": "footer", "content": "swayamapp.com", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "photo_subject",
+    "match_reference": true,
+    "description": "Grayscale cutout figure lower-left, relatable frustrated expression, teal offset shadow, thought-bubble subline"
+  },
+  "replication": {
+    "must_preserve": ["bold headline with accent blocks", "grayscale hero with colored shadow", "thought-bubble subline", "single frame"],
+    "variable_slots": ["headline", "subheadline", "footer"]
+  },
+  "copy": {
+    "post_ref": "./whatsapp-pipeline-gap-editorial-post.md",
+    "caption_scores_ref": "./whatsapp-pipeline-gap-editorial-caption-scores.json"
+  }
+}

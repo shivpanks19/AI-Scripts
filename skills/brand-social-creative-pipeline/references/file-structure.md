@@ -28,6 +28,7 @@ clients/{client_slug}/
 │       ├── {slug}.CREATIVE_DNA.json
 │       ├── {slug}-prompt.md
 │       ├── {slug}-post.md         # Phase 7 — post-writer-sms
+│       ├── {slug}-caption-scores.json  # Phase 7b — caption-score
 │       ├── {slug}.png
 │       └── publish-log.md           # Phase 9b — Firestore + GCS per slug
 │
@@ -56,6 +57,7 @@ clients/{client_slug}/
 | Prompt | `{slug}-prompt.md` |
 | Image | `{slug}.png` |
 | Post (IG, FB, LinkedIn) | `{slug}-post.md` via `post-writer-sms` |
+| Caption scores | `{slug}-caption-scores.json` via `caption-score` (Phase 7b) |
 | Caption (TikTok, Pinterest, YouTube) | `{slug}-caption.md` via `caption-writer-sms` |
 
 ## client.json minimum
@@ -80,12 +82,14 @@ clients/{client_slug}/
 
 ## DNA file pairing
 
-Every generated visual should have **three linked files** (+ publish record after Phase 9b):
+Every generated visual should have **four linked files** (+ publish record after Phase 9b):
 
 1. `{slug}.CREATIVE_DNA.json` — structure
 2. `{slug}-prompt.md` — generation spec
-3. `{slug}.png` — asset
-4. `publish-log.md` — Firestore `documentId` + GCS `imageUrl` (append per slug)
+3. `{slug}-post.md` or `{slug}-caption.md` — copy
+4. `{slug}-caption-scores.json` — scored copy (Phase 7b)
+5. `{slug}.png` — asset
+6. `publish-log.md` — Firestore `documentId` + GCS `imageUrl` (append per slug)
 
 `_meta` in Creative DNA must point to `reference_asset` and `prompt_ref` with relative paths.
 
@@ -95,7 +99,9 @@ Fetched automatically after `BRAND_IDENTITY.md` via [pinterest-reference-fetch/S
 
 ## Firestore publish (Phase 9b)
 
-After each `{slug}.png` is generated, run [firestore-creative-publish/SKILL.md](./firestore-creative-publish/SKILL.md) — upload to GCS + `POST /ai-content` → `OUTLET/{outletId}/social-ai-poster`.
+After each `{slug}.png` is generated, run [firestore-creative-publish/SKILL.md](./firestore-creative-publish/SKILL.md) — upload to GCS + `POST /ai-content` → `OUTLET/{outletId}/social-ai-poster` (includes `caption`, `captionScore`, `captionScores`).
+
+Phase 7b ([caption-score/SKILL.md](./caption-score/SKILL.md)) must complete before Phase 9b.
 
 ## Schema copies
 

@@ -14,6 +14,7 @@ Skills for the [Swayam weekly cloud agent](../clients/swayam/swayam-weekly-autom
 | Bootstrap (brand setup) | design-brand-guardian | [design-brand-guardian/SKILL.md](./design-brand-guardian/SKILL.md) |
 | Bootstrap (Pinterest refs) | pinterest-reference-fetch | [brand-social-creative-pipeline/references/pinterest-reference-fetch/SKILL.md](./brand-social-creative-pipeline/references/pinterest-reference-fetch/SKILL.md) |
 | Publish (after image) | firestore-creative-publish | [brand-social-creative-pipeline/references/firestore-creative-publish/SKILL.md](./brand-social-creative-pipeline/references/firestore-creative-publish/SKILL.md) |
+| Caption score (before publish) | caption-score | [brand-social-creative-pipeline/references/caption-score/SKILL.md](./brand-social-creative-pipeline/references/caption-score/SKILL.md) |
 | Bootstrap (profile research) | creator-profile-teardown | [creator-profile-teardown/SKILL.md](./creator-profile-teardown/SKILL.md) |
 
 ## Swayam brand assets

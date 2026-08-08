@@ -4,12 +4,26 @@
   "collection": "social-ai-poster",
   "slug": "{slug}",
   "title": "{human-readable title — calendar topic or caption hook}",
-  "content": "{full post from {slug}-post.md, or {slug}-caption.md fallback}",
-  "excerpt": "{first 1-2 sentences of post copy}",
+  "caption": "{parsed caption body — post file without hashtag line — REQUIRED}",
+  "content": "{same as caption — backward compatibility}",
+  "excerpt": "{first 1-2 sentences of caption body}",
+  "hashtags": ["{parsed from post file #tag line}"],
+  "cta": "{detected CTA or BRAND_DNA voice.cta_primary}",
+  "captionScore": 0,
+  "captionScores": {
+    "overall": 0,
+    "hook": 0,
+    "clarity": 0,
+    "cta": 0,
+    "hashtagFit": 0,
+    "brandVoice": 0,
+    "platformFit": 0
+  },
   "imagePrompt": "{full generation prompt from {slug}-prompt.md}",
   "imageUrl": "{GCS HTTPS URL from image-function Step 1 — NOT template imageUrl}",
   "templateName": "{from webhook templateName, or {client_slug}_image_post_weekly}",
   "source": "{from webhook source, default brand-social-creative-pipeline}",
+  "_scores_source": "{slug}-caption-scores.json from caption-score skill (Phase 7)",
   "_do_not_set": {
     "showAsTemplate": "weekly drafts only — never true for pipeline publishes"
   },
@@ -21,5 +35,11 @@
     "path",
     "slug",
     "imageUrl"
+  ],
+  "_verify_on_firestore_doc": [
+    "caption",
+    "hashtags",
+    "captionScore",
+    "captionScores"
   ]
 }

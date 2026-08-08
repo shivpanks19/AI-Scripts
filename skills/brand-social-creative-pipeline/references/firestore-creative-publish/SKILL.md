@@ -25,6 +25,7 @@ Runs **immediately after Phase 9** (`{slug}.png` exists). Mirrors [Swayam weekly
 | Generated PNG | `{creative_folder}/{slug}.png` | Yes |
 | Prompt | `{creative_folder}/{slug}-prompt.md` | Yes |
 | Post copy | `{creative_folder}/{slug}-post.md` (preferred) or `{slug}-caption.md` (legacy / TikTok) | Yes |
+| Caption scores | `{creative_folder}/{slug}-caption-scores.json` | Yes (Phase 7) |
 | Creative DNA | `{creative_folder}/{slug}.CREATIVE_DNA.json` | Recommended |
 | **Outlet ID** | **Webhook payload** `outletId` (or `outlet_id`) | Yes |
 | Run metadata | Webhook, user prompt, calendar row, or folder date | Yes |
@@ -110,7 +111,7 @@ Run **per `{slug}.png`** generated in Phase 9. Do not batch-upload before verify
 
 1. Resolve `outletId` from **webhook payload** (or explicit run prompt). **Stop** if missing — do not publish to a guessed outlet.
 2. Resolve `collection`, `templateName`, `source` from webhook (apply defaults above if omitted).
-3. Confirm files exist: `{slug}.png`, `{slug}-prompt.md`, and post copy via resolution below.
+3. Confirm files exist: `{slug}.png`, `{slug}-prompt.md`, post copy, and `{slug}-caption-scores.json`.
 4. **Resolve post copy file** (Phase 7 output):
 
 ```bash
@@ -124,8 +125,26 @@ else
 fi
 ```
 
-5. Read prompt file → extract on-image copy lock for verification later.
-6. Confirm PNG is the **generated** asset — not a Pinterest reference or Firestore template `imageUrl`.
+5. **Parse post copy** into publish fields:
+
+```bash
+# Caption body = post file minus trailing hashtag line(s)
+# Hashtags = tokens from last line starting with # (strip # prefix)
+# CTA = last imperative line before hashtags, or BRAND_DNA voice.cta_primary
+```
+
+| Parsed field | Rule |
+|--------------|------|
+| `caption` | Full post body **without** the hashtag line — **required** (do not rely on `excerpt` alone) |
+| `hashtags` | Array from `#tag` line(s) at end of post file |
+| `cta` | Detected CTA phrase or `voice.cta_primary` from brand DNA |
+| `content` | Same as `caption` (kept for ingest backward compatibility) |
+| `excerpt` | First 1–2 sentences of caption body |
+
+6. Read `{slug}-caption-scores.json` → `captionScore`, `captionScores`. **Stop** if missing — re-run [caption-score](../caption-score/SKILL.md) (Phase 7).
+
+7. Read prompt file → extract on-image copy lock for verification later.
+8. Confirm PNG is the **generated** asset — not a Pinterest reference or Firestore template `imageUrl`.
 
 ### Step 1 — Upload PNG to GCS (Phase 4c equivalent)
 
@@ -183,8 +202,13 @@ https://raw.githubusercontent.com/{org}/{repo}/{branch}/{path-to-png}
 | `outletId` | Webhook `outletId` / `outlet_id` (or explicit run prompt) |
 | `collection` | Webhook `collection` (default `social-ai-poster`) |
 | `title` | Calendar topic or first line of caption (human-readable) |
-| `content` | Full resolved post copy file (`{slug}-post.md` preferred, else `{slug}-caption.md`) |
-| `excerpt` | First 1–2 sentences of post copy |
+| `caption` | Parsed caption body (post file **without** hashtag line) — **required** |
+| `content` | Same as `caption` (backward compatibility for ingest) |
+| `excerpt` | First 1–2 sentences of caption body |
+| `hashtags` | Parsed array from post file `#tag` line |
+| `cta` | Detected CTA or `BRAND_DNA.json` → `voice.cta_primary` |
+| `captionScore` | `{slug}-caption-scores.json` → `captionScore` |
+| `captionScores` | `{slug}-caption-scores.json` → `captionScores` object |
 | `imagePrompt` | Full text from `{slug}-prompt.md` (Generation prompt section) |
 | `imageUrl` | GCS URL from Step 1 — **not** template reference |
 | `slug` | `{slug}` (url-safe, matches filename) |
@@ -200,6 +224,12 @@ OUTLET_ID="${WEBHOOK_OUTLET_ID}"   # from webhook payload — not client.json
 SLUG="paid-leads-leak-15-30-percent"
 FOLDER="clients/swayam/weekly/2026-08-08"
 GCS_URL="https://storage.googleapis.com/..."
+SCORES_FILE="${FOLDER}/${SLUG}-caption-scores.json"
+
+# Parse caption + hashtags from post file (strip markdown header lines)
+POST_RAW="$(sed '1,/^---$/d' "${FOLDER}/${SLUG}-post.md" | sed '/^#/d' | sed '/^$/N;/^\n$/d')"
+CAPTION="$(echo "$POST_RAW" | awk '!/^#/ && !/^---/ {print}' | sed '/^$/N;/^\n$/d')"
+HASHTAGS_JSON="$(grep -E '^#' "${FOLDER}/${SLUG}-post.md" | tail -1 | tr -s ' ' '\n' | sed 's/^#//' | jq -R . | jq -s .)"
 
 curl -sS -X POST "https://crm-demo-2fc0c.web.app/ai-content" \
   -H "Content-Type: application/json" \
@@ -209,18 +239,26 @@ curl -sS -X POST "https://crm-demo-2fc0c.web.app/ai-content" \
     --arg slug "$SLUG" \
     --arg imageUrl "$GCS_URL" \
     --arg imagePrompt "$(cat "${FOLDER}/${SLUG}-prompt.md")" \
-    --arg content "$(cat "${FOLDER}/${SLUG}-post.md" 2>/dev/null || cat "${FOLDER}/${SLUG}-caption.md" 2>/dev/null || echo "")" \
+    --arg caption "$CAPTION" \
+    --arg content "$CAPTION" \
     --arg title "Swayam Intelligence — Paid Leads Leak (4–11 August 2026)" \
     --arg excerpt "Paid leads do not die in your ad funnel." \
     --arg templateName "swayam_image_post_weekly" \
     --arg source "swayam-automation" \
+    --argjson hashtags "$HASHTAGS_JSON" \
+    --argjson captionScore "$(jq -r '.captionScore' "$SCORES_FILE")" \
+    --argjson captionScores "$(jq -c '.captionScores' "$SCORES_FILE")" \
     '{
       outletId: $outletId,
       collection: "social-ai-poster",
       slug: $slug,
       title: $title,
+      caption: $caption,
       content: $content,
       excerpt: $excerpt,
+      hashtags: $hashtags,
+      captionScore: ($captionScore | tonumber),
+      captionScores: $captionScores,
       imagePrompt: $imagePrompt,
       imageUrl: $imageUrl,
       templateName: $templateName,
@@ -238,6 +276,7 @@ Confirm JSON response includes:
 - [ ] `path` === `OUTLET/{outletId}/social-ai-poster/{documentId}`
 - [ ] `imageUrl` === GCS URL from Step 1
 - [ ] `slug` === `{slug}`
+- [ ] Firestore doc has `caption` (full body), `hashtags`, `captionScore`, `captionScores` (GET doc or UI verify after deploy)
 
 **Image text check:** Visually confirm on-image copy in PNG matches prompt copy-lock table. If mismatch → do **not** mark complete; revise prompt and re-run Phase 9, then republish.
 
@@ -247,6 +286,7 @@ Append to `{creative_folder}/publish-log.md`:
 
 - Run date, webhook `outletId`, slug
 - GCS `imageUrl`, Firestore `documentId`, `path`
+- `captionScore` + dimension breakdown from `{slug}-caption-scores.json`
 - Verify pass/fail on image text
 - Raw responses (optional) → `firestore-publish-{slug}.json`
 
@@ -289,6 +329,10 @@ Phase 10 → handoff summary includes documentId + path
 - API key `hexa-ai-content-666` is shared ingest key — do not commit additional secrets.
 - Never publish unless `outletId` came from webhook or an explicit authorized run prompt.
 
+## Backend contract
+
+`functions/aiContent.js` in the CRM repo must persist `caption`, `captionScore`, and `captionScores` on `social-ai-poster` documents (see `buildSocialPosterDocument`). **Deploy CRM functions** after updating ingest — pipeline scores are dropped if the backend is stale.
+
 ---
 
 ## See also
@@ -298,3 +342,4 @@ Phase 10 → handoff summary includes documentId + path
 - [../file-structure.md](../file-structure.md) — creative folder layout
 - [ai-content-payload.template.json](./ai-content-payload.template.json)
 - [publish-log.template.md](./publish-log.template.md)
+- [../caption-score/SKILL.md](../caption-score/SKILL.md) — Phase 7b scoring before publish

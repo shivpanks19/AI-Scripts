@@ -211,6 +211,18 @@ Update `copy.post_ref` (or `copy.caption_ref` for caption-writer platforms) in t
 
 **Legacy:** Older runs may have `{slug}-caption.md` on Instagram/Facebook — Phase 9b publish resolves `-post.md` first, then falls back to `-caption.md`.
 
+### Phase 7b — Score captions (before publish)
+
+**Skill:** [references/caption-score/SKILL.md](references/caption-score/SKILL.md)
+
+After each post/caption file is written:
+
+1. Score copy against brand voice + platform rules (rubric in caption-score skill).
+2. Write `{slug}-caption-scores.json` next to the post file.
+3. If `captionScore` < 65, revise copy and re-score — do not proceed to Phase 9b with weak copy unless user overrides.
+
+Set Creative DNA `copy.caption_scores_ref` → `{slug}-caption-scores.json` when paired.
+
 ---
 
 ## Phase 8 — Prompt build (per calendar visual)
@@ -280,11 +292,12 @@ Runs **immediately after** each `{slug}.png` is saved in Phase 9. Mirrors Swayam
 Per slug:
 
 1. **Upload** PNG to GCS via `POST https://image-function-926896730665.europe-west1.run.app` (base64 data URL).
-2. **Publish** draft to `OUTLET/{outletId}/social-ai-poster` via `POST https://crm-demo-2fc0c.web.app/ai-content`.
-3. **Verify** response: `documentId`, `path`, `imageUrl`, `slug`; confirm on-image text matches prompt copy lock.
-4. **Log** to `{creative_folder}/publish-log.md`.
+2. **Parse** post copy → `caption`, `hashtags`, `cta`; load `{slug}-caption-scores.json`.
+3. **Publish** draft to `OUTLET/{outletId}/social-ai-poster` via `POST https://crm-demo-2fc0c.web.app/ai-content` — include `caption`, `captionScore`, `captionScores`, `hashtags`.
+4. **Verify** response: `documentId`, `path`, `imageUrl`, `slug`; confirm Firestore doc has caption + scores; confirm on-image text matches prompt copy lock.
+5. **Log** to `{creative_folder}/publish-log.md`.
 
-**Inputs:** `{slug}.png`, `{slug}-prompt.md`, `{slug}-post.md` (or `{slug}-caption.md` fallback), `outletId` from webhook.
+**Inputs:** `{slug}.png`, `{slug}-prompt.md`, `{slug}-post.md` (or `{slug}-caption.md`), `{slug}-caption-scores.json`, `outletId` from webhook.
 
 **Skip only when:** user says local-only / do not publish, or webhook did not include `outletId`.
 
@@ -332,6 +345,7 @@ Copy and track:
 - [ ] Phase 5: BRAND_DNA.json
 - [ ] Phase 6: {slug}.CREATIVE_DNA.json per reference/template
 - [ ] Phase 7: captions/posts per calendar slot
+- [ ] Phase 7b: caption scores per slug (caption-score)
 - [ ] Phase 8: {slug}-prompt.md per visual
 - [ ] Phase 9: {slug}.png generated
 - [ ] Phase 9b: GCS upload + Firestore publish per slug (firestore-creative-publish)
@@ -349,8 +363,8 @@ Copy and track:
 | "Calendar + creatives" | Phase 4 (requires 1–1b–3, 5–6) |
 | "New creative from reference" | Phase 6 → 9 (sources: references/pinterest/) |
 | "New variant of existing template" | Phase 8 → 9 (swap variable_slots) |
-| "Copy only" | Phase 7 |
-| "Publish existing PNG" | Phase 9b only (requires `outletId` in webhook or run prompt) |
+| "Copy only" | Phase 7 → 7b |
+| "Publish existing PNG" | Phase 9b only (requires `outletId` + `{slug}-caption-scores.json`) |
 
 ---
 
@@ -366,5 +380,6 @@ Copy and track:
 - [references/file-structure.md](references/file-structure.md) — folder conventions
 - [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md) — fetch 5 Pinterest pins after brand identity
 - [references/prompt-merge.md](references/prompt-merge.md) — DNA → prompt merge
+- [references/caption-score/SKILL.md](references/caption-score/SKILL.md) — score post copy before Firestore publish
 - [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md) — GCS upload + Firestore publish after Phase 9
 - `clients/swayam/` — canonical example

@@ -328,7 +328,8 @@ POST `https://image-function-926896730665.europe-west1.run.app` with base64 PNG 
 
 **Firestore body (minimum)**
 
-- `outletId`, `collection` (`"social-ai-poster"`), `title`, `content`, `excerpt`
+- `outletId`, `collection` (`"social-ai-poster"`), `title`, `caption`, `content`, `excerpt`
+- `hashtags`, `captionScore`, `captionScores` (from `{slug}-caption-scores.json` — run [caption-score](../../skills/brand-social-creative-pipeline/references/caption-score/SKILL.md) in Phase 7b)
 - **Merged** `imagePrompt` (`modifiedImagePrompt` from Phase 4a)
 - Generated `imageUrl` from Phase 4c (GCS URL, not template reference)
 - `slug` (url-safe slug from weekly title)

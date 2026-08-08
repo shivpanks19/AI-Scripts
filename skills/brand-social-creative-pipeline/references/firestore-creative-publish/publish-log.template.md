@@ -21,6 +21,9 @@
 | `imageUrl` (GCS) | `{gcs_url}` ✅ |
 | `slug` | `{slug}` ✅ |
 | `title` | {title} ✅ |
+| `captionScore` | {score} ✅ |
+| `caption` stored | Full body (not excerpt only) ✅ / ❌ |
+| `hashtags` stored | {count} tags ✅ / ❌ |
 | `showAsTemplate` | Not set (weekly draft) ✅ |
 | Image text match | **PASS** / **FAIL** — {notes} |
 
@@ -38,6 +41,20 @@
   "imageUrl": "{gcs_url}"
 }
 ```
+
+### Caption scores (Phase 7b)
+
+| Dimension | Score |
+| --- | --- |
+| Overall (`captionScore`) | {score} |
+| Hook | {hook} |
+| Clarity | {clarity} |
+| CTA | {cta} |
+| Hashtag fit | {hashtagFit} |
+| Brand voice | {brandVoice} |
+| Platform fit | {platformFit} |
+
+Source: `{slug}-caption-scores.json`
 
 ### Firestore publish (Step 2 — /ai-content)
 
@@ -59,6 +76,7 @@
 ├── {slug}-prompt.md
 ├── {slug}-post.md          # preferred (post-writer-sms)
 ├── {slug}-caption.md       # legacy or caption-writer platforms
+├── {slug}-caption-scores.json  # Phase 7b
 ├── {slug}.png
 └── publish-log.md
 ```

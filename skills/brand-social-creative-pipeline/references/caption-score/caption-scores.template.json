@@ -1,0 +1,25 @@
+{
+  "slug": "{slug}",
+  "platform": "{instagram|facebook|linkedin|tiktok|pinterest}",
+  "captionScore": 0,
+  "captionScores": {
+    "overall": 0,
+    "hook": 0,
+    "clarity": 0,
+    "cta": 0,
+    "hashtagFit": 0,
+    "brandVoice": 0,
+    "platformFit": 0
+  },
+  "notes": {
+    "hook": "",
+    "clarity": "",
+    "cta": "",
+    "hashtagFit": "",
+    "brandVoice": "",
+    "platformFit": ""
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "{ISO8601}",
+  "sourceFile": "{slug}-post.md"
+}

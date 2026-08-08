@@ -27,7 +27,7 @@
 | **Angle** | Core positioning — Hexanovate is a growth systems partner, not a vendor agency |
 | **On-image copy** | Headline: `We're not an agency.` / Accent line: `We're your growth system.` / Sub: `Outcomes over deliverables.` / Footer: `hexanovate.com` |
 | **Copy type** | post |
-| **Reference pin** | pin-03-editorial-quote-hero (split + photo subject) |
+| **Reference pin** | pin-01-dark-bold-editorial (typography-only) |
 | **Folder** | `instagram/2026-08-11/` |
 
 ---
@@ -53,7 +53,7 @@
 | **Angle** | Brand architecture — B2B, FMCG, Education under one philosophy |
 | **On-image copy** | Headline: `One vision.` / Accent: `Three markets.` / Sub: `B2B · FMCG · Education — built to dominate.` / Footer: `hexanovate.com` |
 | **Copy type** | post |
-| **Reference pin** | pin-02-contrarian-editorial |
+| **Reference pin** | pin-03-editorial-quote-hero (split + photo subject) |
 | **Folder** | `instagram/2026-08-11/` |
 
 ---

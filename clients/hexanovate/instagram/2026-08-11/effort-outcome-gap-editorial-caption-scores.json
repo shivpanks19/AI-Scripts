@@ -1,0 +1,21 @@
+{
+  "slug": "effort-outcome-gap-editorial",
+  "platform": "instagram",
+  "captionScore": 82,
+  "captionScores": {
+    "overall": 82,
+    "hook": 86,
+    "clarity": 84,
+    "cta": 78,
+    "hashtagFit": 80,
+    "brandVoice": 88,
+    "platformFit": 82
+  },
+  "notes": {
+    "hook": "Strong contrarian opener aligned to anti-agency pillar.",
+    "cta": "Consultation CTA present via link in bio."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T21:20:00Z",
+  "sourceFile": "effort-outcome-gap-editorial-post.md"
+}

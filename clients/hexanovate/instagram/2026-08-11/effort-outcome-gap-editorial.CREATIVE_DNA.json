@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "effort-outcome-gap-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-01-dark-bold-editorial.png",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-01-dark-bold-editorial-reference-prompt.md",
+    "prompt_ref": "./effort-outcome-gap-editorial-prompt.md",
+    "source": "calendar",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-13"
+  },
+  "concept": {
+    "topic": "Effort\u2013outcome gap",
+    "vertical": "Hexanovate parent brand",
+    "message": "Outcomes move when someone owns your vision.",
+    "persona": "Founder scrolling Instagram between meetings"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080
+  },
+  "structure_type": "contrarian-editorial-hero",
+  "composition": {
+    "layout_flow": "left-stack",
+    "zones": {
+      "accent_bar": {
+        "position": "center-left",
+        "scale": "small"
+      },
+      "headline": {
+        "position": "center-left",
+        "scale": "dominant"
+      },
+      "subheadline": {
+        "position": "center-lower",
+        "scale": "medium"
+      },
+      "footer": {
+        "position": "bottom-right",
+        "scale": "small"
+      }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "_background_note": "Render uses brand primary_dark #0A0A0A"
+  },
+  "elements": [
+    {
+      "role": "headline",
+      "type": "headline",
+      "content": "Reports don't close",
+      "color_role": "text_on_dark"
+    },
+    {
+      "role": "headline_accent",
+      "type": "headline",
+      "content": "the gap.",
+      "color_role": "secondary_light"
+    },
+    {
+      "role": "subheadline",
+      "type": "subheadline",
+      "content": "Outcomes move when someone owns your vision.",
+      "color_role": "text_muted"
+    },
+    {
+      "role": "footer",
+      "type": "footer",
+      "content": "hexanovate.com",
+      "color_role": "text_muted"
+    }
+  ],
+  "replication": {
+    "must_preserve": [
+      "left vertical accent bar",
+      "two-line headline with accent second line",
+      "muted subheadline",
+      "footer URL bottom-right",
+      "dark editorial 1:1 typography-only"
+    ],
+    "variable_slots": [
+      "headline lines",
+      "subheadline",
+      "footer"
+    ]
+  },
+  "copy": {
+    "post_ref": "./effort-outcome-gap-editorial-post.md",
+    "caption_scores_ref": "./effort-outcome-gap-editorial-caption-scores.json"
+  }
+}

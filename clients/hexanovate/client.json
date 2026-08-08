@@ -1,0 +1,29 @@
+{
+  "client_slug": "hexanovate",
+  "display_name": "Hexanovate",
+  "website": "www.hexanovate.com",
+  "brand_brief": "its a marketing agency",
+  "channels": ["instagram", "facebook"],
+  "goals": ["awareness", "leads"],
+  "calendar": "weekly",
+  "webhook": {
+    "outlet_id": "OCnD41LsRXTKPgnR1CDu",
+    "triggered_at": "2026-08-08T21:13:00Z"
+  },
+  "pipeline": {
+    "last_run": "2026-08-08",
+    "run_date": "2026-08-08",
+    "calendar_week": "2026-08-11",
+    "phases_completed": "0-10",
+    "mode": "full"
+  },
+  "folders": {
+    "brand_identity": "clients/hexanovate/BRAND_IDENTITY.md",
+    "brand_dna": "clients/hexanovate/BRAND_DNA.json",
+    "references_pinterest": "clients/hexanovate/references/pinterest/2026-08-08",
+    "plans": "clients/hexanovate/plans/2026-08-08",
+    "instagram": "clients/hexanovate/instagram/2026-08-11",
+    "facebook": "clients/hexanovate/facebook/2026-08-11",
+    "handoff": "clients/hexanovate/runs/2026-08-08/PIPELINE-HANDOFF.md"
+  }
+}

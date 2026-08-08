@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "source": "firestore-template",
+    "template_doc_id": "0d434cec-4938-4e23-8dc8-878fddb11145",
+    "template_collection": "social-ai-poster",
+    "template_title": "JEE 2026 Demo Class Launch",
+    "brand_source": "firestore-template-imagePrompt",
+    "weekly_run": "2026-08-03"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "stat-hero-editorial",
+  "composition": {
+    "zones": [
+      "top-left: headline",
+      "center-left: large stat badge",
+      "mid: subline supporting text",
+      "bottom: CTA button",
+      "footer: Infisoft Tech / Swayam branding strip"
+    ]
+  },
+  "elements": [
+    { "type": "headline", "content": "Leads Don't Wait" },
+    { "type": "stat", "content": "78%" },
+    { "type": "subline", "content": "Families enroll with whoever replies first—not whoever has the best brochure." },
+    { "type": "cta", "content": "How fast do you respond?" }
+  ],
+  "copy": { "cta": "How fast do you respond?" },
+  "palette": {
+    "primary": "deep navy",
+    "accent": "crisp royal blue",
+    "highlight": "soft sky blue",
+    "background": "white with subtle geometric grid"
+  }
+}

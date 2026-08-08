@@ -2,8 +2,7 @@
 
 **Creative ID:** `not-agency-system-editorial`
 **DNA merge:** reference-prompt + BRAND_DNA.json + not-agency-system-editorial.CREATIVE_DNA.json
-**Reference prompt:** ../../references/pinterest/2026-08-08/pin-01-dark-bold-editorial-reference-prompt.md
-**Reference fidelity:** high — match reference image composition
+**Generation mode:** prompt-driven only (no reference image attachment)
 
 ## ON-IMAGE COPY — MANDATORY (exact)
 
@@ -14,44 +13,30 @@
 | Subheadline | Outcomes over deliverables. | #A1A1AA |
 | Footer URL | hexanovate.com | #A1A1AA |
 
-## Hero subject (must preserve)
-
-- **Type:** typography_only
-- **Description:** No photo hero — left accent bar + headline stack only
-- **Placement:** n/a
-
-## must_preserve
-
-- left vertical accent bar beside headline
-- two-line headline with accent second line
-- muted subheadline below headline
-- footer URL bottom-right
-- typography-only — reference has no person
-
 ## Generation prompt
 
-Recreate the attached reference image layout closely. Same composition and hero subject placement. Apply brand colors and replace text only.
+Ultra-premium bold editorial social post, 1:1 1080×1080. Typography-only layout.
 
-COLORS (from BRAND_DNA.json):
-- Background / panels: #0A0A0A and #FF5500 accents
-- Accent highlight: #FFB800
+Background: solid #0A0A0A with 2% film grain.
+Left: vertical accent bar 4px × 120px in #FFB800.
+Center-left headline block, 80px margins, left-aligned:
+  Line 1: "We're not an agency." in #FFFFFF
+  Line 2: "We're your growth system." in #FFB800
+Subhead below: "Outcomes over deliverables." in #A1A1AA
+Bottom-right footer URL: "hexanovate.com" in #A1A1AA
+Inter bold display. No photos, no people, no logo in generation.
+
+COLORS (all from BRAND_DNA.json):
+- Background: #0A0A0A
+- Primary: #FF5500
+- Accent: #FFB800
 - Text on dark: #FFFFFF
 - Muted: #A1A1AA
-All colors from brand palette — ignore reference pin hex.
-
-Typography-only reference — match accent bar and headline stack exactly.
-
-**Exact on-image text:**
-- `We're not an agency.` (#FFFFFF)
-- `We're your growth system.` (#FFB800)
-- `Outcomes over deliverables.` (#A1A1AA)
-- `hexanovate.com` (#A1A1AA)
-
-Inter / Plus Jakarta Sans. 1:1 1080×1080. No logo in generation.
+All colors from brand palette.
 
 ## Do not
 
-- Remove person, book, or split-panel hero when reference has them
+- Attach or pixel-match reference pin image
 - Add carousel indicators, fake stats, dashboard UI
 - Use hex not in Brand DNA
 

@@ -88,5 +88,5 @@ When fetching 5 reference pins:
 
 - Prompts must describe a **single full-bleed frame** matching the reference composition — preserve split panels, photo heroes, and props when present.
 - Do not include: `1 / 4`, `Swipe →`, percentage stats, KPI numbers unless sourced from brief.
-- Phase 9: **always** pass `reference_image_paths: [reference_asset]` and use [reference-fidelity.md](./reference-fidelity.md) language.
+- Phase 9: generate from **merged text prompt only** — do not attach reference pin to image generator. See [reference-fidelity.md](./reference-fidelity.md).
 - Image generator: one `GenerateImage` call per calendar row → one `{slug}.png`.

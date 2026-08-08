@@ -89,7 +89,7 @@
       "subheadline",
       "footer"
     ],
-    "reference_fidelity": "high"
+    "generation_mode": "prompt_driven"
   },
   "copy": {
     "post_ref": "./effort-outcome-gap-editorial-post.md",
@@ -99,6 +99,7 @@
     "type": "photo_subject",
     "description": "Young woman seated cross-legged, white t-shirt, ripped blue jeans, smiling while reading open book. Cutout on right half overlapping split panel. Desaturated architectural photo bleed behind.",
     "placement": "right-half",
-    "match_reference": true
+    "match_reference": false,
+    "source": "reference_prompt_prose"
   }
 }

@@ -88,7 +88,7 @@
       "subheadline",
       "footer"
     ],
-    "reference_fidelity": "high"
+    "generation_mode": "prompt_driven"
   },
   "copy": {
     "post_ref": "./not-agency-system-editorial-post.md",
@@ -98,6 +98,7 @@
     "type": "typography_only",
     "description": "No photo hero \u2014 left accent bar + headline stack only",
     "placement": "n/a",
-    "match_reference": true
+    "match_reference": false,
+    "source": "reference_prompt_prose"
   }
 }

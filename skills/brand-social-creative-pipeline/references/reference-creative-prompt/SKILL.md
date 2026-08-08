@@ -68,7 +68,7 @@ Record with pixel-level specificity:
 | **Hero** | Photo / illustration / person / object / UI mockup / typography-only — exact placement, pose, crop, props |
 | **On-image copy in reference** | Transcribe verbatim (will be **replaced** in Phase 8) |
 
-**Reference fidelity:** If the pin contains a person, photo subject, or key object, document it under `## Hero subject (must preserve)` and list it in `must_preserve`. Do **not** default to typography-only when the reference has a visual hero. See [reference-fidelity.md](../reference-fidelity.md).
+**Reference fidelity:** If the pin contains a person, photo subject, or key object, document it fully in the **Regeneration prompt** prose under `## Hero subject (must preserve)`. Phase 9 generates from that text — not from attaching the pin image. See [reference-fidelity.md](../reference-fidelity.md).
 
 Use **color roles**, not hex from the pin:
 

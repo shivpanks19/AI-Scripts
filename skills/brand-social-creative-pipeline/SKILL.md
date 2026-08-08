@@ -342,15 +342,13 @@ See [references/prompt-merge.md](references/prompt-merge.md) for merge algorithm
 For each `{slug}-prompt.md`:
 
 1. Use the LLM's **image generation tool** (e.g. `GenerateImage`).
-2. **Always** pass `reference_image_paths: [creative._meta.reference_asset]` — layout + hero anchor; colors and copy from merged prompt. See [references/reference-fidelity.md](references/reference-fidelity.md).
-3. Open description with: `Recreate the attached reference layout closely. Same hero subject placement. Brand colors + copy lock only.`
-3. Match `creative_dna.canvas.ratio`:
+2. Build `description` **only** from the **Generation prompt** section — prompt-driven, no reference image attachment. See [references/reference-fidelity.md](references/reference-fidelity.md).
+3. **Do not** pass `reference_image_paths` — the pin was reverse-engineered to text in Phase 6a.
+4. Match `creative_dna.canvas.ratio`:
    - `4:5` → aspect_ratio `3:4` or `9:16` per tool support
    - `1:1` → `1:1`
    - `16:9` → `16:9`
-4. Build `description` from **Generation prompt** section (already merged: reference layout + brand colors + content).
 5. Save output to `{slug}.png` next to Creative DNA.
-6. Update `_meta.reference_asset` in Creative DNA if first generation.
 
 **Color gate:** If the prompt or description contains hex values not present in `BRAND_DNA.json`, stop and re-run Phase 8 merge.
 
@@ -462,7 +460,8 @@ Copy and track:
 - [references/file-structure.md](references/file-structure.md) — folder conventions
 - [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md) — fetch 5 Pinterest pins after brand identity
 - [references/reference-creative-prompt/SKILL.md](references/reference-creative-prompt/SKILL.md) — Phase 6a pin → regeneration prompt
-- [references/reference-fidelity.md](references/reference-fidelity.md) — preserve hero subjects, objects, and composition from pins
+- [references/reference-fidelity.md](references/reference-fidelity.md) — prompt-driven generation (Phase 6a text → Phase 8 merge → Phase 9, no reference image attachment)
+- [references/prompt-merge.md](references/prompt-merge.md) — three-layer merge (reference prompt + brand colors + content)
 - [references/caption-score/SKILL.md](references/caption-score/SKILL.md) — score post copy before Firestore publish
 - [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md) — GCS upload + Firestore publish after Phase 9
 - `clients/swayam/` — canonical example

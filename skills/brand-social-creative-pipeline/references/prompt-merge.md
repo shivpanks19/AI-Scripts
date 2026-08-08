@@ -38,8 +38,8 @@ content-calendar.md row  # optional overrides
 1. Read the **Regeneration prompt** section from `{pin}-reference-prompt.md`.
 2. Copy `must_preserve` and zone map into `{slug}-prompt.md`.
 3. Keep all layout/composition language verbatim unless it conflicts with `single-image-post-policy.md`.
-4. Copy `## Hero subject (must preserve)` from the reference prompt into `{slug}-prompt.md` when present.
-5. Append [reference fidelity block](./reference-fidelity.md#phase-8--prompt-merge) to the Generation prompt.
+4. Copy `## Hero subject (must preserve)` from the reference prompt into `{slug}-prompt.md` when present (as prose — not as image attachment).
+5. The **Generation prompt** must be **self-contained** — no "see reference image" or "match attached pin".
 
 ### Step 3 — Resolve color roles → Brand DNA hex
 
@@ -210,17 +210,9 @@ DO NOT:
 
 ### Description build
 
-1. Use **Generation prompt** section from merged `{slug}-prompt.md` (already includes reference layout + brand colors + content).
-2. **Always** pass the reference pin image:
-
-```
-reference_image_paths: [creative._meta.reference_asset]
-```
-
-3. Start the generator `description` with: `Recreate the attached reference image layout closely. Same composition and hero subject placement. Apply brand colors and replace text only.`
-4. Condense to 1–2 paragraphs if needed, but **never drop** hero subjects, objects, exact on-image copy, or `must_preserve` layout rules.
-
-See [reference-fidelity.md](./reference-fidelity.md).
+1. Use **only** the **Generation prompt** section from merged `{slug}-prompt.md` — this already includes reverse-engineered layout prose, Brand DNA colors, and calendar copy.
+2. **Do not** pass `reference_image_paths`. The pin PNG was consumed in Phase 6a; generation is **prompt-driven only**. See [reference-fidelity.md](./reference-fidelity.md).
+3. Condense to 1–2 paragraphs if needed, but **never drop** hero subjects, zones, exact on-image copy, or `must_preserve` rules from the merged text prompt.
 
 ---
 

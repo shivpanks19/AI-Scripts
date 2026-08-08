@@ -1,0 +1,47 @@
+{
+  "slug": "hexanovate",
+  "display_name": "Hexanovate",
+  "website": "https://www.hexanovate.com",
+  "outlet_id": "OCnD41LsRXTKPgnR1CDu",
+  "folders": {
+    "root": "clients/hexanovate",
+    "brand": "clients/hexanovate/BRAND_IDENTITY.md",
+    "brand_dna": "clients/hexanovate/BRAND_DNA.json",
+    "references_pinterest": "clients/hexanovate/references/pinterest/2026-08-08",
+    "plans": "clients/hexanovate/plans/2026-08-08",
+    "instagram": "clients/hexanovate/instagram/2026-08-11",
+    "facebook": "clients/hexanovate/facebook/2026-08-11",
+    "runs": "clients/hexanovate/runs/2026-08-08"
+  },
+  "channels": {
+    "instagram": {
+      "handle": "@hexanovate",
+      "cadence": "3 posts per week",
+      "formats": ["single-image editorial 1:1"]
+    },
+    "facebook": {
+      "handle": "Hexanovate",
+      "cadence": "3 posts per week",
+      "formats": ["single-image editorial 1:1"]
+    }
+  },
+  "pipeline": {
+    "mode": "full",
+    "run_date": "2026-08-08",
+    "calendar_week": "2026-08-11",
+    "last_run": "2026-08-08",
+    "horizon": "weekly",
+    "posts_per_week": 3,
+    "platforms": ["instagram", "facebook"],
+    "goals": ["awareness", "leads"],
+    "phases_completed": [0, 1, "1b", "6a", 2, 3, 4, 5, 6, 7, "7b", 8, 9, "9b", 10],
+    "webhook": {
+      "outlet_id": "OCnD41LsRXTKPgnR1CDu",
+      "pinterest_urls": [
+        "https://in.pinterest.com/pin/2040762329647627/",
+        "https://in.pinterest.com/pin/1124351863243884803/",
+        "https://in.pinterest.com/pin/1039979738966705253/"
+      ]
+    }
+  }
+}

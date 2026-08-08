@@ -1,0 +1,159 @@
+{
+  "_meta": {
+    "type": "brand_dna",
+    "version": "1.0",
+    "brand_id": "hexanovate",
+    "brand_name": "Hexanovate",
+    "schema_ref": "./BRAND_DNA_SCHEMA.json",
+    "source_ref": "./BRAND_IDENTITY.md",
+    "scope": "Invariant across all Hexanovate creatives.",
+    "created": "2026-08-08",
+    "updated": "2026-08-08"
+  },
+  "brand": {
+    "name": "Hexanovate",
+    "descriptor": "Planetary Growth Ecosystem",
+    "agency": null,
+    "tagline_product": "Not an agency. A system.",
+    "tagline_agency": null,
+    "promise": "Strategy that actually executes — zero gaps between vision, execution, and outcome.",
+    "website": "hexanovate.com"
+  },
+  "strategy": {
+    "purpose": "Build connected growth infrastructure so founders focus on vision while systems drive predictable revenue.",
+    "positioning": "For founders tired of agency theatre — Hexanovate is the outcome-obsessed ecosystem across B2B, consumer, and education.",
+    "personality": [
+      "outcome-obsessed",
+      "contrarian but credible",
+      "systems thinker",
+      "empathetic operator",
+      "long-game"
+    ],
+    "values": [
+      { "name": "Accountability", "definition": "Honest next steps when something does not work" },
+      { "name": "Outcome over effort", "definition": "Own the number, not just the report" },
+      { "name": "Long game", "definition": "Success measured in years, not campaigns" }
+    ]
+  },
+  "visual_identity": {
+    "background": "#F8FAFC",
+    "primary": "#2563EB",
+    "primary_light": "#3B82F6",
+    "primary_dark": "#0A0A0A",
+    "secondary": "#F59E0B",
+    "secondary_light": "#FBBF24",
+    "secondary_dark": "#D97706",
+    "revenue": "#10B981",
+    "revenue_light": "#34D399",
+    "revenue_dark": "#059669",
+    "ai": "#6366F1",
+    "ai_muted": "#E0E7FF",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "text_muted": "#9CA3AF",
+    "neutral_50": "#F8FAFC",
+    "neutral_100": "#F1F5F9",
+    "neutral_200": "#E2E8F0",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "style": "dark editorial growth ecosystem — bold type, primary_dark canvas, blue and amber accents"
+  },
+  "typography": {
+    "family": "Inter",
+    "fallback": ["DM Sans", "system-ui", "sans-serif"],
+    "mono": "JetBrains Mono",
+    "wordmark_weight": "bold",
+    "headline_weight": "bold",
+    "body_weight": "regular",
+    "letter_spacing_wordmark": "-2%",
+    "hierarchy": {
+      "display": { "size_px": "44-52", "weight": "bold" },
+      "h1": { "size_px": 36, "weight": "bold" },
+      "h2": { "size_px": 28, "weight": "bold" },
+      "h3": { "size_px": 20, "weight": "semibold" },
+      "body": { "size_px": "15-16", "weight": "regular" },
+      "small": { "size_px": 13, "weight": "regular" }
+    }
+  },
+  "logo": {
+    "wordmark": "Hexanovate",
+    "descriptor_size_ratio": 0.45,
+    "icon_concept": "Hexanovate wordmark — modern sans",
+    "clear_space": "minimum height of wordmark on all sides",
+    "min_digital_width_px": 120,
+    "min_icon_px": 40,
+    "assets": {
+      "app_icon": null,
+      "mark": null,
+      "wordmark": null
+    },
+    "dont": [
+      "stretch wordmark",
+      "recolor away from brand palette",
+      "place on busy imagery without scrim"
+    ]
+  },
+  "ui_patterns": {
+    "pipeline_progress": "#2563EB",
+    "revenue_kpi": "#10B981",
+    "ai_surface": "#6366F1",
+    "ai_surface_muted": "#E0E7FF",
+    "border_radius": { "sm": 4, "md": 8, "lg": 12 },
+    "ai_indicator": "subtle indigo dot",
+    "charts": "revenue green for positive, primary blue for neutral"
+  },
+  "voice": {
+    "tone": "outcome-led contrarian — direct, warm, operator credibility",
+    "headline_tone": "bold provocative hooks that challenge agency norms",
+    "cta_primary": "Book a call",
+    "cta_secondary": "Start the conversation",
+    "prefer": [
+      "growth ecosystem",
+      "outcome",
+      "pipeline",
+      "long game",
+      "one system",
+      "honest conversation",
+      "predictable revenue"
+    ],
+    "avoid": [
+      "revolutionary",
+      "game changer",
+      "India's No.1",
+      "limited seats",
+      "hurry now",
+      "best agency"
+    ]
+  },
+  "imagery": {
+    "prefer": [
+      "dark editorial single-frame",
+      "bold typography",
+      "abstract ecosystem vectors",
+      "editorial photo heroes with accent tint",
+      "contrarian headline stacks"
+    ],
+    "avoid": [
+      "carousel indicators",
+      "fake KPI stats on image",
+      "stock handshakes",
+      "light template covers",
+      "competitor logos",
+      "sci-fi AI brain clipart"
+    ],
+    "agent_presence": "systems and nodes — not humanoid robots"
+  },
+  "constraints": {
+    "accessibility": "White text on #0A0A0A — AAA for headlines; muted #9CA3AF for footer only",
+    "compliance": [
+      "Case study metrics in captions only when sourced from site",
+      "No false urgency",
+      "48-hour response promise in forms — do not contradict in copy"
+    ],
+    "naming": [
+      "Hexanovate for parent brand",
+      "ThirdMeta / NativeUnit / EduHexa for vertical callouts"
+    ]
+  }
+}

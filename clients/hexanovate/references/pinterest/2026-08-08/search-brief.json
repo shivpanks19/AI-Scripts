@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "source": "../../BRAND_IDENTITY.md",
+    "client_slug": "hexanovate",
+    "created": "2026-08-08"
+  },
+  "brand_signals": {
+    "product_category": "growth marketing ecosystem",
+    "industry": "B2B agency / professional services",
+    "audience": "founders, growth leaders, marketing heads",
+    "visual_tone": "dark editorial, contrarian headline, bold typography",
+    "platforms": ["instagram", "facebook"]
+  },
+  "search_queries": [
+    "B2B agency social media post design dark editorial",
+    "marketing agency instagram contrarian headline post",
+    "thought leadership instagram post design agency",
+    "professional services linkedin editorial post design",
+    "growth marketing agency social media creative"
+  ]
+}

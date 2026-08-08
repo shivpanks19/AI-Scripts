@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "connected-growth-ecosystem-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-03-editorial-quote-hero.png",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-03-editorial-quote-hero-reference-prompt.md",
+    "prompt_ref": "./connected-growth-ecosystem-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-15"
+  },
+  "concept": {
+    "topic": "Connected growth ecosystem",
+    "vertical": "parent-brand",
+    "metaphor": "One system instead of ten confused vendors",
+    "message": "Planetary ecosystem — B2B, consumer, education under one roof",
+    "persona": "Growth leader juggling multiple agencies"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "contrarian-editorial-hero",
+  "composition": {
+    "layout_flow": "headline-hero-split",
+    "zones": {
+      "headline": { "position": "upper-left", "scale": "dominant", "z_index": "foreground" },
+      "subline": { "position": "center-left", "scale": "medium", "z_index": "foreground" },
+      "hero": { "position": "right-center", "scale": "large", "z_index": "midground" },
+      "footer": { "position": "top-left", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "paper-grain texture at 8% on primary_dark"
+  },
+  "elements": [
+    { "type": "headline", "role": "headline", "content": "One ecosystem.", "typography": "display", "color_role": "text_on_dark" },
+    { "type": "subheadline", "role": "subheadline", "content": "Not ten vendors.", "typography": "h2", "color_role": "secondary_light" },
+    { "type": "footer", "role": "footer", "content": "hexanovate.com", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "photo_subject",
+    "match_reference": true,
+    "description": "Professional person right-center, questioning palm-up gesture, cutout on accent panel with halftone corner"
+  },
+  "replication": {
+    "must_preserve": ["provocative headline left", "person hero right", "speech-bubble subline zone", "single frame"],
+    "variable_slots": ["headline", "subheadline", "footer"]
+  },
+  "copy": {
+    "post_ref": "./connected-growth-ecosystem-editorial-post.md",
+    "caption_scores_ref": "./connected-growth-ecosystem-editorial-caption-scores.json"
+  }
+}

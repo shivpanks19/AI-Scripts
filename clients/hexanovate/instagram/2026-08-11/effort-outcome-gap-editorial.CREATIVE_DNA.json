@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "effort-outcome-gap-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-02-dark-bold-editorial.png",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-02-dark-bold-editorial-reference-prompt.md",
+    "prompt_ref": "./effort-outcome-gap-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-13"
+  },
+  "concept": {
+    "topic": "Effort vs outcome gap",
+    "vertical": "founder-truth",
+    "metaphor": "Split focus — busy work vs moving needle",
+    "message": "Reports and tasks are not outcomes",
+    "persona": "Founder who hired agencies and got invoices, not pipeline"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "dark-bold-editorial",
+  "composition": {
+    "layout_flow": "center-stack",
+    "zones": {
+      "headline": { "position": "top-center", "scale": "dominant", "z_index": "foreground" },
+      "subline": { "position": "center-upper", "scale": "medium", "z_index": "foreground" },
+      "hero": { "position": "center", "scale": "large", "z_index": "midground" },
+      "footer": { "position": "bottom-left", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "faint grid at 5% opacity"
+  },
+  "elements": [
+    { "type": "headline", "role": "headline", "content": "Effort is not", "typography": "display", "color_role": "text_on_dark" },
+    { "type": "subheadline", "role": "subheadline", "content": "the outcome.", "typography": "h2", "color_role": "secondary_light" },
+    { "type": "footer", "role": "footer", "content": "hexanovate.com", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "photo_subject",
+    "match_reference": true,
+    "description": "High-contrast B&W cutout business figure, white stroke, surreal editorial crop, center"
+  },
+  "replication": {
+    "must_preserve": ["all-caps headline top", "serif subline", "cutout hero center", "single frame"],
+    "variable_slots": ["headline", "subheadline", "footer"]
+  },
+  "copy": {
+    "post_ref": "./effort-outcome-gap-editorial-post.md",
+    "caption_scores_ref": "./effort-outcome-gap-editorial-caption-scores.json"
+  }
+}

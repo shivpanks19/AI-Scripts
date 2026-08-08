@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "type": "pinterest_reference_manifest",
+    "version": "1.0",
+    "client_slug": "hexanovate",
+    "source": "../../BRAND_IDENTITY.md",
+    "search_brief": "./search-brief.json",
+    "fetched": "2026-08-08",
+    "pin_count": 5
+  },
+  "brand_signals": {
+    "product_category": "growth marketing ecosystem",
+    "industry": "B2B agency / professional services",
+    "audience": "founders, growth leaders",
+    "visual_tone": "dark editorial, contrarian headlines"
+  },
+  "searches_run": [
+    {
+      "query": "webhook pinterest_urls (3 provided)",
+      "pinterest_search_url": null,
+      "candidates_reviewed": 3
+    },
+    {
+      "query": "B2B agency social media post design dark editorial",
+      "pinterest_search_url": "https://www.pinterest.com/search/pins/?q=B2B%20agency%20social%20media%20post%20design%20dark%20editorial",
+      "candidates_reviewed": 4
+    },
+    {
+      "query": "editorial social media design agency instagram",
+      "pinterest_search_url": "https://www.pinterest.com/search/pins/?q=editorial%20social%20media%20design%20agency%20instagram",
+      "candidates_reviewed": 3
+    }
+  ],
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "./pin-01-contrarian-editorial.png",
+      "source_pin_url": "https://in.pinterest.com/pin/2040762329647627/",
+      "image_source_url": "https://i.pinimg.com/736x/ba/b7/4a/bab74ae86537db6bd83ca3b6ee7f439c.jpg",
+      "search_query": "webhook",
+      "inferred_layout": "contrarian-editorial",
+      "layout_notes": "Large question headline upper-left; accent word highlight; human photo hero lower half; contrarian subline right",
+      "suggested_structure_type": "contrarian-editorial-hero",
+      "reference_prompt_file": "./pin-01-contrarian-editorial-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-02",
+      "file": "./pin-02-dark-bold-editorial.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1124351863243884803/",
+      "image_source_url": "https://i.pinimg.com/736x/e4/d2/be/e4d2be7d36f82a2c907cd7108db991e7.jpg",
+      "search_query": "webhook",
+      "inferred_layout": "dark-bold-editorial",
+      "layout_notes": "Bold all-caps headline top; surreal photo cutout center; serif subline between headline zones",
+      "suggested_structure_type": "dark-bold-editorial",
+      "reference_prompt_file": "./pin-02-dark-bold-editorial-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-03",
+      "file": "./pin-03-editorial-quote-hero.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1039979738966705253/",
+      "image_source_url": "https://i.pinimg.com/736x/65/e9/13/65e913a64dcb3b8483a96e74caf530f2.jpg",
+      "search_query": "webhook",
+      "inferred_layout": "editorial-quote-hero",
+      "layout_notes": "Provocative all-caps headline; person hero with gesture; textured panel behind type",
+      "suggested_structure_type": "contrarian-editorial-hero",
+      "reference_prompt_file": "./pin-03-editorial-quote-hero-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-04",
+      "file": "./pin-04-editorial-split-hero.png",
+      "source_pin_url": "https://www.pinterest.com/pin/social-media-design-agency-instagram-post-template-for-2025--1118268447389736/",
+      "image_source_url": "https://i.pinimg.com/736x/7a/de/ba/7adeba9f9facb917de5f007bf94e3270.jpg",
+      "search_query": "B2B agency social media post design dark editorial",
+      "inferred_layout": "editorial-split-hero",
+      "layout_notes": "Split layout — copy block left, abstract visual right; agency feed aesthetic",
+      "suggested_structure_type": "editorial-split-hero",
+      "reference_prompt_file": "./pin-04-editorial-split-hero-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-05",
+      "file": "./pin-05-dark-editorial-card.png",
+      "source_pin_url": "https://www.pinterest.com/pin/instagram-carousel-layout--905680205001/",
+      "image_source_url": "https://i.pinimg.com/736x/98/94/ce/9894ce57a4abdf35a4ca08b90fb63c19.jpg",
+      "search_query": "editorial social media design agency instagram",
+      "inferred_layout": "dark-editorial-card",
+      "layout_notes": "Editorial magazine-style type hierarchy; dark card frame; single-frame composition",
+      "suggested_structure_type": "editorial-quote-hero",
+      "reference_prompt_file": "./pin-05-dark-editorial-card-reference-prompt.md",
+      "phase_6a_status": "complete",
+      "phase_6_status": "pending"
+    }
+  ],
+  "selection_rationale": "Three webhook pins provide contrarian and bold editorial layouts; two auto-searched pins add split-hero and dark-card diversity for a B2B growth agency feed."
+}

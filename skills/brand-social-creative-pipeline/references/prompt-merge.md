@@ -2,162 +2,241 @@
 
 Use when building `{slug}-prompt.md` (Phase 8) or calling the image generator (Phase 9).
 
-## Merge order
+## Three-layer merge (mandatory when reference prompt exists)
+
+Phase 8 builds the final image prompt from **three layers** — not from Creative DNA prose alone:
+
+```
+final_prompt = reference_regeneration_prompt
+             + brand_dna_color_resolution
+             + calendar_content_overlay
+```
+
+| Layer | Source | What it supplies | What it must NOT supply |
+|-------|--------|------------------|-------------------------|
+| **1 — Reference layout** | `{pin}-reference-prompt.md` via `creative._meta.reference_prompt_ref` | Zones, margins, typography placement, decorative structure, hero type, `must_preserve` | Final hex colors, brand copy, campaign headline |
+| **2 — Brand theme** | `BRAND_DNA.json` | All resolved hex colors, typography family, logo rules, `imagery.avoid`, voice constraints | Layout zones, composition changes |
+| **3 — Content** | `{slug}.CREATIVE_DNA.json` → `elements[]` + calendar row | On-image copy (headline, subheadline, footer URL), CTA label | Layout structure, colors |
+
+**If `reference_prompt_ref` is missing:** fall back to legacy merge (`BRAND_DNA.json` + `{slug}.CREATIVE_DNA.json` only) — but Phase 6a should run for every Pinterest-backed creative to avoid layout drift.
+
+---
+
+## Merge algorithm (Phase 8)
+
+### Step 1 — Load inputs
+
+```bash
+BRAND_DNA.json
+{slug}.CREATIVE_DNA.json
+{reference_prompt_ref}   # e.g. ../../references/pinterest/pin-01-*-reference-prompt.md
+content-calendar.md row  # optional overrides
+```
+
+### Step 2 — Start from reference regeneration prompt
+
+1. Read the **Regeneration prompt** section from `{pin}-reference-prompt.md`.
+2. Copy `must_preserve` and zone map into `{slug}-prompt.md`.
+3. Keep all layout/composition language verbatim unless it conflicts with `single-image-post-policy.md`.
+
+### Step 3 — Resolve color roles → Brand DNA hex
+
+Replace every `{{ROLE}}` placeholder in the reference prompt with Brand DNA values:
+
+| Placeholder | Brand DNA path | Notes |
+|-------------|----------------|-------|
+| `{{BACKGROUND}}` | See [background_mode](#background) below | `primary_dark` for dark editorial |
+| `{{TEXT_PRIMARY}}` | `visual_identity.text_on_dark` or `text` | Based on `background_mode` |
+| `{{TEXT_SECONDARY}}` | `visual_identity.text_on_dark` or `secondary_light` | Subhead on dark often accent |
+| `{{TEXT_MUTED}}` | `visual_identity.text_muted` | Footer, counters |
+| `{{ACCENT}}` | `visual_identity.secondary_light` | Rules, highlight words |
+| `{{ACCENT_SECONDARY}}` | `visual_identity.revenue_light` or `primary_light` | Optional second highlight |
+
+Also inject a **COLORS** block after role substitution:
+
+```
+COLORS (mandatory — all from BRAND_DNA.json):
+- Background: {resolved_background_hex}
+- Primary: {brand.visual_identity.primary}
+- Primary dark: {brand.visual_identity.primary_dark}
+- Secondary / accent: {brand.visual_identity.secondary_light}
+- Text on dark: {brand.visual_identity.text_on_dark}
+- Muted text: {brand.visual_identity.text_muted}
+All colors from brand palette — ignore reference image colors.
+```
+
+**Hard rule:** Never pass hex values from the Pinterest pin or from `creative.visual_identity` in the reference image. Creative DNA may document source hex for audit only — Phase 8 ignores them.
+
+### Step 4 — Overlay latest content
+
+Replace reference **variable_slots** with this post's copy from `creative.elements[]`:
+
+| Element type | Source | Prompt instruction |
+|--------------|--------|-------------------|
+| `headline` | `elements[].content` where `type=headline` | Exact string — do not paraphrase |
+| `subheadline` | `elements[].content` where `type=subheadline` | Exact string |
+| `footer` | `elements[].content` or `brand.brand.website` | Exact string |
+| `stat` | calendar row only if provided | Never invent |
+| `cta_button` | `creative.copy.cta` | Label only if zone exists in reference |
+
+Write an **ON-IMAGE COPY — MANDATORY** table in `{slug}-prompt.md` with resolved Brand DNA hex per zone.
+
+Remove or strike through the reference prompt's "Reference copy (replace in Phase 8)" block in the final generation prompt — only merged copy appears in **Generation prompt**.
+
+### Step 5 — Append brand constraints
+
+From `BRAND_DNA.json`:
+
+- `typography.family` (+ fallback)
+- `imagery.avoid` → **Do not** section
+- `logo.dont` + overlay workflow if applicable
+- `brand.brand.name` / `descriptor` for context line only
+
+### Step 6 — Write `{slug}-prompt.md`
+
+```markdown
+# {Title}
+
+**Creative ID:** `{slug}`
+**DNA merge:** reference-prompt + BRAND_DNA.json + {slug}.CREATIVE_DNA.json
+**Reference prompt:** {reference_prompt_ref}
+**Calendar ref:** content-calendar.md → [date row]
+
+## ON-IMAGE COPY — MANDATORY (exact)
+[Table: zone | text | brand hex]
+
+## Zone map
+[From reference prompt — unchanged]
+
+## must_preserve
+[From reference prompt]
+
+## Generation prompt
+[Merged: reference layout prose + resolved colors + overlaid copy]
+
+## Do not
+[brand imagery.avoid + reference must_not_change layout rules]
+
+## Post / caption
+[{slug}-post.md]
+```
+
+---
+
+## Legacy merge (no reference prompt)
+
+When `reference_prompt_ref` is absent:
 
 ```
 final = BRAND_DNA.json + {slug}.CREATIVE_DNA.json + calendar_row_overrides
 ```
 
-## Conflict resolution
+Use the [Prompt assembly template](#prompt-assembly-template-legacy) below.
+
+### Conflict resolution (legacy)
 
 | Field | Winner |
 |-------|--------|
-| **All colors** (background, accents, text, CTA fills, halos, glows, element `style.color`) | **Brand DNA** |
+| **All colors** | **Brand DNA** |
 | Fonts, logo rules, voice, imagery.avoid | Brand DNA |
-| Composition, zones, elements (layout roles), hero, canvas, structure_type, effects (on/off only) | Creative DNA |
-| Headline, stat, topic, CTA for this post | Calendar row → update creative `copy` + `elements` |
+| Composition, zones, hero, structure_type | Creative DNA |
+| Headline, stat, topic, CTA | Calendar row → `elements[]` |
 
-**Hard rule:** Never pass hex values from `creative.visual_identity` or `elements[].style` into the generation prompt. Creative DNA may record reference-source colors for documentation only — they are **ignored at merge time**.
-
-Never override `visual_identity.primary`, `secondary`, `typography.family` in creative files.
+---
 
 ## Color resolution (Brand DNA only)
 
-Resolve every color from `brand.visual_identity` at merge time. Use creative DNA only for **layout tone** (`background_mode`) and **structural roles** (headline zone, stat card, CTA button).
+Resolve every color from `brand.visual_identity` at merge time. Use creative DNA only for **layout tone** (`background_mode`) and **structural roles**.
 
 ### Background
 
 Read `creative.visual_identity.background_mode` (preferred) or infer from `structure_type`:
 
 | `background_mode` | Brand token | Typical use |
-|-------------------|-------------|---------------|
-| `light` (default) | `brand.visual_identity.background` (`#F8FAFC`) | Default Swayam editorial, stat cards on light |
-| `dark` | `brand.visual_identity.primary_dark` (`#0F2744`) | Dark editorial / carousel covers — **not** pure black |
-| `primary` | `brand.visual_identity.primary` (`#1E3A5F`) | Full-bleed navy hero |
+|-------------------|-------------|-------------|
+| `light` (default) | `brand.visual_identity.background` (`#F8FAFC`) | Light editorial |
+| `dark` | `brand.visual_identity.primary_dark` | Dark editorial — **not** pure black |
+| `primary` | `brand.visual_identity.primary` | Full-bleed brand hero |
 
-`background_treatment` in creative DNA describes **texture only** (gradient direction, grain, blur) — never the base hex. Example: `subtle film grain 2%` on top of `primary_dark`.
+`background_treatment` describes **texture only** (gradient direction, grain) — never the base hex.
 
 ### Accents & text
 
 | Role | Brand token |
 |------|-------------|
-| Primary accent / highlight word / vertical rule | `secondary_light` (`#14B8A6`) |
+| Primary accent / highlight word / vertical rule | `secondary_light` |
 | Secondary accent / revenue KPI | `revenue` / `revenue_light` |
-| AI badge / agent indicator | `ai` (`#6366F1`) |
-| Body text on light bg | `text` (`#0F172A`) |
-| Body text on dark bg | `text_on_dark` (`#FFFFFF`) |
-| Muted subline / footer | `text_muted` (`#64748B`) |
-| CTA button (primary) | `primary` fill + `text_on_dark` label, or `secondary` fill per brief |
-| Card surface on dark bg | `neutral_50` or white at 92% opacity |
-| WhatsApp UI chrome only | `whatsapp_ui_only` |
-
-### Effects colors
-
-| Creative flag | Brand token |
-|---------------|-------------|
-| `effects.halo` | `ai` or `ai_muted` |
-| `effects.glow_accent` | `secondary_light` |
+| AI badge / agent indicator | `ai` |
+| Body text on light bg | `text` |
+| Body text on dark bg | `text_on_dark` |
+| Muted subline / footer | `text_muted` |
+| CTA button (primary) | `primary` fill + `text_on_dark` label |
 
 ### Element style mapping
 
-When iterating `creative.elements`, ignore `element.style.color` and `element.style.background` hex from the file. Map by `element.type`:
+When iterating `creative.elements`, map by `element.type` and `color_role` — ignore `element.style.color` hex from Creative DNA files.
 
-| Element type | Text color | Background |
-|--------------|------------|------------|
-| `headline`, `stat` (on dark) | `text_on_dark` | per card rules |
-| `headline`, `stat` (on light) | `text` | white / `neutral_50` |
-| `subheadline` | `text_muted` | null |
-| `cta_button` | `text_on_dark` | `primary` or `secondary` |
-| `badge` (accent) | `secondary` | `secondary` at 10% tint |
-| highlight / accent inline word | `secondary_light` | null |
+---
 
-Determine light vs dark from resolved `background_mode`, not from creative hex.
+## Prompt assembly template (legacy)
 
-## Prompt assembly template
+Use only when no `reference_prompt_ref` exists:
 
 ```
 Create an ultra-premium {brand.visual_identity.style} advertisement for {brand.brand.name} — {brand.brand.descriptor}.
 
 Topic: {creative.concept.topic}
-Message: {creative.concept.message}
 Structure: {creative.structure_type}
+CANVAS: {creative.canvas.ratio}
 
-CANVAS: {creative.canvas.ratio} ({creative.canvas.width}x{creative.canvas.height})
-
-COLORS (mandatory — all from BRAND_DNA, never from creative reference):
-- Background: {resolved_background_hex} — {creative.visual_identity.background_treatment}
-- Primary: {brand.visual_identity.primary}
-- Primary dark: {brand.visual_identity.primary_dark}
-- Secondary / accent: {brand.visual_identity.secondary_light}
-- Revenue accent: {brand.visual_identity.revenue}
-- AI surface: {brand.visual_identity.ai}
-- Text: {resolved_text_hex}
-- Muted text: {brand.visual_identity.text_muted}
-
-TYPOGRAPHY: {brand.typography.family}, {creative.typography.headline_weight} headlines
+COLORS (all from BRAND_DNA):
+[resolved hex block]
 
 COMPOSITION:
-{for each zone in creative.composition.zones}
-- {zone_name}: {position}, {scale}, z-{z_index}
-{endfor}
+[zones from creative.composition]
 
-HERO:
-- Type: {creative.hero.type}
-- Subject: {creative.hero.subject}
-- Pose: {creative.hero.pose}
-- Product: {creative.hero.product}
-
-ON-IMAGE COPY (exact — do not paraphrase):
-{for each element in creative.elements}
-- [{element.type}] {element.content}
-{endfor}
-
-CTA: {creative.copy.cta}
-Footer URL: {brand.brand.website}
-
-VISUAL LANGUAGE:
-- Geometry: {creative.visual_language.geometry}
-- Lighting: {creative.visual_language.lighting}
-- Depth: {creative.visual_language.depth}
-- Materials: {creative.visual_language.materials}
-
-EFFECTS: halo={effects.halo}, particles={effects.particles}
+ON-IMAGE COPY (exact):
+[elements[]]
 
 DO NOT:
-{brand.imagery.avoid joined}
-- Invent fake metrics not in copy lock
-- {brand.logo.dont}
-
-STYLE REFERENCE: {brand.visual_identity.style} — Apple × Stripe × Linear editorial SaaS, not Canva template, not sci-fi AI brain clipart.
+[imagery.avoid]
 ```
 
-## Image generator `description` (short form)
+---
 
-Condense merged prompt to 1–2 paragraphs for `GenerateImage`:
+## Image generator (Phase 9)
 
-1. Canvas ratio + style line
-2. Zone layout (headline position, card, hero)
-3. Exact headline + stat + CTA text
-4. Hero casting + phone/product if applicable
-5. **Brand hex colors only** — run color resolution above; never quote creative DNA hex
-6. Footer URL + logo zone
+### Description build
+
+1. Use **Generation prompt** section from merged `{slug}-prompt.md` (already includes reference layout + brand colors + content).
+2. Pass **reference image** when the tool supports it:
+
+```
+reference_image_paths: [creative._meta.reference_asset]
+```
+
+This improves layout fidelity; colors and copy still come from the merged prompt (Brand DNA + elements).
+
+3. Condense to 1–2 paragraphs if needed, but **never drop** exact on-image copy or `must_preserve` layout rules.
+
+---
 
 ## Merge checklist (Phase 8 gate)
 
 Before writing `{slug}-prompt.md` or calling GenerateImage:
 
-- [ ] `background_mode` resolved → brand background hex applied
-- [ ] No `#` values copied from `creative.visual_identity`
-- [ ] No `#` values copied from `elements[].style`
-- [ ] Accent/highlight uses `secondary_light`, not Pinterest/reference teal unless it matches brand
-- [ ] Dark layouts use `primary_dark`, not `#000000` / `#0A0A0A`
-- [ ] Prompt includes explicit line: `All colors from brand palette — ignore reference image colors`
+- [ ] `reference_prompt_ref` loaded (or legacy path documented)
+- [ ] All `{{COLOR_ROLE}}` placeholders resolved to Brand DNA hex
+- [ ] No `#` values from pin or `creative.visual_identity`
+- [ ] On-image copy matches `elements[]` exactly — reference pin copy removed
+- [ ] `must_preserve` from reference prompt included in final prompt
+- [ ] Prompt includes: `All colors from brand palette — ignore reference image colors`
+- [ ] Dark layouts use `primary_dark`, not `#000000`
+
+---
 
 ## Variant generation
 
-To create a new post using an existing Creative DNA template:
-
-1. Copy `{slug}.CREATIVE_DNA.json` → `{new-slug}.CREATIVE_DNA.json`
-2. Change only fields listed in `replication.variable_slots`
-3. Keep `replication.must_preserve` structure intact
-4. Re-run Phase 8–9
+1. Keep same `reference_prompt_ref` for layout consistency
+2. Copy `{slug}.CREATIVE_DNA.json` → change only `variable_slots` (headline, subheadline)
+3. Re-run Phase 8–9 — reference layout + brand colors auto-merge; only content changes

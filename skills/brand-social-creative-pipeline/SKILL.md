@@ -212,14 +212,31 @@ Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template
 
 ---
 
-## Phase 6 — Creative DNA (per reference image)
+## Phase 6a — Reference creative prompt (per pin)
+
+**Skill:** [references/reference-creative-prompt/SKILL.md](references/reference-creative-prompt/SKILL.md)
+
+Runs **after Phase 1b** for every pin in `pinterest-manifest.json` (and for any user-uploaded reference image used in Phase 6).
+
+1. **Open** each `pin-0N-{layout}.png` (or `.jpg`) — visual analysis required.
+2. Write `{pin}-reference-prompt.md` — a **regeneration prompt** that recreates the pin's layout (zones, type scale, decorative elements, hero placement) using **color role placeholders** (`{{BACKGROUND}}`, `{{ACCENT}}`, etc.) — no pin hex.
+3. Update `pinterest-manifest.json` → `reference_prompt_file`, `phase_6a_status: complete`.
+
+**Output:** `references/pinterest/{run_date}/pin-01-{layout}-reference-prompt.md` … `pin-05-…`
+
+**Gate:** Every pin used by a calendar creative must have a reference prompt before Phase 8.
+
+---
+
+## Phase 6 — Creative DNA (per calendar visual)
 
 **Schemas:** `templates/CREATIVE_DNA_SCHEMA.json` → copy to client root.
 
-For **each calendar visual** (and optionally each pin in `references/pinterest/{run_date}/pinterest-manifest.json`), plus any user-supplied references from Phase 0:
+For **each calendar visual** (link to matching pin from Phase 1b / 6a), plus any user-supplied references from Phase 0:
 
-1. Analyze the image: map zones, elements, exact on-image copy, hero, canvas, effects.
-2. Write one file per image:
+1. Read the pin's `{pin}-reference-prompt.md` + analyze the reference image for `elements[]` and `must_preserve`.
+2. Set `_meta.reference_prompt_ref` → pin reference prompt path.
+3. Write one file per calendar row:
 
 ```
 clients/{client_slug}/instagram/{run_date}/{slug}.CREATIVE_DNA.json
@@ -281,25 +298,32 @@ Set Creative DNA `copy.caption_scores_ref` → `{slug}-caption-scores.json` when
 
 For each calendar entry with a visual:
 
-1. Load `BRAND_DNA.json` + matching `{slug}.CREATIVE_DNA.json`.
-2. Merge per `CREATIVE_DNA_SCHEMA.json` merge rules — **resolve all colors from Brand DNA** (see [references/prompt-merge.md](references/prompt-merge.md#color-resolution-brand-dna-only)).
+1. Load **three layers** (see [references/prompt-merge.md](references/prompt-merge.md#three-layer-merge-mandatory-when-reference-prompt-exists)):
+   - `{pin}-reference-prompt.md` via `creative._meta.reference_prompt_ref` — **layout / structure**
+   - `BRAND_DNA.json` — **color theme** (resolve all `{{COLOR_ROLE}}` placeholders to brand hex)
+   - `{slug}.CREATIVE_DNA.json` → `elements[]` — **latest on-image content**
+2. Merge: start from reference regeneration prompt → inject Brand DNA colors → overlay calendar copy (replace reference pin text).
 3. Write `{slug}-prompt.md` with:
 
 ```markdown
 # {Title}
 
 **Creative ID:** `{slug}`
-**DNA merge:** BRAND_DNA.json + {slug}.CREATIVE_DNA.json
+**DNA merge:** reference-prompt + BRAND_DNA.json + {slug}.CREATIVE_DNA.json
+**Reference prompt:** {reference_prompt_ref}
 **Calendar ref:** content-calendar.md → [date row]
 
 ## ON-IMAGE COPY — MANDATORY (exact)
-[Table from creative_dna.elements + copy zones]
+[Table from elements[] + Brand DNA hex per zone]
 
 ## Zone map
-[ASCII layout from composition.zones]
+[From reference prompt — preserve pin layout]
+
+## must_preserve
+[From reference prompt]
 
 ## Generation prompt
-[Merged prompt: **brand colors only** (resolved background_mode + brand tokens) + creative structure/hero/elements — never creative hex]
+[Reference layout prose + Brand DNA colors + overlaid elements[] copy — never pin hex]
 
 ## Do not
 [brand imagery.avoid + creative constraints]
@@ -317,13 +341,14 @@ See [references/prompt-merge.md](references/prompt-merge.md) for merge algorithm
 For each `{slug}-prompt.md`:
 
 1. Use the LLM's **image generation tool** (e.g. `GenerateImage`).
-2. Match `creative_dna.canvas.ratio`:
+2. Pass `reference_image_paths: [creative._meta.reference_asset]` when supported — layout anchor; colors and copy still from merged prompt.
+3. Match `creative_dna.canvas.ratio`:
    - `4:5` → aspect_ratio `3:4` or `9:16` per tool support
    - `1:1` → `1:1`
    - `16:9` → `16:9`
-3. Build `description` from merged prompt: headline, stat, hero casting, **brand palette hex only** (run color resolution — no creative DNA hex), style, CTA, footer URL.
-4. Save output to `{slug}.png` next to Creative DNA.
-5. Update `_meta.reference_asset` in Creative DNA if first generation.
+4. Build `description` from **Generation prompt** section (already merged: reference layout + brand colors + content).
+5. Save output to `{slug}.png` next to Creative DNA.
+6. Update `_meta.reference_asset` in Creative DNA if first generation.
 
 **Color gate:** If the prompt or description contains hex values not present in `BRAND_DNA.json`, stop and re-run Phase 8 merge.
 
@@ -391,6 +416,7 @@ Copy and track:
 - [ ] Phase 0: Intake + client scaffold
 - [ ] Phase 1: BRAND_IDENTITY.md (design-brand-guardian)
 - [ ] Phase 1b: 5 Pinterest pins → references/pinterest/ (pinterest-reference-fetch)
+- [ ] Phase 6a: {pin}-reference-prompt.md per pin (reference-creative-prompt)
 - [ ] Phase 2: social-media-context (social-media-context-sms)
 - [ ] Phase 3: content-strategy.md (content-strategy-sms)
 - [ ] Phase 4: content-calendar.md (content-calendar-sms)
@@ -433,7 +459,8 @@ Copy and track:
 
 - [references/file-structure.md](references/file-structure.md) — folder conventions
 - [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md) — fetch 5 Pinterest pins after brand identity
-- [references/prompt-merge.md](references/prompt-merge.md) — DNA → prompt merge
+- [references/reference-creative-prompt/SKILL.md](references/reference-creative-prompt/SKILL.md) — Phase 6a pin → regeneration prompt
+- [references/prompt-merge.md](references/prompt-merge.md) — three-layer merge (reference + brand colors + content)
 - [references/caption-score/SKILL.md](references/caption-score/SKILL.md) — score post copy before Firestore publish
 - [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md) — GCS upload + Firestore publish after Phase 9
 - `clients/swayam/` — canonical example

@@ -213,15 +213,15 @@ Short human summary:
 
 ---
 
-## Handoff to Phase 6
+## Handoff to Phase 6a + Phase 6
 
 For **each** pin in `pinterest-manifest.json`:
 
-1. Open `pin-0N-*.png`
-2. Reverse-engineer layout → `{layout-slug}.CREATIVE_DNA.json` in `references/pinterest/` or dated creative folder
-3. Set `_meta.source` = `pinterest-reference` and `_meta.reference_asset` = pin file path
-4. Set `visual_identity.background_mode` (not reference hex)
-5. Update manifest pin `phase_6_status` → `complete` and add `creative_dna_file`
+1. **Phase 6a:** Write `pin-0N-{layout}-reference-prompt.md` via [reference-creative-prompt/SKILL.md](../reference-creative-prompt/SKILL.md) — layout regeneration prompt with color role placeholders.
+2. Update manifest: `reference_prompt_file`, `phase_6a_status: complete`.
+3. **Phase 6:** For calendar rows using this pin, set Creative DNA `_meta.reference_prompt_ref` → that file.
+4. Set `elements[]` to this post's on-image copy only (not the pin's original text).
+5. Update manifest pin `phase_6_status` → `complete` and add `creative_dna_file` when DNA is written.
 
 ---
 
@@ -231,6 +231,7 @@ For **each** pin in `pinterest-manifest.json`:
 - [ ] Exactly **5** PNGs saved under `clients/{slug}/references/pinterest/`
 - [ ] `search-brief.json` + `pinterest-manifest.json` exist
 - [ ] All 5 pins are **dark editorial** single-frame layouts (no stat/carousel/dashboard)
+- [ ] Phase 6a: each pin has `{pin}-reference-prompt.md` before calendar Phase 8
 - [ ] At least **2** distinct `inferred_layout` values across 5 pins (within editorial family)
 - [ ] Each pin has `source_pin_url` and `search_query` recorded
 - [ ] `client.json` includes `references_pinterest` folder path

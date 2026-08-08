@@ -7,8 +7,17 @@
     "purpose": "Replicable structure for ONE social media creative. Each image gets its own CREATIVE_DNA.json file. LLMs reverse-engineer or author this from a reference image + brief, then merge with BRAND_DNA.json at render time.",
     "file_naming": "{creative-slug}.CREATIVE_DNA.json",
     "file_location": "Same folder as the creative asset and prompt (e.g. instagram/, carousel/).",
-    "merge_order": ["BRAND_DNA.json", "{creative-slug}.CREATIVE_DNA.json"],
+    "merge_order": ["reference_prompt", "BRAND_DNA.json", "{creative-slug}.CREATIVE_DNA.json"],
     "merge_rules": {
+      "reference_prompt_wins_on": [
+        "composition",
+        "zone_map",
+        "must_preserve",
+        "typography_placement",
+        "decorative_structure",
+        "hero_placement",
+        "regeneration_layout_prose"
+      ],
       "brand_dna_wins_on": [
         "all_colors",
         "visual_identity.background",
@@ -42,9 +51,10 @@
     "llm_workflow": [
       "1. Receive reference image and/or creative brief.",
       "2. Read BRAND_DNA.json for invariant brand rules.",
-      "3. Analyze the reference: map every visual zone, text block, hero, and UI element.",
-      "4. Write a new {slug}.CREATIVE_DNA.json following this schema exactly.",
-      "5. At render time: merge brand_dna + creative_dna → image prompt or compositor spec."
+      "3. Phase 6a: write pin reference-prompt.md (layout regeneration, color roles only).",
+      "4. Analyze the reference: map zones, text blocks, hero — link reference_prompt_ref.",
+      "5. Write {slug}.CREATIVE_DNA.json with elements[] for this post's on-image copy.",
+      "6. Phase 8: merge reference-prompt + brand_dna colors + elements[] → {slug}-prompt.md."
     ]
   },
 
@@ -55,6 +65,7 @@
       "creative_id": "string — unique slug, e.g. 2026-08-08-admissions-automation-stat-hero",
       "brand_dna": "../BRAND_DNA.json",
       "reference_asset": "./{creative-slug}.png",
+      "reference_prompt_ref": "../../references/pinterest/pin-01-{layout}-reference-prompt.md",
       "prompt_ref": "./{creative-slug}-prompt.md",
       "source": "generated | reference_upload | reverse_engineered",
       "created": "ISO date",

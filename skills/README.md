@@ -1,6 +1,6 @@
 # Skills — Swayam weekly creative pipeline
 
-Skills for the [Swayam weekly cloud agent](../docs/swayam/swayam-weekly-automation.md).
+Skills for the [Swayam weekly cloud agent](../clients/swayam/swayam-weekly-automation.md).
 
 ## Invoke order (weekly run)
 
@@ -8,7 +8,7 @@ Skills for the [Swayam weekly cloud agent](../docs/swayam/swayam-weekly-automati
 |-------|-------|------|
 | 1 Research | reddit-posts | [reddit-posts/SKILL.md](./reddit-posts/SKILL.md) |
 | 2 Copy | caption-writer-sms, post-writer-sms, whatsapp-skill | [caption-writer-sms](./caption-writer-sms/SKILL.md), [post-writer-sms](./post-writer-sms/SKILL.md), [whatsapp-skill](./whatsapp-skill/SKILL.md) |
-| 2 Context | social-media-context-sms | Read [docs/swayam/social-media-context-sms.md](../docs/swayam/social-media-context-sms.md) |
+| 2 Context | social-media-context-sms | Read [clients/swayam/social-media-context-sms.md](../clients/swayam/social-media-context-sms.md) |
 | 3–4 Creative | brand-social-creative-pipeline | [brand-social-creative-pipeline/SKILL.md](./brand-social-creative-pipeline/SKILL.md) |
 | Hooks (optional) | hook-writer-sms | [hook-writer-sms/SKILL.md](./hook-writer-sms/SKILL.md) |
 | Bootstrap (brand setup) | design-brand-guardian | [design-brand-guardian/SKILL.md](./design-brand-guardian/SKILL.md) |
@@ -18,10 +18,10 @@ Skills for the [Swayam weekly cloud agent](../docs/swayam/swayam-weekly-automati
 
 | File | Purpose |
 |------|---------|
-| [docs/swayam/BRAND_DNA.json](../docs/swayam/BRAND_DNA.json) | Invariant brand tokens |
-| [docs/swayam/BRAND_DNA_SCHEMA.json](../docs/swayam/BRAND_DNA_SCHEMA.json) | Brand DNA schema |
-| [docs/swayam/CREATIVE_DNA_SCHEMA.json](../docs/swayam/CREATIVE_DNA_SCHEMA.json) | Per-creative DNA schema |
-| [docs/swayam/social-media-context-sms.md](../docs/swayam/social-media-context-sms.md) | Voice, audience, pillars |
+| [clients/swayam/BRAND_DNA.json](../clients/swayam/BRAND_DNA.json) | Invariant brand tokens |
+| [clients/swayam/BRAND_DNA_SCHEMA.json](../clients/swayam/BRAND_DNA_SCHEMA.json) | Brand DNA schema |
+| [clients/swayam/CREATIVE_DNA_SCHEMA.json](../clients/swayam/CREATIVE_DNA_SCHEMA.json) | Per-creative DNA schema |
+| [clients/swayam/social-media-context-sms.md](../clients/swayam/social-media-context-sms.md) | Voice, audience, pillars |
 
 ## Prompt merge
 

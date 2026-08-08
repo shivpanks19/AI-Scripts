@@ -11,8 +11,8 @@ WHITE = (255, 255, 255)
 GRAY = (120, 120, 120)
 LIGHT_BLUE = (0, 80, 200)
 
-OUT = "/workspace/docs/assets/eduhexa/eduhexa-whatsapp-reading-depth-july-2026.png"
-LOGO = "/workspace/docs/eduhexa logo.png"
+OUT = "/workspace/clients/assets/eduhexa/eduhexa-whatsapp-reading-depth-july-2026.png"
+LOGO = "/workspace/clients/eduhexa logo.png"
 
 img = Image.new("RGB", (SIZE, SIZE), BLACK)
 draw = ImageDraw.Draw(img)

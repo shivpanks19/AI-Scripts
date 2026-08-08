@@ -14,7 +14,7 @@ Orchestrates the full workflow: **brand identity → social context → strategy
 
 Run phases in order. Skip only phases the user explicitly says are done. After each phase, save deliverables to the client folder before continuing.
 
-**Reference implementation:** `docs/swayam/` (BRAND_IDENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
+**Reference implementation:** `clients/swayam/` (BRAND_IDENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
 
 ---
 
@@ -25,7 +25,7 @@ Collect from the user (ask only for missing items):
 | Input | Required | Notes |
 |-------|----------|-------|
 | Website URL | Yes | Fetch homepage, product, pricing if available |
-| Client slug | Yes | e.g. `swayam` → `docs/swayam/` |
+| Client slug | Yes | e.g. `swayam` → `clients/swayam/` |
 | Brand files | Optional | Existing decks, logos, ICP docs, feature lists |
 | Platforms | Yes | Instagram, LinkedIn, Meta ads, etc. |
 | Calendar horizon | Yes | `weekly` or `monthly` |
@@ -44,7 +44,7 @@ clients/{client_slug}/
 ├── instagram/
 ├── linkedin/
 └── plans/
-    ├── social-media-context.md    # Phase 2 (or docs/swayam/social-media-context-sms.md if global)
+    ├── social-media-context.md    # Phase 2 (or clients/swayam/social-media-context-sms.md if global)
     ├── content-strategy.md        # Phase 3
     └── content-calendar.md        # Phase 4
 ```
@@ -79,7 +79,7 @@ Initialize `client.json` with `website`, `display_name`, `folders`, `channels`.
 2. Map brand voice → social voice; positioning → audience; pillars → content pillars.
 3. Write context file. Prefer client-scoped path:
    - `clients/{client_slug}/plans/social-media-context.md`
-   - Or update `docs/swayam/social-media-context-sms.md` if user wants one global profile.
+   - Or update `clients/swayam/social-media-context-sms.md` if user wants one global profile.
 
 Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Platform Configuration, Content Formats, Example Posts (draft if none), Anti-Patterns.
 
@@ -305,4 +305,4 @@ Copy and track:
 
 - [references/file-structure.md](references/file-structure.md) — folder conventions
 - [references/prompt-merge.md](references/prompt-merge.md) — DNA → prompt merge
-- `docs/swayam/` — canonical example
+- `clients/swayam/` — canonical example

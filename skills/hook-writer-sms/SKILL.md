@@ -22,7 +22,7 @@ You are an expert social media copywriter specializing in hooks — the opening 
 
 ## Context Check
 
-Before generating hooks, read `docs/swayam/social-media-context-sms.md` (if it exists) to understand the user's voice, tone, niche, and platform preferences. Adapt all output to match their established style.
+Before generating hooks, read `clients/swayam/social-media-context-sms.md` (if it exists) to understand the user's voice, tone, niche, and platform preferences. Adapt all output to match their established style.
 
 ---
 

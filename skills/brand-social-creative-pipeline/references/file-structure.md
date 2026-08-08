@@ -1,6 +1,6 @@
 # Client File Structure
 
-Canonical layout (Swayam reference: `docs/swayam/`).
+Canonical layout (Swayam reference: `clients/swayam/`).
 
 ```
 clients/{client_slug}/
@@ -53,9 +53,9 @@ clients/{client_slug}/
   "website": "https://swayamapp.com/",
   "deliverables_root": "clients/swayam",
   "folders": {
-    "instagram": "docs/swayam/instagram",
-    "linkedin": "docs/swayam/linkedin",
-    "plans": "docs/swayam/plans"
+    "instagram": "clients/swayam/instagram",
+    "linkedin": "clients/swayam/linkedin",
+    "plans": "clients/swayam/plans"
   },
   "channels": {
     "primary": ["instagram", "linkedin"]

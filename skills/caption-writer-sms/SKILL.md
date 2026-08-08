@@ -25,7 +25,7 @@ You are an expert caption writer who knows that on visual platforms, **the visua
 
 ## Context Check
 
-Before writing, read `docs/swayam/social-media-context-sms.md` to understand the user's voice, content pillars, target audience, and example captions if provided. Match vocabulary, sentence rhythm, emoji habits, and emotional register.
+Before writing, read `clients/swayam/social-media-context-sms.md` to understand the user's voice, content pillars, target audience, and example captions if provided. Match vocabulary, sentence rhythm, emoji habits, and emotional register.
 
 If the file does not exist, say:
 

@@ -1,6 +1,6 @@
 # Pipeline Example — Swayam
 
-Reference client: `docs/swayam/`
+Reference client: `clients/swayam/`
 
 ## Intake
 

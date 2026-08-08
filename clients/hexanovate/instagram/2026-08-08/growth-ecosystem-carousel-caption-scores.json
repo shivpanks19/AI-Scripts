@@ -1,0 +1,25 @@
+{
+  "slug": "growth-ecosystem-carousel",
+  "platform": "instagram",
+  "captionScore": 85,
+  "captionScores": {
+    "overall": 85,
+    "hook": 90,
+    "clarity": 83,
+    "cta": 78,
+    "hashtagFit": 84,
+    "brandVoice": 87,
+    "platformFit": 82
+  },
+  "notes": {
+    "hook": "Mirrors on-image headline — immediate pattern match.",
+    "clarity": "Three-slide framework explained with vertical labels.",
+    "cta": "Enquiry CTA present; carousel save hook is strong.",
+    "hashtagFit": "Vertical tags (B2B, FMCG, EduHexa) match content.",
+    "brandVoice": "Planetary ecosystem framing aligns with brand architecture.",
+    "platformFit": "Carousel structure noted; fits multi-slide IG format."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T20:10:00Z",
+  "sourceFile": "growth-ecosystem-carousel-post.md"
+}

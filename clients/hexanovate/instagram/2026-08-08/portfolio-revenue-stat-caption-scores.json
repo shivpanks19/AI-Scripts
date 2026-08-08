@@ -1,0 +1,25 @@
+{
+  "slug": "portfolio-revenue-stat",
+  "platform": "instagram",
+  "captionScore": 85,
+  "captionScores": {
+    "overall": 85,
+    "hook": 87,
+    "clarity": 84,
+    "cta": 82,
+    "hashtagFit": 80,
+    "brandVoice": 88,
+    "platformFit": 85
+  },
+  "notes": {
+    "hook": "3× stat ties directly to on-image creative.",
+    "clarity": "ELMO case attributed; fragmentation thesis is clear.",
+    "cta": "Growth partnership CTA with link-in-bio direction.",
+    "hashtagFit": "Portfolio and ROI tags fit proof pillar.",
+    "brandVoice": "Evidence-led, proof-over-noise voice consistent.",
+    "platformFit": "Concise stat post format suits IG/FB feed."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T20:10:00Z",
+  "sourceFile": "portfolio-revenue-stat-post.md"
+}

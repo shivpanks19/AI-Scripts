@@ -21,6 +21,7 @@
 - [x] Phase 5: BRAND_DNA.json (regenerated)
 - [x] Phase 6: 3× CREATIVE_DNA.json
 - [x] Phase 7: 3× posts (+ Facebook copies)
+- [x] Phase 7b: 3× caption-scores.json (hook 85+, brand voice aligned)
 - [x] Phase 8: 3× prompts (brand-color merged)
 - [x] Phase 9: 3× PNG generated
 - [x] Phase 9b: GCS upload + Firestore publish (3 slugs)

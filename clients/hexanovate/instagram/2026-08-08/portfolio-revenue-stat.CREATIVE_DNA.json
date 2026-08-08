@@ -56,6 +56,7 @@
   },
   "copy": {
     "cta": "Start a Growth Partnership",
-    "post_ref": "./portfolio-revenue-stat-post.md"
+    "post_ref": "./portfolio-revenue-stat-post.md",
+    "caption_scores_ref": "./portfolio-revenue-stat-caption-scores.json"
   }
 }

@@ -1,0 +1,25 @@
+{
+  "slug": "not-agency-system-editorial",
+  "platform": "instagram",
+  "captionScore": 86,
+  "captionScores": {
+    "overall": 86,
+    "hook": 88,
+    "clarity": 85,
+    "cta": 80,
+    "hashtagFit": 82,
+    "brandVoice": 90,
+    "platformFit": 86
+  },
+  "notes": {
+    "hook": "Strong contrarian opener — ten vendors vs systems problem.",
+    "clarity": "Single systems thesis with clear bullet proof stack.",
+    "cta": "Growth partnership CTA present; could name hexanovate.com explicitly.",
+    "hashtagFit": "Tags align to growth systems and vertical pillars.",
+    "brandVoice": "Operator-grade, systems-over-slogans tone matches BRAND_DNA.",
+    "platformFit": "IG-friendly line breaks; length within feed norms."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T20:10:00Z",
+  "sourceFile": "not-agency-system-editorial-post.md"
+}

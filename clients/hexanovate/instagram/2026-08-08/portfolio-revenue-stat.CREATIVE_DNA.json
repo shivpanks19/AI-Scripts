@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "portfolio-revenue-stat",
+    "run_date": "2026-08-08",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-03-webhook-stat-hero.png",
+    "prompt_ref": "./portfolio-revenue-stat-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Oversized stat hero — portfolio proof layout",
+    "reference_url": "https://in.pinterest.com/pin/1039979738966705253/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-13"
+  },
+  "concept": {
+    "topic": "Portfolio revenue proof — ELMO case",
+    "vertical": "B2B growth operators",
+    "metaphor": "Compounding revenue from one integrated system",
+    "message": "Systems compound; scattered vendors stall",
+    "persona": "Revenue head scanning proof on feed"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "stat-hero",
+  "composition": {
+    "layout_flow": "top-stat-bottom-context",
+    "zones": {
+      "stat": { "position": "center-upper", "scale": "dominant", "z_index": "foreground" },
+      "stat_label": { "position": "center", "scale": "medium", "z_index": "foreground" },
+      "subline": { "position": "center-below", "scale": "small", "z_index": "foreground" },
+      "source_line": { "position": "bottom-left", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "subtle radial glow behind stat numeral"
+  },
+  "visual_language": {
+    "geometry": "rounded stat card with thin border",
+    "lighting": "primary glow behind stat",
+    "depth": "card slightly elevated",
+    "materials": "matte dark card surface"
+  },
+  "effects": { "halo": true, "particles": false, "glow_accent": true },
+  "elements": [
+    { "role": "stat", "copy": "3×", "typography": "display", "color_role": "primary" },
+    { "role": "stat_label", "copy": "revenue growth", "typography": "h2", "color_role": "text_on_dark" },
+    { "role": "subline", "copy": "One system. One partner.", "typography": "body", "color_role": "text_muted" },
+    { "role": "source", "copy": "Portfolio case · ELMO", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": { "type": "none", "description": "Typography-led — no photographic hero" },
+  "replication": {
+    "must_preserve": ["oversized stat numeral", "three-line stat stack", "source attribution line", "dark card"],
+    "variable_slots": ["stat value", "stat label", "subline", "source case name"]
+  },
+  "copy": {
+    "cta": "Start a Growth Partnership",
+    "post_ref": "./portfolio-revenue-stat-post.md"
+  }
+}

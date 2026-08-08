@@ -1,8 +1,8 @@
 # Hexanovate — Brand Identity
 
-**Version:** 1.0 (pipeline webhook run)  
+**Version:** 1.1 (pipeline run 2026-08-08)  
 **Source:** hexanovate.com, webhook brand_brief, EduHexa portfolio cross-reference  
-**Last updated:** 2026-08-08
+**Last updated:** 2026-08-08 (re-run — full pipeline, dated folders)
 
 ---
 

@@ -5,10 +5,11 @@
     "brand_id": "hexanovate",
     "brand_name": "Hexanovate",
     "schema_ref": "./BRAND_DNA_SCHEMA.json",
-    "source_ref": "./plans/social-media-context.md",
+    "source_ref": "./plans/2026-08-08/social-media-context.md",
     "scope": "Invariant across all Hexanovate creatives. Import into every render; never override per creative.",
     "created": "2026-08-08",
-    "updated": "2026-08-08"
+    "updated": "2026-08-08",
+    "run_date": "2026-08-08"
   },
   "brand": {
     "name": "Hexanovate",

@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "source": "../../BRAND_IDENTITY.md",
+    "client_slug": "hexanovate",
+    "run_date": "2026-08-08",
+    "created": "2026-08-08"
+  },
+  "brand_signals": {
+    "product_category": "marketing agency / growth systems",
+    "industry": "B2B SaaS, FMCG, education",
+    "audience": "founders, revenue leaders, brand operators",
+    "visual_tone": "corporate editorial, stat contrast, carousel systems",
+    "platforms": ["instagram", "facebook"]
+  },
+  "search_queries": [
+    "webhook pinterest_urls[0-2]",
+    "digital marketing agency social media post template",
+    "B2B social media posts marketing agency before after"
+  ]
+}

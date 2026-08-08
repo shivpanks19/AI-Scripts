@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "growth-ecosystem-carousel",
+    "run_date": "2026-08-08",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-02-webhook-carousel-cover.png",
+    "prompt_ref": "./growth-ecosystem-carousel-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Modern business carousel cover — bold two-line hook",
+    "reference_url": "https://in.pinterest.com/pin/1124351863243884803/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-15"
+  },
+  "concept": {
+    "topic": "Planetary growth ecosystem — three verticals",
+    "vertical": "B2B, FMCG, Education unified",
+    "metaphor": "Three domains orbiting one growth system",
+    "message": "One partner across B2B, consumer, and education",
+    "persona": "Operator planning multi-vertical growth strategy"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "carousel-cover",
+  "composition": {
+    "layout_flow": "center-stack-with-orbit",
+    "zones": {
+      "headline": { "position": "center-upper", "scale": "dominant", "z_index": "foreground" },
+      "subheadline": { "position": "center", "scale": "medium", "z_index": "foreground" },
+      "orbit_icons": { "position": "center", "scale": "medium", "z_index": "midground" },
+      "swipe_hint": { "position": "bottom-center", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "subtle starfield dots at 6% opacity"
+  },
+  "visual_language": {
+    "geometry": "three pill nodes on orbital ring — B2B, FMCG, Education labels",
+    "lighting": "soft blue rim on orbit ring",
+    "depth": "flat with orbital diagram",
+    "materials": "vector pills and thin orbit line"
+  },
+  "effects": { "halo": false, "particles": true, "glow_accent": true },
+  "elements": [
+    { "role": "headline", "copy": "Three domains.", "typography": "display", "color_role": "text_on_dark" },
+    { "role": "subheadline", "copy": "One growth system.", "typography": "h2", "color_role": "primary" },
+    { "role": "swipe_hint", "copy": "Swipe →", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "abstract_vector",
+    "description": "Orbital ring with three labeled nodes: B2B, FMCG, Education"
+  },
+  "replication": {
+    "must_preserve": ["two-line cover hook", "three-node orbit diagram", "swipe hint", "carousel cover format"],
+    "variable_slots": ["headline", "subheadline", "node labels", "slide 2-4 copy in caption"]
+  },
+  "copy": {
+    "cta": "Start a Growth Partnership",
+    "post_ref": "./growth-ecosystem-carousel-post.md"
+  }
+}

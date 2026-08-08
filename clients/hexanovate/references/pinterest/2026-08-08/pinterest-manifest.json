@@ -1,0 +1,91 @@
+{
+  "_meta": {
+    "type": "pinterest_reference_manifest",
+    "version": "1.0",
+    "client_slug": "hexanovate",
+    "run_date": "2026-08-08",
+    "source": "../../BRAND_IDENTITY.md",
+    "search_brief": "./search-brief.json",
+    "fetched": "2026-08-08",
+    "pin_count": 5
+  },
+  "brand_signals": {
+    "product_category": "marketing agency / growth systems",
+    "industry": "B2B SaaS, FMCG, education",
+    "audience": "founders, revenue leaders, brand operators",
+    "visual_tone": "corporate editorial, stat contrast, carousel systems"
+  },
+  "searches_run": [
+    {
+      "query": "webhook pinterest_urls",
+      "pinterest_search_url": "https://in.pinterest.com/pin/2040762329647627/",
+      "candidates_reviewed": 3
+    },
+    {
+      "query": "digital marketing agency social media post template",
+      "pinterest_search_url": "https://in.pinterest.com/pin/premium-psd--817684876094768868/",
+      "candidates_reviewed": 2
+    },
+    {
+      "query": "B2B social media posts marketing agency before after",
+      "pinterest_search_url": "https://www.pinterest.com/ideas/b2b-social-media-posts/904863808542/",
+      "candidates_reviewed": 2
+    }
+  ],
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "./pin-01-webhook-agency-editorial.png",
+      "source_pin_url": "https://in.pinterest.com/pin/2040762329647627/",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "clean-corporate-agency",
+      "layout_notes": "Clean corporate grid — brand-aligned visual system post",
+      "suggested_structure_type": "editorial-quote-hero",
+      "phase_6_status": "complete",
+      "creative_dna_file": "../../../instagram/2026-08-08/not-agency-system-editorial.CREATIVE_DNA.json"
+    },
+    {
+      "id": "pin-02",
+      "file": "./pin-02-webhook-carousel-cover.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1124351863243884803/",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "carousel-cover",
+      "layout_notes": "Multi-slide business carousel cover — bold headline stack",
+      "suggested_structure_type": "carousel-cover",
+      "phase_6_status": "complete",
+      "creative_dna_file": "../../../instagram/2026-08-08/growth-ecosystem-carousel.CREATIVE_DNA.json"
+    },
+    {
+      "id": "pin-03",
+      "file": "./pin-03-webhook-stat-hero.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1039979738966705253/",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "stat-hero",
+      "layout_notes": "Large stat with supporting label — portfolio proof layout",
+      "suggested_structure_type": "stat-hero",
+      "phase_6_status": "complete",
+      "creative_dna_file": "../../../instagram/2026-08-08/portfolio-revenue-stat.CREATIVE_DNA.json"
+    },
+    {
+      "id": "pin-04",
+      "file": "./pin-04-marketing-agency-hero.png",
+      "source_pin_url": "https://in.pinterest.com/pin/premium-psd--817684876094768868/",
+      "search_query": "digital marketing agency social media post template",
+      "inferred_layout": "marketing-agency-hero",
+      "layout_notes": "Split hero — headline left, figure/visual right",
+      "suggested_structure_type": "split-hero",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-05",
+      "file": "./pin-05-strategy-before-after.png",
+      "source_pin_url": "https://www.pinterest.com/ideas/b2b-social-media-posts/904863808542/",
+      "search_query": "B2B social media posts marketing agency before after",
+      "inferred_layout": "strategy-before-after",
+      "layout_notes": "Before/after strategy contrast — stat and transformation hook",
+      "suggested_structure_type": "stat-hero",
+      "phase_6_status": "pending"
+    }
+  ],
+  "selection_rationale": "Three webhook pins plus two auto-searched layouts for corporate editorial, carousel cover, stat hero, split agency hero, and before/after contrast — matching agency/B2B category with layout diversity."
+}

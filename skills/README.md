@@ -11,6 +11,8 @@ Skills for the [Swayam weekly cloud agent](../docs/swayam-weekly-automation.md).
 | 2 Context | social-media-context-sms | Read [docs/swayam/social-media-context-sms.md](../docs/swayam/social-media-context-sms.md) |
 | 3–4 Creative | brand-social-creative-pipeline | [brand-social-creative-pipeline/SKILL.md](./brand-social-creative-pipeline/SKILL.md) |
 | Hooks (optional) | hook-writer-sms | [hook-writer-sms/SKILL.md](./hook-writer-sms/SKILL.md) |
+| Bootstrap (brand setup) | design-brand-guardian | [design-brand-guardian/SKILL.md](./design-brand-guardian/SKILL.md) |
+| Bootstrap (profile research) | creator-profile-teardown | [creator-profile-teardown/SKILL.md](./creator-profile-teardown/SKILL.md) |
 
 ## Swayam brand assets
 
@@ -24,3 +26,8 @@ Skills for the [Swayam weekly cloud agent](../docs/swayam-weekly-automation.md).
 ## Prompt merge
 
 See [brand-social-creative-pipeline/references/prompt-merge.md](./brand-social-creative-pipeline/references/prompt-merge.md).
+
+## Bootstrap skills (quarterly / new client)
+
+- **design-brand-guardian** — Phase 1 brand identity (`BRAND_IDENTITY.md`)
+- **creator-profile-teardown** — Instagram/social profile analysis before strategy

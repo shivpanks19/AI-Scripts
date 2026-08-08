@@ -76,6 +76,13 @@ This agent is a **recurring partial run** of [brand-social-creative-pipeline](..
 
 **Hard gate:** Phase 2 must complete before any image work.
 
+### Bootstrap skills (quarterly refresh only)
+
+| Skill | Path |
+|-------|------|
+| design-brand-guardian | [skills/design-brand-guardian/SKILL.md](../skills/design-brand-guardian/SKILL.md) |
+| creator-profile-teardown | [skills/creator-profile-teardown/SKILL.md](../skills/creator-profile-teardown/SKILL.md) |
+
 ---
 
 ## Weekly artifacts (canonical paths)

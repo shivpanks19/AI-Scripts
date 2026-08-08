@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "effort-outcome-gap-stat",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/pin-04-linkedin-carousel-stat.png",
+    "prompt_ref": "./effort-outcome-gap-stat-prompt.md",
+    "source": "pinterest-reference",
+    "reference_inspiration": "Stat hero card — bold metric label with supporting subline",
+    "reference_url": "https://www.pinterest.com/pin/linkedin-carousel-template--53550683063302504/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-13"
+  },
+  "concept": {
+    "topic": "Effort vs outcome gap",
+    "vertical": "Growth leadership",
+    "metaphor": "Reports and tasks vs revenue movement",
+    "message": "Effort without outcomes is an expensive hobby",
+    "persona": "CMO evaluating agency ROI"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": { "ratio": "4:5", "width": 1080, "height": 1350 }
+  },
+  "structure_type": "stat-hero-card",
+  "composition": {
+    "layout_flow": "center-card",
+    "zones": {
+      "stat_label": { "position": "center-upper", "scale": "dominant", "z_index": "foreground" },
+      "subline": { "position": "center", "scale": "medium", "z_index": "foreground" },
+      "card_surface": { "position": "center", "scale": "large", "z_index": "midground" },
+      "footer": { "position": "bottom-center", "scale": "small", "z_index": "foreground" },
+      "logo": { "position": "bottom-right", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "primary",
+    "background": "#2D1B69",
+    "_background_note": "Reference hex only — render uses brand.primary #1B1B2F",
+    "background_treatment": "subtle diagonal gradient primary to primary_dark",
+    "style": "stat card on brand primary surface"
+  },
+  "visual_language": {
+    "geometry": "rounded stat card 16px radius",
+    "lighting": "soft top highlight on card",
+    "depth": "card elevated with subtle shadow",
+    "materials": "frosted card on primary background"
+  },
+  "effects": {
+    "halo": false,
+    "particles": false,
+    "glow_accent": false
+  },
+  "elements": [
+    { "role": "stat", "type": "stat", "content": "Effort ≠ Outcome", "typography": "display", "color_role": "text_on_dark" },
+    { "role": "subheadline", "type": "subheadline", "content": "Reports don't move revenue. Systems do.", "typography": "h3", "color_role": "secondary_light" },
+    { "role": "footer", "type": "footer", "content": "Hexanovate · Growth Systems", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "none",
+    "description": "Typography-led stat card — no photographic hero"
+  },
+  "replication": {
+    "must_preserve": ["center stat card", "bold stat label", "supporting subline", "rounded card surface"],
+    "variable_slots": ["stat label", "subline text", "footer text"]
+  },
+  "copy": {
+    "post_ref": "./effort-outcome-gap-stat-post.md",
+    "caption_scores_ref": "./effort-outcome-gap-stat-caption-scores.json"
+  }
+}

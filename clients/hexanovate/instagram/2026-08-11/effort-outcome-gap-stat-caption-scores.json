@@ -1,0 +1,21 @@
+{
+  "slug": "effort-outcome-gap-stat",
+  "platform": "instagram",
+  "captionScore": 85,
+  "captionScores": {
+    "overall": 85,
+    "hook": 90,
+    "clarity": 86,
+    "cta": 80,
+    "hashtagFit": 78,
+    "brandVoice": 88,
+    "platformFit": 84
+  },
+  "notes": {
+    "hook": "Founder truth story earns scroll depth.",
+    "cta": "Question CTA drives comments."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T20:25:00Z",
+  "sourceFile": "effort-outcome-gap-stat-post.md"
+}

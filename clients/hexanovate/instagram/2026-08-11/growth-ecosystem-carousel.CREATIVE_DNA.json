@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "growth-ecosystem-carousel",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/pin-05-carousel-template-cover.png",
+    "prompt_ref": "./growth-ecosystem-carousel-prompt.md",
+    "source": "pinterest-reference",
+    "reference_inspiration": "Carousel cover — numbered hook with accent band",
+    "reference_url": "https://www.pinterest.com/pin/1055599908471695/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-15"
+  },
+  "concept": {
+    "topic": "Three markets, one growth ecosystem",
+    "vertical": "B2B + FMCG + Education",
+    "metaphor": "Planetary ecosystem with three specialist orbits",
+    "message": "Big vision, focused execution across three verticals",
+    "persona": "Growth leader exploring agency fit"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": { "ratio": "4:5", "width": 1080, "height": 1350 }
+  },
+  "structure_type": "carousel-cover",
+  "composition": {
+    "layout_flow": "top-headline-bottom-accent-band",
+    "zones": {
+      "headline": { "position": "top-left", "scale": "dominant", "z_index": "foreground" },
+      "subheadline": { "position": "center-left", "scale": "medium", "z_index": "foreground" },
+      "accent_band": { "position": "bottom", "scale": "medium", "z_index": "midground" },
+      "slide_indicator": { "position": "top-right", "scale": "small", "z_index": "foreground" },
+      "logo": { "position": "bottom-right", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "light",
+    "background": "#FFFFFF",
+    "_background_note": "Reference hex only — render uses brand.background #F8FAFC",
+    "background_treatment": "clean light surface with subtle grid dots at 3% opacity",
+    "style": "carousel cover — numbered hook, violet accent band"
+  },
+  "visual_language": {
+    "geometry": "bottom accent band full-bleed, slide 1 of 4 indicator",
+    "lighting": "flat bright",
+    "depth": "accent band flat color block",
+    "materials": "paper-clean light background"
+  },
+  "effects": {
+    "halo": false,
+    "particles": false,
+    "glow_accent": false
+  },
+  "elements": [
+    { "role": "headline", "type": "headline", "content": "3 markets", "typography": "display", "color_role": "text" },
+    { "role": "subheadline", "type": "subheadline", "content": "One growth ecosystem", "typography": "h2", "color_role": "primary" },
+    { "role": "slide_indicator", "type": "badge", "content": "1 / 4", "typography": "small", "color_role": "text_muted" },
+    { "role": "cta_band", "type": "cta_button", "content": "Swipe →", "typography": "body", "color_role": "text_on_dark" }
+  ],
+  "hero": {
+    "type": "abstract_vector",
+    "description": "Three small orbit icons (B2B, consumer bag, graduation cap) as minimal line icons above accent band"
+  },
+  "replication": {
+    "must_preserve": ["carousel cover layout", "numbered headline hook", "bottom accent band", "slide indicator"],
+    "variable_slots": ["headline number", "subheadline", "slide count"]
+  },
+  "copy": {
+    "post_ref": "./growth-ecosystem-carousel-post.md",
+    "caption_scores_ref": "./growth-ecosystem-carousel-caption-scores.json"
+  }
+}

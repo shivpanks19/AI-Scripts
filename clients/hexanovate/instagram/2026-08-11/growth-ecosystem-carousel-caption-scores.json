@@ -1,0 +1,21 @@
+{
+  "slug": "growth-ecosystem-carousel",
+  "platform": "instagram",
+  "captionScore": 83,
+  "captionScores": {
+    "overall": 83,
+    "hook": 82,
+    "clarity": 86,
+    "cta": 80,
+    "hashtagFit": 82,
+    "brandVoice": 84,
+    "platformFit": 85
+  },
+  "notes": {
+    "hook": "Carousel framework clear with vertical routing.",
+    "cta": "Soft conversation CTA matches brand voice."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T20:25:00Z",
+  "sourceFile": "growth-ecosystem-carousel-post.md"
+}

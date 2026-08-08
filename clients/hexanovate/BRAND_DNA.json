@@ -1,0 +1,179 @@
+{
+  "_meta": {
+    "type": "brand_dna",
+    "version": "1.0",
+    "brand_id": "hexanovate",
+    "brand_name": "Hexanovate",
+    "schema_ref": "./BRAND_DNA_SCHEMA.json",
+    "source_ref": "./BRAND_IDENTITY.md",
+    "scope": "Invariant across all Hexanovate creatives. Import into every render; never override per creative.",
+    "created": "2026-08-08",
+    "updated": "2026-08-08"
+  },
+  "brand": {
+    "name": "Hexanovate",
+    "descriptor": "Growth Systems Ecosystem",
+    "agency": null,
+    "tagline_product": "The Planetary Growth Ecosystem",
+    "tagline_agency": "Not an Agency. A System.",
+    "promise": "One connected partner for strategy, execution, and measurable outcomes across B2B, FMCG, and education.",
+    "website": "hexanovate.com"
+  },
+  "strategy": {
+    "purpose": "Build connected growth ecosystems so founders focus on vision while systems drive outcomes.",
+    "positioning": "For growth leaders tired of fragmented vendors — Hexanovate is the planetary growth ecosystem that closes the effort–outcome gap.",
+    "personality": [
+      "confident operator",
+      "outcome-obsessed",
+      "human",
+      "systems-minded",
+      "direct"
+    ],
+    "values": [
+      {
+        "name": "Accountability without excuses",
+        "definition": "Honest next steps when something doesn't work"
+      },
+      {
+        "name": "Enablement first",
+        "definition": "Build compounding systems, not dependency"
+      },
+      {
+        "name": "Honest always",
+        "definition": "No inflated metrics or slide-deck-only strategy"
+      },
+      {
+        "name": "Excellence always",
+        "definition": "We own the number — outcomes over effort"
+      },
+      {
+        "name": "Long game only",
+        "definition": "Success measured in years, not campaigns"
+      }
+    ]
+  },
+  "visual_identity": {
+    "background": "#F8FAFC",
+    "primary": "#1B1B2F",
+    "primary_light": "#2D2D44",
+    "primary_dark": "#0A0A0F",
+    "secondary": "#7C3AED",
+    "secondary_light": "#A78BFA",
+    "secondary_dark": "#5B21B6",
+    "revenue": "#10B981",
+    "revenue_light": "#34D399",
+    "revenue_dark": "#059669",
+    "ai": "#6366F1",
+    "ai_muted": "#818CF8",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "text_muted": "#94A3B8",
+    "neutral_50": "#F1F5F9",
+    "neutral_100": "#E2E8F0",
+    "neutral_200": "#CBD5E1",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "whatsapp_ui_only": "#25D366",
+    "style": "premium editorial growth systems — dark navy canvas, violet accents, operator-grade minimalism"
+  },
+  "typography": {
+    "family": "Inter",
+    "fallback": ["DM Sans", "system-ui", "sans-serif"],
+    "mono": "JetBrains Mono",
+    "wordmark_weight": "bold",
+    "headline_weight": "bold",
+    "body_weight": "regular",
+    "letter_spacing_wordmark": "-1%",
+    "hierarchy": {
+      "display": { "size_px": "72", "weight": "bold" },
+      "h1": { "size_px": 48, "weight": "bold" },
+      "h2": { "size_px": 32, "weight": "semibold" },
+      "h3": { "size_px": 24, "weight": "semibold" },
+      "body": { "size_px": "18", "weight": "regular" },
+      "small": { "size_px": 14, "weight": "regular" }
+    }
+  },
+  "logo": {
+    "wordmark": "HEXANOVATE",
+    "descriptor_size_ratio": 0.45,
+    "icon_concept": "Planetary orbit / connected nodes — growth ecosystem",
+    "clear_space": "1× wordmark height",
+    "min_digital_width_px": 120,
+    "min_icon_px": 32,
+    "assets": {
+      "app_icon": null,
+      "mark": null,
+      "wordmark": null
+    },
+    "dont": [
+      "Stretch or distort wordmark",
+      "Place on busy photography without contrast overlay",
+      "Use off-brand accent colors on logo"
+    ]
+  },
+  "ui_patterns": {
+    "pipeline_progress": "#7C3AED",
+    "revenue_kpi": "#10B981",
+    "ai_surface": "#6366F1",
+    "ai_surface_muted": "#818CF8",
+    "border_radius": {
+      "sm": 8,
+      "md": 12,
+      "lg": 16
+    },
+    "ai_indicator": "Subtle violet dot or pill badge",
+    "charts": "Revenue green for growth KPIs; violet for pipeline/system metrics"
+  },
+  "voice": {
+    "tone": "Direct, confident, outcome-obsessed — operator voice, not hype agency",
+    "headline_tone": "Bold contrarian or systems-framed — short, memorable",
+    "cta_primary": "Book a Demo",
+    "cta_secondary": "Start The Conversation",
+    "prefer": [
+      "growth system",
+      "ecosystem",
+      "outcomes",
+      "effort vs outcome",
+      "one partner",
+      "we own the number",
+      "built around you"
+    ],
+    "avoid": [
+      "synergy",
+      "leverage",
+      "thought leader",
+      "excited to announce",
+      "guaranteed",
+      "world's best",
+      "rise and grind"
+    ]
+  },
+  "imagery": {
+    "prefer": [
+      "Abstract systems/network visuals",
+      "Dark editorial layouts with violet accents",
+      "Sourced portfolio metrics only",
+      "Dashboard UI mockups for B2B posts",
+      "Founder-operator energy (stylised)"
+    ],
+    "avoid": [
+      "Generic AI brain clipart",
+      "Stock handshakes",
+      "Fake urgency countdowns",
+      "Invented statistics",
+      "Competitor logos without permission"
+    ],
+    "agent_presence": "Systems and automation depicted as connected nodes or dashboard UI — not humanoid robots"
+  },
+  "constraints": {
+    "accessibility": "WCAG AA contrast on text; white on primary_dark, dark text on light backgrounds",
+    "compliance": [
+      "Portfolio metrics must be sourced from hexanovate.com case studies",
+      "No fabricated survey statistics"
+    ],
+    "naming": [
+      "ThirdMeta, NativeUnit, EduHexa are sub-brands — capitalise correctly"
+    ]
+  }
+}

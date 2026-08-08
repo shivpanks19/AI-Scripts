@@ -1,0 +1,35 @@
+{
+  "client_slug": "hexanovate",
+  "display_name": "Hexanovate",
+  "website": "https://www.hexanovate.com",
+  "deliverables_root": "clients/hexanovate",
+  "outlet_id": "OCnD41LsRXTKPgnR1CDu",
+  "pipeline": {
+    "run_date": "2026-08-08",
+    "calendar_week": "2026-08-11",
+    "last_run": "2026-08-08T20:22:00Z",
+    "mode": "full",
+    "horizon": "weekly",
+    "goals": ["awareness", "leads"],
+    "platforms": ["instagram", "facebook"],
+    "phases_completed": []
+  },
+  "folders": {
+    "instagram": "clients/hexanovate/instagram/2026-08-11",
+    "facebook": "clients/hexanovate/facebook/2026-08-11",
+    "plans": "clients/hexanovate/plans",
+    "references_pinterest": "clients/hexanovate/references/pinterest"
+  },
+  "channels": {
+    "primary": ["instagram", "facebook"],
+    "instagram": {
+      "handle": "@hexanovate",
+      "cadence": "3 posts per week",
+      "formats": ["1:1 feed", "4:5 feed", "carousel cover"]
+    },
+    "facebook": {
+      "cadence": "3 posts per week (mirrored from Instagram)",
+      "formats": ["photo post", "link optional"]
+    }
+  }
+}

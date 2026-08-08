@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "type": "pinterest_reference_manifest",
+    "version": "1.0",
+    "client_slug": "hexanovate",
+    "source": "../BRAND_IDENTITY.md",
+    "search_brief": "./search-brief.json",
+    "fetched": "2026-08-08",
+    "pin_count": 5
+  },
+  "brand_signals": {
+    "product_category": "growth marketing agency",
+    "industry": "B2B / FMCG / education",
+    "audience": "founders, CMOs, growth leaders",
+    "visual_tone": "editorial, bold, premium dark"
+  },
+  "searches_run": [
+    {
+      "query": "webhook pinterest_urls (3 provided)",
+      "pinterest_search_url": null,
+      "candidates_reviewed": 3
+    },
+    {
+      "query": "B2B marketing agency linkedin carousel design",
+      "pinterest_search_url": "https://www.pinterest.com/search/pins/?q=B2B%20marketing%20agency%20linkedin%20carousel%20design",
+      "candidates_reviewed": 4
+    },
+    {
+      "query": "growth marketing instagram carousel cover",
+      "pinterest_search_url": "https://www.pinterest.com/search/pins/?q=growth%20marketing%20instagram%20carousel%20cover",
+      "candidates_reviewed": 3
+    }
+  ],
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "./pin-01-agency-who-we-are.png",
+      "source_pin_url": "https://in.pinterest.com/pin/2040762329647627/",
+      "image_source_url": "https://i.pinimg.com/736x/ba/b7/4a/bab74ae86537db6bd83ca3b6ee7f439c.jpg",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "gradient-kpi-card-grid",
+      "layout_notes": "Agency intro card — bold headline, brand blocks, CTA zone",
+      "suggested_structure_type": "agency-intro-hero",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-02",
+      "file": "./pin-02-growth-brand-hero.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1124351863243884803/",
+      "image_source_url": "https://i.pinimg.com/736x/e4/d2/be/e4d2be7d36f82a2c907cd7108db991e7.jpg",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "dark-bold-editorial",
+      "layout_notes": "Growth CTA editorial — headline + subline + DM hook",
+      "suggested_structure_type": "editorial-cta-hero",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-03",
+      "file": "./pin-03-contrarian-editorial.png",
+      "source_pin_url": "https://in.pinterest.com/pin/1039979738966705253/",
+      "image_source_url": "https://i.pinimg.com/736x/65/e9/13/65e913a64dcb3b8483a96e74caf530f2.jpg",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "dark-bold-editorial",
+      "layout_notes": "Contrarian 'don't choose us' — provocative headline stack",
+      "suggested_structure_type": "contrarian-editorial",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-04",
+      "file": "./pin-04-linkedin-carousel-stat.png",
+      "source_pin_url": "https://www.pinterest.com/pin/linkedin-carousel-template--53550683063302504/",
+      "image_source_url": "https://i.pinimg.com/736x/7a/53/5e/7a535ea1a2ed63cbaa9ff462b942e1e0.jpg",
+      "search_query": "B2B marketing agency linkedin carousel design",
+      "inferred_layout": "stat-hero",
+      "layout_notes": "LinkedIn carousel slide — stat + supporting copy blocks",
+      "suggested_structure_type": "stat-carousel-slide",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-05",
+      "file": "./pin-05-carousel-template-cover.png",
+      "source_pin_url": "https://www.pinterest.com/pin/1055599908471695/",
+      "image_source_url": "https://i.pinimg.com/736x/6e/4a/0d/6e4a0d2b05f07af9e5f6915ec9f5a6d4.jpg",
+      "search_query": "growth marketing instagram carousel cover",
+      "inferred_layout": "carousel-cover",
+      "layout_notes": "Carousel cover — numbered list hook, purple accent band",
+      "suggested_structure_type": "carousel-cover",
+      "phase_6_status": "pending"
+    }
+  ],
+  "selection_rationale": "Three webhook pins cover agency intro, growth CTA, and contrarian editorial; auto-search added stat-carousel and carousel-cover for layout diversity across B2B growth agency social formats."
+}

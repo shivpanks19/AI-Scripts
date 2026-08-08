@@ -1,0 +1,21 @@
+{
+  "slug": "not-agency-system-editorial",
+  "platform": "instagram",
+  "captionScore": 82,
+  "captionScores": {
+    "overall": 82,
+    "hook": 88,
+    "clarity": 84,
+    "cta": 78,
+    "hashtagFit": 80,
+    "brandVoice": 86,
+    "platformFit": 82
+  },
+  "notes": {
+    "hook": "Strong contrarian opener referencing site copy.",
+    "cta": "Clear demo CTA aligned to brand DNA."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-08T20:25:00Z",
+  "sourceFile": "not-agency-system-editorial-post.md"
+}

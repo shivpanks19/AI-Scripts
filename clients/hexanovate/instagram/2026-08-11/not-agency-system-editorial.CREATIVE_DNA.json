@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "not-agency-system-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/pin-01-clean-corporate-agency.png",
+    "prompt_ref": "./not-agency-system-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Clean corporate agency grid — brand-aligned visual system",
+    "reference_url": "https://in.pinterest.com/pin/900790362986884750/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-11"
+  },
+  "concept": {
+    "topic": "Systems positioning — not an agency",
+    "vertical": "B2B SaaS, FMCG, education operators",
+    "metaphor": "Single integrated system vs scattered vendor chaos",
+    "message": "Growth is architecture, not another agency deck",
+    "persona": "Founder evaluating marketing vendors on mobile"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": { "ratio": "4:5", "width": 1080, "height": 1350 }
+  },
+  "structure_type": "editorial-quote-hero",
+  "composition": {
+    "layout_flow": "center-stack",
+    "zones": {
+      "headline": { "position": "center-upper", "scale": "dominant", "z_index": "foreground" },
+      "subheadline": { "position": "center", "scale": "medium", "z_index": "foreground" },
+      "hero_illustration": { "position": "center", "scale": "medium", "z_index": "midground" },
+      "footer_strip": { "position": "bottom-center", "scale": "small", "z_index": "foreground" },
+      "logo": { "position": "bottom-right", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background": "#141414",
+    "_background_note": "Reference hex only — render uses brand.background #0A0A0A",
+    "background_treatment": "subtle grid lines at 12% opacity, corner halftone dots",
+    "style": "bold corporate editorial — high contrast vector, no photography"
+  },
+  "visual_language": {
+    "geometry": "hexagonal system nodes connected by thin circuit lines",
+    "lighting": "soft primary glow from center hero",
+    "depth": "flat editorial with subtle depth on hero object",
+    "materials": "vector matte surfaces, no glossy 3D"
+  },
+  "effects": {
+    "halo": true,
+    "particles": false,
+    "glow_accent": true
+  },
+  "elements": [
+    { "role": "headline", "copy": "Not an agency.", "typography": "display", "color_role": "text_on_dark" },
+    { "role": "subheadline", "copy": "A growth system.", "typography": "h2", "color_role": "primary" },
+    { "role": "footer", "copy": "hexanovate.com", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "abstract_vector",
+    "description": "Central hexagonal hub with three connected nodes labelled B2B, FMCG, Education — single system diagram, no photos"
+  },
+  "replication": {
+    "must_preserve": ["center-stack layout", "two-line headline/sub", "dark canvas", "vector not photo", "footer URL"],
+    "variable_slots": ["headline text", "subheadline text", "hero diagram labels", "footer"]
+  },
+  "copy": {
+    "cta": "Start a Growth Partnership",
+    "caption_ref": "./not-agency-system-editorial-caption.md"
+  }
+}

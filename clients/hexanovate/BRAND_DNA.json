@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "type": "brand_dna",
+    "version": "1.0",
+    "brand_id": "hexanovate",
+    "brand_name": "Hexanovate",
+    "schema_ref": "./BRAND_DNA_SCHEMA.json",
+    "source_ref": "./plans/social-media-context.md",
+    "scope": "Invariant across all Hexanovate creatives. Import into every render; never override per creative.",
+    "created": "2026-08-08",
+    "updated": "2026-08-08"
+  },
+  "brand": {
+    "name": "Hexanovate",
+    "descriptor": "Revenue Growth Systems",
+    "agency": "Hexanovate",
+    "tagline_product": "Not an Agency. A System.",
+    "tagline_agency": "Human Intelligence, System Powered.",
+    "promise": "Predictable revenue from one growth system — not ten confused vendors.",
+    "website": "hexanovate.com"
+  },
+  "strategy": {
+    "purpose": "Engineer compounding revenue systems for B2B, FMCG, and education brands.",
+    "positioning": "For operators tired of fragmented marketing — Hexanovate is the growth systems partner that turns intent into predictable pipeline.",
+    "personality": [
+      "strategic operator",
+      "systems-minded",
+      "evidence-led",
+      "direct",
+      "human"
+    ],
+    "values": [
+      {
+        "name": "Systems over slogans",
+        "definition": "Revenue is engineered, not hoped for"
+      },
+      {
+        "name": "Human intelligence, system powered",
+        "definition": "People own outcomes; systems run repeatability"
+      },
+      {
+        "name": "Proof over noise",
+        "definition": "Portfolio outcomes beat vanity metrics"
+      },
+      {
+        "name": "Compounding growth",
+        "definition": "Fix foundations before scaling spend"
+      },
+      {
+        "name": "Partnership depth",
+        "definition": "Long-term growth partner, not campaign vendor"
+      }
+    ]
+  },
+  "visual_identity": {
+    "background": "#0A0A0A",
+    "primary": "#0066FF",
+    "primary_light": "#3385FF",
+    "primary_dark": "#0047B3",
+    "primary_dark_bg": "#0A0A0A",
+    "secondary": "#0066FF",
+    "secondary_light": "#3385FF",
+    "secondary_dark": "#0047B3",
+    "surface_card": "#141414",
+    "text": "#FFFFFF",
+    "text_on_dark": "#FFFFFF",
+    "text_muted": "#A3A3A3",
+    "neutral_50": "#F5F5F5",
+    "neutral_100": "#E5E5E5",
+    "neutral_200": "#D4D4D4",
+    "accent_glow": "rgba(0, 102, 255, 0.25)",
+    "success": "#22C55E",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "style": "corporate editorial growth systems — dark canvas, electric blue accents, grid motifs"
+  },
+  "typography": {
+    "family": "Inter",
+    "fallback": ["system-ui", "sans-serif"],
+    "mono": "JetBrains Mono",
+    "wordmark_weight": "bold",
+    "headline_weight": "bold",
+    "body_weight": "regular",
+    "letter_spacing_wordmark": "-2%",
+    "hierarchy": {
+      "display": { "size_px": "44-52", "weight": "bold" },
+      "h1": { "size_px": 36, "weight": "bold" },
+      "h2": { "size_px": 28, "weight": "bold" },
+      "h3": { "size_px": 20, "weight": "semibold" },
+      "body": { "size_px": "15-16", "weight": "regular" },
+      "small": { "size_px": 13, "weight": "regular" }
+    }
+  },
+  "logo": {
+    "wordmark": "Hexanovate",
+    "descriptor_size_ratio": 0.4,
+    "icon_concept": "HEXA geometric mark — blue on dark",
+    "clear_space": "minimum height of logo on all sides",
+    "min_digital_width_px": 100,
+    "overlay": {
+      "workflow": "Generate creative WITHOUT logo in AI prompt unless brand wordmark requested as text only.",
+      "variants": {
+        "light": "Blue HEXA wordmark on dark backgrounds",
+        "dark": "Blue wordmark on light backgrounds (rare)"
+      },
+      "placement": "bottom-right",
+      "width_ratio": 0.18
+    },
+    "dont": [
+      "stretch logo",
+      "recolor logo away from brand primary",
+      "place on busy imagery without scrim"
+    ]
+  },
+  "ui_patterns": {
+    "hex_motif": "#0066FF",
+    "circuit_lines": "primary at 15% opacity",
+    "halftone_dots": "primary corners at 8% opacity",
+    "border_radius": { "sm": 4, "md": 8, "lg": 12 },
+    "stat_display": "oversized numeral in primary or white"
+  },
+  "voice": {
+    "tone": "operator-direct — systems framing, evidence-backed",
+    "headline_tone": "confident contrarian — not agency cliché",
+    "cta_primary": "Start a Growth Partnership",
+    "cta_secondary": "Save this for your vendor review",
+    "prefer": [
+      "growth system",
+      "revenue pipeline",
+      "predictable revenue",
+      "compounding growth",
+      "B2B growth engine",
+      "human intelligence system powered"
+    ],
+    "avoid": [
+      "revolutionary",
+      "game changer",
+      "India's No.1",
+      "limited seats",
+      "hurry now",
+      "viral hack",
+      "best agency"
+    ]
+  },
+  "imagery": {
+    "prefer": [
+      "dark editorial layouts",
+      "abstract grid/system metaphors",
+      "single dominant stat with caption attribution",
+      "clean corporate splits",
+      "carousel pillar covers"
+    ],
+    "avoid": [
+      "stock handshake photos",
+      "generic AI brain clipart",
+      "invented survey stats on image",
+      "competitor logos",
+      "bright orange template clichés"
+    ]
+  },
+  "constraints": {
+    "accessibility": "White text on #0A0A0A — AAA for headlines; muted #A3A3A3 for secondary",
+    "compliance": [
+      "Attribute portfolio case names in caption when citing multiples",
+      "No false urgency or scarcity language",
+      "No invented metrics on image without calendar brief"
+    ],
+    "naming": [
+      "Hexanovate for parent brand",
+      "EduHexa for education vertical proof",
+      "Portfolio case names only when sourced from hexanovate.com"
+    ]
+  }
+}

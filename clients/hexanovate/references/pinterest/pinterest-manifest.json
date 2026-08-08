@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "type": "pinterest_reference_manifest",
+    "version": "1.0",
+    "client_slug": "hexanovate",
+    "source": "../BRAND_IDENTITY.md",
+    "search_brief": "./search-brief.json",
+    "fetched": "2026-08-08",
+    "pin_count": 5
+  },
+  "brand_signals": {
+    "product_category": "marketing agency / growth systems",
+    "industry": "B2B SaaS, FMCG, education",
+    "audience": "founders, revenue leaders, brand operators",
+    "visual_tone": "corporate editorial, stat contrast, carousel systems"
+  },
+  "searches_run": [
+    {
+      "query": "webhook pinterest_urls[0]",
+      "pinterest_search_url": "https://in.pinterest.com/pin/900790362986884750/",
+      "candidates_reviewed": 1
+    },
+    {
+      "query": "modern business instagram carousel template",
+      "pinterest_search_url": "https://in.pinterest.com/pin/modern-business-instagram-carousel-template-psd--450852612709752979/",
+      "candidates_reviewed": 2
+    },
+    {
+      "query": "digital marketing agency social media post template",
+      "pinterest_search_url": "https://in.pinterest.com/pin/premium-psd--817684876094768868/",
+      "candidates_reviewed": 2
+    },
+    {
+      "query": "B2B social media posts marketing agency",
+      "pinterest_search_url": "https://www.pinterest.com/ideas/b2b-social-media-posts/904863808542/",
+      "candidates_reviewed": 3
+    },
+    {
+      "query": "B2B SaaS instagram carousel post template",
+      "pinterest_search_url": "https://in.pinterest.com/pin/b2b-saas-tech-product-instagram-carousel-post-template-visme--923167623616151371/",
+      "candidates_reviewed": 2
+    }
+  ],
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "./pin-01-clean-corporate-agency.png",
+      "source_pin_url": "https://in.pinterest.com/pin/900790362986884750/",
+      "image_source_url": "https://i.pinimg.com/736x/5d/b1/51/5db151f18f8f07e2841e5db10b162cf5.jpg",
+      "search_query": "webhook pinterest_urls",
+      "inferred_layout": "clean-corporate-agency",
+      "layout_notes": "Clean corporate grid — brand-aligned visual system post",
+      "suggested_structure_type": "editorial-quote-hero",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-02",
+      "file": "./pin-02-carousel-cover.png",
+      "source_pin_url": "https://in.pinterest.com/pin/modern-business-instagram-carousel-template-psd--450852612709752979/",
+      "image_source_url": "https://i.pinimg.com/736x/04/a4/52/04a4525073e98206a92a7a3cf77651b9.jpg",
+      "search_query": "modern business instagram carousel template",
+      "inferred_layout": "carousel-cover",
+      "layout_notes": "Multi-slide business carousel cover — bold headline stack",
+      "suggested_structure_type": "carousel-cover",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-03",
+      "file": "./pin-03-marketing-agency-hero.png",
+      "source_pin_url": "https://in.pinterest.com/pin/premium-psd--817684876094768868/",
+      "image_source_url": "https://i.pinimg.com/736x/16/45/e7/1645e7dd3edc2dc099ff99d99943b913.jpg",
+      "search_query": "digital marketing agency social media post template",
+      "inferred_layout": "marketing-agency-hero",
+      "layout_notes": "Split hero — headline left, figure/visual right",
+      "suggested_structure_type": "split-hero",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-04",
+      "file": "./pin-04-strategy-before-after.png",
+      "source_pin_url": "https://www.pinterest.com/ideas/b2b-social-media-posts/904863808542/",
+      "image_source_url": "https://i.pinimg.com/736x/a3/a8/42/a3a84215920a972f3ddd79ece56fce3d.jpg",
+      "search_query": "B2B social media posts marketing agency before after",
+      "inferred_layout": "strategy-before-after",
+      "layout_notes": "Before/after strategy contrast — stat and transformation hook",
+      "suggested_structure_type": "stat-hero",
+      "phase_6_status": "pending"
+    },
+    {
+      "id": "pin-05",
+      "file": "./pin-05-b2b-saas-carousel.png",
+      "source_pin_url": "https://in.pinterest.com/pin/b2b-saas-tech-product-instagram-carousel-post-template-visme--923167623616151371/",
+      "image_source_url": "https://i.pinimg.com/736x/ from pin page",
+      "search_query": "B2B SaaS instagram carousel post template",
+      "inferred_layout": "b2b-saas-carousel",
+      "layout_notes": "Corporate SaaS carousel — product/education pillar grid",
+      "suggested_structure_type": "carousel-cover",
+      "phase_6_status": "pending"
+    }
+  ],
+  "selection_rationale": "One webhook pin plus four auto-searched layouts: corporate editorial, carousel cover, split agency hero, before/after stat contrast, and B2B SaaS carousel — matching agency/B2B category with layout diversity."
+}

@@ -77,20 +77,27 @@
   ],
   "replication": {
     "must_preserve": [
-      "left vertical accent bar",
+      "left vertical accent bar beside headline",
       "two-line headline with accent second line",
-      "muted subheadline",
+      "muted subheadline below headline",
       "footer URL bottom-right",
-      "dark editorial 1:1 typography-only"
+      "typography-only \u2014 reference has no person"
     ],
     "variable_slots": [
       "headline lines",
       "subheadline",
       "footer"
-    ]
+    ],
+    "reference_fidelity": "high"
   },
   "copy": {
     "post_ref": "./not-agency-system-editorial-post.md",
     "caption_scores_ref": "./not-agency-system-editorial-caption-scores.json"
+  },
+  "hero": {
+    "type": "typography_only",
+    "description": "No photo hero \u2014 left accent bar + headline stack only",
+    "placement": "n/a",
+    "match_reference": true
   }
 }

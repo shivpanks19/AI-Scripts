@@ -234,8 +234,9 @@ Runs **after Phase 1b** for every pin in `pinterest-manifest.json` (and for any 
 
 For **each calendar visual** (link to matching pin from Phase 1b / 6a), plus any user-supplied references from Phase 0:
 
-1. Read the pin's `{pin}-reference-prompt.md` + analyze the reference image for `elements[]` and `must_preserve`.
+1. Read the pin's `{pin}-reference-prompt.md` + **visually analyze** the reference image for `elements[]`, `hero`, and `must_preserve`.
 2. Set `_meta.reference_prompt_ref` → pin reference prompt path.
+3. Set `hero.type` and `hero.description` from reference — preserve person/object when present ([reference-fidelity.md](references/reference-fidelity.md)).
 3. Write one file per calendar row:
 
 ```
@@ -341,7 +342,8 @@ See [references/prompt-merge.md](references/prompt-merge.md) for merge algorithm
 For each `{slug}-prompt.md`:
 
 1. Use the LLM's **image generation tool** (e.g. `GenerateImage`).
-2. Pass `reference_image_paths: [creative._meta.reference_asset]` when supported — layout anchor; colors and copy still from merged prompt.
+2. **Always** pass `reference_image_paths: [creative._meta.reference_asset]` — layout + hero anchor; colors and copy from merged prompt. See [references/reference-fidelity.md](references/reference-fidelity.md).
+3. Open description with: `Recreate the attached reference layout closely. Same hero subject placement. Brand colors + copy lock only.`
 3. Match `creative_dna.canvas.ratio`:
    - `4:5` → aspect_ratio `3:4` or `9:16` per tool support
    - `1:1` → `1:1`
@@ -460,7 +462,7 @@ Copy and track:
 - [references/file-structure.md](references/file-structure.md) — folder conventions
 - [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md) — fetch 5 Pinterest pins after brand identity
 - [references/reference-creative-prompt/SKILL.md](references/reference-creative-prompt/SKILL.md) — Phase 6a pin → regeneration prompt
-- [references/prompt-merge.md](references/prompt-merge.md) — three-layer merge (reference + brand colors + content)
+- [references/reference-fidelity.md](references/reference-fidelity.md) — preserve hero subjects, objects, and composition from pins
 - [references/caption-score/SKILL.md](references/caption-score/SKILL.md) — score post copy before Firestore publish
 - [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md) — GCS upload + Firestore publish after Phase 9
 - `clients/swayam/` — canonical example

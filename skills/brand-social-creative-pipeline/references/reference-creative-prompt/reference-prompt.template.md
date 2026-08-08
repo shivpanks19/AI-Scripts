@@ -31,15 +31,21 @@
 
 ---
 
+## Hero subject (must preserve)
+
+{If reference has person / photo / illustration / key object — describe type, pose, crop, clothing, props, and exact placement. If truly typography-only, state "typography_only" explicitly.}
+
+---
+
 ## must_preserve
 
 Layout traits that **must not change** when swapping brand copy:
 
 1. {e.g. left-aligned headline block with 80px margin}
-2. {e.g. 4px vertical accent bar left of headline}
-3. {e.g. typography-only — no photo hero}
+2. {e.g. split panel — purple copy block left 45%, photo subject right 55%}
+3. {e.g. seated person waist-up, cross-legged, reading book — right of center}
 4. {e.g. footer URL strip bottom-right}
-5. {add pin-specific traits}
+5. {add pin-specific traits — include hero when present}
 
 ---
 

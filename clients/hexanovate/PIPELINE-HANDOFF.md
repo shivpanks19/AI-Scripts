@@ -89,7 +89,8 @@ See `instagram/2026-08-11/publish-log.md` for GCS URLs, documentIds, and caption
 1. **Website:** hexanovate.com is SPA shell — brand identity merged from meta tags, public LinkedIn/Linktree research, and webhook brief ("marketing agency").
 2. **Positioning:** Anti-agency growth systems partner — B2B (ThirdMeta), FMCG (NativeUnit), Education (EduHexa).
 3. **Colors:** Dark canvas `#0A0A0A`, growth orange `#FF5500`, highlight `#FFB800`.
-4. **Pinterest:** Webhook URLs returned placeholders in CI; pin-01/02 use verified dark-bold-editorial reference.
+4. **Pinterest:** Webhook URLs returned placeholders in CI; pin-03 used for split-layout + photo hero fidelity (v2 regen 2026-08-08).
+5. **Reference fidelity:** Pipeline updated — Phase 9 always passes `reference_image_paths`; hero subjects preserved when present in pin.
 
 ---
 

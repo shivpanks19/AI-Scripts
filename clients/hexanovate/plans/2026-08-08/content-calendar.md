@@ -27,7 +27,7 @@
 | **Angle** | Core positioning — Hexanovate is a growth systems partner, not a vendor agency |
 | **On-image copy** | Headline: `We're not an agency.` / Accent line: `We're your growth system.` / Sub: `Outcomes over deliverables.` / Footer: `hexanovate.com` |
 | **Copy type** | post |
-| **Reference pin** | pin-01-dark-bold-editorial |
+| **Reference pin** | pin-03-editorial-quote-hero (split + photo subject) |
 | **Folder** | `instagram/2026-08-11/` |
 
 ---
@@ -40,7 +40,7 @@
 | **Angle** | Founder story — reports don't close the effort–outcome gap |
 | **On-image copy** | Headline: `Reports don't close` / Accent: `the gap.` / Sub: `Outcomes move when someone owns your vision.` / Footer: `hexanovate.com` |
 | **Copy type** | post |
-| **Reference pin** | pin-01-dark-bold-editorial |
+| **Reference pin** | pin-03-editorial-quote-hero (split + photo subject) |
 | **Folder** | `instagram/2026-08-11/` |
 
 ---

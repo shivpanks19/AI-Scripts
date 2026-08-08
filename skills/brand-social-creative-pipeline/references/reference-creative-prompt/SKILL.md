@@ -65,8 +65,10 @@ Record with pixel-level specificity:
 | **Zones** | Every text block, image area, rule, badge, footer — position + relative size |
 | **Typography** | Alignment (left/center), line breaks, relative scale (display vs sub vs footer) |
 | **Decorative** | Vertical rules, halftone, shapes, photo crops, icon rows |
-| **Hero** | Photo / illustration / UI mockup / typography-only — exact placement |
+| **Hero** | Photo / illustration / person / object / UI mockup / typography-only — exact placement, pose, crop, props |
 | **On-image copy in reference** | Transcribe verbatim (will be **replaced** in Phase 8) |
+
+**Reference fidelity:** If the pin contains a person, photo subject, or key object, document it under `## Hero subject (must preserve)` and list it in `must_preserve`. Do **not** default to typography-only when the reference has a visual hero. See [reference-fidelity.md](../reference-fidelity.md).
 
 Use **color roles**, not hex from the pin:
 

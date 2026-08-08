@@ -14,7 +14,7 @@ All social feed visuals in this pipeline are **one PNG per post** — dark edito
 | **Canvas** | 1:1 (1080×1080) |
 | **Structure** | `dark-bold-editorial` or `contrarian-editorial-hero` or `editorial-quote-hero` |
 | **Background mode** | `dark` only (`brand.visual_identity.primary_dark`) |
-| **Layout** | Center-stack or split editorial — headline + subheadline + optional abstract hero + footer URL |
+| **Layout** | Match reference pin — headline + subhead + footer URL; **preserve photo/illustration hero when reference has one** |
 | **Slug suffix** | `-editorial` (e.g. `not-agency-system-editorial`) |
 
 **Reference quality bar:** `not-agency-system-editorial` — contrarian headline on dark canvas, rich but single-frame composition, brand tagline as on-image copy.
@@ -75,8 +75,10 @@ When fetching 5 reference pins:
 
 ## Phase 6 — Creative DNA rules
 
-- `structure_type` must be one of: `contrarian-editorial-hero`, `editorial-quote-hero`, `dark-bold-editorial`.
-- `visual_identity.background_mode` must be `dark`.
+- `structure_type` must match the reference pin (e.g. `contrarian-editorial-hero`, `editorial-quote-hero`, `editorial-split-hero`, `dark-bold-editorial`).
+- `hero.type` must reflect the reference: `photo_subject`, `illustration_subject`, `abstract_vector`, or `typography_only`.
+- When reference has a person or object, set `hero.match_reference: true` and copy pose/placement into `hero.description`. See [reference-fidelity.md](./reference-fidelity.md).
+- `visual_identity.background_mode` may be `dark`, `light`, or `primary` — match reference layout tone; colors still resolve from Brand DNA.
 - `canvas.ratio` must be `1:1`.
 - No `slide_indicator`, no `stat` element type, no carousel CTA bands.
 
@@ -84,6 +86,7 @@ When fetching 5 reference pins:
 
 ## Phase 8–9 — Prompt and image generation
 
-- Prompts must describe a **single full-bleed editorial frame** — not a card on colored bg, not a carousel cover.
+- Prompts must describe a **single full-bleed frame** matching the reference composition — preserve split panels, photo heroes, and props when present.
 - Do not include: `1 / 4`, `Swipe →`, percentage stats, KPI numbers unless sourced from brief.
+- Phase 9: **always** pass `reference_image_paths: [reference_asset]` and use [reference-fidelity.md](./reference-fidelity.md) language.
 - Image generator: one `GenerateImage` call per calendar row → one `{slug}.png`.

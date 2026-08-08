@@ -1,9 +1,9 @@
-# Effort–outcome gap — effort-outcome-gap-editorial
+# effort-outcome-gap-editorial
 
 **Creative ID:** `effort-outcome-gap-editorial`
 **DNA merge:** reference-prompt + BRAND_DNA.json + effort-outcome-gap-editorial.CREATIVE_DNA.json
-**Reference prompt:** ../../references/pinterest/2026-08-08/pin-01-dark-bold-editorial-reference-prompt.md
-**Calendar ref:** content-calendar.md → 2026-08-13
+**Reference prompt:** ../../references/pinterest/2026-08-08/pin-03-editorial-quote-hero-reference-prompt.md
+**Reference fidelity:** high — match reference image composition
 
 ## ON-IMAGE COPY — MANDATORY (exact)
 
@@ -14,49 +14,47 @@
 | Subheadline | Outcomes move when someone owns your vision. | #A1A1AA |
 | Footer URL | hexanovate.com | #A1A1AA |
 
-## Zone map
+## Hero subject (must preserve)
 
-Left accent bar (4px × 120px, #FFB800) beside left-aligned headline stack. Subhead below. Brand strip bottom-left optional. Footer URL bottom-right.
+- **Type:** photo_subject
+- **Description:** Young woman seated cross-legged, white t-shirt, ripped blue jeans, smiling while reading open book. Cutout on right half overlapping split panel. Desaturated architectural photo bleed behind.
+- **Placement:** right-half
 
 ## must_preserve
 
-- Left vertical accent bar beside headline
-- Two-line headline with accent on line 2
-- Left-aligned editorial stack, 80px margins
-- Muted subheadline below headline
-- Footer URL bottom-right
-- Typography-only dark 1:1 — no photos, UI, clipart
+- split layout — copy left ~45%, photo hero right ~55%
+- curved boundary between panels
+- seated woman cross-legged reading book on right
+- architectural photo bleed behind subject
+- CTA pill in left panel
+- bottom footer strip three columns
 
 ## Generation prompt
 
-Create an ultra-premium bold editorial social feed post for **Hexanovate — Growth Systems**. Square 1:1, 1080×1080 px. Typography-only — no photos, mockups, or human subjects.
+Recreate the attached reference image layout closely. Same composition and hero subject placement. Apply brand colors and replace text only.
 
-COLORS (mandatory — all from BRAND_DNA.json):
-- Background: #0A0A0A
-- Primary: #FF5500
-- Accent / highlight: #FFB800
+COLORS (from BRAND_DNA.json):
+- Background / panels: #0A0A0A and #FF5500 accents
+- Accent highlight: #FFB800
 - Text on dark: #FFFFFF
-- Muted text: #A1A1AA
-All colors from brand palette — ignore reference image colors.
+- Muted: #A1A1AA
+All colors from brand palette — ignore reference pin hex.
 
-Background: solid #0A0A0A with 2% film grain.
-
-Layout: 4px × 120px vertical accent bar (#FFB800) left of headline block. 80px margins.
+MUST include seated woman reading book on right — same pose and placement as reference pin.
 
 **Exact on-image text:**
-- Line 1: `Reports don't close` (#FFFFFF)
-- Line 2: `the gap.` (#FFB800)
-- Subhead: `Outcomes move when someone owns your vision.` (#A1A1AA)
-- Footer: `hexanovate.com` (#A1A1AA)
+- `Reports don't close` (#FFFFFF)
+- `the gap.` (#FFB800)
+- `Outcomes move when someone owns your vision.` (#A1A1AA)
+- `hexanovate.com` (#A1A1AA)
 
-Inter / Plus Jakarta Sans. Bold display headline. Razor-sharp text. No logo in generation. Aspect ratio 1:1.
+Inter / Plus Jakarta Sans. 1:1 1080×1080. No logo in generation.
 
 ## Do not
 
-- Carousel indicators, stats, KPI numbers, dashboard screenshots
-- Stock photos, handshake clichés, AI brain icons
-- Hex values not in Brand DNA
-- Extra text beyond copy lock
+- Remove person, book, or split-panel hero when reference has them
+- Add carousel indicators, fake stats, dashboard UI
+- Use hex not in Brand DNA
 
 ## Post / caption
 

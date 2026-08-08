@@ -1,9 +1,9 @@
-# Anti-agency positioning — not-agency-system-editorial
+# not-agency-system-editorial
 
 **Creative ID:** `not-agency-system-editorial`
 **DNA merge:** reference-prompt + BRAND_DNA.json + not-agency-system-editorial.CREATIVE_DNA.json
 **Reference prompt:** ../../references/pinterest/2026-08-08/pin-01-dark-bold-editorial-reference-prompt.md
-**Calendar ref:** content-calendar.md → 2026-08-11
+**Reference fidelity:** high — match reference image composition
 
 ## ON-IMAGE COPY — MANDATORY (exact)
 
@@ -14,49 +14,46 @@
 | Subheadline | Outcomes over deliverables. | #A1A1AA |
 | Footer URL | hexanovate.com | #A1A1AA |
 
-## Zone map
+## Hero subject (must preserve)
 
-Left accent bar (4px × 120px, #FFB800) beside left-aligned headline stack. Subhead below. Brand strip bottom-left optional. Footer URL bottom-right.
+- **Type:** typography_only
+- **Description:** No photo hero — left accent bar + headline stack only
+- **Placement:** n/a
 
 ## must_preserve
 
-- Left vertical accent bar beside headline
-- Two-line headline with accent on line 2
-- Left-aligned editorial stack, 80px margins
-- Muted subheadline below headline
-- Footer URL bottom-right
-- Typography-only dark 1:1 — no photos, UI, clipart
+- left vertical accent bar beside headline
+- two-line headline with accent second line
+- muted subheadline below headline
+- footer URL bottom-right
+- typography-only — reference has no person
 
 ## Generation prompt
 
-Create an ultra-premium bold editorial social feed post for **Hexanovate — Growth Systems**. Square 1:1, 1080×1080 px. Typography-only — no photos, mockups, or human subjects.
+Recreate the attached reference image layout closely. Same composition and hero subject placement. Apply brand colors and replace text only.
 
-COLORS (mandatory — all from BRAND_DNA.json):
-- Background: #0A0A0A
-- Primary: #FF5500
-- Accent / highlight: #FFB800
+COLORS (from BRAND_DNA.json):
+- Background / panels: #0A0A0A and #FF5500 accents
+- Accent highlight: #FFB800
 - Text on dark: #FFFFFF
-- Muted text: #A1A1AA
-All colors from brand palette — ignore reference image colors.
+- Muted: #A1A1AA
+All colors from brand palette — ignore reference pin hex.
 
-Background: solid #0A0A0A with 2% film grain.
-
-Layout: 4px × 120px vertical accent bar (#FFB800) left of headline block. 80px margins.
+Typography-only reference — match accent bar and headline stack exactly.
 
 **Exact on-image text:**
-- Line 1: `We're not an agency.` (#FFFFFF)
-- Line 2: `We're your growth system.` (#FFB800)
-- Subhead: `Outcomes over deliverables.` (#A1A1AA)
-- Footer: `hexanovate.com` (#A1A1AA)
+- `We're not an agency.` (#FFFFFF)
+- `We're your growth system.` (#FFB800)
+- `Outcomes over deliverables.` (#A1A1AA)
+- `hexanovate.com` (#A1A1AA)
 
-Inter / Plus Jakarta Sans. Bold display headline. Razor-sharp text. No logo in generation. Aspect ratio 1:1.
+Inter / Plus Jakarta Sans. 1:1 1080×1080. No logo in generation.
 
 ## Do not
 
-- Carousel indicators, stats, KPI numbers, dashboard screenshots
-- Stock photos, handshake clichés, AI brain icons
-- Hex values not in Brand DNA
-- Extra text beyond copy lock
+- Remove person, book, or split-panel hero when reference has them
+- Add carousel indicators, fake stats, dashboard UI
+- Use hex not in Brand DNA
 
 ## Post / caption
 

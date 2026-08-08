@@ -4,8 +4,8 @@
     "version": "1.0",
     "creative_id": "three-markets-editorial",
     "brand_dna": "../../BRAND_DNA.json",
-    "reference_asset": "../../references/pinterest/2026-08-08/pin-02-contrarian-editorial.png",
-    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-02-contrarian-editorial-reference-prompt.md",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-03-editorial-quote-hero.png",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-03-editorial-quote-hero-reference-prompt.md",
     "prompt_ref": "./three-markets-editorial-prompt.md",
     "source": "calendar",
     "created": "2026-08-08",
@@ -23,7 +23,7 @@
     "width": 1080,
     "height": 1080
   },
-  "structure_type": "contrarian-editorial-hero",
+  "structure_type": "editorial-split-hero",
   "composition": {
     "layout_flow": "left-stack",
     "zones": {
@@ -77,20 +77,27 @@
   ],
   "replication": {
     "must_preserve": [
-      "left vertical accent bar",
-      "two-line headline with accent second line",
-      "muted subheadline",
-      "footer URL bottom-right",
-      "dark editorial 1:1 typography-only"
+      "split layout \u2014 copy left, photo hero right",
+      "seated woman with book on right side",
+      "curved panel boundary",
+      "footer strip bottom",
+      "CTA pill left panel"
     ],
     "variable_slots": [
       "headline lines",
       "subheadline",
       "footer"
-    ]
+    ],
+    "reference_fidelity": "high"
   },
   "copy": {
     "post_ref": "./three-markets-editorial-post.md",
     "caption_scores_ref": "./three-markets-editorial-caption-scores.json"
+  },
+  "hero": {
+    "type": "photo_subject",
+    "description": "Same reference hero: young woman cross-legged reading book, right half cutout, architectural bleed behind.",
+    "placement": "right-half",
+    "match_reference": true
   }
 }

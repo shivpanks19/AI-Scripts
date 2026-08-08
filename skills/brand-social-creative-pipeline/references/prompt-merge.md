@@ -14,7 +14,7 @@ final_prompt = reference_regeneration_prompt
 
 | Layer | Source | What it supplies | What it must NOT supply |
 |-------|--------|------------------|-------------------------|
-| **1 — Reference layout** | `{pin}-reference-prompt.md` via `creative._meta.reference_prompt_ref` | Zones, margins, typography placement, decorative structure, hero type, `must_preserve` | Final hex colors, brand copy, campaign headline |
+| **1 — Reference layout** | `{pin}-reference-prompt.md` via `creative._meta.reference_prompt_ref` | Zones, margins, typography placement, decorative structure, **hero subject (person/object/pose/placement)**, `must_preserve` | Final hex colors, brand copy, campaign headline |
 | **2 — Brand theme** | `BRAND_DNA.json` | All resolved hex colors, typography family, logo rules, `imagery.avoid`, voice constraints | Layout zones, composition changes |
 | **3 — Content** | `{slug}.CREATIVE_DNA.json` → `elements[]` + calendar row | On-image copy (headline, subheadline, footer URL), CTA label | Layout structure, colors |
 
@@ -38,6 +38,8 @@ content-calendar.md row  # optional overrides
 1. Read the **Regeneration prompt** section from `{pin}-reference-prompt.md`.
 2. Copy `must_preserve` and zone map into `{slug}-prompt.md`.
 3. Keep all layout/composition language verbatim unless it conflicts with `single-image-post-policy.md`.
+4. Copy `## Hero subject (must preserve)` from the reference prompt into `{slug}-prompt.md` when present.
+5. Append [reference fidelity block](./reference-fidelity.md#phase-8--prompt-merge) to the Generation prompt.
 
 ### Step 3 — Resolve color roles → Brand DNA hex
 
@@ -209,15 +211,16 @@ DO NOT:
 ### Description build
 
 1. Use **Generation prompt** section from merged `{slug}-prompt.md` (already includes reference layout + brand colors + content).
-2. Pass **reference image** when the tool supports it:
+2. **Always** pass the reference pin image:
 
 ```
 reference_image_paths: [creative._meta.reference_asset]
 ```
 
-This improves layout fidelity; colors and copy still come from the merged prompt (Brand DNA + elements).
+3. Start the generator `description` with: `Recreate the attached reference image layout closely. Same composition and hero subject placement. Apply brand colors and replace text only.`
+4. Condense to 1–2 paragraphs if needed, but **never drop** hero subjects, objects, exact on-image copy, or `must_preserve` layout rules.
 
-3. Condense to 1–2 paragraphs if needed, but **never drop** exact on-image copy or `must_preserve` layout rules.
+See [reference-fidelity.md](./reference-fidelity.md).
 
 ---
 

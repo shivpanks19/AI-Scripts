@@ -4,8 +4,8 @@
     "version": "1.0",
     "creative_id": "effort-outcome-gap-editorial",
     "brand_dna": "../../BRAND_DNA.json",
-    "reference_asset": "../../references/pinterest/2026-08-08/pin-01-dark-bold-editorial.png",
-    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-01-dark-bold-editorial-reference-prompt.md",
+    "reference_asset": "../../references/pinterest/2026-08-08/pin-03-editorial-quote-hero.png",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-08/pin-03-editorial-quote-hero-reference-prompt.md",
     "prompt_ref": "./effort-outcome-gap-editorial-prompt.md",
     "source": "calendar",
     "created": "2026-08-08",
@@ -23,7 +23,7 @@
     "width": 1080,
     "height": 1080
   },
-  "structure_type": "contrarian-editorial-hero",
+  "structure_type": "editorial-split-hero",
   "composition": {
     "layout_flow": "left-stack",
     "zones": {
@@ -77,20 +77,28 @@
   ],
   "replication": {
     "must_preserve": [
-      "left vertical accent bar",
-      "two-line headline with accent second line",
-      "muted subheadline",
-      "footer URL bottom-right",
-      "dark editorial 1:1 typography-only"
+      "split layout \u2014 copy left ~45%, photo hero right ~55%",
+      "curved boundary between panels",
+      "seated woman cross-legged reading book on right",
+      "architectural photo bleed behind subject",
+      "CTA pill in left panel",
+      "bottom footer strip three columns"
     ],
     "variable_slots": [
       "headline lines",
       "subheadline",
       "footer"
-    ]
+    ],
+    "reference_fidelity": "high"
   },
   "copy": {
     "post_ref": "./effort-outcome-gap-editorial-post.md",
     "caption_scores_ref": "./effort-outcome-gap-editorial-caption-scores.json"
+  },
+  "hero": {
+    "type": "photo_subject",
+    "description": "Young woman seated cross-legged, white t-shirt, ripped blue jeans, smiling while reading open book. Cutout on right half overlapping split panel. Desaturated architectural photo bleed behind.",
+    "placement": "right-half",
+    "match_reference": true
   }
 }

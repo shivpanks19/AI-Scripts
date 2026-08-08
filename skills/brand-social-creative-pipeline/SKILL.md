@@ -13,9 +13,46 @@ description: >-
 
 Orchestrates the full workflow: **brand identity → Pinterest references → social context → strategy → calendar → copy → Brand DNA → Creative DNA → prompts → generated images**.
 
-Run phases in order. Skip only phases the user explicitly says are done. After each phase, save deliverables to the client folder before continuing.
+**Reference implementation:** `clients/swayam/` (BRAND_DENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
 
-**Reference implementation:** `clients/swayam/` (BRAND_IDENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
+---
+
+## Run policy — always execute fresh (mandatory)
+
+**Every invocation runs Phases 0–10 from scratch.** Do not skip phases because prior artifacts exist. Do not reuse files from earlier runs unless the user explicitly requests a partial run (see [Partial runs](#partial-runs)).
+
+### Run date folder
+
+At the start of every run, set:
+
+| Variable | Resolution |
+|----------|------------|
+| `run_date` | UTC date of invocation (`YYYY-MM-DD`) — **always** used for `plans/`, `references/pinterest/`, `instagram/`, `facebook/`, and `runs/` |
+| `calendar_week` | First post date in calendar (from webhook `calendar_start_date`, else next Monday from `run_date`) — used only inside `content-calendar.md` row dates, not folder names |
+
+Create **new dated subfolders** for this run — never overwrite a prior run's folder:
+
+```
+clients/{client_slug}/
+├── plans/{run_date}/                    # Phase 2–4
+├── references/pinterest/{run_date}/     # Phase 1b
+├── instagram/{run_date}/                # Phase 6–9b
+├── facebook/{run_date}/                 # Phase 7 mirror
+└── runs/{run_date}/PIPELINE-HANDOFF.md  # Phase 10
+```
+
+Update `client.json` → `pipeline.last_run`, `pipeline.run_date`, `pipeline.calendar_week`, and `folders` paths for the active run.
+
+### Per-run execution rules
+
+1. **Re-fetch** website and brand inputs; **rewrite** `BRAND_IDENTITY.md` and `BRAND_DNA.json` at client root.
+2. **Re-download** Pinterest pins into `references/pinterest/{run_date}/` (webhook `pinterest_urls` first, auto-search to fill 5).
+3. **Rewrite** all plan files under `plans/{run_date}/`.
+4. **Author new** Creative DNA, posts, prompts, and PNGs under `instagram/{run_date}/` and `facebook/{run_date}/`.
+5. **Publish** (Phase 9b) when webhook supplies `outletId` — append to that run's `publish-log.md`.
+6. Record completion in `runs/{run_date}/PIPELINE-HANDOFF.md` (do not overwrite prior run handoffs).
+
+`skip_phases` in webhook applies only when the user explicitly passes it for bootstrap shortcuts — default is **run all phases**.
 
 ---
 
@@ -43,16 +80,19 @@ clients/{client_slug}/
 ├── BRAND_DNA.json             # Phase 5
 ├── CREATIVE_DNA_SCHEMA.json   # copy from templates/
 ├── references/
-│   └── pinterest/             # Phase 1b — 5 fetched pin images + manifest
-├── instagram/
-├── linkedin/
-└── plans/
-    ├── social-media-context.md    # Phase 2 (or clients/swayam/social-media-context-sms.md if global)
-    ├── content-strategy.md        # Phase 3
-    └── content-calendar.md        # Phase 4
+│   └── pinterest/{run_date}/    # Phase 1b — 5 fetched pin images + manifest (new folder each run)
+├── instagram/{run_date}/   # Phase 6–9b
+├── facebook/{run_date}/
+├── linkedin/{run_date}/
+├── plans/{run_date}/            # Phase 2–4 (new folder each run)
+│   ├── social-media-context.md
+│   ├── content-strategy.md
+│   └── content-calendar.md
+└── runs/{run_date}/
+    └── PIPELINE-HANDOFF.md      # Phase 10
 ```
 
-Initialize `client.json` with `website`, `display_name`, `folders`, `channels`.
+Initialize or update `client.json` with `website`, `display_name`, `folders`, `channels`, `pipeline.run_date`, `pipeline.calendar_week`.
 
 **Reference creatives:** Do not ask the user for Pinterest URLs or layout images at intake. Phase 1b supplies the default reference set after brand identity.
 
@@ -85,12 +125,12 @@ Runs **only after** `BRAND_IDENTITY.md` exists. Replaces manual “paste 5 Pinte
 1. Read `BRAND_IDENTITY.md` — extract product category, industry, audience, visual tone.
 2. Build category-specific Pinterest search queries (e.g. CRM → SaaS CRM pins; CSR → CSR campaign pins). See [search-keywords.md](references/pinterest-reference-fetch/search-keywords.md).
 3. Search Pinterest (WebSearch + WebFetch); select **5 pins** with layout diversity.
-4. Download pin images to `clients/{client_slug}/references/pinterest/pin-01-{layout}.png` … `pin-05-{layout}.png`.
-5. Write `search-brief.json`, `pinterest-manifest.json`, and `README.md`.
+4. Download pin images to `clients/{client_slug}/references/pinterest/{run_date}/pin-01-{layout}.png` … `pin-05-{layout}.png`.
+5. Write `search-brief.json`, `pinterest-manifest.json`, and `README.md` in that dated folder.
 
-**Outputs:** `clients/{client_slug}/references/pinterest/` (5 PNGs + manifest). Phase 6 consumes this folder.
+**Outputs:** `clients/{client_slug}/references/pinterest/{run_date}/` (5 PNGs + manifest). Phase 6 consumes this run's folder.
 
-**Skip only if:** user explicitly provided ≥5 reference images in Phase 0 and says skip Pinterest fetch.
+**Webhook `pinterest_urls`:** download those pins first; auto-search only to reach 5 total. Never reuse pins from a prior `{run_date}` folder.
 
 **Gate:** Manifest lists 5 valid PNGs before Phase 2.
 
@@ -102,9 +142,8 @@ Runs **only after** `BRAND_IDENTITY.md` exists. Replaces manual “paste 5 Pinte
 
 1. Read `BRAND_IDENTITY.md` + `client.json`.
 2. Map brand voice → social voice; positioning → audience; pillars → content pillars.
-3. Write context file. Prefer client-scoped path:
-   - `clients/{client_slug}/plans/social-media-context.md`
-   - Or update `clients/swayam/social-media-context-sms.md` if user wants one global profile.
+3. Write context file to the **current run folder**:
+   - `clients/{client_slug}/plans/{run_date}/social-media-context.md`
 
 Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Platform Configuration, Content Formats, Example Posts (draft if none), Anti-Patterns.
 
@@ -116,7 +155,7 @@ Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Pla
 
 1. Read social media context + brand identity.
 2. Ask discovery questions only if gaps remain (goals, performance, competitors, time budget).
-3. Write `clients/{client_slug}/plans/content-strategy.md`:
+3. Write `clients/{client_slug}/plans/{run_date}/content-strategy.md`:
    - Content pillars + balance ratios
    - Topic clusters per pillar
    - Weekly content mix per platform
@@ -130,7 +169,7 @@ Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Pla
 
 1. Read strategy + context.
 2. Build **weekly** or **monthly** calendar per user request.
-3. Write `clients/{client_slug}/plans/content-calendar.md`.
+3. Write `clients/{client_slug}/plans/{run_date}/content-calendar.md`.
 
 Each calendar row must include:
 
@@ -166,14 +205,14 @@ Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template
 
 **Schemas:** `templates/CREATIVE_DNA_SCHEMA.json` → copy to client root.
 
-For **each** pin in `clients/{client_slug}/references/pinterest/pinterest-manifest.json` (Phase 1b), plus any user-supplied references from Phase 0:
+For **each calendar visual** (and optionally each pin in `references/pinterest/{run_date}/pinterest-manifest.json`), plus any user-supplied references from Phase 0:
 
 1. Analyze the image: map zones, elements, exact on-image copy, hero, canvas, effects.
 2. Write one file per image:
 
 ```
-clients/{client_slug}/instagram/{YYYY-MM-DD}/{slug}.CREATIVE_DNA.json
-clients/{client_slug}/instagram/{YYYY-MM-DD}/{slug}.png          # reference or generated
+clients/{client_slug}/instagram/{run_date}/{slug}.CREATIVE_DNA.json
+clients/{client_slug}/instagram/{run_date}/{slug}.png
 ```
 
 Naming: `{slug}.CREATIVE_DNA.json` (not a shared registry).
@@ -195,16 +234,16 @@ For each calendar slot, **invoke the sub-skill** — do not improvise copy outsi
 | LinkedIn, X, Threads, Bluesky, **Instagram, Facebook** | `post-writer-sms` | `{slug}-post.md` |
 | TikTok, Pinterest, YouTube | `caption-writer-sms` | `{slug}-caption.md` |
 
-1. Read `plans/social-media-context.md` + brand voice from `BRAND_DNA.json`.
+1. Read `plans/{run_date}/social-media-context.md` + brand voice from `BRAND_DNA.json`.
 2. Invoke **post-writer-sms** for Instagram and Facebook (visual feed posts with paired image) — follow that skill's Facebook and Instagram sections in `skills/post-writer-sms/SKILL.md`.
 3. Write copy aligned to pillar, topic, and CTA from brand DNA (`voice.cta_primary`).
 4. Save alongside the creative:
 
 ```
-clients/{client_slug}/instagram/{YYYY-MM-DD}/{slug}-post.md
-clients/{client_slug}/facebook/{YYYY-MM-DD}/{slug}-post.md
-clients/{client_slug}/linkedin/{YYYY-MM-DD}/{slug}-post.md
-clients/{client_slug}/tiktok/{YYYY-MM-DD}/{slug}-caption.md   # caption-writer only
+clients/{client_slug}/instagram/{run_date}/{slug}-post.md
+clients/{client_slug}/facebook/{run_date}/{slug}-post.md
+clients/{client_slug}/linkedin/{run_date}/{slug}-post.md
+clients/{client_slug}/tiktok/{run_date}/{slug}-caption.md
 ```
 
 Update `copy.post_ref` (or `copy.caption_ref` for caption-writer platforms) in the Creative DNA when the visual and copy are paired.
@@ -356,12 +395,14 @@ Copy and track:
 
 ## Partial runs
 
+**Default webhook/automation runs always execute Phases 0–10.** Partial runs apply only when the user **explicitly** requests a subset:
+
 | User request | Start at |
 |--------------|----------|
-| "Brand only" | Phase 1 → 1b → 5 |
-| "Pinterest refs only" | Phase 1b (requires BRAND_IDENTITY.md) |
-| "Calendar + creatives" | Phase 4 (requires 1–1b–3, 5–6) |
-| "New creative from reference" | Phase 6 → 9 (sources: references/pinterest/) |
+| "Brand only" | Phase 1 → 1b → 5 (still use new `{run_date}` folders) |
+| "Pinterest refs only" | Phase 1b into `references/pinterest/{run_date}/` |
+| "Calendar + creatives" | Phase 4 → 9 (new `{run_date}` plans + `{calendar_week}` creatives) |
+| "New creative from reference" | Phase 6 → 9 |
 | "New variant of existing template" | Phase 8 → 9 (swap variable_slots) |
 | "Copy only" | Phase 7 → 7b |
 | "Publish existing PNG" | Phase 9b only (requires `outletId` + `{slug}-caption-scores.json`) |

@@ -2,27 +2,29 @@
 
 Canonical layout (Swayam reference: `clients/swayam/`).
 
+**Every pipeline invocation creates a new `{run_date}` folder** — never overwrite prior runs.
+
 ```
 clients/{client_slug}/
 ├── client.json
-├── BRAND_IDENTITY.md
+├── BRAND_IDENTITY.md              # regenerated each run (Phase 1)
 ├── BRAND_DNA_SCHEMA.json
-├── BRAND_DNA.json
+├── BRAND_DNA.json                 # regenerated each run (Phase 5)
 ├── CREATIVE_DNA_SCHEMA.json
-├── FEATURES.md                    # optional product doc
 │
 ├── references/
-│   └── pinterest/               # Phase 1b — 5 pin PNGs + manifest
+│   └── pinterest/{run_date}/      # Phase 1b — new folder per run
 │       ├── README.md
 │       ├── search-brief.json
 │       ├── pinterest-manifest.json
 │       └── pin-01-{layout}.png … pin-05-{layout}.png
 │
-├── plans/
+├── plans/{run_date}/              # Phase 2–4 — new folder per run
 │   ├── social-media-context.md
 │   ├── content-strategy.md
 │   └── content-calendar.md
 │
+<<<<<<< HEAD
 ├── instagram/
 │   └── {YYYY-MM-DD}/
 │       ├── {slug}.CREATIVE_DNA.json
@@ -31,28 +33,41 @@ clients/{client_slug}/
 │       ├── {slug}-caption-scores.json  # Phase 7b — caption-score
 │       ├── {slug}.png
 │       └── publish-log.md           # Phase 9b — Firestore + GCS per slug
+=======
+├── instagram/{run_date}/            # Phase 6–9b — new folder per run
+│   ├── {slug}.CREATIVE_DNA.json
+│   ├── {slug}-prompt.md
+│   ├── {slug}-post.md
+│   ├── {slug}.png
+│   └── publish-log.md
+>>>>>>> aa92519 (Require full pipeline re-run with dated folders on every invocation)
 │
-├── facebook/
-│   └── {YYYY-MM-DD}/
-│       ├── {slug}-post.md         # Phase 7 — post-writer-sms (mirror or adapt IG)
-│       └── {slug}.png
+├── facebook/{run_date}/
+│   ├── {slug}-post.md
+│   └── {slug}.png
 │
-├── linkedin/
-│   └── {YYYY-MM-DD}/
-│       ├── {slug}-post.md
-│       └── {slug}.png             # if visual post
+├── linkedin/{run_date}/
+│   ├── {slug}-post.md
+│   └── {slug}.png
 │
-└── carousel/
-    └── {YYYY-MM-DD}/
-        ├── slide-prompts.json
-        └── assets/
+└── runs/{run_date}/
+    └── PIPELINE-HANDOFF.md        # Phase 10 — one handoff per run
 ```
+
+## Run date resolution
+
+| Variable | Value |
+|----------|-------|
+| `run_date` | UTC date when the agent is invoked (`YYYY-MM-DD`) |
+| Post dates in calendar | From webhook `calendar_start_date`, else next Monday from `run_date` |
+
+Prior runs remain on disk under their own `{run_date}` folders (e.g. `instagram/2026-08-11/` and `instagram/2026-08-08/`).
 
 ## Naming rules
 
 | Artifact | Pattern |
 |----------|---------|
-| Creative slug | `{topic-kebab}-hero` or `{date}-{topic}-hero` |
+| Creative slug | `{topic-kebab}-hero` or `{topic-kebab}-editorial` |
 | Creative DNA | `{slug}.CREATIVE_DNA.json` |
 | Prompt | `{slug}-prompt.md` |
 | Image | `{slug}.png` |
@@ -68,11 +83,16 @@ clients/{client_slug}/
   "display_name": "Swayam",
   "website": "https://swayamapp.com/",
   "deliverables_root": "clients/swayam",
+  "pipeline": {
+    "run_date": "2026-08-08",
+    "calendar_week": "2026-08-11",
+    "last_run": "2026-08-08T19:54:00Z"
+  },
   "folders": {
-    "instagram": "clients/swayam/instagram",
-    "linkedin": "clients/swayam/linkedin",
-    "plans": "clients/swayam/plans",
-    "references_pinterest": "clients/swayam/references/pinterest"
+    "instagram": "clients/swayam/instagram/2026-08-08",
+    "facebook": "clients/swayam/facebook/2026-08-08",
+    "plans": "clients/swayam/plans/2026-08-08",
+    "references_pinterest": "clients/swayam/references/pinterest/2026-08-08"
   },
   "channels": {
     "primary": ["instagram", "linkedin"]
@@ -95,7 +115,7 @@ Every generated visual should have **four linked files** (+ publish record after
 
 ## Pinterest references (Phase 1b)
 
-Fetched automatically after `BRAND_IDENTITY.md` via [pinterest-reference-fetch/SKILL.md](./pinterest-reference-fetch/SKILL.md). Phase 6 reverse-engineers each `pin-*.png` into `{slug}.CREATIVE_DNA.json`.
+Fetched into `references/pinterest/{run_date}/` after each `BRAND_IDENTITY.md` rewrite via [pinterest-reference-fetch/SKILL.md](./pinterest-reference-fetch/SKILL.md).
 
 ## Firestore publish (Phase 9b)
 
@@ -105,9 +125,11 @@ Phase 7b ([caption-score/SKILL.md](./caption-score/SKILL.md)) must complete befo
 
 ## Schema copies
 
-On new client setup, copy from skill templates:
+On first client setup, copy from skill templates:
 
 ```bash
 cp skills/brand-social-creative-pipeline/templates/BRAND_DNA_SCHEMA.json clients/{slug}/
 cp skills/brand-social-creative-pipeline/templates/CREATIVE_DNA_SCHEMA.json clients/{slug}/
 ```
+
+Schemas at client root are reused; all run-scoped deliverables go under `{run_date}` folders.

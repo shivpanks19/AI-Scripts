@@ -3,7 +3,7 @@ name: pinterest-reference-fetch
 description: >-
   Fetch 5 Pinterest social-design reference pins after BRAND_IDENTITY.md exists.
   Derives search keywords from brand identity (product category, industry, audience),
-  searches Pinterest, downloads pin images to clients/{slug}/references/pinterest/,
+  searches Pinterest, downloads pin images to clients/{slug}/references/pinterest/{run_date}/,
   and writes a manifest for Phase 6 Creative DNA. Use when bootstrapping a new client
   in brand-social-creative-pipeline or when the user asks for Pinterest layout references.
 ---
@@ -14,7 +14,9 @@ Runs **immediately after Phase 1** (`BRAND_IDENTITY.md` exists). **Do not run be
 
 **Pipeline position:** Phase 1b — after `design-brand-guardian`, before Phase 2 (social context).
 
-**Downstream:** Phase 6 reads `clients/{client_slug}/references/pinterest/pinterest-manifest.json` and each `pin-*.png` to author `{slug}.CREATIVE_DNA.json`.
+**Downstream:** Phase 6 reads `clients/{client_slug}/references/pinterest/{run_date}/pinterest-manifest.json` and each `pin-*.png` to author `{slug}.CREATIVE_DNA.json`.
+
+**Run policy:** Always fetch into a **new** `{run_date}` folder. Never reuse pins from prior runs.
 
 ---
 
@@ -24,14 +26,14 @@ Runs **immediately after Phase 1** (`BRAND_IDENTITY.md` exists). **Do not run be
 |-------|------|----------|
 | Brand identity | `clients/{client_slug}/BRAND_IDENTITY.md` | Yes |
 | Client slug | `clients/{client_slug}/client.json` → `client_slug` | Yes |
-| Pin count | Default **5** | No |
+| Run date | `client.json` → `pipeline.run_date` | Yes |
 
 ---
 
 ## Outputs
 
 ```
-clients/{client_slug}/references/pinterest/
+clients/{client_slug}/references/pinterest/{run_date}/
 ├── README.md                 # human summary + how pins were chosen
 ├── search-brief.json         # keywords derived from BRAND_IDENTITY
 ├── pinterest-manifest.json   # machine-readable index (Phase 6 input)
@@ -46,7 +48,7 @@ Update `client.json`:
 
 ```json
 "folders": {
-  "references_pinterest": "clients/{client_slug}/references/pinterest"
+  "references_pinterest": "clients/{client_slug}/references/pinterest/{run_date}"
 }
 ```
 
@@ -149,7 +151,7 @@ Skip duplicates (same layout twice). If category is CSR, prefer impact storytell
 mkdir -p clients/{client_slug}/references/pinterest
 
 # Example — use highest-res i.pinimg.com URL from pin metadata
-curl -L "{image_url}" -o "clients/{client_slug}/references/pinterest/pin-01-{layout-slug}.png"
+curl -L "{image_url}" -o "clients/{client_slug}/references/pinterest/{run_date}/pin-01-{layout-slug}.png"
 ```
 
 Naming: `pin-{01-05}-{layout-slug}.png` (layout slug from Step 4).

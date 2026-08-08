@@ -1,6 +1,6 @@
 # Swayam — Weekly cloud agent outputs
 
-Artifacts written by [docs/swayam-weekly-automation.md](../swayam-weekly-automation.md) each run. Skills live in [skills/](../../../skills/README.md).
+Artifacts written by [docs/swayam/swayam-weekly-automation.md](../swayam-weekly-automation.md) each run. Skills live in [skills/](../../../skills/README.md).
 
 ## Folder convention
 
@@ -38,7 +38,7 @@ docs/swayam/weekly/{YYYY-MM-DD}/
 
 ## Image upload
 
-Posters upload to GCS via `image-function` using base64 from `{slug}.png`. See `docs/swayam-weekly-automation.md`.
+Posters upload to GCS via `image-function` using base64 from `{slug}.png`. See `docs/swayam/swayam-weekly-automation.md`.
 
 ## Git
 

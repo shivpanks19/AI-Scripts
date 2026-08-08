@@ -14,7 +14,7 @@
 **Prompt (one line):**
 
 ```
-Read and execute docs/swayam-weekly-automation.md for outlet 5qy4uU63AX6jLjDYvP19.
+Read and execute docs/swayam/swayam-weekly-automation.md for outlet 5qy4uU63AX6jLjDYvP19.
 ```
 
 ---
@@ -40,27 +40,27 @@ Allowed `collection` values on ingest: **`AI_CONTENT`**, **`social-ai-poster`** 
 
 ## Skills & pipeline integration
 
-This agent is a **recurring partial run** of [brand-social-creative-pipeline](../skills/brand-social-creative-pipeline/SKILL.md) (Phases 6→8→9). See [skills/README.md](../skills/README.md) for the full skill index.
+This agent is a **recurring partial run** of [brand-social-creative-pipeline](../../skills/brand-social-creative-pipeline/SKILL.md) (Phases 6→8→9). See [skills/README.md](../../skills/README.md) for the full skill index.
 
 ### Always read (static — do not regenerate weekly)
 
 | File | Use |
 |------|-----|
-| `docs/swayam-weekly-automation.md` | This runbook |
+| `docs/swayam/swayam-weekly-automation.md` | This runbook |
 | `docs/swayam/BRAND_DNA.json` | Colors, typography, CTA, imagery.avoid |
 | `docs/swayam/social-media-context-sms.md` | Voice, pillars, anti-patterns |
 | `docs/swayam/weekly/README.md` | Weekly artifact layout |
-| `docs/whatsapp-skill.md` | WhatsApp length/compliance patterns |
+| `skills/whatsapp-skill/SKILL.md` | WhatsApp length/compliance patterns |
 
 ### Per-phase skills
 
 | Phase | Skill | Path |
 |-------|-------|------|
-| 1 | Exa + reddit-posts | [skills/reddit-posts/SKILL.md](../skills/reddit-posts/SKILL.md) |
-| 2 | caption-writer-sms, post-writer-sms | [skills/caption-writer-sms/SKILL.md](../skills/caption-writer-sms/SKILL.md), [skills/post-writer-sms/SKILL.md](../skills/post-writer-sms/SKILL.md) |
-| 2 hooks | hook-writer-sms (optional) | [skills/hook-writer-sms/SKILL.md](../skills/hook-writer-sms/SKILL.md) |
-| 3–4 | brand-social-creative-pipeline | [skills/brand-social-creative-pipeline/SKILL.md](../skills/brand-social-creative-pipeline/SKILL.md) |
-| 4a merge | prompt-merge | [skills/brand-social-creative-pipeline/references/prompt-merge.md](../skills/brand-social-creative-pipeline/references/prompt-merge.md) |
+| 1 | Exa + reddit-posts | [skills/reddit-posts/SKILL.md](../../skills/reddit-posts/SKILL.md) |
+| 2 | caption-writer-sms, post-writer-sms, whatsapp-skill | [skills/caption-writer-sms/SKILL.md](../../skills/caption-writer-sms/SKILL.md), [skills/post-writer-sms/SKILL.md](../../skills/post-writer-sms/SKILL.md), [skills/whatsapp-skill/SKILL.md](../../skills/whatsapp-skill/SKILL.md) |
+| 2 hooks | hook-writer-sms (optional) | [skills/hook-writer-sms/SKILL.md](../../skills/hook-writer-sms/SKILL.md) |
+| 3–4 | brand-social-creative-pipeline | [skills/brand-social-creative-pipeline/SKILL.md](../../skills/brand-social-creative-pipeline/SKILL.md) |
+| 4a merge | prompt-merge | [skills/brand-social-creative-pipeline/references/prompt-merge.md](../../skills/brand-social-creative-pipeline/references/prompt-merge.md) |
 | 5a | Notion MCP | Child page under Reddit Swayam Research |
 
 ### Phase mapping (cloud ↔ pipeline)
@@ -80,8 +80,8 @@ This agent is a **recurring partial run** of [brand-social-creative-pipeline](..
 
 | Skill | Path |
 |-------|------|
-| design-brand-guardian | [skills/design-brand-guardian/SKILL.md](../skills/design-brand-guardian/SKILL.md) |
-| creator-profile-teardown | [skills/creator-profile-teardown/SKILL.md](../skills/creator-profile-teardown/SKILL.md) |
+| design-brand-guardian | [skills/design-brand-guardian/SKILL.md](../../skills/design-brand-guardian/SKILL.md) |
+| creator-profile-teardown | [skills/creator-profile-teardown/SKILL.md](../../skills/creator-profile-teardown/SKILL.md) |
 
 ---
 
@@ -105,7 +105,7 @@ docs/swayam/weekly/{YYYY-MM-DD}/
 └── publish-log.md                 # Firestore docIds, GCS URLs, verify status
 ```
 
-See [docs/swayam/weekly/README.md](../../docs/swayam/weekly/README.md).
+See [weekly/README.md](./weekly/README.md).
 
 ---
 
@@ -193,7 +193,7 @@ Phase 0 Setup → Phase 1 Research → Phase 2 Content → Phase 3 Template → 
 | `subline` | Supporting line (may wrap) |
 | `cta` | Short question or invite |
 
-**Writing style:** Conversational WhatsApp tone — short lines, one link max, 0–1 emoji for India B2B; value-first. Match `docs/whatsapp-skill.md` patterns; Swayam voice = trusted operator on sales/marketing ops pain, not product pitch.
+**Writing style:** Conversational WhatsApp tone — short lines, one link max, 0–1 emoji for India B2B; value-first. Match `skills/whatsapp-skill/SKILL.md` patterns; Swayam voice = trusted operator on sales/marketing ops pain, not product pitch.
 
 ---
 

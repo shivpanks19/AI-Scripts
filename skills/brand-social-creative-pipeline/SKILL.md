@@ -133,7 +133,7 @@ Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template
 
 **Brand DNA is one file per client.** Never put layout, composition, or per-image copy here.
 
-**Merge rule:** Brand DNA wins on colors, typography, logo, voice, imagery constraints.
+**Merge rule:** Brand DNA wins on **all colors** (background, accents, text, CTA fills, effect colors), typography, logo, voice, imagery constraints. Creative DNA never supplies final hex values at render time — only layout roles and `background_mode` (light | dark | primary).
 
 ---
 
@@ -154,6 +154,8 @@ clients/{client_slug}/instagram/{YYYY-MM-DD}/{slug}.png          # reference or 
 Naming: `{slug}.CREATIVE_DNA.json` (not a shared registry).
 
 3. Populate `replication.must_preserve` and `replication.variable_slots` so future variants keep structure.
+
+**Color authoring rule:** When reverse-engineering a reference (e.g. Pinterest), record layout and zones in Creative DNA. Set `visual_identity.background_mode` to `light`, `dark`, or `primary` — do **not** treat reference hex (e.g. `#0A0A0A` pure black) as the render color. Optional `visual_identity.*` hex fields are documentation of the source image only; Phase 8 ignores them and resolves from Brand DNA. See [references/prompt-merge.md](references/prompt-merge.md#color-resolution-brand-dna-only).
 
 **If no reference images:** create Creative DNA from brief + brand identity for each calendar visual format (stat-hero, editorial-search-hero, myth-truth, etc.) before Phase 8.
 
@@ -186,7 +188,7 @@ Update `copy.caption` in the Creative DNA when the visual and caption are paired
 For each calendar entry with a visual:
 
 1. Load `BRAND_DNA.json` + matching `{slug}.CREATIVE_DNA.json`.
-2. Merge per `CREATIVE_DNA_SCHEMA.json` merge rules.
+2. Merge per `CREATIVE_DNA_SCHEMA.json` merge rules — **resolve all colors from Brand DNA** (see [references/prompt-merge.md](references/prompt-merge.md#color-resolution-brand-dna-only)).
 3. Write `{slug}-prompt.md` with:
 
 ```markdown
@@ -203,7 +205,7 @@ For each calendar entry with a visual:
 [ASCII layout from composition.zones]
 
 ## Generation prompt
-[Merged prompt: brand colors/fonts/style + creative structure/hero/elements]
+[Merged prompt: **brand colors only** (resolved background_mode + brand tokens) + creative structure/hero/elements — never creative hex]
 
 ## Do not
 [brand imagery.avoid + creative constraints]
@@ -225,9 +227,11 @@ For each `{slug}-prompt.md`:
    - `4:5` → aspect_ratio `3:4` or `9:16` per tool support
    - `1:1` → `1:1`
    - `16:9` → `16:9`
-3. Build `description` from merged prompt: headline, stat, hero casting, colors (hex), style, CTA, footer URL.
+3. Build `description` from merged prompt: headline, stat, hero casting, **brand palette hex only** (run color resolution — no creative DNA hex), style, CTA, footer URL.
 4. Save output to `{slug}.png` next to Creative DNA.
 5. Update `_meta.reference_asset` in Creative DNA if first generation.
+
+**Color gate:** If the prompt or description contains hex values not present in `BRAND_DNA.json`, stop and re-run Phase 8 merge.
 
 **Quality loop:** If generated copy drifts from the copy lock, note in prompt that exact text must appear; offer Figma composite for pixel-perfect type.
 

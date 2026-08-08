@@ -1,0 +1,195 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "stat-overlay-dashboard",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "./stat-overlay-dashboard.png",
+    "prompt_ref": "./stat-overlay-dashboard-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Pinterest LinkedIn SaaS posts — floating stat cards over blurred dashboard",
+    "reference_url": "https://www.pinterest.com/ideas/linkedin-social-media-design/956025573749/",
+    "created": "2026-08-08",
+    "channel": "instagram"
+  },
+  "concept": {
+    "topic": "Metric-led insight with product context",
+    "vertical": "admissions-operations",
+    "metaphor": "The number floats above the chaos you fixed",
+    "message": "One sharp stat proves the operational gap",
+    "persona": "Admissions head who measures response time and conversion"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": {
+      "ratio": "4:5",
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "structure_type": "stat-hero-floating-cards",
+  "composition": {
+    "layout_flow": "center-stack",
+    "zones": {
+      "headline": {
+        "position": "top-left",
+        "scale": "large",
+        "z_index": "foreground"
+      },
+      "dashboard_bg": {
+        "position": "center",
+        "scale": "dominant",
+        "z_index": "background"
+      },
+      "hero_stat_card": {
+        "position": "center",
+        "scale": "dominant",
+        "z_index": "foreground"
+      },
+      "overlay_stat_left": {
+        "position": "center-left",
+        "scale": "medium",
+        "z_index": "foreground"
+      },
+      "overlay_stat_right": {
+        "position": "center-right",
+        "scale": "medium",
+        "z_index": "foreground"
+      },
+      "subline": {
+        "position": "center-lower",
+        "scale": "medium",
+        "z_index": "foreground"
+      },
+      "cta": {
+        "position": "bottom-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "footer": {
+        "position": "footer",
+        "scale": "small",
+        "z_index": "foreground"
+      }
+    }
+  },
+  "visual_identity": {
+    "background": "#0F2744",
+    "background_treatment": "blurred dashboard screenshot at 40% opacity behind white stat cards",
+    "primary_accent": "#2D4F7C",
+    "secondary_accent": "#14B8A6",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "style": "analytics SaaS — dark canvas, white floating metric cards, soft shadows"
+  },
+  "visual_language": {
+    "geometry": "rounded-xl cards, 12px radius, 24px card padding",
+    "lighting": "card drop shadow 0 8px 32px rgba(15,39,68,0.12)",
+    "depth": "three-layer — blurred UI base, hero stat, flanking mini cards",
+    "materials": ["frosted white cards", "blurred UI backdrop", "teal trend arrows"]
+  },
+  "typography": {
+    "headline_weight": "bold",
+    "headline_scale": "large",
+    "body_weight": "regular",
+    "alignment": "left"
+  },
+  "hero": {
+    "type": "product",
+    "scale": "supporting",
+    "subject": "Blurred CRM dashboard as depth layer",
+    "pose": "straight-on UI",
+    "product": "Pipeline + WhatsApp inbox blurred",
+    "lighting": "ambient screen glow",
+    "casting": null
+  },
+  "elements": [
+    {
+      "id": "headline",
+      "type": "headline",
+      "zone": "headline",
+      "content": "{headline}",
+      "style": { "color": "#FFFFFF", "background": null, "scale": "h1" }
+    },
+    {
+      "id": "hero_stat",
+      "type": "stat",
+      "zone": "hero_stat_card",
+      "content": { "value": "{stat}", "label": "{stat_label}", "delta": "{delta}" },
+      "style": { "color": "#1E3A5F", "background": "#FFFFFF", "scale": "hero card 2x" }
+    },
+    {
+      "id": "overlay_left",
+      "type": "stat",
+      "zone": "overlay_stat_left",
+      "content": { "value": "{support_stat_1}", "label": "{support_label_1}" },
+      "style": { "color": "#0F172A", "background": "#FFFFFF", "scale": "card sm" }
+    },
+    {
+      "id": "overlay_right",
+      "type": "stat",
+      "zone": "overlay_stat_right",
+      "content": { "value": "{support_stat_2}", "label": "{support_label_2}" },
+      "style": { "color": "#0F172A", "background": "#FFFFFF", "scale": "card sm" }
+    },
+    {
+      "id": "subline",
+      "type": "subheadline",
+      "zone": "subline",
+      "content": "{subline}",
+      "style": { "color": "#CBD5E1", "background": null, "scale": "body" }
+    },
+    {
+      "id": "cta",
+      "type": "cta_button",
+      "zone": "cta",
+      "content": "{cta}",
+      "style": { "color": "#FFFFFF", "background": "#0D9488", "scale": "button md" }
+    },
+    {
+      "id": "logo",
+      "type": "logo",
+      "zone": "footer",
+      "content": "Swayam",
+      "style": { "color": "#FFFFFF", "background": null, "scale": "sm wordmark only" }
+    }
+  ],
+  "effects": {
+    "ribbons": false,
+    "particles": "minimal",
+    "halo": true,
+    "halo_color": "#6366F1",
+    "glow_accent": "#14B8A6",
+    "flow_orbits": false
+  },
+  "copy": {
+    "headline": "Leads Don't Wait",
+    "subheadline": "Families enroll with whoever replies first—not whoever has the best brochure.",
+    "cta": "How fast do you respond?",
+    "website": "swayamapp.com",
+    "caption": "78% of families shortlist the institute that responds first. If your follow-up lives in a counsellor's personal WhatsApp, you're flying blind."
+  },
+  "replication": {
+    "structure_summary": "Dark blurred dashboard background with one oversized center stat card and two smaller floating stat cards offset left/right; headline top-left, subline + CTA below.",
+    "must_preserve": [
+      "oversized hero stat in white card",
+      "two flanking overlay stat cards",
+      "blurred product UI as background depth",
+      "dark navy canvas (not light editorial)"
+    ],
+    "variable_slots": [
+      "headline",
+      "stat",
+      "stat_label",
+      "delta",
+      "support_stat_1",
+      "support_label_1",
+      "support_stat_2",
+      "support_label_2",
+      "subline",
+      "cta"
+    ]
+  }
+}

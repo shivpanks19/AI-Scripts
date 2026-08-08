@@ -1,0 +1,203 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "dashboard-split-hero",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "./dashboard-split-hero.png",
+    "prompt_ref": "./dashboard-split-hero-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Pinterest SaaS Social Media Design — split headline + dashboard mockup",
+    "reference_url": "https://www.pinterest.com/ideas/saas-social-media-design/909970389329/",
+    "created": "2026-08-08",
+    "channel": "linkedin"
+  },
+  "concept": {
+    "topic": "Product-led proof — show the CRM interface as the hero",
+    "vertical": "revenue-operations",
+    "metaphor": "The dashboard is the pitch deck",
+    "message": "See revenue, pipeline, and WhatsApp in one view",
+    "persona": "Growth owner evaluating whether the product is real"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": {
+      "ratio": "4:5",
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "structure_type": "split-dashboard-hero",
+  "composition": {
+    "layout_flow": "split",
+    "zones": {
+      "badge": {
+        "position": "top-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "headline_block": {
+        "position": "upper-third",
+        "scale": "large",
+        "z_index": "foreground"
+      },
+      "stat_row": {
+        "position": "center-left",
+        "scale": "medium",
+        "z_index": "foreground"
+      },
+      "cta_row": {
+        "position": "center-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "dashboard_panel": {
+        "position": "center-right",
+        "scale": "dominant",
+        "z_index": "mid"
+      },
+      "notification_card": {
+        "position": "bottom-right",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "footer": {
+        "position": "footer",
+        "scale": "small",
+        "z_index": "foreground"
+      }
+    }
+  },
+  "visual_identity": {
+    "background": "#F8FAFC",
+    "background_treatment": "soft neutral gradient left column; framed white dashboard card right with subtle drop shadow",
+    "primary_accent": "#1E3A5F",
+    "secondary_accent": "#0D9488",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "style": "clean B2B SaaS — spacious, card-based, navy + teal accents"
+  },
+  "visual_language": {
+    "geometry": "rounded-2xl dashboard frame, 8px grid, subtle border #E2E8F0",
+    "lighting": "soft top-left ambient, no harsh shadows",
+    "depth": "layered cards — dashboard base, floating notification pill",
+    "materials": ["matte UI panels", "glass notification card", "soft shadow"]
+  },
+  "typography": {
+    "headline_weight": "bold",
+    "headline_scale": "dominant",
+    "body_weight": "regular",
+    "alignment": "left"
+  },
+  "hero": {
+    "type": "product",
+    "scale": "dominant",
+    "subject": "CRM dashboard mockup — pipeline board + Meta ads KPI strip",
+    "pose": "angled 4° perspective optional",
+    "product": "Swayam pipeline view with revenue KPI tiles",
+    "lighting": "screen glow on chart area",
+    "casting": null
+  },
+  "elements": [
+    {
+      "id": "badge",
+      "type": "badge",
+      "zone": "badge",
+      "content": "Agentic CRM",
+      "style": { "color": "#0D9488", "background": "#F0FDFA", "scale": "xs pill" }
+    },
+    {
+      "id": "headline",
+      "type": "headline",
+      "zone": "headline_block",
+      "content": "{headline}",
+      "style": { "color": "#0F172A", "background": null, "scale": "display" }
+    },
+    {
+      "id": "subheadline",
+      "type": "subheadline",
+      "zone": "headline_block",
+      "content": "{subheadline}",
+      "style": { "color": "#64748B", "background": null, "scale": "body" }
+    },
+    {
+      "id": "stat_1",
+      "type": "stat",
+      "zone": "stat_row",
+      "content": { "value": "{stat_1}", "label": "{stat_1_label}" },
+      "style": { "color": "#1E3A5F", "background": "#FFFFFF", "scale": "card sm" }
+    },
+    {
+      "id": "stat_2",
+      "type": "stat",
+      "zone": "stat_row",
+      "content": { "value": "{stat_2}", "label": "{stat_2_label}" },
+      "style": { "color": "#1E3A5F", "background": "#FFFFFF", "scale": "card sm" }
+    },
+    {
+      "id": "cta_primary",
+      "type": "cta_button",
+      "zone": "cta_row",
+      "content": "{cta}",
+      "style": { "color": "#FFFFFF", "background": "#1E3A5F", "scale": "button md" }
+    },
+    {
+      "id": "dashboard",
+      "type": "phone_ui",
+      "zone": "dashboard_panel",
+      "content": "Pipeline kanban + revenue chart + WhatsApp thread preview",
+      "style": { "color": null, "background": "#FFFFFF", "scale": "full panel" }
+    },
+    {
+      "id": "notification",
+      "type": "card",
+      "zone": "notification_card",
+      "content": "AI next-step: Call Priya — hot lead, 2h idle",
+      "style": { "color": "#0F172A", "background": "#FFFFFF", "scale": "toast card" }
+    },
+    {
+      "id": "logo",
+      "type": "logo",
+      "zone": "footer",
+      "content": "Swayam wordmark + swayamapp.com",
+      "style": { "color": "#1E3A5F", "background": null, "scale": "sm" }
+    }
+  ],
+  "effects": {
+    "ribbons": false,
+    "particles": "none",
+    "halo": false,
+    "halo_color": null,
+    "glow_accent": "#6366F1",
+    "flow_orbits": false
+  },
+  "copy": {
+    "headline": "Your CRM stores leads. Swayam runs revenue.",
+    "subheadline": "Meta ads, WhatsApp nurture, and pipeline — one agentic stack.",
+    "cta": "Book a Demo",
+    "website": "swayamapp.com",
+    "caption": "Stop tab-switching between Ads Manager, WhatsApp, and spreadsheets. Swayam connects ad spend to closed deals. Revenue, on autopilot."
+  },
+  "replication": {
+    "structure_summary": "50/50 split: left copy column (badge, headline, 2 mini stat cards, CTA) + right framed dashboard mockup with floating AI notification card.",
+    "must_preserve": [
+      "split layout with dashboard as dominant right hero",
+      "two inline stat cards below headline",
+      "framed product UI (not abstract illustration)",
+      "floating notification/toast overlay on dashboard"
+    ],
+    "variable_slots": [
+      "headline",
+      "subheadline",
+      "stat_1",
+      "stat_1_label",
+      "stat_2",
+      "stat_2_label",
+      "cta",
+      "dashboard_screen_content",
+      "notification_text"
+    ]
+  }
+}

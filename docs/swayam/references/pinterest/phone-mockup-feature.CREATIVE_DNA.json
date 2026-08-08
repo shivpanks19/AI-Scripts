@@ -1,0 +1,198 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "phone-mockup-feature",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "./phone-mockup-feature.png",
+    "prompt_ref": "./phone-mockup-feature-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Pinterest social media mockup pins — device frame with app feature reveal",
+    "reference_url": "https://www.pinterest.com/search/pins/?q=saas%20social%20media%20post%20design",
+    "created": "2026-08-08",
+    "channel": "instagram"
+  },
+  "concept": {
+    "topic": "Mobile-first feature reveal — WhatsApp + CRM on phone",
+    "vertical": "whatsapp-sales",
+    "metaphor": "The counsellor's actual daily screen",
+    "message": "WhatsApp nurture tied to pipeline — not a separate app",
+    "persona": "Admissions counsellor or head evaluating mobile workflow"
+  },
+  "canvas": {
+    "ratio": "4:5",
+    "width": 1080,
+    "height": 1350,
+    "crop_safe": {
+      "ratio": "1:1",
+      "width": 1080,
+      "height": 1080
+    }
+  },
+  "structure_type": "device-mockup-feature-hero",
+  "composition": {
+    "layout_flow": "center-stack",
+    "zones": {
+      "headline": {
+        "position": "top-left",
+        "scale": "large",
+        "z_index": "foreground"
+      },
+      "feature_pill": {
+        "position": "top-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "phone_frame": {
+        "position": "center",
+        "scale": "dominant",
+        "z_index": "mid"
+      },
+      "ui_screen": {
+        "position": "center",
+        "scale": "dominant",
+        "z_index": "foreground"
+      },
+      "floating_badge": {
+        "position": "center-right",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "benefit_list": {
+        "position": "center-lower",
+        "scale": "medium",
+        "z_index": "foreground"
+      },
+      "cta": {
+        "position": "bottom-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "footer": {
+        "position": "footer",
+        "scale": "small",
+        "z_index": "foreground"
+      }
+    }
+  },
+  "visual_identity": {
+    "background": "#F1F5F9",
+    "background_treatment": "light neutral with soft radial gradient behind phone",
+    "primary_accent": "#1E3A5F",
+    "secondary_accent": "#25D366",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "style": "product marketing mockup — realistic device frame, WhatsApp-green accent for chat UI only"
+  },
+  "visual_language": {
+    "geometry": "iPhone-style device frame, 24px corner radius screen, subtle device shadow",
+    "lighting": "studio product shot — soft key light from top-left",
+    "depth": "phone floats above background with 40px shadow; floating feature badge overlaps device edge",
+    "materials": ["aluminum device frame", "screen UI composite", "floating pill badge"]
+  },
+  "typography": {
+    "headline_weight": "bold",
+    "headline_scale": "large",
+    "body_weight": "regular",
+    "alignment": "left"
+  },
+  "hero": {
+    "type": "human_with_product",
+    "scale": "dominant",
+    "subject": "Phone showing WhatsApp thread linked to CRM lead card",
+    "pose": "device held at slight angle (optional hand crop at bottom)",
+    "product": "Swayam mobile — WhatsApp inbox with lead context sidebar",
+    "lighting": "screen-lit face of device",
+    "casting": "optional partial hand — Indian professional, neutral"
+  },
+  "elements": [
+    {
+      "id": "feature_pill",
+      "type": "badge",
+      "zone": "feature_pill",
+      "content": "{feature_name}",
+      "style": { "color": "#0D9488", "background": "#F0FDFA", "scale": "pill sm" }
+    },
+    {
+      "id": "headline",
+      "type": "headline",
+      "zone": "headline",
+      "content": "{headline}",
+      "style": { "color": "#0F172A", "background": null, "scale": "h1" }
+    },
+    {
+      "id": "phone",
+      "type": "phone_ui",
+      "zone": "phone_frame",
+      "content": "WhatsApp chat with lead name, stage badge, AI next-step suggestion",
+      "style": { "color": null, "background": "#FFFFFF", "scale": "device lg" }
+    },
+    {
+      "id": "ai_badge",
+      "type": "badge",
+      "zone": "floating_badge",
+      "content": "AI: Call in 10 min — hot lead",
+      "style": { "color": "#FFFFFF", "background": "#6366F1", "scale": "floating pill" }
+    },
+    {
+      "id": "benefit_1",
+      "type": "icon_row",
+      "zone": "benefit_list",
+      "content": "✓ CRM history on every WhatsApp thread",
+      "style": { "color": "#0F172A", "background": null, "scale": "body sm" }
+    },
+    {
+      "id": "benefit_2",
+      "type": "icon_row",
+      "zone": "benefit_list",
+      "content": "✓ Templates + pipeline in one tap",
+      "style": { "color": "#0F172A", "background": null, "scale": "body sm" }
+    },
+    {
+      "id": "cta",
+      "type": "cta_button",
+      "zone": "cta",
+      "content": "{cta}",
+      "style": { "color": "#FFFFFF", "background": "#1E3A5F", "scale": "button md" }
+    },
+    {
+      "id": "logo",
+      "type": "logo",
+      "zone": "footer",
+      "content": "Swayam wordmark dark variant",
+      "style": { "color": "#1E3A5F", "background": null, "scale": "sm" }
+    }
+  ],
+  "effects": {
+    "ribbons": false,
+    "particles": "none",
+    "halo": false,
+    "halo_color": null,
+    "glow_accent": "#6366F1",
+    "flow_orbits": false
+  },
+  "copy": {
+    "headline": "WhatsApp that remembers every lead.",
+    "subheadline": "Counsellors sell. Swayam keeps the CRM history attached.",
+    "cta": "Book a Demo",
+    "website": "swayamapp.com",
+    "caption": "Personal WhatsApp numbers lose context. Swayam ties every thread to pipeline stage, source ad, and AI next-step — so follow-up isn't guesswork."
+  },
+  "replication": {
+    "structure_summary": "4:5 vertical: headline + feature pill top, centered phone mockup showing WhatsApp+CRM UI, floating AI badge on device edge, 2 benefit bullets below, CTA bottom.",
+    "must_preserve": [
+      "realistic phone device frame as hero",
+      "WhatsApp UI visible on screen (green accent UI-only)",
+      "floating AI/agent badge overlapping phone",
+      "light neutral background — not dark editorial"
+    ],
+    "variable_slots": [
+      "headline",
+      "feature_name",
+      "screen_ui_content",
+      "ai_badge_text",
+      "benefit_bullets",
+      "cta"
+    ]
+  }
+}

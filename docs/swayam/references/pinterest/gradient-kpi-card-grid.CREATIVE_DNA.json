@@ -1,0 +1,191 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "gradient-kpi-card-grid",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "./gradient-kpi-card-grid.png",
+    "prompt_ref": "./gradient-kpi-card-grid-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Pinterest analytics dashboard pins — purple/blue gradient with 4 KPI metric cards",
+    "reference_url": "https://www.pinterest.com/ideas/saas-social-media-design/909970389329/",
+    "created": "2026-08-08",
+    "channel": "instagram"
+  },
+  "concept": {
+    "topic": "Revenue KPI snapshot — prove traction at a glance",
+    "vertical": "revenue-operations",
+    "metaphor": "Your Monday morning briefing as a social post",
+    "message": "Four numbers that matter more than lead count",
+    "persona": "Founder who wants revenue clarity without opening five tabs"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": {
+      "ratio": "4:5",
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "structure_type": "kpi-grid-hero",
+  "composition": {
+    "layout_flow": "top-to-bottom",
+    "zones": {
+      "headline": {
+        "position": "top-left",
+        "scale": "large",
+        "z_index": "foreground"
+      },
+      "kpi_grid": {
+        "position": "center",
+        "scale": "dominant",
+        "z_index": "foreground"
+      },
+      "chart_strip": {
+        "position": "center-lower",
+        "scale": "medium",
+        "z_index": "mid"
+      },
+      "cta": {
+        "position": "bottom-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "footer": {
+        "position": "footer",
+        "scale": "small",
+        "z_index": "foreground"
+      }
+    }
+  },
+  "visual_identity": {
+    "background": "#1E3A5F",
+    "background_treatment": "diagonal gradient navy #1E3A5F → indigo #4338CA with soft mesh blobs",
+    "primary_accent": "#6366F1",
+    "secondary_accent": "#D97706",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "style": "premium analytics SaaS — gradient canvas, white glass KPI cards, amber revenue highlights"
+  },
+  "visual_language": {
+    "geometry": "2×2 KPI card grid, 16px gap, 12px radius cards",
+    "lighting": "glass morphism on cards — white 90% opacity, backdrop blur",
+    "depth": "gradient base → glass cards → mini sparkline charts inside cards",
+    "materials": ["gradient mesh", "frosted glass cards", "sparkline micro-charts"]
+  },
+  "typography": {
+    "headline_weight": "bold",
+    "headline_scale": "large",
+    "body_weight": "regular",
+    "alignment": "left"
+  },
+  "hero": {
+    "type": "illustration",
+    "scale": "supporting",
+    "subject": "Four KPI cards as the visual hero — not a human",
+    "pose": null,
+    "product": "Metric tiles: MRR, conversion rate, response time, pipeline value",
+    "lighting": "soft glow behind card grid",
+    "casting": null
+  },
+  "elements": [
+    {
+      "id": "headline",
+      "type": "headline",
+      "zone": "headline",
+      "content": "{headline}",
+      "style": { "color": "#FFFFFF", "background": null, "scale": "h1" }
+    },
+    {
+      "id": "kpi_1",
+      "type": "stat",
+      "zone": "kpi_grid",
+      "content": { "value": "{kpi_1_value}", "label": "{kpi_1_label}", "trend": "{kpi_1_trend}" },
+      "style": { "color": "#0F172A", "background": "rgba(255,255,255,0.92)", "scale": "card md" }
+    },
+    {
+      "id": "kpi_2",
+      "type": "stat",
+      "zone": "kpi_grid",
+      "content": { "value": "{kpi_2_value}", "label": "{kpi_2_label}", "trend": "{kpi_2_trend}" },
+      "style": { "color": "#0F172A", "background": "rgba(255,255,255,0.92)", "scale": "card md" }
+    },
+    {
+      "id": "kpi_3",
+      "type": "stat",
+      "zone": "kpi_grid",
+      "content": { "value": "{kpi_3_value}", "label": "{kpi_3_label}", "trend": "{kpi_3_trend}" },
+      "style": { "color": "#D97706", "background": "rgba(255,255,255,0.92)", "scale": "card md revenue accent" }
+    },
+    {
+      "id": "kpi_4",
+      "type": "stat",
+      "zone": "kpi_grid",
+      "content": { "value": "{kpi_4_value}", "label": "{kpi_4_label}", "trend": "{kpi_4_trend}" },
+      "style": { "color": "#0F172A", "background": "rgba(255,255,255,0.92)", "scale": "card md" }
+    },
+    {
+      "id": "chart",
+      "type": "card",
+      "zone": "chart_strip",
+      "content": "Mini bar chart — weekly pipeline trend",
+      "style": { "color": null, "background": "rgba(255,255,255,0.15)", "scale": "wide strip" }
+    },
+    {
+      "id": "cta",
+      "type": "cta_button",
+      "zone": "cta",
+      "content": "{cta}",
+      "style": { "color": "#1E3A5F", "background": "#FFFFFF", "scale": "button md" }
+    },
+    {
+      "id": "logo",
+      "type": "logo",
+      "zone": "footer",
+      "content": "Swayam · swayamapp.com",
+      "style": { "color": "#CBD5E1", "background": null, "scale": "sm" }
+    }
+  ],
+  "effects": {
+    "ribbons": false,
+    "particles": "minimal",
+    "halo": true,
+    "halo_color": "#6366F1",
+    "glow_accent": "#D97706",
+    "flow_orbits": false
+  },
+  "copy": {
+    "headline": "Monday revenue briefing",
+    "subheadline": "Four numbers your spreadsheet can't give you.",
+    "cta": "See how it works",
+    "website": "swayamapp.com",
+    "caption": "Pipeline value, conversion rate, response time, and ad-attributed revenue — in one agentic CRM. No more Monday spreadsheet archaeology."
+  },
+  "replication": {
+    "structure_summary": "Gradient navy-to-indigo canvas with 2×2 glass KPI card grid as hero, optional sparkline strip below, white headline top-left.",
+    "must_preserve": [
+      "2×2 KPI card grid as dominant element",
+      "gradient mesh background (not flat solid)",
+      "glass/frosted white cards with trend indicators",
+      "one revenue metric highlighted in amber"
+    ],
+    "variable_slots": [
+      "headline",
+      "kpi_1_value",
+      "kpi_1_label",
+      "kpi_1_trend",
+      "kpi_2_value",
+      "kpi_2_label",
+      "kpi_2_trend",
+      "kpi_3_value",
+      "kpi_3_label",
+      "kpi_3_trend",
+      "kpi_4_value",
+      "kpi_4_label",
+      "kpi_4_trend",
+      "cta"
+    ]
+  }
+}

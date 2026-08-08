@@ -1,0 +1,183 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "dark-bold-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "./dark-bold-editorial.png",
+    "prompt_ref": "./dark-bold-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Pinterest LinkedIn Carousel Design — black/bold thought-leadership slide covers",
+    "reference_url": "https://www.pinterest.com/ideas/linkedin-carousel-design/916788887085/",
+    "created": "2026-08-08",
+    "channel": "linkedin"
+  },
+  "concept": {
+    "topic": "Opinion / myth-bust thought leadership",
+    "vertical": null,
+    "metaphor": "One provocative line on a dark stage",
+    "message": "Challenge the default CRM mental model",
+    "persona": "Revenue leader scrolling LinkedIn between meetings"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": {
+      "ratio": "4:5",
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "structure_type": "editorial-quote-hero",
+  "composition": {
+    "layout_flow": "center-stack",
+    "zones": {
+      "slide_indicator": {
+        "position": "top-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "headline": {
+        "position": "center",
+        "scale": "dominant",
+        "z_index": "foreground"
+      },
+      "accent_line": {
+        "position": "center-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "subheadline": {
+        "position": "center-lower",
+        "scale": "medium",
+        "z_index": "foreground"
+      },
+      "author_strip": {
+        "position": "bottom-left",
+        "scale": "small",
+        "z_index": "foreground"
+      },
+      "logo": {
+        "position": "bottom-right",
+        "scale": "small",
+        "z_index": "foreground"
+      }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background": "#0A0A0A",
+    "_background_note": "Reference-source hex only — render uses brand.primary_dark #0F2744 per prompt-merge.md",
+    "background_treatment": "solid with subtle noise grain 2%",
+    "primary_accent": "#14B8A6",
+    "secondary_accent": "#F59E0B",
+    "text": "#FFFFFF",
+    "text_on_dark": "#FFFFFF",
+    "style": "bold editorial — high contrast, minimal, carousel cover aesthetic"
+  },
+  "visual_language": {
+    "geometry": "left accent bar 4px teal, generous margins 80px",
+    "lighting": "flat — no gradients on text",
+    "depth": "flat editorial — typography only",
+    "materials": ["matte black", "teal accent stroke", "subtle film grain"]
+  },
+  "typography": {
+    "headline_weight": "bold",
+    "headline_scale": "dominant",
+    "body_weight": "regular",
+    "alignment": "editorial"
+  },
+  "hero": {
+    "type": "none",
+    "scale": "none",
+    "subject": "Typography-only — no photo or UI",
+    "pose": null,
+    "product": null,
+    "lighting": null,
+    "casting": null
+  },
+  "elements": [
+    {
+      "id": "slide_num",
+      "type": "badge",
+      "zone": "slide_indicator",
+      "content": "01 / 07",
+      "style": { "color": "#64748B", "background": null, "scale": "xs mono" }
+    },
+    {
+      "id": "accent_bar",
+      "type": "prop",
+      "zone": "accent_line",
+      "content": "vertical teal rule",
+      "style": { "color": "#14B8A6", "background": null, "scale": "4px × 120px" }
+    },
+    {
+      "id": "headline",
+      "type": "headline",
+      "zone": "headline",
+      "content": "{headline}",
+      "style": { "color": "#FFFFFF", "background": null, "scale": "display tight leading" }
+    },
+    {
+      "id": "highlight_word",
+      "type": "headline",
+      "zone": "headline",
+      "content": "{highlight_word}",
+      "style": { "color": "#14B8A6", "background": null, "scale": "inline accent" }
+    },
+    {
+      "id": "subheadline",
+      "type": "subheadline",
+      "zone": "subheadline",
+      "content": "{subline}",
+      "style": { "color": "#94A3B8", "background": null, "scale": "body lg" }
+    },
+    {
+      "id": "author",
+      "type": "badge",
+      "zone": "author_strip",
+      "content": "Swayam · Agentic CRM",
+      "style": { "color": "#CBD5E1", "background": null, "scale": "sm" }
+    },
+    {
+      "id": "logo",
+      "type": "logo",
+      "zone": "logo",
+      "content": "Swayam wordmark light variant",
+      "style": { "color": "#FFFFFF", "background": null, "scale": "sm" }
+    }
+  ],
+  "effects": {
+    "ribbons": false,
+    "particles": "none",
+    "halo": false,
+    "halo_color": null,
+    "glow_accent": null,
+    "flow_orbits": false
+  },
+  "copy": {
+    "headline": "Your CRM shouldn't stop at follow-ups.",
+    "subheadline": "Storage is not a revenue system. Agentic CRM runs the loop.",
+    "cta": "Swipe →",
+    "website": "swayamapp.com",
+    "caption": "Most CRMs are expensive reminder apps. Swayam connects Meta ads → WhatsApp → pipeline → close. Revenue, on autopilot."
+  },
+  "replication": {
+    "structure_summary": "Near-black carousel cover: oversized left-aligned headline with one teal-highlighted word, teal vertical accent bar, muted subline, minimal author strip. No UI mockup.",
+    "must_preserve": [
+      "dark editorial layout (background_mode: dark → brand primary_dark at render)",
+      "oversized bold headline as sole visual hero",
+      "one accent color word or phrase",
+      "left teal vertical rule",
+      "carousel slide counter optional top-left"
+    ],
+    "variable_slots": [
+      "headline",
+      "highlight_word",
+      "subline",
+      "slide_number",
+      "author_label"
+    ]
+  }
+}

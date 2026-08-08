@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "type": "creative_dna_reference_library",
+    "version": "1.0",
+    "schema_ref": "../../CREATIVE_DNA_SCHEMA.json",
+    "brand_dna_ref": "../../BRAND_DNA.json",
+    "purpose": "Index of Pinterest-inspired SaaS layout archetypes encoded as schema-compliant CREATIVE_DNA files.",
+    "created": "2026-08-08",
+    "source": "Pinterest SaaS / B2B social media design research"
+  },
+  "references": [
+    {
+      "slug": "dashboard-split-hero",
+      "file": "./dashboard-split-hero.CREATIVE_DNA.json",
+      "structure_type": "split-dashboard-hero",
+      "best_for": "Product proof, feature launch, demo CTAs",
+      "channel": "linkedin",
+      "pinterest_ref": "https://www.pinterest.com/ideas/saas-social-media-design/909970389329/"
+    },
+    {
+      "slug": "stat-overlay-dashboard",
+      "file": "./stat-overlay-dashboard.CREATIVE_DNA.json",
+      "structure_type": "stat-hero-floating-cards",
+      "best_for": "Stat-led pain points, response time, conversion metrics",
+      "channel": "instagram",
+      "pinterest_ref": "https://www.pinterest.com/ideas/linkedin-social-media-design/956025573749/"
+    },
+    {
+      "slug": "dark-bold-editorial",
+      "file": "./dark-bold-editorial.CREATIVE_DNA.json",
+      "structure_type": "editorial-quote-hero",
+      "best_for": "Thought leadership, myth-bust, carousel cover slides",
+      "channel": "linkedin",
+      "pinterest_ref": "https://www.pinterest.com/ideas/linkedin-carousel-design/916788887085/"
+    },
+    {
+      "slug": "gradient-kpi-card-grid",
+      "file": "./gradient-kpi-card-grid.CREATIVE_DNA.json",
+      "structure_type": "kpi-grid-hero",
+      "best_for": "Revenue briefing, multi-metric snapshots, Monday dashboards",
+      "channel": "instagram",
+      "pinterest_ref": "https://www.pinterest.com/ideas/saas-social-media-design/909970389329/"
+    },
+    {
+      "slug": "phone-mockup-feature",
+      "file": "./phone-mockup-feature.CREATIVE_DNA.json",
+      "structure_type": "device-mockup-feature-hero",
+      "best_for": "WhatsApp feature, mobile workflow, counsellor UX",
+      "channel": "instagram",
+      "pinterest_ref": "https://www.pinterest.com/search/pins/?q=saas%20social%20media%20post%20design"
+    }
+  ],
+  "selection_heuristic": {
+    "stat-led_pain": ["stat-overlay-dashboard", "gradient-kpi-card-grid"],
+    "operator_opinion": ["dark-bold-editorial"],
+    "product_proof": ["dashboard-split-hero", "phone-mockup-feature"],
+    "whatsapp_mobile": ["phone-mockup-feature"],
+    "revenue_kpi": ["gradient-kpi-card-grid", "dashboard-split-hero"]
+  }
+}

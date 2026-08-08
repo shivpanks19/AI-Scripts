@@ -15,6 +15,8 @@ Orchestrates the full workflow: **brand identity → Pinterest references → so
 
 **Reference implementation:** `clients/swayam/` (BRAND_DENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
 
+**Visual format policy (mandatory):** Single-image dark editorial feed posts only — one PNG per calendar slot. No carousels, stat/KPI cards, or multi-slide formats. See [references/single-image-post-policy.md](references/single-image-post-policy.md).
+
 ---
 
 ## Run policy — always execute fresh (mandatory)
@@ -151,25 +153,30 @@ Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Pla
 
 ## Phase 3 — Content Strategy
 
-**Skill:** `content-strategy-sms`
+**Skill:** `content-strategy-sms`  
+**Policy:** [references/single-image-post-policy.md](references/single-image-post-policy.md) — **single-image editorial only**
 
 1. Read social media context + brand identity.
 2. Ask discovery questions only if gaps remain (goals, performance, competitors, time budget).
 3. Write `clients/{client_slug}/plans/{run_date}/content-strategy.md`:
    - Content pillars + balance ratios
    - Topic clusters per pillar
-   - Weekly content mix per platform
+   - Weekly content mix per platform — **every slot: single-image dark editorial 1:1**
    - Differentiation (voice positioning, content gaps, underserved segments)
+4. Under **Content formats**, allow only: `single-image editorial feed post (1:1, dark)`. Do not plan carousels, stat heroes, or KPI cards.
+5. Slug pattern for creatives: `{topic-kebab}-editorial`.
 
 ---
 
 ## Phase 4 — Content Calendar
 
-**Skill:** `content-calendar-sms`
+**Skill:** `content-calendar-sms`  
+**Policy:** [references/single-image-post-policy.md](references/single-image-post-policy.md) — **single-image editorial only**
 
 1. Read strategy + context.
 2. Build **weekly** or **monthly** calendar per user request.
 3. Write `clients/{client_slug}/plans/{run_date}/content-calendar.md`.
+4. **One calendar row = one slug = one PNG** — no carousel slides, no stat cards.
 
 Each calendar row must include:
 
@@ -179,11 +186,15 @@ Each calendar row must include:
 | Platform | instagram |
 | Pillar | educational |
 | Topic / angle | AI automation for admissions |
-| Format | stat-hero poster |
-| `creative_template_ref` | `{slug}` of matching Creative DNA |
-| Copy type | caption / post |
+| Format | single-image editorial 1:1 |
+| `creative_template_ref` | `{topic-kebab}-editorial` |
+| Copy type | post |
 
-Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template_ref` when reference creatives exist.
+**Forbidden format values:** `stat-hero`, `carousel`, `carousel cover`, `kpi-grid`, `phone-mockup`, `dashboard-split`.
+
+On-image copy per row: headline + subheadline + footer URL (2–3 lines). No fake stats on image.
+
+Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template_ref` ending in `-editorial`.
 
 ---
 
@@ -221,7 +232,9 @@ Naming: `{slug}.CREATIVE_DNA.json` (not a shared registry).
 
 **Color authoring rule:** When reverse-engineering a reference (e.g. Pinterest), record layout and zones in Creative DNA. Set `visual_identity.background_mode` to `light`, `dark`, or `primary` — do **not** treat reference hex (e.g. `#0A0A0A` pure black) as the render color. Optional `visual_identity.*` hex fields are documentation of the source image only; Phase 8 ignores them and resolves from Brand DNA. See [references/prompt-merge.md](references/prompt-merge.md#color-resolution-brand-dna-only).
 
-**If Phase 1b was skipped and no user references:** create Creative DNA from brief + brand identity for each calendar visual format (stat-hero, editorial-search-hero, myth-truth, etc.) before Phase 8.
+**Format gate:** Only `dark-bold-editorial`, `contrarian-editorial-hero`, or `editorial-quote-hero` structure types. `background_mode` must be `dark`. Slug must end with `-editorial`. See [single-image-post-policy.md](references/single-image-post-policy.md).
+
+**If Phase 1b was skipped and no user references:** create Creative DNA from brief + brand identity using **dark editorial single-image** layout only — never stat-hero, carousel, or kpi-grid.
 
 ---
 

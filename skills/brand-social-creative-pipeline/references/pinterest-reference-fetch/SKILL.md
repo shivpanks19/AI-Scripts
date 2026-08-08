@@ -16,6 +16,8 @@ Runs **immediately after Phase 1** (`BRAND_IDENTITY.md` exists). **Do not run be
 
 **Downstream:** Phase 6 reads `clients/{client_slug}/references/pinterest/{run_date}/pinterest-manifest.json` and each `pin-*.png` to author `{slug}.CREATIVE_DNA.json`.
 
+**Format policy:** [single-image-post-policy.md](../single-image-post-policy.md) — select pins with **dark editorial / contrarian headline** layouts only. Skip stat-hero, carousel-cover, kpi-grid, dashboard-split, phone-mockup.
+
 **Run policy:** Always fetch into a **new** `{run_date}` folder. Never reuse pins from prior runs.
 
 ---
@@ -131,19 +133,21 @@ Keep 8–12 candidates before filtering to 5.
 
 **If Pinterest blocks fetch:** use WebSearch snippets and image URLs from search results; document limitation in `README.md`.
 
-### Step 4 — Select exactly 5 pins (layout diversity)
+### Step 4 — Select exactly 5 pins (editorial diversity only)
 
-Choose one pin per archetype where possible:
+**Mandatory:** All 5 pins must be single-frame **dark editorial** layouts per [single-image-post-policy.md](../single-image-post-policy.md). Do not select stat, carousel, dashboard, or phone-mockup pins.
+
+Choose variation across these allowed archetypes only:
 
 | Priority | Archetype | `inferred_layout` slug |
 |----------|-----------|-------------------------|
-| 1 | Split copy + product/dashboard UI | `dashboard-split-hero` |
-| 2 | Stat / KPI hero or metric cards | `stat-hero` or `kpi-grid` |
-| 3 | Dark bold editorial / quote slide | `dark-bold-editorial` |
-| 4 | Phone or device mockup | `phone-mockup-feature` |
-| 5 | Carousel / list / myth-truth / gradient card | `carousel-cover` or `gradient-kpi-card-grid` |
+| 1 | Dark bold editorial / quote hero | `dark-bold-editorial` |
+| 2 | Contrarian / provocative headline stack | `contrarian-editorial` |
+| 3 | Center-stack editorial with abstract hero | `editorial-quote-hero` |
+| 4 | Split editorial (copy + abstract visual, no UI mockup) | `editorial-split-hero` |
+| 5 | Gradient dark editorial card (single frame, not carousel) | `dark-editorial-card` |
 
-Skip duplicates (same layout twice). If category is CSR, prefer impact storytelling + quote slides over dashboard UI.
+Skip duplicates (same layout twice). **Reject** pins that are carousel covers, stat/KPI cards, or multi-slide templates even if visually strong.
 
 ### Step 5 — Download images to client references folder
 
@@ -226,7 +230,8 @@ For **each** pin in `pinterest-manifest.json`:
 - [ ] `BRAND_IDENTITY.md` was read; keywords match product category (not generic)
 - [ ] Exactly **5** PNGs saved under `clients/{slug}/references/pinterest/`
 - [ ] `search-brief.json` + `pinterest-manifest.json` exist
-- [ ] At least **3** distinct `inferred_layout` values across 5 pins
+- [ ] All 5 pins are **dark editorial** single-frame layouts (no stat/carousel/dashboard)
+- [ ] At least **2** distinct `inferred_layout` values across 5 pins (within editorial family)
 - [ ] Each pin has `source_pin_url` and `search_query` recorded
 - [ ] `client.json` includes `references_pinterest` folder path
 

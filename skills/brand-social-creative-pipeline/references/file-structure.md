@@ -65,9 +65,11 @@ Prior runs remain on disk under their own `{run_date}` folders (e.g. `instagram/
 
 ## Naming rules
 
+**Format policy:** [single-image-post-policy.md](./single-image-post-policy.md) — all feed creatives are single dark editorial images.
+
 | Artifact | Pattern |
 |----------|---------|
-| Creative slug | `{topic-kebab}-hero` or `{topic-kebab}-editorial` |
+| Creative slug | `{topic-kebab}-editorial` only (no `-stat`, `-carousel`, `-hero`) |
 | Creative DNA | `{slug}.CREATIVE_DNA.json` |
 | Prompt | `{slug}-prompt.md` |
 | Image | `{slug}.png` |

@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "behaviour-engagement-stat",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "./behaviour-engagement-stat.png",
+    "reference_layout": "../../references/pinterest/pin-03-stat-infographic.png",
+    "prompt_ref": "./behaviour-engagement-stat-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Instagram stat infographic — dominant numeral + label",
+    "reference_url": "https://in.pinterest.com/pin/597430706830219247/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-13"
+  },
+  "concept": {
+    "topic": "Behaviour and engagement top new-term concerns",
+    "vertical": "School leadership",
+    "metaphor": "Survey signal as single number",
+    "message": "Conduct and focus outrank budget on worry lists",
+    "persona": "Institute owner planning term opening"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080
+  },
+  "structure_type": "stat-hero",
+  "composition": {
+    "layout_flow": "vertical-stat-stack",
+    "zones": {
+      "stat": { "position": "center-upper", "scale": "dominant", "z_index": "foreground" },
+      "label": { "position": "center", "scale": "medium", "z_index": "foreground" },
+      "source_line": { "position": "bottom-center", "scale": "small", "z_index": "foreground" },
+      "accent_bar": { "position": "left-edge", "scale": "small", "z_index": "foreground" },
+      "logo": { "position": "bottom-right", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background": "#111111",
+    "_background_note": "Render uses brand.background #000000",
+    "style": "clean stat card — minimal chart decoration"
+  },
+  "elements": [
+    { "role": "stat", "copy": "3 in 4", "typography": "display", "color_role": "primary" },
+    { "role": "label", "copy": "educators expect behaviour to be a major challenge this term", "typography": "h3", "color_role": "text_on_dark" },
+    { "role": "source", "copy": "Community Pulse research · Aug 2026", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "typography_only",
+    "description": "Oversized stat numeral with thin left accent bar in primary blue"
+  },
+  "replication": {
+    "must_preserve": ["dominant stat scale", "label below stat", "left accent bar", "source attribution line"],
+    "variable_slots": ["stat value", "label text", "source line"]
+  },
+  "copy": {
+    "caption_ref": "./behaviour-engagement-stat-caption.md"
+  }
+}

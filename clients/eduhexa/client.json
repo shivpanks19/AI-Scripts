@@ -1,0 +1,33 @@
+{
+  "slug": "eduhexa",
+  "display_name": "EduHexa",
+  "website": "https://eduhexa.in",
+  "agency": "Hexanovate / Hexa Agents",
+  "folders": {
+    "root": "clients/eduhexa",
+    "brand": "clients/eduhexa/BRAND_IDENTITY.md",
+    "brand_dna": "clients/eduhexa/BRAND_DNA.json",
+    "references": "clients/eduhexa/references/pinterest",
+    "plans": "clients/eduhexa/plans",
+    "instagram": "clients/eduhexa/instagram",
+    "assets": "clients/assets/eduhexa",
+    "logo": "clients/eduhexa logo.png"
+  },
+  "channels": {
+    "instagram": {
+      "handle": "@eduhexa",
+      "cadence": "3 posts per week",
+      "formats": ["1:1 feed", "4:5 feed", "carousel cover"]
+    }
+  },
+  "pipeline": {
+    "mode": "dry_run",
+    "started": "2026-08-08",
+    "horizon": "weekly",
+    "posts_per_week": 3,
+    "platforms": ["instagram"],
+    "phases_completed": [0, 1, "1b", 2, 3, 4, 5, 6, 7, 8, 9],
+    "phases_skipped": ["9b"],
+    "skip_reason": "Phase 9b requires outletId from webhook"
+  }
+}

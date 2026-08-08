@@ -1,0 +1,178 @@
+{
+  "_meta": {
+    "type": "brand_dna",
+    "version": "1.0",
+    "brand_id": "eduhexa",
+    "brand_name": "EduHexa",
+    "schema_ref": "./BRAND_DNA_SCHEMA.json",
+    "source_ref": "./plans/social-media-context.md",
+    "scope": "Invariant across all EduHexa creatives. Import into every render; never override per creative.",
+    "created": "2026-08-08",
+    "updated": "2026-08-08"
+  },
+  "brand": {
+    "name": "EduHexa",
+    "descriptor": "Education Intelligence",
+    "agency": "Hexanovate",
+    "tagline_product": "Trusted voice on the future of education.",
+    "tagline_agency": "Growth systems for education institutions.",
+    "promise": "Weekly intelligence and strategic partnership for admissions, branding, and classroom credibility.",
+    "website": "eduhexa.in"
+  },
+  "strategy": {
+    "purpose": "Help Indian schools and institutes grow admissions and prove learning happens inside their walls.",
+    "positioning": "For principals and institute owners navigating AI and admissions pressure — EduHexa is the education intelligence partner that turns trends into leadership action.",
+    "personality": [
+      "calm advisor",
+      "education insider",
+      "evidence-led",
+      "practical",
+      "human"
+    ],
+    "values": [
+      {
+        "name": "Institutional honesty",
+        "definition": "Marketing aligned with classroom proof"
+      },
+      {
+        "name": "Insider credibility",
+        "definition": "Speak like educators, not marketers"
+      },
+      {
+        "name": "Practical intelligence",
+        "definition": "Signals become leadership questions and action"
+      },
+      {
+        "name": "Proof over polish",
+        "definition": "Competence demonstrated, not assumed"
+      },
+      {
+        "name": "Long-term partnership",
+        "definition": "Strategic advisor across admissions, brand, and classrooms"
+      }
+    ]
+  },
+  "visual_identity": {
+    "background": "#000000",
+    "primary": "#0066FF",
+    "primary_light": "#3385FF",
+    "primary_dark": "#0047B3",
+    "secondary": "#0066FF",
+    "secondary_light": "#3385FF",
+    "secondary_dark": "#0047B3",
+    "surface_card": "#0A0A0A",
+    "text": "#FFFFFF",
+    "text_on_dark": "#FFFFFF",
+    "text_muted": "#A3A3A3",
+    "neutral_50": "#F5F5F5",
+    "neutral_100": "#E5E5E5",
+    "neutral_200": "#D4D4D4",
+    "accent_glow": "rgba(0, 102, 255, 0.25)",
+    "success": "#22C55E",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "style": "editorial education intelligence — dark canvas, electric blue accents, vector minimalism"
+  },
+  "typography": {
+    "family": "Inter",
+    "fallback": ["DM Sans", "system-ui", "sans-serif"],
+    "mono": "JetBrains Mono",
+    "wordmark_weight": "bold",
+    "headline_weight": "bold",
+    "body_weight": "regular",
+    "letter_spacing_wordmark": "-2%",
+    "hierarchy": {
+      "display": { "size_px": "44-52", "weight": "bold" },
+      "h1": { "size_px": 36, "weight": "bold" },
+      "h2": { "size_px": 28, "weight": "bold" },
+      "h3": { "size_px": 20, "weight": "semibold" },
+      "body": { "size_px": "15-16", "weight": "regular" },
+      "small": { "size_px": 13, "weight": "regular" }
+    }
+  },
+  "logo": {
+    "wordmark": "EduHexa",
+    "descriptor_size_ratio": 0.4,
+    "icon_concept": "HEXA geometric mark — blue on dark",
+    "clear_space": "minimum height of logo on all sides",
+    "min_digital_width_px": 100,
+    "assets": {
+      "mark": "../../eduhexa logo.png"
+    },
+    "overlay": {
+      "workflow": "Generate creative WITHOUT logo in AI prompt. Composite logo bottom-right post-generation.",
+      "variants": {
+        "light": "Blue HEXA logo on dark backgrounds",
+        "dark": "Blue HEXA logo on light backgrounds (rare for Instagram)"
+      },
+      "placement": "bottom-right",
+      "width_ratio": 0.2
+    },
+    "dont": [
+      "stretch logo",
+      "recolor logo away from brand primary",
+      "place on busy imagery without scrim"
+    ]
+  },
+  "ui_patterns": {
+    "hex_motif": "#0066FF",
+    "circuit_lines": "primary at 15% opacity",
+    "halftone_dots": "primary corners at 8% opacity",
+    "border_radius": { "sm": 4, "md": 8, "lg": 12 },
+    "stat_display": "oversized numeral in primary or white"
+  },
+  "voice": {
+    "tone": "calm advisory insider — validate, reframe, bridge softly",
+    "headline_tone": "provocative but credible — leadership-facing",
+    "cta_primary": "Book a Free Consultation",
+    "cta_secondary": "Save this for your leadership meeting",
+    "prefer": [
+      "education intelligence",
+      "classroom proof",
+      "admissions growth",
+      "leadership questions",
+      "parent communication",
+      "prove-it era",
+      "institutional credibility"
+    ],
+    "avoid": [
+      "revolutionary",
+      "game changer",
+      "India's No.1",
+      "limited seats",
+      "hurry now",
+      "disruptive",
+      "best in market"
+    ]
+  },
+  "imagery": {
+    "prefer": [
+      "editorial vector illustrations",
+      "abstract classroom metaphors",
+      "single dominant stat",
+      "dark canvas with blue accents",
+      "geometric minimalism"
+    ],
+    "avoid": [
+      "stock graduation photos",
+      "handshake clichés",
+      "generic AI brain clipart",
+      "invented survey stats on image",
+      "competitor logos",
+      "sci-fi robot imagery"
+    ]
+  },
+  "constraints": {
+    "accessibility": "White text on #000000 background — AAA for headlines; muted text #A3A3A3 for secondary only",
+    "compliance": [
+      "Attribute survey patterns in caption when stats are paraphrased",
+      "No false urgency or scarcity language",
+      "WhatsApp opt-out language where applicable on cross-posted templates"
+    ],
+    "naming": [
+      "Lead with EduHexa in education contexts",
+      "Community Pulse is the digest series name",
+      "Hexanovate for agency-level B2B contexts"
+    ]
+  }
+}

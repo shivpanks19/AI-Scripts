@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "leadership-questions-carousel",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/pin-02-carousel-flowchart.png",
+    "prompt_ref": "./leadership-questions-carousel-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Carousel flowchart cover — numbered framework hook",
+    "reference_url": "https://uk.pinterest.com/pin/408490628715687263/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-15"
+  },
+  "concept": {
+    "topic": "Admissions season integrity checklist",
+    "vertical": "School and institute leadership",
+    "metaphor": "Decision tree / question path",
+    "message": "Verify in class before parents hear it elsewhere",
+    "persona": "Admissions head preparing parent communication"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080
+  },
+  "structure_type": "carousel-cover-framework",
+  "composition": {
+    "layout_flow": "top-number-bottom-headline",
+    "zones": {
+      "slide_indicator": { "position": "top-left", "copy": "1 / 4", "scale": "small" },
+      "headline": { "position": "center", "scale": "dominant", "z_index": "foreground" },
+      "subheadline": { "position": "center-lower", "scale": "medium", "z_index": "foreground" },
+      "flow_hint": { "position": "bottom-left", "scale": "small", "description": "subtle arrow/path graphic" },
+      "logo": { "position": "bottom-right", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background": "#0D0D0D",
+    "_background_note": "Render uses brand.background #000000",
+    "style": "carousel cover — swipe cue, framework numbering"
+  },
+  "elements": [
+    { "role": "headline", "copy": "3 questions", "typography": "display", "color_role": "primary" },
+    { "role": "subheadline", "copy": "before admissions season", "typography": "h2", "color_role": "text_on_dark" },
+    { "role": "slide_indicator", "copy": "1 / 4", "typography": "small", "color_role": "text_muted" }
+  ],
+  "carousel_slides": [
+    { "slide": 2, "copy": "What do you verify in class?" },
+    { "slide": 3, "copy": "What still depends on take-home proof?" },
+    { "slide": 4, "copy": "How do you explain the gap to parents?" }
+  ],
+  "replication": {
+    "must_preserve": ["slide indicator", "numbered framework hook", "swipe-friendly cover", "dark editorial"],
+    "variable_slots": ["question count", "topic phrase", "slide questions"]
+  },
+  "copy": {
+    "caption_ref": "./leadership-questions-carousel-caption.md"
+  }
+}

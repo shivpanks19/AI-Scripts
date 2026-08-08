@@ -1,6 +1,11 @@
-# Pinterest SaaS Design References → Creative DNA
+# Pinterest layout references
 
-Reverse-engineered layout archetypes from Pinterest SaaS / B2B social media design trends, encoded as `{slug}.CREATIVE_DNA.json` files that follow [CREATIVE_DNA_SCHEMA.json](../../CREATIVE_DNA_SCHEMA.json).
+**Fetched by:** [pinterest-reference-fetch](../../../skills/brand-social-creative-pipeline/references/pinterest-reference-fetch/SKILL.md) (Phase 1b, after `BRAND_IDENTITY.md`).
+
+**Raw pins:** `pin-01-*.png` … `pin-05-*.png` + `pinterest-manifest.json`  
+**Creative DNA templates:** `{slug}.CREATIVE_DNA.json` (Phase 6 reverse-engineer from pins)
+
+Reverse-engineered layout archetypes encoded as `{slug}.CREATIVE_DNA.json` files that follow [CREATIVE_DNA_SCHEMA.json](../../CREATIVE_DNA_SCHEMA.json).
 
 **Merge at render time:** `BRAND_DNA.json` + `{slug}.CREATIVE_DNA.json` (brand wins on colors, logo, voice).
 

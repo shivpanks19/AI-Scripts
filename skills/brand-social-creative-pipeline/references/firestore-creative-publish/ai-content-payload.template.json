@@ -1,0 +1,25 @@
+{
+  "_comment": "POST https://crm-demo-2fc0c.web.app/ai-content — header x-api-key: hexa-ai-content-666",
+  "outletId": "{from webhook payload outletId or outlet_id}",
+  "collection": "social-ai-poster",
+  "slug": "{slug}",
+  "title": "{human-readable title — calendar topic or caption hook}",
+  "content": "{full caption from {slug}-caption.md}",
+  "excerpt": "{first 1-2 sentences of caption}",
+  "imagePrompt": "{full generation prompt from {slug}-prompt.md}",
+  "imageUrl": "{GCS HTTPS URL from image-function Step 1 — NOT template imageUrl}",
+  "templateName": "{from webhook templateName, or {client_slug}_image_post_weekly}",
+  "source": "{from webhook source, default brand-social-creative-pipeline}",
+  "_do_not_set": {
+    "showAsTemplate": "weekly drafts only — never true for pipeline publishes"
+  },
+  "_expected_response_fields": [
+    "success",
+    "documentId",
+    "outletId",
+    "collection",
+    "path",
+    "slug",
+    "imageUrl"
+  ]
+}

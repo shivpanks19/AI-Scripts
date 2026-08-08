@@ -15,6 +15,7 @@ Reference client: `clients/swayam/`
 | Phase | File |
 |-------|------|
 | 1 | `BRAND_IDENTITY.md` |
+| 1b | `references/pinterest/pinterest-manifest.json` + 5 `pin-*.png` |
 | 2 | `plans/social-media-context.md` |
 | 3 | `plans/content-strategy.md` |
 | 4 | `plans/content-calendar.md` |

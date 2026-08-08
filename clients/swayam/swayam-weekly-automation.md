@@ -61,6 +61,8 @@ This agent is a **recurring partial run** of [brand-social-creative-pipeline](..
 | 2 hooks | hook-writer-sms (optional) | [skills/hook-writer-sms/SKILL.md](../../skills/hook-writer-sms/SKILL.md) |
 | 3–4 | brand-social-creative-pipeline | [skills/brand-social-creative-pipeline/SKILL.md](../../skills/brand-social-creative-pipeline/SKILL.md) |
 | 4a merge | prompt-merge | [skills/brand-social-creative-pipeline/references/prompt-merge.md](../../skills/brand-social-creative-pipeline/references/prompt-merge.md) |
+| 4b Image | Phase 9 | [skills/brand-social-creative-pipeline/SKILL.md](../../skills/brand-social-creative-pipeline/SKILL.md) |
+| 4c–5b Publish | Phase 9b | [skills/brand-social-creative-pipeline/references/firestore-creative-publish/SKILL.md](../../skills/brand-social-creative-pipeline/references/firestore-creative-publish/SKILL.md) |
 | 5a | Notion MCP | Child page under Reddit Swayam Research |
 
 ### Phase mapping (cloud ↔ pipeline)
@@ -72,7 +74,7 @@ This agent is a **recurring partial run** of [brand-social-creative-pipeline](..
 | 3 Template | Phase 6 (Firestore runtime) |
 | 4a Prompt | Phase 8 |
 | 4b Image | Phase 9 |
-| 4c–6 Publish/verify | Beyond pipeline |
+| 4c–6 Publish/verify | Phase 9b (firestore-creative-publish) + Notion 5a |
 
 **Hard gate:** Phase 2 must complete before any image work.
 
@@ -309,6 +311,8 @@ Save verbatim to `{slug}-prompt.md` and use as Firestore `imagePrompt` in Phase 
 
 #### Phase 4c — Upload via image-function
 
+**Skill:** [firestore-creative-publish](../../skills/brand-social-creative-pipeline/references/firestore-creative-publish/SKILL.md) — Step 1.
+
 POST `https://image-function-926896730665.europe-west1.run.app` with base64 PNG (see [Image upload](#image-upload--canonical-host)).
 
 **Optional fallback:** Regenerate with stricter copy-lock language in the prompt if AI text verification fails twice.
@@ -320,7 +324,7 @@ POST `https://image-function-926896730665.europe-west1.run.app` with base64 PNG 
 | Step | Action |
 | --- | --- |
 | 5a — Notion | Create child page under [Reddit Swayam Research](https://app.notion.com/p/Reddit-swayam-Research-35bc45f0da5d81e6acd2e196888b3922) with research notes + all Phase 2 copy |
-| 5b — Firestore | `POST https://crm-demo-2fc0c.web.app/ai-content` · header `x-api-key: hexa-ai-content-666` · `collection: social-ai-poster` · `templateName: swayam_image_post_weekly` · `source: swayam-automation` |
+| 5b — Firestore | **Skill:** [firestore-creative-publish](../../skills/brand-social-creative-pipeline/references/firestore-creative-publish/SKILL.md) — Step 2. `POST https://crm-demo-2fc0c.web.app/ai-content` · header `x-api-key: hexa-ai-content-666` · `collection: social-ai-poster` · `templateName: swayam_image_post_weekly` · `source: swayam-automation` |
 
 **Firestore body (minimum)**
 
@@ -335,6 +339,8 @@ Update `publish-log.md` with response fields.
 ---
 
 ### Phase 6 — Verify
+
+**Skill:** [firestore-creative-publish](../../skills/brand-social-creative-pipeline/references/firestore-creative-publish/SKILL.md) — Step 3.
 
 Confirm response includes:
 

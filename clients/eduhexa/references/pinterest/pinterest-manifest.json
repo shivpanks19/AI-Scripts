@@ -1,0 +1,47 @@
+{
+  "client_slug": "eduhexa",
+  "fetched": "2026-08-08",
+  "count": 5,
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "pin-01-edtech-event-poster.png",
+      "layout_archetype": "education-event-poster",
+      "pinterest_url": "https://in.pinterest.com/pin/premium-psd--334744184817190055/",
+      "search_query": "education expo instagram post template",
+      "notes": "Hero photo + headline band — admissions/event announcement pattern"
+    },
+    {
+      "id": "pin-02",
+      "file": "pin-02-carousel-flowchart.png",
+      "layout_archetype": "carousel-flowchart",
+      "pinterest_url": "https://uk.pinterest.com/pin/408490628715687263/",
+      "search_query": "instagram carousel flow chart template",
+      "notes": "Multi-slide decision tree — leadership questions carousel"
+    },
+    {
+      "id": "pin-03",
+      "file": "pin-03-stat-infographic.png",
+      "layout_archetype": "stat-infographic",
+      "pinterest_url": "https://in.pinterest.com/pin/597430706830219247/",
+      "search_query": "instagram charts graphs infographic template",
+      "notes": "Chart-forward data slide — survey stat hero"
+    },
+    {
+      "id": "pin-04",
+      "file": "pin-04-carousel-templates.png",
+      "layout_archetype": "bold-editorial-carousel-cover",
+      "pinterest_url": "https://in.pinterest.com/pin/free-figma-instagram-carousel-templates--597571444328302992/",
+      "search_query": "instagram carousel post templates bold typography",
+      "notes": "High-contrast cover slide — thought-leadership hook"
+    },
+    {
+      "id": "pin-05",
+      "file": "pin-05-analytics-report.png",
+      "layout_archetype": "kpi-card-grid",
+      "pinterest_url": "https://in.pinterest.com/pin/social-media-monthly-client-analytics-report-template-with-infographics-and-charts--1137158974668973965/",
+      "search_query": "social media analytics infographic template",
+      "notes": "Multi-metric card layout — proof/outcomes grid"
+    }
+  ]
+}

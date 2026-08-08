@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "type": "pinterest_reference_manifest",
+    "version": "1.0",
+    "client_slug": "{client_slug}",
+    "source": "../BRAND_IDENTITY.md",
+    "search_brief": "./search-brief.json",
+    "fetched": "YYYY-MM-DD",
+    "pin_count": 5
+  },
+  "brand_signals": {
+    "product_category": "",
+    "industry": "",
+    "audience": "",
+    "visual_tone": "",
+    "platforms": ["linkedin", "instagram"]
+  },
+  "searches_run": [
+    {
+      "query": "",
+      "pinterest_search_url": "https://www.pinterest.com/search/pins/?q=",
+      "candidates_reviewed": 0
+    }
+  ],
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "./pin-01-{layout-slug}.png",
+      "source_pin_url": "",
+      "image_source_url": "",
+      "search_query": "",
+      "inferred_layout": "",
+      "layout_notes": "",
+      "suggested_structure_type": "",
+      "creative_dna_file": null,
+      "phase_6_status": "pending"
+    }
+  ],
+  "selection_rationale": ""
+}

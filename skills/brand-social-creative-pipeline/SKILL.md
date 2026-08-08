@@ -5,12 +5,13 @@ description: >-
   strategy, calendar, copy, Brand DNA, Creative DNA, image prompts, and generated
   creatives. Use when the user wants a full social media setup for a brand,
   brand DNA, creative DNA, social calendar with visuals, or to replicate the
-  Swayam brand-to-creative workflow from website + reference images.
+  Swayam brand-to-creative workflow from website + brand identity (Pinterest
+  references are auto-fetched in Phase 1b — no manual reference images required).
 ---
 
 # Brand → Social → Creative Pipeline
 
-Orchestrates the full workflow: **brand identity → social context → strategy → calendar → copy → Brand DNA → Creative DNA → prompts → generated images**.
+Orchestrates the full workflow: **brand identity → Pinterest references → social context → strategy → calendar → copy → Brand DNA → Creative DNA → prompts → generated images**.
 
 Run phases in order. Skip only phases the user explicitly says are done. After each phase, save deliverables to the client folder before continuing.
 
@@ -25,11 +26,11 @@ Collect from the user (ask only for missing items):
 | Input | Required | Notes |
 |-------|----------|-------|
 | Website URL | Yes | Fetch homepage, product, pricing if available |
-| Client slug | Yes | e.g. `swayam` → `clients/swayam/` |
+| Client slug | Optional | take it fromwebsite given `swayamapp.com` → `clients/swayamapp/` |
 | Brand files | Optional | Existing decks, logos, ICP docs, feature lists |
 | Platforms | Yes | Instagram, LinkedIn, Meta ads, etc. |
 | Calendar horizon | Yes | `weekly` or `monthly` |
-| Reference creatives | Optional | Images to reverse-engineer into Creative DNA templates |
+| Reference creatives | **No** — not required | Phase 1b auto-fetches 5 Pinterest pins from `BRAND_IDENTITY.md`. Optional: user may upload extra refs to merge in Phase 6 |
 | Goals | Optional | Awareness, leads, demos, community |
 
 Create client scaffold:
@@ -41,6 +42,8 @@ clients/{client_slug}/
 ├── BRAND_DNA_SCHEMA.json      # copy from templates/
 ├── BRAND_DNA.json             # Phase 5
 ├── CREATIVE_DNA_SCHEMA.json   # copy from templates/
+├── references/
+│   └── pinterest/             # Phase 1b — 5 fetched pin images + manifest
 ├── instagram/
 ├── linkedin/
 └── plans/
@@ -50,6 +53,8 @@ clients/{client_slug}/
 ```
 
 Initialize `client.json` with `website`, `display_name`, `folders`, `channels`.
+
+**Reference creatives:** Do not ask the user for Pinterest URLs or layout images at intake. Phase 1b supplies the default reference set after brand identity.
 
 ---
 
@@ -67,7 +72,27 @@ Initialize `client.json` with `website`, `display_name`, `folders`, `channels`.
    - Imagery guidelines
    - Go-to-market pillars
 
-**Gate:** User approves brand identity before Phase 2 (unless they say proceed).
+**Gate:** User approves brand identity before Phase 1b (unless they say proceed).
+
+---
+
+## Phase 1b — Pinterest reference fetch
+
+**Skill:** [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md)
+
+Runs **only after** `BRAND_IDENTITY.md` exists. Replaces manual “paste 5 Pinterest URLs” intake.
+
+1. Read `BRAND_IDENTITY.md` — extract product category, industry, audience, visual tone.
+2. Build category-specific Pinterest search queries (e.g. CRM → SaaS CRM pins; CSR → CSR campaign pins). See [search-keywords.md](references/pinterest-reference-fetch/search-keywords.md).
+3. Search Pinterest (WebSearch + WebFetch); select **5 pins** with layout diversity.
+4. Download pin images to `clients/{client_slug}/references/pinterest/pin-01-{layout}.png` … `pin-05-{layout}.png`.
+5. Write `search-brief.json`, `pinterest-manifest.json`, and `README.md`.
+
+**Outputs:** `clients/{client_slug}/references/pinterest/` (5 PNGs + manifest). Phase 6 consumes this folder.
+
+**Skip only if:** user explicitly provided ≥5 reference images in Phase 0 and says skip Pinterest fetch.
+
+**Gate:** Manifest lists 5 valid PNGs before Phase 2.
 
 ---
 
@@ -141,7 +166,7 @@ Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template
 
 **Schemas:** `templates/CREATIVE_DNA_SCHEMA.json` → copy to client root.
 
-For **each** reference creative image the user provides (or each distinct layout in the client's existing library):
+For **each** pin in `clients/{client_slug}/references/pinterest/pinterest-manifest.json` (Phase 1b), plus any user-supplied references from Phase 0:
 
 1. Analyze the image: map zones, elements, exact on-image copy, hero, canvas, effects.
 2. Write one file per image:
@@ -157,7 +182,7 @@ Naming: `{slug}.CREATIVE_DNA.json` (not a shared registry).
 
 **Color authoring rule:** When reverse-engineering a reference (e.g. Pinterest), record layout and zones in Creative DNA. Set `visual_identity.background_mode` to `light`, `dark`, or `primary` — do **not** treat reference hex (e.g. `#0A0A0A` pure black) as the render color. Optional `visual_identity.*` hex fields are documentation of the source image only; Phase 8 ignores them and resolves from Brand DNA. See [references/prompt-merge.md](references/prompt-merge.md#color-resolution-brand-dna-only).
 
-**If no reference images:** create Creative DNA from brief + brand identity for each calendar visual format (stat-hero, editorial-search-hero, myth-truth, etc.) before Phase 8.
+**If Phase 1b was skipped and no user references:** create Creative DNA from brief + brand identity for each calendar visual format (stat-hero, editorial-search-hero, myth-truth, etc.) before Phase 8.
 
 ---
 
@@ -239,6 +264,29 @@ For each `{slug}-prompt.md`:
 
 ---
 
+## Phase 9b — Publish to Firestore (after each image)
+
+**Skill:** [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md)
+
+Runs **immediately after** each `{slug}.png` is saved in Phase 9. Mirrors Swayam weekly [Phase 4c + 5b + 6](../../../clients/swayam/swayam-weekly-automation.md#phase-5--publish).
+
+**Prerequisite:** Webhook (or explicit run prompt) must include `outletId`. Optional: `collection`, `templateName`, `source`. **Stop** if `outletId` is missing — do not read from `client.json`.
+
+Per slug:
+
+1. **Upload** PNG to GCS via `POST https://image-function-926896730665.europe-west1.run.app` (base64 data URL).
+2. **Publish** draft to `OUTLET/{outletId}/social-ai-poster` via `POST https://crm-demo-2fc0c.web.app/ai-content`.
+3. **Verify** response: `documentId`, `path`, `imageUrl`, `slug`; confirm on-image text matches prompt copy lock.
+4. **Log** to `{creative_folder}/publish-log.md`.
+
+**Inputs:** `{slug}.png`, `{slug}-prompt.md`, `{slug}-caption.md`, `outletId` from webhook.
+
+**Skip only when:** user says local-only / do not publish, or webhook did not include `outletId`.
+
+**Do not** set `showAsTemplate` on weekly pipeline drafts.
+
+---
+
 ## Phase 10 — Handoff
 
 Deliver summary:
@@ -252,8 +300,11 @@ Deliver summary:
 - Creatives: [list paths with DNA + prompt + png + caption]
 
 ## Calendar execution
-| Date | Platform | Slug | Asset | Status |
+| Date | Platform | Slug | Asset | Firestore path | Status |
 ...
+
+## Publish log
+- `instagram/{YYYY-MM-DD}/publish-log.md` — documentId, GCS imageUrl per slug (Phase 9b)
 
 ## Next steps
 - Schedule posts (BlackTwist if connected)
@@ -269,6 +320,7 @@ Copy and track:
 ```
 - [ ] Phase 0: Intake + client scaffold
 - [ ] Phase 1: BRAND_IDENTITY.md (design-brand-guardian)
+- [ ] Phase 1b: 5 Pinterest pins → references/pinterest/ (pinterest-reference-fetch)
 - [ ] Phase 2: social-media-context (social-media-context-sms)
 - [ ] Phase 3: content-strategy.md (content-strategy-sms)
 - [ ] Phase 4: content-calendar.md (content-calendar-sms)
@@ -277,6 +329,7 @@ Copy and track:
 - [ ] Phase 7: captions/posts per calendar slot
 - [ ] Phase 8: {slug}-prompt.md per visual
 - [ ] Phase 9: {slug}.png generated
+- [ ] Phase 9b: GCS upload + Firestore publish per slug (firestore-creative-publish)
 - [ ] Phase 10: Handoff summary
 ```
 
@@ -286,11 +339,13 @@ Copy and track:
 
 | User request | Start at |
 |--------------|----------|
-| "Brand only" | Phase 1 → 5 |
-| "Calendar + creatives" | Phase 4 (requires 1–3, 5–6) |
-| "New creative from reference" | Phase 6 → 9 |
+| "Brand only" | Phase 1 → 1b → 5 |
+| "Pinterest refs only" | Phase 1b (requires BRAND_IDENTITY.md) |
+| "Calendar + creatives" | Phase 4 (requires 1–1b–3, 5–6) |
+| "New creative from reference" | Phase 6 → 9 (sources: references/pinterest/) |
 | "New variant of existing template" | Phase 8 → 9 (swap variable_slots) |
 | "Copy only" | Phase 7 |
+| "Publish existing PNG" | Phase 9b only (requires `outletId` in webhook or run prompt) |
 
 ---
 
@@ -298,11 +353,13 @@ Copy and track:
 
 - Does not replace sub-skills — invoke them for their domain steps.
 - Does not commit to git unless user asks.
-- Does not publish/schedule unless BlackTwist MCP is connected and user confirms.
+- Does not publish unless webhook (or explicit run prompt) supplies `outletId`. Does not schedule to social unless BlackTwist MCP is connected and user confirms.
 - Brand DNA = one per client; Creative DNA = one per image. Never use a shared creative registry.
 
 ## See also
 
 - [references/file-structure.md](references/file-structure.md) — folder conventions
+- [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md) — fetch 5 Pinterest pins after brand identity
 - [references/prompt-merge.md](references/prompt-merge.md) — DNA → prompt merge
+- [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md) — GCS upload + Firestore publish after Phase 9
 - `clients/swayam/` — canonical example

@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "prove-it-era-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/pin-04-carousel-templates.png",
+    "prompt_ref": "./prove-it-era-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "reference_inspiration": "Bold Instagram carousel cover — single provocative headline",
+    "reference_url": "https://in.pinterest.com/pin/free-figma-instagram-carousel-templates--597571444328302992/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-11"
+  },
+  "concept": {
+    "topic": "Prove-It Era — classroom credibility",
+    "vertical": "K-12 and coaching institutes",
+    "metaphor": "Proof zone moves from homework to live classroom",
+    "message": "Take-home work no longer proves thinking",
+    "persona": "Principal scrolling Instagram between meetings"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080,
+    "crop_safe": { "ratio": "4:5", "width": 1080, "height": 1350 }
+  },
+  "structure_type": "editorial-quote-hero",
+  "composition": {
+    "layout_flow": "center-stack",
+    "zones": {
+      "headline": { "position": "center-upper", "scale": "dominant", "z_index": "foreground" },
+      "subheadline": { "position": "center", "scale": "medium", "z_index": "foreground" },
+      "hero_illustration": { "position": "center", "scale": "medium", "z_index": "midground" },
+      "footer_strip": { "position": "bottom-center", "scale": "small", "z_index": "foreground" },
+      "logo": { "position": "bottom-right", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background": "#1A1A1A",
+    "_background_note": "Reference hex only — render uses brand.background #000000",
+    "style": "bold editorial vector — high contrast, no photography"
+  },
+  "visual_language": {
+    "geometry": "hexagonal classroom frame, subtle circuit lines at edges",
+    "effects": ["blue halftone dots in corners", "soft primary glow on hero object"]
+  },
+  "elements": [
+    { "role": "headline", "copy": "Proof moved.", "typography": "display", "color_role": "text_on_dark" },
+    { "role": "subheadline", "copy": "Back to the classroom.", "typography": "h2", "color_role": "primary" },
+    { "role": "footer", "copy": "EduHexa Community Pulse · Aug 2026", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "abstract_vector",
+    "description": "Blue hexagonal frame with desk, handwritten notebook, pencil, open book, subtle checkmark seal — digital tools stay outside proof zone"
+  },
+  "replication": {
+    "must_preserve": ["center-stack layout", "two-line headline/sub structure", "dark canvas", "vector not photo", "logo bottom-right"],
+    "variable_slots": ["headline text", "subheadline text", "hero metaphor", "footer date"]
+  },
+  "copy": {
+    "caption_ref": "./prove-it-era-editorial-caption.md"
+  }
+}

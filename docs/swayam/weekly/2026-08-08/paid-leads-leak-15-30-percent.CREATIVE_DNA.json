@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "source": "firestore-template",
+    "template_doc_id": "0d434cec-4938-4e23-8dc8-878fddb11145",
+    "template_collection": "social-ai-poster",
+    "brand_source": "firestore-template-imagePrompt"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "stat-hero-editorial",
+  "composition": {
+    "zones": [
+      "top-left headline",
+      "center hero stat badge",
+      "mid subline",
+      "bottom-center CTA button",
+      "footer brand strip"
+    ]
+  },
+  "elements": [
+    { "type": "headline", "content": "Paid Leads Leak" },
+    { "type": "stat", "content": "15-30%" },
+    { "type": "subline", "content": "They die in the assignment queue—not in your ad funnel." },
+    { "type": "cta", "content": "Who owns new enquiries?" }
+  ],
+  "copy": { "cta": "Who owns new enquiries?" }
+}

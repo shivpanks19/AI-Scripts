@@ -1,0 +1,218 @@
+{
+  "_meta": {
+    "type": "brand_dna",
+    "version": "1.0",
+    "brand_id": "swayam",
+    "brand_name": "Swayam",
+    "schema_ref": "./BRAND_DNA_SCHEMA.json",
+    "source_ref": "./social-media-context-sms.md",
+    "scope": "Invariant across all Swayam creatives. Import into every render; never override per creative.",
+    "created": "2026-07-31",
+    "updated": "2026-08-08"
+  },
+  "brand": {
+    "name": "Swayam",
+    "descriptor": "Agentic CRM",
+    "agency": "Hexa Agents",
+    "tagline_product": "Revenue, on autopilot.",
+    "tagline_agency": "Agentic integration. Measurable revenue.",
+    "promise": "Revenue runs itself\u2014until you need a human.",
+    "website": "swayamapp.com"
+  },
+  "strategy": {
+    "purpose": "Give growth-minded businesses an autonomous revenue engine \u2014 marketing spend, conversations, and pipeline work together toward conversion.",
+    "positioning": "For revenue leaders tired of CRMs that only store leads \u2014 Swayam is the agentic CRM that runs ads, captures leads, automates WhatsApp, and manages pipeline in one stack.",
+    "personality": [
+      "confident operator",
+      "sharp and direct",
+      "technically credible",
+      "outcome-obsessed"
+    ],
+    "values": [
+      {
+        "name": "Revenue-first",
+        "definition": "Measure success in conversions and revenue, not vanity metrics"
+      },
+      {
+        "name": "Agentic by default",
+        "definition": "Automation and AI do the work; humans set strategy"
+      },
+      {
+        "name": "End-to-end ownership",
+        "definition": "One stack from ad to close \u2014 no broken handoffs"
+      },
+      {
+        "name": "Transparent operations",
+        "definition": "Clients see what agents did and why"
+      },
+      {
+        "name": "Practical intelligence",
+        "definition": "AI that counsellors and owners can act on today"
+      }
+    ]
+  },
+  "visual_identity": {
+    "background": "#F8FAFC",
+    "primary": "#1E3A5F",
+    "primary_light": "#2D4F7C",
+    "primary_dark": "#0F2744",
+    "secondary": "#0D9488",
+    "secondary_light": "#14B8A6",
+    "secondary_dark": "#0F766E",
+    "revenue": "#D97706",
+    "revenue_light": "#F59E0B",
+    "revenue_dark": "#B45309",
+    "ai": "#6366F1",
+    "ai_muted": "#E0E7FF",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "text_muted": "#64748B",
+    "neutral_50": "#F8FAFC",
+    "neutral_100": "#F1F5F9",
+    "neutral_200": "#E2E8F0",
+    "success": "#059669",
+    "warning": "#D97706",
+    "error": "#DC2626",
+    "whatsapp_ui_only": "#25D366",
+    "style": "luxury editorial revenue operations technology"
+  },
+  "typography": {
+    "family": "Plus Jakarta Sans",
+    "fallback": [
+      "Inter",
+      "system-ui",
+      "sans-serif"
+    ],
+    "mono": "JetBrains Mono",
+    "wordmark_weight": "semibold",
+    "headline_weight": "bold",
+    "body_weight": "regular",
+    "letter_spacing_wordmark": "-1%",
+    "hierarchy": {
+      "display": {
+        "size_px": "40-48",
+        "weight": "bold"
+      },
+      "h1": {
+        "size_px": 32,
+        "weight": "bold"
+      },
+      "h2": {
+        "size_px": 24,
+        "weight": "semibold"
+      },
+      "h3": {
+        "size_px": 18,
+        "weight": "semibold"
+      },
+      "body": {
+        "size_px": "15-16",
+        "weight": "regular"
+      },
+      "small": {
+        "size_px": 13,
+        "weight": "regular"
+      }
+    }
+  },
+  "logo": {
+    "wordmark": "Swayam",
+    "descriptor_size_ratio": 0.45,
+    "icon_concept": "stylized S-loop \u2014 ad \u2192 lead \u2192 convert cycle",
+    "clear_space": "minimum height of S icon on all sides",
+    "min_digital_width_px": 120,
+    "min_icon_px": 24,
+    "assets": {
+      "app_icon": "carousel/2026-08-01/assets/swayam-app-icon.png",
+      "mark": "carousel/2026-08-01/assets/swayam-mark.png",
+      "wordmark": "2026-08-03-swayam-logo-wordmark.png",
+      "lockup_script": "../../scripts/instagram/apply_logo.py"
+    },
+    "overlay": {
+      "workflow": "Generate creative WITHOUT logo in AI prompt. Run apply_logo.py after generation.",
+      "variants": {
+        "light": "White wordmark + teal descriptor \u2014 for dark/navy backgrounds",
+        "dark": "Navy wordmark + teal descriptor \u2014 for light/neutral backgrounds"
+      },
+      "auto_select": "From visual_identity.background hex, logo element color, or sampled region luminance",
+      "descriptor": "AGENTIC CRM"
+    },
+    "dont": [
+      "stretch wordmark",
+      "add gradients to wordmark",
+      "place on busy photography without scrim",
+      "use Sensible CRM in customer-facing materials"
+    ]
+  },
+  "ui_patterns": {
+    "pipeline_progress": "#0D9488",
+    "revenue_kpi": "#D97706",
+    "ai_surface": "#6366F1",
+    "ai_surface_muted": "#E0E7FF",
+    "border_radius": {
+      "sm": 6,
+      "md": 10,
+      "lg": 16
+    },
+    "ai_indicator": "indigo left border or soft ai_muted background; sparkle icon sparingly",
+    "charts": "primary navy series; amber for revenue/conversion series"
+  },
+  "voice": {
+    "tone": "confident operator \u2014 sharp, evidence-led, revenue language",
+    "headline_tone": "bold outcome-focused \u2014 revenue loop, not contact storage",
+    "cta_primary": "Book a Demo",
+    "cta_secondary": "See how it works",
+    "prefer": [
+      "agentic CRM",
+      "revenue loop",
+      "conversion",
+      "pipeline",
+      "nurture",
+      "qualify",
+      "close",
+      "integration agency",
+      "managed ads",
+      "direct revenue impact"
+    ],
+    "avoid": [
+      "revolutionary",
+      "disruptive",
+      "synergy",
+      "touch base",
+      "circle back",
+      "lead management solution",
+      "full-service digital"
+    ]
+  },
+  "imagery": {
+    "prefer": [
+      "real dashboard screenshots over abstract stock",
+      "pipeline board",
+      "WhatsApp thread linked to lead",
+      "Meta ads report in CRM",
+      "AI briefing panel"
+    ],
+    "avoid": [
+      "generic AI brain clipart",
+      "handshake stock photography",
+      "oversaturated orange-only palettes",
+      "competitor LLM logos as hero icons",
+      "invented metrics or fake revenue numbers on mockups",
+      "sci-fi robot imagery"
+    ],
+    "agent_presence": "subtle motion, status indicators, agent-completed patterns \u2014 not sci-fi"
+  },
+  "constraints": {
+    "accessibility": "Body text on neutral_50 uses text color (AAA). Primary buttons: white on primary or secondary (AA+).",
+    "compliance": [
+      "WhatsApp marketing templates include opt-out language where required",
+      "Ad claims tied to reportable in-product metrics",
+      "No fully autonomous claims where human review is legally required"
+    ],
+    "naming": [
+      "Lead with Swayam in product contexts",
+      "Lead with agentic integration in agency/sales contexts",
+      "EduHexa is a vertical proof point, not the master brand"
+    ]
+  }
+}

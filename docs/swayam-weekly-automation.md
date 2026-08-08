@@ -40,41 +40,41 @@ Allowed `collection` values on ingest: **`AI_CONTENT`**, **`social-ai-poster`** 
 
 ## Skills & pipeline integration
 
-This agent follows the **brand → creative pipeline** pattern: Firestore template = layout DNA, weekly copy = variable slots, `modifiedImagePrompt` = merged prompt.
+This agent is a **recurring partial run** of [brand-social-creative-pipeline](../skills/brand-social-creative-pipeline/SKILL.md) (Phases 6→8→9). See [skills/README.md](../skills/README.md) for the full skill index.
 
 ### Always read (static — do not regenerate weekly)
 
 | File | Use |
 |------|-----|
 | `docs/swayam-weekly-automation.md` | This runbook |
-| `docs/whatsapp-skill.md` | WhatsApp length, tone, compliance patterns |
+| `docs/swayam/BRAND_DNA.json` | Colors, typography, CTA, imagery.avoid |
+| `docs/swayam/social-media-context-sms.md` | Voice, pillars, anti-patterns |
 | `docs/swayam/weekly/README.md` | Weekly artifact layout |
+| `docs/whatsapp-skill.md` | WhatsApp length/compliance patterns |
 
-**Brand design:** Colors, typography, and layout zones come from the selected Firestore template `imagePrompt`. Enforce Swayam voice: confident operator, revenue-first, value-not-pitch. Product: agentic CRM for Meta ads + WhatsApp + pipeline (swayamapp.com).
+### Per-phase skills
 
-### Per-phase tools
-
-| Phase | Tool / doc |
-|-------|------------|
-| 1 | Exa + Reddit search; never copy posts verbatim |
-| 2 | `docs/whatsapp-skill.md` for community + message template tone |
-| 3–4 | Firestore template pick + Creative DNA merge (below) |
-| 5a | Notion MCP — child page under Reddit Swayam Research |
+| Phase | Skill | Path |
+|-------|-------|------|
+| 1 | Exa + reddit-posts | [skills/reddit-posts/SKILL.md](../skills/reddit-posts/SKILL.md) |
+| 2 | caption-writer-sms, post-writer-sms | [skills/caption-writer-sms/SKILL.md](../skills/caption-writer-sms/SKILL.md), [skills/post-writer-sms/SKILL.md](../skills/post-writer-sms/SKILL.md) |
+| 2 hooks | hook-writer-sms (optional) | [skills/hook-writer-sms/SKILL.md](../skills/hook-writer-sms/SKILL.md) |
+| 3–4 | brand-social-creative-pipeline | [skills/brand-social-creative-pipeline/SKILL.md](../skills/brand-social-creative-pipeline/SKILL.md) |
+| 4a merge | prompt-merge | [skills/brand-social-creative-pipeline/references/prompt-merge.md](../skills/brand-social-creative-pipeline/references/prompt-merge.md) |
+| 5a | Notion MCP | Child page under Reddit Swayam Research |
 
 ### Phase mapping (cloud ↔ pipeline)
 
 | Cloud phase | Pipeline equivalent |
 |-------------|---------------------|
 | 1 Research | New input — feeds copy |
-| 2 Content | Copy phase |
-| 3 Template | Template selection |
-| 4a Prompt | Prompt merge |
-| 4b Image | Image generation |
-| 4c–6 Publish/verify | Publish infra |
+| 2 Content | Phase 7 (copy only) |
+| 3 Template | Phase 6 (Firestore runtime) |
+| 4a Prompt | Phase 8 |
+| 4b Image | Phase 9 |
+| 4c–6 Publish/verify | Beyond pipeline |
 
 **Hard gate:** Phase 2 must complete before any image work.
-
-**Optional (if performance-marketing-agency repo is also available):** `clients/swayam/BRAND_DNA.json`, `brand-social-creative-pipeline` skill, `post-writer-sms` / `caption-writer-sms`.
 
 ---
 

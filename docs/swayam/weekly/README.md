@@ -1,6 +1,6 @@
 # Swayam — Weekly cloud agent outputs
 
-Artifacts written by [docs/swayam-weekly-automation.md](../swayam-weekly-automation.md) each run.
+Artifacts written by [docs/swayam-weekly-automation.md](../swayam-weekly-automation.md) each run. Skills live in [skills/](../../../skills/README.md).
 
 ## Folder convention
 

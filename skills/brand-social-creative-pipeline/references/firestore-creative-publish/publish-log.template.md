@@ -57,7 +57,8 @@
 {creative_folder}/
 ├── {slug}.CREATIVE_DNA.json
 ├── {slug}-prompt.md
-├── {slug}-caption.md
+├── {slug}-post.md          # preferred (post-writer-sms)
+├── {slug}-caption.md       # legacy or caption-writer platforms
 ├── {slug}.png
 └── publish-log.md
 ```

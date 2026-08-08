@@ -27,9 +27,14 @@ clients/{client_slug}/
 │   └── {YYYY-MM-DD}/
 │       ├── {slug}.CREATIVE_DNA.json
 │       ├── {slug}-prompt.md
-│       ├── {slug}-caption.md
+│       ├── {slug}-post.md         # Phase 7 — post-writer-sms
 │       ├── {slug}.png
 │       └── publish-log.md           # Phase 9b — Firestore + GCS per slug
+│
+├── facebook/
+│   └── {YYYY-MM-DD}/
+│       ├── {slug}-post.md         # Phase 7 — post-writer-sms (mirror or adapt IG)
+│       └── {slug}.png
 │
 ├── linkedin/
 │   └── {YYYY-MM-DD}/
@@ -50,7 +55,8 @@ clients/{client_slug}/
 | Creative DNA | `{slug}.CREATIVE_DNA.json` |
 | Prompt | `{slug}-prompt.md` |
 | Image | `{slug}.png` |
-| Caption | `{slug}-caption.md` |
+| Post (IG, FB, LinkedIn) | `{slug}-post.md` via `post-writer-sms` |
+| Caption (TikTok, Pinterest, YouTube) | `{slug}-caption.md` via `caption-writer-sms` |
 
 ## client.json minimum
 

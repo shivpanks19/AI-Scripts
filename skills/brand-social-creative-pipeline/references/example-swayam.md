@@ -21,7 +21,7 @@ Reference client: `clients/swayam/`
 | 4 | `plans/content-calendar.md` |
 | 5 | `BRAND_DNA.json` |
 | 6 | `instagram/2026-08-08/admissions-automation-stat-hero.CREATIVE_DNA.json` |
-| 7 | `instagram/2026-08-08/admissions-automation-stat-hero-caption.md` |
+| 7 | `instagram/2026-08-08/admissions-automation-stat-hero-post.md` (post-writer-sms) |
 | 8 | `instagram/2026-08-08/admissions-automation-stat-hero-prompt.md` |
 | 9 | `instagram/2026-08-08/admissions-automation-stat-hero.png` |
 

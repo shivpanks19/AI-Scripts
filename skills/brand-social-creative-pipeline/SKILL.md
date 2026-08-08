@@ -188,23 +188,28 @@ Naming: `{slug}.CREATIVE_DNA.json` (not a shared registry).
 
 ## Phase 7 — Copy (posts & captions)
 
-For each calendar slot:
+For each calendar slot, **invoke the sub-skill** — do not improvise copy outside it.
 
-| Platform type | Skill |
-|---------------|-------|
-| LinkedIn, X, Threads, Bluesky | `post-writer-sms` |
-| Instagram, Facebook, TikTok, Pinterest, YouTube | `caption-writer-sms` |
+| Platform type | Skill | Output file |
+|---------------|-------|-------------|
+| LinkedIn, X, Threads, Bluesky, **Instagram, Facebook** | `post-writer-sms` | `{slug}-post.md` |
+| TikTok, Pinterest, YouTube | `caption-writer-sms` | `{slug}-caption.md` |
 
-1. Read social media context + brand voice from `BRAND_DNA.json`.
-2. Write copy aligned to pillar, topic, and CTA from brand DNA (`voice.cta_primary`).
-3. Save alongside the creative:
+1. Read `plans/social-media-context.md` + brand voice from `BRAND_DNA.json`.
+2. Invoke **post-writer-sms** for Instagram and Facebook (visual feed posts with paired image) — follow that skill's Facebook and Instagram sections in `skills/post-writer-sms/SKILL.md`.
+3. Write copy aligned to pillar, topic, and CTA from brand DNA (`voice.cta_primary`).
+4. Save alongside the creative:
 
 ```
-clients/{client_slug}/instagram/{YYYY-MM-DD}/{slug}-caption.md
+clients/{client_slug}/instagram/{YYYY-MM-DD}/{slug}-post.md
+clients/{client_slug}/facebook/{YYYY-MM-DD}/{slug}-post.md
 clients/{client_slug}/linkedin/{YYYY-MM-DD}/{slug}-post.md
+clients/{client_slug}/tiktok/{YYYY-MM-DD}/{slug}-caption.md   # caption-writer only
 ```
 
-Update `copy.caption` in the Creative DNA when the visual and caption are paired.
+Update `copy.post_ref` (or `copy.caption_ref` for caption-writer platforms) in the Creative DNA when the visual and copy are paired.
+
+**Legacy:** Older runs may have `{slug}-caption.md` on Instagram/Facebook — Phase 9b publish resolves `-post.md` first, then falls back to `-caption.md`.
 
 ---
 
@@ -235,8 +240,8 @@ For each calendar entry with a visual:
 ## Do not
 [brand imagery.avoid + creative constraints]
 
-## Caption
-[From Phase 7]
+## Post / caption
+[From Phase 7 — `{slug}-post.md` for Instagram/Facebook/LinkedIn; `{slug}-caption.md` for TikTok/Pinterest/YouTube]
 ```
 
 See [references/prompt-merge.md](references/prompt-merge.md) for merge algorithm.
@@ -279,7 +284,7 @@ Per slug:
 3. **Verify** response: `documentId`, `path`, `imageUrl`, `slug`; confirm on-image text matches prompt copy lock.
 4. **Log** to `{creative_folder}/publish-log.md`.
 
-**Inputs:** `{slug}.png`, `{slug}-prompt.md`, `{slug}-caption.md`, `outletId` from webhook.
+**Inputs:** `{slug}.png`, `{slug}-prompt.md`, `{slug}-post.md` (or `{slug}-caption.md` fallback), `outletId` from webhook.
 
 **Skip only when:** user says local-only / do not publish, or webhook did not include `outletId`.
 

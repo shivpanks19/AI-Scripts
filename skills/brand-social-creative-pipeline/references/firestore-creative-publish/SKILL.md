@@ -24,7 +24,7 @@ Runs **immediately after Phase 9** (`{slug}.png` exists). Mirrors [Swayam weekly
 |-------|---------------|----------|
 | Generated PNG | `{creative_folder}/{slug}.png` | Yes |
 | Prompt | `{creative_folder}/{slug}-prompt.md` | Yes |
-| Caption | `{creative_folder}/{slug}-caption.md` | Yes |
+| Post copy | `{creative_folder}/{slug}-post.md` (preferred) or `{slug}-caption.md` (legacy / TikTok) | Yes |
 | Creative DNA | `{creative_folder}/{slug}.CREATIVE_DNA.json` | Recommended |
 | **Outlet ID** | **Webhook payload** `outletId` (or `outlet_id`) | Yes |
 | Run metadata | Webhook, user prompt, calendar row, or folder date | Yes |
@@ -110,9 +110,22 @@ Run **per `{slug}.png`** generated in Phase 9. Do not batch-upload before verify
 
 1. Resolve `outletId` from **webhook payload** (or explicit run prompt). **Stop** if missing — do not publish to a guessed outlet.
 2. Resolve `collection`, `templateName`, `source` from webhook (apply defaults above if omitted).
-3. Confirm files exist: `{slug}.png`, `{slug}-prompt.md`, `{slug}-caption.md`.
-4. Read prompt file → extract on-image copy lock for verification later.
-5. Confirm PNG is the **generated** asset — not a Pinterest reference or Firestore template `imageUrl`.
+3. Confirm files exist: `{slug}.png`, `{slug}-prompt.md`, and post copy via resolution below.
+4. **Resolve post copy file** (Phase 7 output):
+
+```bash
+# Prefer post-writer-sms output (Instagram, Facebook, LinkedIn)
+if [ -f "${FOLDER}/${SLUG}-post.md" ]; then
+  COPY_FILE="${FOLDER}/${SLUG}-post.md"
+elif [ -f "${FOLDER}/${SLUG}-caption.md" ]; then
+  COPY_FILE="${FOLDER}/${SLUG}-caption.md"   # legacy or caption-writer platforms
+else
+  echo "Missing ${SLUG}-post.md or ${SLUG}-caption.md"; exit 1
+fi
+```
+
+5. Read prompt file → extract on-image copy lock for verification later.
+6. Confirm PNG is the **generated** asset — not a Pinterest reference or Firestore template `imageUrl`.
 
 ### Step 1 — Upload PNG to GCS (Phase 4c equivalent)
 
@@ -170,8 +183,8 @@ https://raw.githubusercontent.com/{org}/{repo}/{branch}/{path-to-png}
 | `outletId` | Webhook `outletId` / `outlet_id` (or explicit run prompt) |
 | `collection` | Webhook `collection` (default `social-ai-poster`) |
 | `title` | Calendar topic or first line of caption (human-readable) |
-| `content` | Full `{slug}-caption.md` body (Instagram caption) |
-| `excerpt` | First 1–2 sentences of caption |
+| `content` | Full resolved post copy file (`{slug}-post.md` preferred, else `{slug}-caption.md`) |
+| `excerpt` | First 1–2 sentences of post copy |
 | `imagePrompt` | Full text from `{slug}-prompt.md` (Generation prompt section) |
 | `imageUrl` | GCS URL from Step 1 — **not** template reference |
 | `slug` | `{slug}` (url-safe, matches filename) |
@@ -196,7 +209,7 @@ curl -sS -X POST "https://crm-demo-2fc0c.web.app/ai-content" \
     --arg slug "$SLUG" \
     --arg imageUrl "$GCS_URL" \
     --arg imagePrompt "$(cat "${FOLDER}/${SLUG}-prompt.md")" \
-    --arg content "$(cat "${FOLDER}/${SLUG}-caption.md" 2>/dev/null || echo "")" \
+    --arg content "$(cat "${FOLDER}/${SLUG}-post.md" 2>/dev/null || cat "${FOLDER}/${SLUG}-caption.md" 2>/dev/null || echo "")" \
     --arg title "Swayam Intelligence — Paid Leads Leak (4–11 August 2026)" \
     --arg excerpt "Paid leads do not die in your ad funnel." \
     --arg templateName "swayam_image_post_weekly" \

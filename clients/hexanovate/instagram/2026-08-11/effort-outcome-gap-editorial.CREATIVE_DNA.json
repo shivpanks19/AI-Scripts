@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "effort-outcome-gap-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/pin-02-contrarian-editorial.jpg",
+    "prompt_ref": "./effort-outcome-gap-editorial-prompt.md",
+    "source": "pinterest-reference",
+    "reference_inspiration": "Contrarian editorial headline stack",
+    "reference_url": "https://in.pinterest.com/pin/1124351863243884803/",
+    "created": "2026-08-08",
+    "channel": "instagram",
+    "calendar_date": "2026-08-13"
+  },
+  "concept": {
+    "topic": "Effort vs outcome gap",
+    "vertical": "Founder truth / anti-report culture",
+    "metaphor": "Reports vs revenue needle",
+    "message": "Tasks and reports without outcomes are expensive hobbies",
+    "persona": "CMO who just received another monthly agency deck"
+  },
+  "canvas": {
+    "ratio": "1:1",
+    "width": 1080,
+    "height": 1080
+  },
+  "structure_type": "contrarian-editorial-hero",
+  "composition": {
+    "layout_flow": "left-aligned stack",
+    "zones": {
+      "headline": { "position": "left-upper", "scale": "dominant", "z_index": "foreground" },
+      "subheadline": { "position": "left-center", "scale": "large", "z_index": "foreground" },
+      "hero_abstract": { "position": "right-lower", "scale": "medium", "z_index": "midground" },
+      "footer_strip": { "position": "bottom-left", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "diagonal subtle gradient top-left to bottom-right"
+  },
+  "visual_language": {
+    "geometry": "minimal — typography-led",
+    "lighting": "none — flat editorial",
+    "depth": "single plane",
+    "materials": "matte"
+  },
+  "typography": {
+    "headline_weight": "bold",
+    "subheadline_weight": "bold"
+  },
+  "hero": {
+    "type": "abstract_vector",
+    "subject": "Fading report pages dissolving into single upward arrow",
+    "pose": "diagonal flow",
+    "product": null
+  },
+  "elements": [
+    { "type": "headline", "content": "Effort isn't the metric.", "typography": "display", "color_role": "text_on_dark" },
+    { "type": "subheadline", "content": "Outcome is.", "typography": "h1", "color_role": "secondary_light" },
+    { "type": "footer", "content": "hexanovate.com", "typography": "small", "color_role": "text_muted" }
+  ],
+  "effects": {
+    "halo": false,
+    "particles": false,
+    "glow_accent": false
+  },
+  "copy": {
+    "cta": "Start The Conversation",
+    "post_ref": "./effort-outcome-gap-editorial-post.md",
+    "caption_scores_ref": "./effort-outcome-gap-editorial-caption-scores.json"
+  },
+  "replication": {
+    "must_preserve": ["left-aligned contrarian stack", "two-line structure", "dark canvas", "abstract hero lower-right"],
+    "variable_slots": ["headline text", "subheadline text", "hero metaphor"]
+  }
+}

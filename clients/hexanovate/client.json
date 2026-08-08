@@ -1,0 +1,39 @@
+{
+  "client_slug": "hexanovate",
+  "display_name": "Hexanovate",
+  "website": "https://www.hexanovate.com",
+  "outlet_id": "OCnD41LsRXTKPgnR1CDu",
+  "deliverables_root": "clients/hexanovate",
+  "pipeline": {
+    "run_date": "2026-08-08",
+    "calendar_week": "2026-08-11",
+    "last_run": "2026-08-08T20:40:00Z",
+    "mode": "full",
+    "horizon": "weekly",
+    "posts_per_week": 3,
+    "goals": ["awareness", "leads"],
+    "phases_completed": [0, 1, "1b", 2, 3, 4, 5, 6, 7, "7b", 8, 9, "9b", 10]
+  },
+  "folders": {
+    "instagram": "clients/hexanovate/instagram/2026-08-11",
+    "facebook": "clients/hexanovate/facebook/2026-08-11",
+    "plans": "clients/hexanovate/plans",
+    "references_pinterest": "clients/hexanovate/references/pinterest"
+  },
+  "channels": {
+    "primary": ["instagram", "facebook"],
+    "instagram": {
+      "cadence": "3 posts per week"
+    },
+    "facebook": {
+      "cadence": "3 posts per week (mirrored from Instagram)"
+    }
+  },
+  "webhook": {
+    "outlet_id": "OCnD41LsRXTKPgnR1CDu",
+    "triggered": "2026-08-08T20:38:00Z",
+    "platforms": ["instagram", "facebook"],
+    "calendar": "weekly",
+    "brand_brief": "its a marketing agency"
+  }
+}

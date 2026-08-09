@@ -3,7 +3,7 @@ name: pinterest-reference-fetch
 description: >-
   Fetch 5 Pinterest social-design reference pins after BRAND_IDENTITY.md exists.
   Derives search keywords from brand identity (product category, industry, audience),
-  searches Pinterest, downloads pin images to clients/{slug}/references/pinterest/{run_date}/,
+  searches Pinterest, downloads pin images to gdrive/clients/{slug}/references/pinterest/{run_date}/,
   and writes a manifest for Phase 6 Creative DNA. Use when bootstrapping a new client
   in brand-social-creative-pipeline or when the user asks for Pinterest layout references.
 ---
@@ -14,7 +14,9 @@ Runs **immediately after Phase 1** (`BRAND_IDENTITY.md` exists). **Do not run be
 
 **Pipeline position:** Phase 1b — after `design-brand-guardian`, before Phase 2 (social context).
 
-**Downstream:** Phase 6 reads `clients/{client_slug}/references/pinterest/{run_date}/pinterest-manifest.json` and each `pin-*.png` to author `{slug}.CREATIVE_DNA.json`.
+**Downstream:** Phase 6 reads `gdrive/clients/{client_slug}/references/pinterest/{run_date}/pinterest-manifest.json` and each `pin-*.png` to author `{slug}.CREATIVE_DNA.json`.
+
+**Storage:** Upload all outputs to Google Drive via MCP. See [google-drive-storage.md](../google-drive-storage.md).
 
 **Format policy:** [single-image-post-policy.md](../single-image-post-policy.md) — select pins with **dark editorial / contrarian headline** layouts only. Skip stat-hero, carousel-cover, kpi-grid, dashboard-split, phone-mockup.
 
@@ -26,8 +28,8 @@ Runs **immediately after Phase 1** (`BRAND_IDENTITY.md` exists). **Do not run be
 
 | Input | Path | Required |
 |-------|------|----------|
-| Brand identity | `clients/{client_slug}/BRAND_IDENTITY.md` | Yes |
-| Client slug | `clients/{client_slug}/client.json` → `client_slug` | Yes |
+| Brand identity | `gdrive/clients/{client_slug}/BRAND_IDENTITY.md` | Yes |
+| Client slug | `gdrive/clients/{client_slug}/client.json` → `client_slug` | Yes |
 | Run date | `client.json` → `pipeline.run_date` | Yes |
 
 ---
@@ -35,7 +37,7 @@ Runs **immediately after Phase 1** (`BRAND_IDENTITY.md` exists). **Do not run be
 ## Outputs
 
 ```
-clients/{client_slug}/references/pinterest/{run_date}/
+gdrive/clients/{client_slug}/references/pinterest/{run_date}/
 ├── README.md                 # human summary + how pins were chosen
 ├── search-brief.json         # keywords derived from BRAND_IDENTITY
 ├── pinterest-manifest.json   # machine-readable index (Phase 6 input)
@@ -50,7 +52,7 @@ Update `client.json`:
 
 ```json
 "folders": {
-  "references_pinterest": "clients/{client_slug}/references/pinterest/{run_date}"
+  "references_pinterest": "gdrive/clients/{client_slug}/references/pinterest/{run_date}"
 }
 ```
 
@@ -149,14 +151,10 @@ Choose variation across these allowed archetypes only:
 
 Skip duplicates (same layout twice). **Reject** pins that are carousel covers, stat/KPI cards, or multi-slide templates even if visually strong.
 
-### Step 5 — Download images to client references folder
+### Step 5 — Download images and upload to Google Drive
 
-```bash
-mkdir -p clients/{client_slug}/references/pinterest
-
-# Example — use highest-res i.pinimg.com URL from pin metadata
-curl -L "{image_url}" -o "clients/{client_slug}/references/pinterest/{run_date}/pin-01-{layout-slug}.png"
-```
+1. Download each pin image to a temp path (curl or browser fetch).
+2. Upload to `gdrive/clients/{client_slug}/references/pinterest/{run_date}/pin-01-{layout-slug}.png` via Google Drive MCP.
 
 Naming: `pin-{01-05}-{layout-slug}.png` (layout slug from Step 4).
 
@@ -228,7 +226,7 @@ For **each** pin in `pinterest-manifest.json`:
 ## Quality gate (before marking Phase 1b done)
 
 - [ ] `BRAND_IDENTITY.md` was read; keywords match product category (not generic)
-- [ ] Exactly **5** PNGs saved under `clients/{slug}/references/pinterest/`
+- [ ] Exactly **5** PNGs saved under `gdrive/clients/{slug}/references/pinterest/{run_date}/`
 - [ ] `search-brief.json` + `pinterest-manifest.json` exist
 - [ ] All 5 pins are **dark editorial** single-frame layouts (no stat/carousel/dashboard)
 - [ ] Phase 6a: each pin has `{pin}-reference-prompt.md` before calendar Phase 8
@@ -269,6 +267,6 @@ For **each** pin in `pinterest-manifest.json`:
 ## Boundaries
 
 - Reference images are **layout inspiration only** — never copy on-image text or competitor branding into finals.
-- Do not commit to git unless user asks.
+- Do not write to repo `clients/` — Google Drive only (`brand-gdrive` branch).
 - Do not use Pinterest pin colors in generation prompts (see [prompt-merge.md](../prompt-merge.md)).
 - If user supplied reference creatives in Phase 0, still run this step unless they explicitly say skip — merge user refs + Pinterest pins in Phase 6 (max 5 Pinterest + user refs).

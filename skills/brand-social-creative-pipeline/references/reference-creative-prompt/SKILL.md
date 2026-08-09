@@ -16,6 +16,8 @@ Produces a **regeneration prompt** from a reference image — detailed enough th
 
 **Downstream:** Phase 8 reads `{pin}-reference-prompt.md` + `BRAND_DNA.json` + `{slug}.CREATIVE_DNA.json` `elements[]` → `{slug}-prompt.md`.
 
+**Storage:** Read reference images from Google Drive via MCP. Write `{pin}-reference-prompt.md` back to the same Drive folder. See [google-drive-storage.md](../google-drive-storage.md).
+
 ---
 
 ## Inputs
@@ -33,7 +35,7 @@ Produces a **regeneration prompt** from a reference image — detailed enough th
 Per reference image:
 
 ```
-clients/{client_slug}/references/pinterest/{run_date}/
+gdrive/clients/{client_slug}/references/pinterest/{run_date}/
 ├── pin-01-{layout}.png
 ├── pin-01-{layout}-reference-prompt.md    # Phase 6a — NEW
 └── pinterest-manifest.json                # add reference_prompt_file per pin
@@ -136,4 +138,4 @@ When authoring `{slug}.CREATIVE_DNA.json` for a calendar row:
 
 - [../prompt-merge.md](../prompt-merge.md) — three-layer merge (reference + brand colors + content)
 - [../pinterest-reference-fetch/SKILL.md](../pinterest-reference-fetch/SKILL.md) — Phase 1b pins
-- `clients/swayam/references/pinterest/dark-bold-editorial-prompt.md` — example of layout-specific prompt quality
+- `gdrive/clients/swayam/references/pinterest/dark-bold-editorial-prompt.md` — example of layout-specific prompt quality

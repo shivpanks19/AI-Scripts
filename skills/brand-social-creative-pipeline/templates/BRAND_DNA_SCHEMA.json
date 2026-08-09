@@ -4,7 +4,7 @@
     "version": "1.0",
     "purpose": "Replicable structure for ONE brand/client. Each client gets its own BRAND_DNA.json. LLMs author or extract this from a brand identity doc, style guide, or website — then pair with per-image CREATIVE_DNA files.",
     "file_naming": "BRAND_DNA.json",
-    "file_location": "clients/{client_slug}/BRAND_DNA.json",
+    "file_location": "gdrive/clients/{client_slug}/BRAND_DNA.json",
     "pairs_with": "{creative-slug}.CREATIVE_DNA.json — see CREATIVE_DNA_SCHEMA.json",
     "merge_order": ["BRAND_DNA.json", "{creative-slug}.CREATIVE_DNA.json"],
     "merge_rules": {
@@ -30,7 +30,7 @@
     },
     "llm_workflow": [
       "1. Receive brand identity doc, style guide, website, or client brief.",
-      "2. Write clients/{client_slug}/BRAND_DNA.json following this schema.",
+      "2. Write gdrive/clients/{client_slug}/BRAND_DNA.json following this schema.",
       "3. For each social creative: write {slug}.CREATIVE_DNA.json (see CREATIVE_DNA_SCHEMA.json).",
       "4. At render time: merge brand_dna + creative_dna → never override brand colors, fonts, or voice in creative files."
     ]

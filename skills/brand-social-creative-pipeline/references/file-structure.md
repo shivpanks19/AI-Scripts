@@ -1,16 +1,21 @@
-# Client File Structure
+# Client File Structure (Google Drive)
 
-Canonical layout (Swayam reference: `clients/swayam/`).
+**Branch:** `brand-gdrive`  
+**Storage:** [google-drive-storage.md](./google-drive-storage.md)
 
-**Every pipeline invocation creates a new `{run_date}` folder** — never overwrite prior runs.
+Canonical layout on Google Drive (Swayam reference: `gdrive/clients/swayam/`).
+
+**Every pipeline invocation creates a new `{run_date}` folder on Drive** — never overwrite prior runs.
 
 ```
-clients/{client_slug}/
+gdrive/clients/{client_slug}/
 ├── client.json
 ├── BRAND_IDENTITY.md              # regenerated each run (Phase 1)
 ├── BRAND_DNA_SCHEMA.json
 ├── BRAND_DNA.json                 # regenerated each run (Phase 5)
 ├── CREATIVE_DNA_SCHEMA.json
+├── assets/
+│   └── logo.png                   # optional — user-supplied logo
 │
 ├── references/
 │   └── pinterest/{run_date}/      # Phase 1b + 6a
@@ -53,7 +58,7 @@ clients/{client_slug}/
 | `calendar_week` | First post date in calendar (webhook `calendar_start_date`, else next Monday) |
 | Creative folders | `instagram/{calendar_week}/` — not `run_date` |
 
-Prior runs remain on disk under their own folders.
+Prior runs remain on Drive under their own folders.
 
 ## Naming rules
 
@@ -71,7 +76,7 @@ Prior runs remain on disk under their own folders.
 
 ## DNA file pairing
 
-Every generated visual should have **linked files** (+ publish record after Phase 9b):
+Every generated visual should have **linked files on Drive** (+ publish record after Phase 9b):
 
 1. `{pin}-reference-prompt.md` — layout regeneration spec (Phase 6a)
 2. `{slug}.CREATIVE_DNA.json` — content + pointer to reference prompt
@@ -81,7 +86,7 @@ Every generated visual should have **linked files** (+ publish record after Phas
 6. `{slug}.png` — asset
 7. `publish-log.md` — Firestore record
 
-`_meta` in Creative DNA must point to `reference_asset`, `reference_prompt_ref`, and `prompt_ref`.
+`_meta` in Creative DNA must point to `reference_asset`, `reference_prompt_ref`, and `prompt_ref` (Drive-relative paths).
 
 ## Three-layer prompt merge
 
@@ -100,15 +105,20 @@ See [prompt-merge.md](./prompt-merge.md).
 
 ## Firestore publish (Phase 9b)
 
-After each `{slug}.png` is generated, run [firestore-creative-publish/SKILL.md](./firestore-creative-publish/SKILL.md).
+After each `{slug}.png` is generated on Drive, run [firestore-creative-publish/SKILL.md](./firestore-creative-publish/SKILL.md). Download PNG via Drive MCP for base64 GCS upload.
 
 Phase 7b ([caption-score/SKILL.md](./caption-score/SKILL.md)) must complete before Phase 9b.
 
 ## Schema copies
 
-On first client setup:
+On first client setup, copy from **repo templates** to Drive via MCP:
 
-```bash
-cp skills/brand-social-creative-pipeline/templates/BRAND_DNA_SCHEMA.json clients/{slug}/
-cp skills/brand-social-creative-pipeline/templates/CREATIVE_DNA_SCHEMA.json clients/{slug}/
 ```
+skills/brand-social-creative-pipeline/templates/BRAND_DNA_SCHEMA.json
+  → gdrive/clients/{slug}/BRAND_DNA_SCHEMA.json
+
+skills/brand-social-creative-pipeline/templates/CREATIVE_DNA_SCHEMA.json
+  → gdrive/clients/{slug}/CREATIVE_DNA_SCHEMA.json
+```
+
+Use [templates/client.json.template](../templates/client.json.template) for initial `client.json` on Drive.

@@ -1,0 +1,41 @@
+{
+  "slug": "{client_slug}",
+  "display_name": "{Display Name}",
+  "website": "https://example.com",
+  "storage": {
+    "backend": "google_drive",
+    "root_folder_id": "1mGIow4YU-8vzTeUFBtFXsNLkjg-aM1uJ",
+    "root_url": "https://drive.google.com/drive/folders/1mGIow4YU-8vzTeUFBtFXsNLkjg-aM1uJ",
+    "path_prefix": "clients/{client_slug}",
+    "mcp_server": "plugin-google-drive-google-drive",
+    "folder_ids": {}
+  },
+  "folders": {
+    "root": "gdrive/clients/{client_slug}",
+    "brand": "gdrive/clients/{client_slug}/BRAND_IDENTITY.md",
+    "brand_dna": "gdrive/clients/{client_slug}/BRAND_DNA.json",
+    "references": "gdrive/clients/{client_slug}/references/pinterest",
+    "plans": "gdrive/clients/{client_slug}/plans",
+    "instagram": "gdrive/clients/{client_slug}/instagram",
+    "facebook": "gdrive/clients/{client_slug}/facebook",
+    "linkedin": "gdrive/clients/{client_slug}/linkedin",
+    "assets": "gdrive/clients/{client_slug}/assets",
+    "logo": "gdrive/clients/{client_slug}/assets/logo.png"
+  },
+  "channels": {
+    "instagram": {
+      "handle": "@brand",
+      "cadence": "3 posts per week",
+      "formats": ["1:1 feed"]
+    }
+  },
+  "pipeline": {
+    "branch": "brand-gdrive",
+    "storage_backend": "google_drive",
+    "run_date": null,
+    "calendar_week": null,
+    "last_run": null,
+    "horizon": "weekly",
+    "platforms": ["instagram"]
+  }
+}

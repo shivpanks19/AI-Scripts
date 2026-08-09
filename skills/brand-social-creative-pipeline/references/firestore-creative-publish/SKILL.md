@@ -10,7 +10,9 @@ description: >-
 
 # Firestore Creative Publish
 
-Runs **immediately after Phase 9** (`{slug}.png` exists). Mirrors [Swayam weekly automation Phase 4c + 5b + 6](../../../../clients/swayam/swayam-weekly-automation.md#phase-5--publish).
+Runs **immediately after Phase 9** (`{slug}.png` exists on Google Drive). Mirrors Swayam weekly automation Phase 4c + 5b + 6 publish flow.
+
+**Storage:** All creative files live on Google Drive. Download PNG and text files via Drive MCP before GCS upload. See [google-drive-storage.md](../google-drive-storage.md).
 
 **Pipeline position:** Phase **9b** — after `{slug}.png` is saved, before Phase 10 handoff.
 
@@ -30,10 +32,10 @@ Runs **immediately after Phase 9** (`{slug}.png` exists). Mirrors [Swayam weekly
 | **Outlet ID** | **Webhook payload** `outletId` (or `outlet_id`) | Yes |
 | Run metadata | Webhook, user prompt, calendar row, or folder date | Yes |
 
-**Creative folder examples:**
+**Creative folder examples (Google Drive):**
 
-- Pipeline: `clients/{client_slug}/instagram/{YYYY-MM-DD}/`
-- Swayam weekly: `clients/swayam/weekly/{YYYY-MM-DD}/`
+- Pipeline: `gdrive/clients/{client_slug}/instagram/{YYYY-MM-DD}/`
+- Swayam weekly: `gdrive/clients/swayam/weekly/{YYYY-MM-DD}/`
 
 ---
 
@@ -160,11 +162,13 @@ fi
 }
 ```
 
-**Shell (from repo root):**
+**Shell (download PNG from Drive first, then base64):**
 
 ```bash
 SLUG="behaviour-engagement-stat"
-PNG="clients/eduhexa/instagram/2026-08-11/${SLUG}.png"
+FOLDER="gdrive/clients/eduhexa/instagram/2026-08-11"
+# 1. Download ${FOLDER}/${SLUG}.png from Google Drive MCP to /tmp/${SLUG}.png
+PNG="/tmp/${SLUG}.png"
 B64=$(base64 -i "$PNG" | tr -d '\n')
 
 curl -sS -X POST "https://image-function-926896730665.europe-west1.run.app" \
@@ -183,11 +187,7 @@ curl -sS -X POST "https://image-function-926896730665.europe-west1.run.app" \
 
 **Never** pass a Firestore template `imageUrl` as upload source — that bakes in stale template text.
 
-**Fallback:** raw GitHub URL to committed PNG — only if base64 fails:
-
-```
-https://raw.githubusercontent.com/{org}/{repo}/{branch}/{path-to-png}
-```
+**Fallback:** raw GitHub URL to committed PNG — only if base64 fails and file was mirrored to repo (not default on `brand-gdrive`).
 
 ### Step 2 — Build Firestore payload (Phase 5b)
 
@@ -222,7 +222,8 @@ https://raw.githubusercontent.com/{org}/{repo}/{branch}/{path-to-png}
 ```bash
 OUTLET_ID="${WEBHOOK_OUTLET_ID}"   # from webhook payload — not client.json
 SLUG="paid-leads-leak-15-30-percent"
-FOLDER="clients/swayam/weekly/2026-08-08"
+FOLDER="gdrive/clients/swayam/weekly/2026-08-08"
+# Download post, scores, prompt from Drive MCP before parsing
 GCS_URL="https://storage.googleapis.com/..."
 SCORES_FILE="${FOLDER}/${SLUG}-caption-scores.json"
 
@@ -298,8 +299,8 @@ When `brand-social-creative-pipeline` Phase 9 completes for a slug:
 
 ```
 Webhook → outletId (+ optional publish metadata)
-Phase 9  → {slug}.png saved locally
-Phase 9b → this skill (upload + Firestore + verify + publish-log)
+Phase 9  → {slug}.png saved on Google Drive
+Phase 9b → this skill (download from Drive → upload GCS + Firestore + verify + publish-log on Drive)
 Phase 10 → handoff summary includes documentId + path
 ```
 
@@ -337,8 +338,7 @@ Phase 10 → handoff summary includes documentId + path
 
 ## See also
 
-- [clients/swayam/swayam-weekly-automation.md](../../../../clients/swayam/swayam-weekly-automation.md) — canonical weekly runbook
-- [clients/swayam/weekly/2026-08-08/publish-log.md](../../../../clients/swayam/weekly/2026-08-08/publish-log.md) — example verify log
+- [../google-drive-storage.md](../google-drive-storage.md) — Drive paths and MCP ops
 - [../file-structure.md](../file-structure.md) — creative folder layout
 - [ai-content-payload.template.json](./ai-content-payload.template.json)
 - [publish-log.template.md](./publish-log.template.md)

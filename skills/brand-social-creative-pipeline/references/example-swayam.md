@@ -1,6 +1,7 @@
 # Pipeline Example — Swayam
 
-Reference client: `clients/swayam/`
+**Branch:** `brand-gdrive`  
+**Reference client on Google Drive:** `gdrive/clients/swayam/`
 
 ## Intake
 
@@ -10,20 +11,20 @@ Reference client: `clients/swayam/`
 - Calendar: weekly
 - Reference creatives: editorial-search-hero, stat-hero admissions
 
-## Phase outputs
+## Phase outputs (on Google Drive)
 
 | Phase | File |
 |-------|------|
-| 1 | `BRAND_IDENTITY.md` |
-| 1b | `references/pinterest/pinterest-manifest.json` + 5 `pin-*.png` |
-| 2 | `plans/social-media-context.md` |
-| 3 | `plans/content-strategy.md` |
-| 4 | `plans/content-calendar.md` |
-| 5 | `BRAND_DNA.json` |
-| 6 | `instagram/2026-08-08/admissions-automation-stat-hero.CREATIVE_DNA.json` |
-| 7 | `instagram/2026-08-08/admissions-automation-stat-hero-post.md` (post-writer-sms) |
-| 8 | `instagram/2026-08-08/admissions-automation-stat-hero-prompt.md` |
-| 9 | `instagram/2026-08-08/admissions-automation-stat-hero.png` |
+| 1 | `gdrive/clients/swayam/BRAND_IDENTITY.md` |
+| 1b | `gdrive/clients/swayam/references/pinterest/{run_date}/pinterest-manifest.json` + 5 `pin-*.png` |
+| 2 | `gdrive/clients/swayam/plans/{run_date}/social-media-context.md` |
+| 3 | `gdrive/clients/swayam/plans/{run_date}/content-strategy.md` |
+| 4 | `gdrive/clients/swayam/plans/{run_date}/content-calendar.md` |
+| 5 | `gdrive/clients/swayam/BRAND_DNA.json` |
+| 6 | `gdrive/clients/swayam/instagram/2026-08-08/admissions-automation-stat-hero.CREATIVE_DNA.json` |
+| 7 | `gdrive/clients/swayam/instagram/2026-08-08/admissions-automation-stat-hero-post.md` (post-writer-sms) |
+| 8 | `gdrive/clients/swayam/instagram/2026-08-08/admissions-automation-stat-hero-prompt.md` |
+| 9 | `gdrive/clients/swayam/instagram/2026-08-08/admissions-automation-stat-hero.png` |
 
 ## Calendar row → creative mapping
 
@@ -38,7 +39,7 @@ Reference client: `clients/swayam/`
 
 User: "Same layout as admissions stat hero but for WhatsApp pipeline"
 
-1. Copy `admissions-automation-stat-hero.CREATIVE_DNA.json`
+1. Copy `admissions-automation-stat-hero.CREATIVE_DNA.json` on Drive
 2. Change `variable_slots` only: topic, headline, stat, hero_card content
 3. Keep `must_preserve`: oversized stat, human+phone, zone map
-4. Generate new prompt + image
+4. Generate new prompt + image → upload to Drive

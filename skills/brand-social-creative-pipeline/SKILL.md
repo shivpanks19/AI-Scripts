@@ -3,17 +3,26 @@ name: brand-social-creative-pipeline
 description: >-
   End-to-end pipeline from website/brief to brand identity, social context,
   strategy, calendar, copy, Brand DNA, Creative DNA, image prompts, and generated
-  creatives. Use when the user wants a full social media setup for a brand,
-  brand DNA, creative DNA, social calendar with visuals, or to replicate the
-  Swayam brand-to-creative workflow from website + brand identity (Pinterest
-  references are auto-fetched in Phase 1b — no manual reference images required).
+  creatives. Use on branch brand-gdrive — all client artifacts saved to Google Drive
+  (gdrive/clients/{slug}/) via plugin-google-drive-google-drive MCP. Skills stay in repo.
+  Pinterest references auto-fetched in Phase 1b.
 ---
 
 # Brand → Social → Creative Pipeline
 
 Orchestrates the full workflow: **brand identity → Pinterest references → social context → strategy → calendar → copy → Brand DNA → Creative DNA → prompts → generated images**.
 
-**Reference implementation:** `clients/swayam/` (BRAND_DENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
+**Branch:** `brand-gdrive` — use skills from this branch in automation.
+
+**Storage:** All client artifacts read/write via **Google Drive MCP** (`plugin-google-drive-google-drive`). Do **not** save pipeline outputs under `clients/` in the git repo. See [references/google-drive-storage.md](references/google-drive-storage.md).
+
+| Location | Contents |
+|----------|----------|
+| **Google Drive** | `gdrive/clients/{client_slug}/` — identity, DNA, plans, refs, copy, prompts, PNGs, publish logs |
+| **Git repo** (`brand-gdrive`) | Skills, templates, schemas only |
+
+**Drive root:** folder `1mGIow4YU-8vzTeUFBtFXsNLkjg-aM1uJ` → `clients/{client_slug}/`  
+**Reference client:** `gdrive/clients/swayam/` (BRAND_IDENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
 
 **Visual format policy (mandatory):** Single-image dark editorial feed posts only — one PNG per calendar slot. No carousels, stat/KPI cards, or multi-slide formats. See [references/single-image-post-policy.md](references/single-image-post-policy.md).
 
@@ -32,10 +41,10 @@ At the start of every run, set:
 | `run_date` | UTC date of invocation (`YYYY-MM-DD`) — **always** used for `plans/`, `references/pinterest/`, `instagram/`, `facebook/`, and `runs/` |
 | `calendar_week` | First post date in calendar (from webhook `calendar_start_date`, else next Monday from `run_date`) — used only inside `content-calendar.md` row dates, not folder names |
 
-Create **new dated subfolders** for this run — never overwrite a prior run's folder:
+Create **new dated subfolders on Google Drive** for this run — never overwrite a prior run's folder:
 
 ```
-clients/{client_slug}/
+gdrive/clients/{client_slug}/
 ├── plans/{run_date}/                    # Phase 2–4
 ├── references/pinterest/{run_date}/     # Phase 1b
 ├── instagram/{run_date}/                # Phase 6–9b
@@ -43,7 +52,7 @@ clients/{client_slug}/
 └── runs/{run_date}/PIPELINE-HANDOFF.md  # Phase 10
 ```
 
-Update `client.json` → `pipeline.last_run`, `pipeline.run_date`, `pipeline.calendar_week`, and `folders` paths for the active run.
+Use Google Drive MCP to create folders and write files. Update `client.json` on Drive → `pipeline.last_run`, `pipeline.run_date`, `pipeline.calendar_week`, and `folders` paths for the active run.
 
 ### Per-run execution rules
 
@@ -65,22 +74,23 @@ Collect from the user (ask only for missing items):
 | Input | Required | Notes |
 |-------|----------|-------|
 | Website URL | Yes | Fetch homepage, product, pricing if available |
-| Client slug | Optional | take it fromwebsite given `swayamapp.com` → `clients/swayamapp/` |
+| Client slug | Optional | take it from website given `swayamapp.com` → `gdrive/clients/swayam/` |
 | Brand files | Optional | Existing decks, logos, ICP docs, feature lists |
 | Platforms | Yes | Instagram, LinkedIn, Meta ads, etc. |
 | Calendar horizon | Yes | `weekly` or `monthly` |
 | Reference creatives | **No** — not required | Phase 1b auto-fetches 5 Pinterest pins from `BRAND_IDENTITY.md`. Optional: user may upload extra refs to merge in Phase 6 |
 | Goals | Optional | Awareness, leads, demos, community |
 
-Create client scaffold:
+Create client scaffold on **Google Drive** (see [google-drive-storage.md](references/google-drive-storage.md)):
 
 ```
-clients/{client_slug}/
+gdrive/clients/{client_slug}/
 ├── client.json
 ├── BRAND_IDENTITY.md          # Phase 1
-├── BRAND_DNA_SCHEMA.json      # copy from templates/
+├── BRAND_DNA_SCHEMA.json      # copy from repo templates/ via Drive MCP
 ├── BRAND_DNA.json             # Phase 5
-├── CREATIVE_DNA_SCHEMA.json   # copy from templates/
+├── CREATIVE_DNA_SCHEMA.json   # copy from repo templates/
+├── assets/logo.png            # optional user logo
 ├── references/
 │   └── pinterest/{run_date}/    # Phase 1b — 5 fetched pin images + manifest (new folder each run)
 ├── instagram/{run_date}/   # Phase 6–9b
@@ -94,7 +104,7 @@ clients/{client_slug}/
     └── PIPELINE-HANDOFF.md      # Phase 10
 ```
 
-Initialize or update `client.json` with `website`, `display_name`, `folders`, `channels`, `pipeline.run_date`, `pipeline.calendar_week`.
+Initialize or update `client.json` on Drive from [templates/client.json.template](templates/client.json.template) with `storage.backend: "google_drive"`, `website`, `display_name`, `folders`, `channels`, `pipeline.run_date`, `pipeline.calendar_week`.
 
 **Reference creatives:** Do not ask the user for Pinterest URLs or layout images at intake. Phase 1b supplies the default reference set after brand identity.
 
@@ -106,7 +116,7 @@ Initialize or update `client.json` with `website`, `display_name`, `folders`, `c
 
 1. Fetch and analyze the website (copy, visuals, positioning, product, audience).
 2. Merge with any user-supplied brand files.
-3. Write `clients/{client_slug}/BRAND_IDENTITY.md` using the Brand Guardian deliverable template:
+3. Write `gdrive/clients/{client_slug}/BRAND_IDENTITY.md` using the Brand Guardian deliverable template:
    - Brand foundation (purpose, vision, mission, values, personality, promise)
    - Brand architecture and positioning
    - Visual identity (colors as CSS variables, typography, logo system, UI patterns)
@@ -127,10 +137,10 @@ Runs **only after** `BRAND_IDENTITY.md` exists. Replaces manual “paste 5 Pinte
 1. Read `BRAND_IDENTITY.md` — extract product category, industry, audience, visual tone.
 2. Build category-specific Pinterest search queries (e.g. CRM → SaaS CRM pins; CSR → CSR campaign pins). See [search-keywords.md](references/pinterest-reference-fetch/search-keywords.md).
 3. Search Pinterest (WebSearch + WebFetch); select **5 pins** with layout diversity.
-4. Download pin images to `clients/{client_slug}/references/pinterest/{run_date}/pin-01-{layout}.png` … `pin-05-{layout}.png`.
-5. Write `search-brief.json`, `pinterest-manifest.json`, and `README.md` in that dated folder.
+4. Download pin images to `gdrive/clients/{client_slug}/references/pinterest/{run_date}/pin-01-{layout}.png` … `pin-05-{layout}.png` (upload via Drive MCP).
+5. Write `search-brief.json`, `pinterest-manifest.json`, and `README.md` in that dated folder on Drive.
 
-**Outputs:** `clients/{client_slug}/references/pinterest/{run_date}/` (5 PNGs + manifest). Phase 6 consumes this run's folder.
+**Outputs:** `gdrive/clients/{client_slug}/references/pinterest/{run_date}/` (5 PNGs + manifest). Phase 6 consumes this run's folder.
 
 **Webhook `pinterest_urls`:** download those pins first; auto-search only to reach 5 total. Never reuse pins from a prior `{run_date}` folder.
 
@@ -145,7 +155,7 @@ Runs **only after** `BRAND_IDENTITY.md` exists. Replaces manual “paste 5 Pinte
 1. Read `BRAND_IDENTITY.md` + `client.json`.
 2. Map brand voice → social voice; positioning → audience; pillars → content pillars.
 3. Write context file to the **current run folder**:
-   - `clients/{client_slug}/plans/{run_date}/social-media-context.md`
+   - `gdrive/clients/{client_slug}/plans/{run_date}/social-media-context.md`
 
 Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Platform Configuration, Content Formats, Example Posts (draft if none), Anti-Patterns.
 
@@ -158,7 +168,7 @@ Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Pla
 
 1. Read social media context + brand identity.
 2. Ask discovery questions only if gaps remain (goals, performance, competitors, time budget).
-3. Write `clients/{client_slug}/plans/{run_date}/content-strategy.md`:
+3. Write `gdrive/clients/{client_slug}/plans/{run_date}/content-strategy.md`:
    - Content pillars + balance ratios
    - Topic clusters per pillar
    - Weekly content mix per platform — **every slot: single-image dark editorial 1:1**
@@ -175,7 +185,7 @@ Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Pla
 
 1. Read strategy + context.
 2. Build **weekly** or **monthly** calendar per user request.
-3. Write `clients/{client_slug}/plans/{run_date}/content-calendar.md`.
+3. Write `gdrive/clients/{client_slug}/plans/{run_date}/content-calendar.md`.
 4. **One calendar row = one slug = one PNG** — no carousel slides, no stat cards.
 
 Each calendar row must include:
@@ -203,7 +213,7 @@ Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template
 **Schemas:** `templates/BRAND_DNA_SCHEMA.json` → copy to client root.
 
 1. Read `BRAND_IDENTITY.md`.
-2. Extract invariant brand tokens into `clients/{client_slug}/BRAND_DNA.json` following the schema exactly.
+2. Extract invariant brand tokens into `gdrive/clients/{client_slug}/BRAND_DNA.json` following the schema exactly.
 3. Set `_meta.brand_id`, `_meta.source_ref`, `_meta.schema_ref`.
 
 **Brand DNA is one file per client.** Never put layout, composition, or per-image copy here.
@@ -240,8 +250,8 @@ For **each calendar visual** (link to matching pin from Phase 1b / 6a), plus any
 3. Write one file per calendar row:
 
 ```
-clients/{client_slug}/instagram/{run_date}/{slug}.CREATIVE_DNA.json
-clients/{client_slug}/instagram/{run_date}/{slug}.png
+gdrive/clients/{client_slug}/instagram/{run_date}/{slug}.CREATIVE_DNA.json
+gdrive/clients/{client_slug}/instagram/{run_date}/{slug}.png
 ```
 
 Naming: `{slug}.CREATIVE_DNA.json` (not a shared registry).
@@ -271,10 +281,10 @@ For each calendar slot, **invoke the sub-skill** — do not improvise copy outsi
 4. Save alongside the creative:
 
 ```
-clients/{client_slug}/instagram/{run_date}/{slug}-post.md
-clients/{client_slug}/facebook/{run_date}/{slug}-post.md
-clients/{client_slug}/linkedin/{run_date}/{slug}-post.md
-clients/{client_slug}/tiktok/{run_date}/{slug}-caption.md
+gdrive/clients/{client_slug}/instagram/{run_date}/{slug}-post.md
+gdrive/clients/{client_slug}/facebook/{run_date}/{slug}-post.md
+gdrive/clients/{client_slug}/linkedin/{run_date}/{slug}-post.md
+gdrive/clients/{client_slug}/tiktok/{run_date}/{slug}-caption.md
 ```
 
 Update `copy.post_ref` (or `copy.caption_ref` for caption-writer platforms) in the Creative DNA when the visual and copy are paired.
@@ -348,7 +358,7 @@ For each `{slug}-prompt.md`:
    - `4:5` → aspect_ratio `3:4` or `9:16` per tool support
    - `1:1` → `1:1`
    - `16:9` → `16:9`
-5. Save output to `{slug}.png` next to Creative DNA.
+5. Save output to `{slug}.png` next to Creative DNA on Google Drive (upload via Drive MCP).
 
 **Color gate:** If the prompt or description contains hex values not present in `BRAND_DNA.json`, stop and re-run Phase 8 merge.
 
@@ -362,7 +372,7 @@ For each `{slug}-prompt.md`:
 
 **Skill:** [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md)
 
-Runs **immediately after** each `{slug}.png` is saved in Phase 9. Mirrors Swayam weekly [Phase 4c + 5b + 6](../../../clients/swayam/swayam-weekly-automation.md#phase-5--publish).
+Runs **immediately after** each `{slug}.png` is saved on Drive in Phase 9. Download PNG via Drive MCP for base64 GCS upload. Mirrors Swayam weekly Phase 4c + 5b + 6 publish flow.
 
 **Prerequisite:** Webhook (or explicit run prompt) must include `outletId`. Optional: `collection`, `templateName`, `source`. **Stop** if `outletId` is missing — do not read from `client.json`.
 
@@ -451,17 +461,19 @@ Copy and track:
 ## Boundaries
 
 - Does not replace sub-skills — invoke them for their domain steps.
+- Does not write client artifacts to the git repo — Google Drive only (`brand-gdrive` branch).
 - Does not commit to git unless user asks.
 - Does not publish unless webhook (or explicit run prompt) supplies `outletId`. Does not schedule to social unless BlackTwist MCP is connected and user confirms.
 - Brand DNA = one per client; Creative DNA = one per image. Never use a shared creative registry.
 
 ## See also
 
-- [references/file-structure.md](references/file-structure.md) — folder conventions
+- [references/google-drive-storage.md](references/google-drive-storage.md) — Drive root, MCP ops, path notation
+- [references/file-structure.md](references/file-structure.md) — folder conventions (Drive paths)
 - [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md) — fetch 5 Pinterest pins after brand identity
 - [references/reference-creative-prompt/SKILL.md](references/reference-creative-prompt/SKILL.md) — Phase 6a pin → regeneration prompt
 - [references/reference-fidelity.md](references/reference-fidelity.md) — prompt-driven generation (Phase 6a text → Phase 8 merge → Phase 9, no reference image attachment)
 - [references/prompt-merge.md](references/prompt-merge.md) — three-layer merge (reference prompt + brand colors + content)
 - [references/caption-score/SKILL.md](references/caption-score/SKILL.md) — score post copy before Firestore publish
 - [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md) — GCS upload + Firestore publish after Phase 9
-- `clients/swayam/` — canonical example
+- `gdrive/clients/swayam/` — canonical example on Google Drive

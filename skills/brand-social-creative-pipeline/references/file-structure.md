@@ -47,6 +47,7 @@ gdrive/clients/{client_slug}/
 │   └── {slug}.png
 │
 └── runs/{run_date}/
+    ├── PIPELINE-PROGRESS.json        # Phase 0 — checkpoint (update each phase)
     └── PIPELINE-HANDOFF.md        # Phase 10 — one handoff per run
 ```
 

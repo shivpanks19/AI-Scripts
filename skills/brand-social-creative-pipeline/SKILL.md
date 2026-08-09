@@ -28,9 +28,11 @@ Orchestrates the full workflow: **brand identity → Pinterest references → so
 
 ---
 
-## Run policy — always execute fresh (mandatory)
+## Run policy — fresh content, resumable execution (mandatory)
 
-**Every invocation runs Phases 0–10 from scratch.** Do not skip phases because prior artifacts exist. Do not reuse files from earlier runs unless the user explicitly requests a partial run (see [Partial runs](#partial-runs)).
+**Every invocation authors new content for the current `{run_date}`.** Do not reuse *prior run* folders. **Within the same `{run_date}` run**, resume from `PIPELINE-PROGRESS.json` — never redo completed phases or re-upload files.
+
+**Stall prevention:** [references/pipeline-run-guardrails.md](references/pipeline-run-guardrails.md) — read before Phase 0.
 
 ### Run date folder
 
@@ -38,30 +40,45 @@ At the start of every run, set:
 
 | Variable | Resolution |
 |----------|------------|
-| `run_date` | UTC date of invocation (`YYYY-MM-DD`) — **always** used for `plans/`, `references/pinterest/`, `instagram/`, `facebook/`, and `runs/` |
-| `calendar_week` | First post date in calendar (from webhook `calendar_start_date`, else next Monday from `run_date`) — used only inside `content-calendar.md` row dates, not folder names |
+| `run_date` | UTC date of invocation (`YYYY-MM-DD`) — used for `plans/`, `references/pinterest/`, `runs/` |
+| `calendar_week` | First post date in calendar (webhook `calendar_start_date`, else next Monday from `run_date`) — used for `instagram/`, `facebook/`, `linkedin/` creative folders |
+| `staging_dir` | `/tmp/{client_slug}-{run_date}/` — **write all artifacts here first** |
 
 Create **new dated subfolders on Google Drive** for this run — never overwrite a prior run's folder:
 
 ```
 gdrive/clients/{client_slug}/
-├── plans/{run_date}/                    # Phase 2–4
-├── references/pinterest/{run_date}/     # Phase 1b
-├── instagram/{run_date}/                # Phase 6–9b
-├── facebook/{run_date}/                 # Phase 7 mirror
-└── runs/{run_date}/PIPELINE-HANDOFF.md  # Phase 10
+├── plans/{run_date}/                         # Phase 2–4
+├── references/pinterest/{run_date}/          # Phase 1b
+├── instagram/{calendar_week}/                 # Phase 6–9b (NOT run_date)
+├── facebook/{calendar_week}/                 # Phase 7 mirror
+├── runs/{run_date}/PIPELINE-PROGRESS.json    # Phase 0 — checkpoint (update each phase)
+└── runs/{run_date}/PIPELINE-HANDOFF.md       # Phase 10
 ```
 
-Use Google Drive MCP to create folders and write files. Update `client.json` on Drive → `pipeline.last_run`, `pipeline.run_date`, `pipeline.calendar_week`, and `folders` paths for the active run.
+### Resume within run (mandatory)
+
+1. Read `runs/{run_date}/PIPELINE-PROGRESS.json` if it exists (or run [scripts/resume-from-progress.sh](scripts/resume-from-progress.sh)).
+2. If Phase 8 is `complete` and Phase 9 is not → **start at Phase 9** (do not re-upload Phases 0–8).
+3. If Phase 9 is `complete` and `outletId` present → **start at Phase 9b**.
+4. Record every uploaded file in `progress.uploads.{filename}.file_id` — **never upload the same title twice** to the same folder.
+
+### Local staging first (mandatory)
+
+1. Author phases to `staging_dir` locally.
+2. Verify with [scripts/upload-drive-run.sh](scripts/upload-drive-run.sh).
+3. **Batch-upload** to Drive once per phase block — not file-by-file interleaved with generation.
+4. **Phase 9 (image gen) must start within 45 min of run start** — never defer PNG generation for Drive uploads.
 
 ### Per-run execution rules
 
-1. **Re-fetch** website and brand inputs; **rewrite** `BRAND_IDENTITY.md` and `BRAND_DNA.json` at client root.
+1. **Re-fetch** website and brand inputs; **rewrite** `BRAND_IDENTITY.md` and `BRAND_DNA.json` (stage locally, upload once).
 2. **Re-download** Pinterest pins into `references/pinterest/{run_date}/` (webhook `pinterest_urls` first, auto-search to fill 5).
 3. **Rewrite** all plan files under `plans/{run_date}/`.
-4. **Author new** Creative DNA, posts, prompts, and PNGs under `instagram/{run_date}/` and `facebook/{run_date}/`.
+4. **Author new** Creative DNA, posts, prompts, and PNGs under `instagram/{calendar_week}/` and `facebook/{calendar_week}/`.
 5. **Publish** (Phase 9b) when webhook supplies `outletId` — append to that run's `publish-log.md`.
-6. Record completion in `runs/{run_date}/PIPELINE-HANDOFF.md` (do not overwrite prior run handoffs).
+6. Update `PIPELINE-PROGRESS.json` after each phase; set `status: complete` at Phase 10.
+7. Record completion in `runs/{run_date}/PIPELINE-HANDOFF.md` (do not overwrite prior run handoffs).
 
 `skip_phases` in webhook applies only when the user explicitly passes it for bootstrap shortcuts — default is **run all phases**.
 
@@ -93,18 +110,21 @@ gdrive/clients/{client_slug}/
 ├── assets/logo.png            # optional user logo
 ├── references/
 │   └── pinterest/{run_date}/    # Phase 1b — 5 fetched pin images + manifest (new folder each run)
-├── instagram/{run_date}/   # Phase 6–9b
-├── facebook/{run_date}/
-├── linkedin/{run_date}/
+├── instagram/{calendar_week}/   # Phase 6–9b
+├── facebook/{calendar_week}/
+├── linkedin/{calendar_week}/
 ├── plans/{run_date}/            # Phase 2–4 (new folder each run)
 │   ├── social-media-context.md
 │   ├── content-strategy.md
 │   └── content-calendar.md
 └── runs/{run_date}/
+    ├── PIPELINE-PROGRESS.json   # Phase 0 — checkpoint (update each phase)
     └── PIPELINE-HANDOFF.md      # Phase 10
 ```
 
 Initialize or update `client.json` on Drive from [templates/client.json.template](templates/client.json.template) with `storage.backend: "google_drive"`, `website`, `display_name`, `folders`, `channels`, `pipeline.run_date`, `pipeline.calendar_week`.
+
+**First Drive write:** create `runs/{run_date}/PIPELINE-PROGRESS.json` from [templates/pipeline-progress.template.json](templates/pipeline-progress.template.json).
 
 **Reference creatives:** Do not ask the user for Pinterest URLs or layout images at intake. Phase 1b supplies the default reference set after brand identity.
 
@@ -349,6 +369,8 @@ See [references/prompt-merge.md](references/prompt-merge.md) for merge algorithm
 
 ## Phase 9 — Generate images
 
+**Priority:** Phase 9 must start within 45 minutes of run start. Do not defer image generation for Drive uploads or retries.
+
 For each `{slug}-prompt.md`:
 
 1. Use the LLM's **image generation tool** (e.g. `GenerateImage`).
@@ -420,24 +442,26 @@ Deliver summary:
 
 ## Pipeline checklist
 
-Copy and track:
+Track in `runs/{run_date}/PIPELINE-PROGRESS.json` — update after each phase:
 
 ```
-- [ ] Phase 0: Intake + client scaffold
-- [ ] Phase 1: BRAND_IDENTITY.md (design-brand-guardian)
-- [ ] Phase 1b: 5 Pinterest pins → references/pinterest/ (pinterest-reference-fetch)
+- [ ] Phase 0: Intake + scaffold + PIPELINE-PROGRESS.json
+- [ ] Phase 1: BRAND_IDENTITY.md (design-brand-guardian) → stage locally
+- [ ] Phase 1b: 5 Pinterest pins → references/pinterest/{run_date}/ (pinterest-reference-fetch)
 - [ ] Phase 6a: {pin}-reference-prompt.md per pin (reference-creative-prompt)
 - [ ] Phase 2: social-media-context (social-media-context-sms)
 - [ ] Phase 3: content-strategy.md (content-strategy-sms)
 - [ ] Phase 4: content-calendar.md (content-calendar-sms)
 - [ ] Phase 5: BRAND_DNA.json
-- [ ] Phase 6: {slug}.CREATIVE_DNA.json per reference/template
+- [ ] Batch upload: root + plans + pinterest (search-before-create)
+- [ ] Phase 6: {slug}.CREATIVE_DNA.json per calendar visual
 - [ ] Phase 7: captions/posts per calendar slot
 - [ ] Phase 7b: caption scores per slug (caption-score)
 - [ ] Phase 8: {slug}-prompt.md per visual
-- [ ] Phase 9: {slug}.png generated
+- [ ] Batch upload: instagram/{calendar_week}/ text artifacts
+- [ ] Phase 9: {slug}.png generated (REQUIRED — do not skip)
 - [ ] Phase 9b: GCS upload + Firestore publish per slug (firestore-creative-publish)
-- [ ] Phase 10: Handoff summary
+- [ ] Phase 10: PIPELINE-HANDOFF.md + progress status=complete
 ```
 
 ---
@@ -468,6 +492,7 @@ Copy and track:
 
 ## See also
 
+- [references/pipeline-run-guardrails.md](references/pipeline-run-guardrails.md) — stall prevention, resume, idempotent uploads
 - [references/google-drive-storage.md](references/google-drive-storage.md) — Drive root, MCP ops, path notation
 - [references/file-structure.md](references/file-structure.md) — folder conventions (Drive paths)
 - [references/pinterest-reference-fetch/SKILL.md](references/pinterest-reference-fetch/SKILL.md) — fetch 5 Pinterest pins after brand identity

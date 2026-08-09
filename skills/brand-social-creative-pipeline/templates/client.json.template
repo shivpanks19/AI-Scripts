@@ -36,6 +36,8 @@
     "calendar_week": null,
     "last_run": null,
     "horizon": "weekly",
-    "platforms": ["instagram"]
+    "platforms": ["instagram"],
+    "progress_ref": "gdrive/clients/{client_slug}/runs/{run_date}/PIPELINE-PROGRESS.json",
+    "staging_dir": "/tmp/{client_slug}-{run_date}"
   }
 }

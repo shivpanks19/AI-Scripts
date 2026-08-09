@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "type": "pipeline_progress",
+    "version": "1.0",
+    "purpose": "Checkpoint file for resume, idempotent uploads, and stall detection. Written at Phase 0; updated after each phase."
+  },
+  "client_slug": "{client_slug}",
+  "run_date": "{run_date}",
+  "calendar_week": "{calendar_week}",
+  "status": "in_progress",
+  "started_at": null,
+  "updated_at": null,
+  "outlet_id": null,
+  "slugs": [],
+  "phases": {
+    "0": { "status": "pending", "completed_at": null, "notes": null },
+    "1": { "status": "pending", "completed_at": null, "notes": null },
+    "1b": { "status": "pending", "completed_at": null, "pins_on_drive": 0, "notes": null },
+    "2": { "status": "pending", "completed_at": null, "notes": null },
+    "3": { "status": "pending", "completed_at": null, "notes": null },
+    "4": { "status": "pending", "completed_at": null, "notes": null },
+    "5": { "status": "pending", "completed_at": null, "notes": null },
+    "6a": { "status": "pending", "completed_at": null, "notes": null },
+    "6": { "status": "pending", "completed_at": null, "notes": null },
+    "7": { "status": "pending", "completed_at": null, "notes": null },
+    "7b": { "status": "pending", "completed_at": null, "notes": null },
+    "8": { "status": "pending", "completed_at": null, "notes": null },
+    "9": { "status": "pending", "completed_at": null, "pngs_on_drive": 0, "notes": null },
+    "9b": { "status": "pending", "completed_at": null, "published": 0, "notes": null },
+    "10": { "status": "pending", "completed_at": null, "notes": null }
+  },
+  "uploads": {},
+  "staging_dir": "/tmp/{client_slug}-{run_date}",
+  "errors": []
+}

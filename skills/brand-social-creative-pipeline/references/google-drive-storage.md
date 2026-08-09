@@ -59,6 +59,26 @@ Store resolved Drive folder IDs in `client.json` → `storage.folder_ids` after 
 
 Use **Google Drive MCP** for all read/write. Do **not** write pipeline artifacts to `clients/` in the git repo on this branch.
 
+**Stall prevention:** [pipeline-run-guardrails.md](./pipeline-run-guardrails.md) — local staging, progress checkpoint, search-before-create.
+
+### Idempotent write protocol (mandatory)
+
+Drive MCP `create_file` cannot update content in place. Prevent duplicates:
+
+1. **Search first:** `title = '{filename}' and parentId = '{folder_id}'`
+2. **0 results** → `create_file`; record `file_id` in `PIPELINE-PROGRESS.json` → `uploads.{filename}`
+3. **≥1 results** → **skip upload** for this run; use newest `file_id` in progress
+4. **Max 1 create per (parentId, title) per run** — never retry on uncertainty
+
+### Local staging (mandatory)
+
+| Step | Action |
+|------|--------|
+| 1 | Write artifacts to `/tmp/{client_slug}-{run_date}/` during Phases 0–8 |
+| 2 | Verify with `scripts/upload-drive-run.sh` |
+| 3 | Batch-upload per phase block (not per file during generation) |
+| 4 | Update `runs/{run_date}/PIPELINE-PROGRESS.json` after each batch |
+
 ### Scaffold (Phase 0)
 
 1. Ensure `clients/` exists under root folder `1mGIow4YU-8vzTeUFBtFXsNLkjg-aM1uJ`.
@@ -78,6 +98,7 @@ Use **Google Drive MCP** for all read/write. Do **not** write pipeline artifacts
 
 - **Download:** fetch pin images and generated PNGs to a temp path when visual analysis or base64 upload is required.
 - **Upload:** after Phase 9 image generation, save `{slug}.png` to `gdrive/clients/{slug}/instagram/{calendar_week}/`.
+- **One attempt** per binary per run; if MCP base64 fails (>400 KB), record failure in progress and continue.
 - **Phase 9b:** download PNG from Drive → base64 → GCS `image-function` (do not rely on repo paths).
 
 ### Folder creation per run
@@ -86,8 +107,9 @@ On each invocation, create **new dated folders** on Drive (never overwrite prior
 
 - `references/pinterest/{run_date}/`
 - `plans/{run_date}/`
-- `instagram/{calendar_week}/` (or `{run_date}` per pipeline SKILL)
-- `runs/{run_date}/`
+- `instagram/{calendar_week}/`
+- `facebook/{calendar_week}/`
+- `runs/{run_date}/` (include `PIPELINE-PROGRESS.json` at Phase 0)
 
 ---
 

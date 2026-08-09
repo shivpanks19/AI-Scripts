@@ -1,6 +1,15 @@
 # Swayam (swayamappv2) — Publish Log (2026-08-11)
 **Outlet ID:** `5qy4uU63AX6jLjDYvP19`
 **Run date:** 2026-08-08
+
+---
+
+## Notion
+
+- **Parent:** Reddit Swayam Research (`35bc45f0da5d81e6acd2e196888b3922`)
+- **Child page:** [Swayam Intelligence — Brand Social Weekly (11–15 August 2026)](https://app.notion.com/p/3b7c45f0da5d81f28b79fbe1d91dd285)
+- **Page ID:** `3b7c45f0-da5d-81f2-8b79-fbe1d91dd285`
+
 ---
 ## crm-stores-leads-editorial
 - **GCS imageUrl:** https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786229486188-image.png

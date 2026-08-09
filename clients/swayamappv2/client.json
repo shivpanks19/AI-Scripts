@@ -34,7 +34,9 @@
     "posts_per_week": 3,
     "platforms": ["instagram", "facebook"],
     "goals": ["awareness", "leads"],
-    "phases_completed": [0, 1, "1b", "6a", 2, 3, 4, 5, 6, 7, "7b", 8, 9, "9b", 10],
+    "phases_completed": [0, 1, "1b", "6a", 2, 3, 4, 5, 6, 7, "7b", 8, 9, "9b", "5a", 10],
+    "notion_page_id": "3b7c45f0-da5d-81f2-8b79-fbe1d91dd285",
+    "notion_page_url": "https://app.notion.com/p/3b7c45f0da5d81f28b79fbe1d91dd285"
     "webhook": {
       "outlet_id": "5qy4uU63AX6jLjDYvP19",
       "pinterest_urls": [

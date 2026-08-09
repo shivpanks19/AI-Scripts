@@ -25,6 +25,7 @@
 - [x] Phase 8: 3 × prompt.md
 - [x] Phase 9: 3 × PNG generated
 - [x] Phase 9b: GCS upload + Firestore publish (3 drafts)
+- [x] Phase 5a (Notion): Child page under Reddit Swayam Research
 - [x] Phase 10: This handoff
 
 ---
@@ -66,6 +67,12 @@ Facebook mirrors: same PNGs + platform-specific posts in `facebook/2026-08-11/`.
 ## Publish log
 
 See `instagram/2026-08-11/publish-log.md` for GCS URLs, documentIds, and caption scores.
+
+## Notion (Phase 5a)
+
+- **Parent:** Reddit Swayam Research (`35bc45f0da5d81e6acd2e196888b3922`)
+- **Child page:** [Swayam Intelligence — Brand Social Weekly (11–15 August 2026)](https://app.notion.com/p/3b7c45f0da5d81f28b79fbe1d91dd285)
+- **Page ID:** `3b7c45f0-da5d-81f2-8b79-fbe1d91dd285`
 
 ---
 

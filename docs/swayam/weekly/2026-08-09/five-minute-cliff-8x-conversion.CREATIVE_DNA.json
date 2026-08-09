@@ -1,0 +1,20 @@
+{
+  "_meta": {
+    "source": "firestore-template",
+    "template_doc_id": "a64938a9-9bbb-44c3-a0fb-04c100c16eb4",
+    "template_collection": "social-ai-poster",
+    "brand_source": "firestore-template-imagePrompt"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "stat-hero-editorial",
+  "composition": {
+    "zones": "pastel gradient background, center hero card with oversized stat, headline top-left, subline mid, CTA button bottom, Infisoft Tech footer strip"
+  },
+  "elements": [
+    { "type": "headline", "content": "Five Minute Cliff" },
+    { "type": "stat", "content": "8×" },
+    { "type": "subline", "content": "Conversion drops when WhatsApp replies wait past five minutes." },
+    { "type": "cta", "content": "Is your first reply instant?" }
+  ],
+  "copy": { "cta": "Is your first reply instant?" }
+}

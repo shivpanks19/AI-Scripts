@@ -75,15 +75,41 @@ Replace reference **variable_slots** with this post's copy from `creative.elemen
 
 | Element type | Source | Prompt instruction |
 |--------------|--------|-------------------|
-| `headline` | `elements[].content` where `type=headline` | Exact string — do not paraphrase |
-| `subheadline` | `elements[].content` where `type=subheadline` | Exact string |
-| `footer` | `elements[].content` or `brand.brand.website` | Exact string |
-| `stat` | calendar row only if provided | Never invent |
+| `headline` | `elements[]` where `type=headline` | Exact string or `{prefix, highlight}` — do not paraphrase |
+| `subheadline` | `type=subheadline` | Exact string |
+| `body` | `type=body` | Full paragraph — `brand-editorial-full` only |
+| `tagline` | `type=tagline` | Exact string |
+| `insight_callout` | `type=insight_callout` | Icon + prefix/highlight/suffix exact |
+| `icon_row` | `type=icon_row` | Each `{icon, label}` exact — no paraphrase |
+| `logo` | `elements[]` where `type=logo` | **COMPOSITE ONLY (Phase 9a)** — copy-lock table only; omit from Generation prompt when `logo.composition.enabled` |
+| `footer` / `url` | `elements[]` or `brand.brand.website` | Exact string |
 | `cta_button` | `creative.copy.cta` | Label only if zone exists in reference |
+
+**Layout template:** When `layout_template` is `brand-editorial-full`, include **all zones** in the copy-lock table. See [creative-layout-templates.md](./creative-layout-templates.md).
 
 Write an **ON-IMAGE COPY — MANDATORY** table in `{slug}-prompt.md` with resolved Brand DNA hex per zone.
 
 Remove or strike through the reference prompt's "Reference copy (replace in Phase 8)" block in the final generation prompt — only merged copy appears in **Generation prompt**.
+
+### Step 4b — Logo-safe zone (when `logo.composition.enabled`)
+
+When `BRAND_DNA.json` → `logo.composition.enabled` is `true`:
+
+1. Include `layout_spec` (or infer from Creative DNA) with `logo.position` and `logoZone` normalized coordinates.
+2. Add to **Generation prompt** (mandatory):
+
+```
+LOGO SAFE ZONE (reserved — do not render any logo):
+Reserve the designated logo-safe area for a separately composited brand logo.
+Do not generate any logo, watermark, brand mark, text-based brand identity, or substitute symbol in this area.
+Keep important visual subjects and critical details outside the reserved logo area.
+Normalized logo zone: x={logoZone.x}, y={logoZone.y}, width={logoZone.width}, height={logoZone.height}
+```
+
+3. **Do not** ask the image model to reproduce the logo. Phase 9a composites the real asset via `scripts/compose_brand_assets.py`.
+4. Phase 9 saves `{slug}-background.png`; Phase 9a writes `{slug}.png`.
+
+See [brand-composition/SKILL.md](./brand-composition/SKILL.md).
 
 ### Step 5 — Append brand constraints
 

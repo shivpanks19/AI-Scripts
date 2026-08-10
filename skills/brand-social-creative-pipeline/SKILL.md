@@ -4,16 +4,18 @@ description: >-
   End-to-end pipeline from website/brief to brand identity, social context,
   strategy, calendar, copy, Brand DNA, Creative DNA, image prompts, and generated
   creatives. Use when the user wants a full social media setup for a brand,
-  brand DNA, creative DNA, social calendar with visuals, or to replicate the
-  Swayam brand-to-creative workflow from website + brand identity (Pinterest
+  brand DNA, creative DNA, social calendar with visuals, or to run the full
+  brand-to-creative workflow from website + brand identity (Pinterest references
   references are auto-fetched in Phase 1b — no manual reference images required).
 ---
 
 # Brand → Social → Creative Pipeline
 
-Orchestrates the full workflow: **brand identity → Pinterest references → social context → strategy → calendar → copy → Brand DNA → Creative DNA → prompts → generated images**.
+Orchestrates the full workflow: **brand identity → Pinterest references → social context → trend research → strategy → calendar → copy → Brand DNA → Creative DNA → prompts → generated images**.
 
-**Reference implementation:** `clients/swayam/` (BRAND_DENTITY.md, BRAND_DNA.json, instagram/*/*.CREATIVE_DNA.json)
+**Brand-agnostic rule:** Pipeline skills and reference docs use placeholders (`{client_slug}`, `{pillar}`, `{concept}`). Client-specific copy, domains, product names, and pillars come **only** from the webhook payload and files under `clients/{client_slug}/` — never from hardcoded examples in skill files.
+
+**Reference implementations (examples only):** `clients/swayam/`, `clients/eduhexa/`
 
 **Visual format policy (mandatory):** Single-image dark editorial feed posts only — one PNG per calendar slot. No carousels, stat/KPI cards, or multi-slide formats. See [references/single-image-post-policy.md](references/single-image-post-policy.md).
 
@@ -29,8 +31,10 @@ At the start of every run, set:
 
 | Variable | Resolution |
 |----------|------------|
-| `run_date` | UTC date of invocation (`YYYY-MM-DD`) — **always** used for `plans/`, `references/pinterest/`, `instagram/`, `facebook/`, and `runs/` |
-| `calendar_week` | First post date in calendar (from webhook `calendar_start_date`, else next Monday from `run_date`) — used only inside `content-calendar.md` row dates, not folder names |
+| `run_date` | UTC date of invocation (`YYYY-MM-DD`) — **only** date key for `plans/`, `references/pinterest/`, `instagram/`, `facebook/`, `linkedin/`, and `runs/` |
+| `posts_count` | Number of creatives to produce this run — from webhook `run.posts_per_week`, `run.posts_count`, or strategy; default **3** |
+
+**No publish dates in pipeline mode.** Do not assign Mon/Wed/Fri or `calendar_start_date`. Scheduling happens outside the pipeline (BlackTwist, manual). Each run produces **N slot-based creatives** (`slot_index` 1…N), not a dated calendar week.
 
 Create **new dated subfolders** for this run — never overwrite a prior run's folder:
 
@@ -43,7 +47,7 @@ clients/{client_slug}/
 └── runs/{run_date}/PIPELINE-HANDOFF.md  # Phase 10
 ```
 
-Update `client.json` → `pipeline.last_run`, `pipeline.run_date`, `pipeline.calendar_week`, and `folders` paths for the active run.
+Update `client.json` → `pipeline.last_run`, `pipeline.run_date`, `pipeline.posts_count`, and `folders` paths for the active run.
 
 ### Per-run execution rules
 
@@ -65,12 +69,25 @@ Collect from the user (ask only for missing items):
 | Input | Required | Notes |
 |-------|----------|-------|
 | Website URL | Yes | Fetch homepage, product, pricing if available |
-| Client slug | Optional | take it fromwebsite given `swayamapp.com` → `clients/swayamapp/` |
+| Client slug | Optional | Derive from website domain — e.g. `example.com` → `clients/example/` |
 | Brand files | Optional | Existing decks, logos, ICP docs, feature lists |
 | Platforms | Yes | Instagram, LinkedIn, Meta ads, etc. |
-| Calendar horizon | Yes | `weekly` or `monthly` |
+| `posts_count` | Yes | How many creatives to produce this run (`run.posts_per_week` or `run.posts_count`); default **3** |
+| Calendar horizon | Optional | `weekly` / `monthly` — batch label only; **does not assign publish dates** |
 | Reference creatives | **No** — not required | Phase 1b auto-fetches 5 Pinterest pins from `BRAND_IDENTITY.md`. Optional: user may upload extra refs to merge in Phase 6 |
 | Goals | Optional | Awareness, leads, demos, community |
+| `calendar_mode` | Optional | `discover` (default) \| `preset` \| `preset_strict` — see Phase 3b |
+| `concept_history_runs` | Optional | Prior plan folders to exclude used concepts; default **3** |
+| `campaign.posts` | Optional | Preset calendar slots; dedup in `preset` mode |
+| `creative_territory.preferred_concepts` | Optional | Concept pool for Phase 3b discover mode |
+| `creative_layout.default_template` | Optional | `editorial-minimal` (default) \| `brand-editorial-full` — see [creative-layout-templates.md](references/creative-layout-templates.md) |
+| `creative_layout.reference_image_url` | Optional | Canonical layout reference (required for `brand-editorial-full` on first run) |
+| `run.creative_layout_template` | Optional | Alias for `creative_layout.default_template` |
+| `research.method` | Optional | `exa` \| `rss` \| `both` (default `both`) — Phase 2a trend research |
+| `research.window_days` | Optional | Lookback window for trends; default **14** |
+| `research.keywords` | Optional | Extra search/RSS keywords beyond brand-derived list |
+| `research.rss_feeds` | Optional | Client-specific RSS URLs for Phase 2a |
+| `research.skip` | Optional | Skip Phase 2a only when user explicitly requests static strategy |
 
 Create client scaffold:
 
@@ -88,13 +105,17 @@ clients/{client_slug}/
 ├── linkedin/{run_date}/
 ├── plans/{run_date}/            # Phase 2–4 (new folder each run)
 │   ├── social-media-context.md
+│   ├── trend-research-brief.md
+│   ├── trend-research-brief.json
 │   ├── content-strategy.md
 │   └── content-calendar.md
 └── runs/{run_date}/
     └── PIPELINE-HANDOFF.md      # Phase 10
 ```
 
-Initialize or update `client.json` with `website`, `display_name`, `folders`, `channels`, `pipeline.run_date`, `pipeline.calendar_week`.
+Initialize or update `client.json` with `website`, `display_name`, `folders`, `channels`, `pipeline.run_date`, `pipeline.posts_count`.
+
+**Deprecated in pipeline intake (ignore if present):** `calendar_start_date`, `calendar_week` — do not use for slot assignment or creative folders.
 
 **Reference creatives:** Do not ask the user for Pinterest URLs or layout images at intake. Phase 1b supplies the default reference set after brand identity.
 
@@ -151,38 +172,85 @@ Required sections: Identity, Target Audience, Voice & Tone, Content Pillars, Pla
 
 ---
 
+## Phase 2a — Trend Research
+
+**Skill:** [../brand-trend-research/SKILL.md](../brand-trend-research/SKILL.md)
+
+Runs **after Phase 2**, **before Phase 3**. Surfaces timely category, audience, and news signals for strategy and calendar.
+
+1. Read `BRAND_IDENTITY.md`, `plans/{run_date}/social-media-context.md`, and `client.json`.
+2. Derive `research_keywords[]`; resolve `research.method`, `window_days`, feeds from webhook or `client.json` → `trend_research`.
+3. Run **Exa** (or WebSearch fallback) and/or **RSS** keyword fetch — see brand-trend-research skill.
+4. Write:
+   - `plans/{run_date}/trend-research-brief.md`
+   - `plans/{run_date}/trend-research-brief.json`
+
+**Gate:** Phase 3 blocked until `trend-research-brief.json` exists with `key_trends.length >= 3` (unless `research.skip: true`).
+
+**Skip:** Only when user or webhook sets `research.skip: true` for a static strategy run.
+
+---
+
 ## Phase 3 — Content Strategy
 
 **Skill:** `content-strategy-sms`  
 **Policy:** [references/single-image-post-policy.md](references/single-image-post-policy.md) — **single-image editorial only**
 
-1. Read social media context + brand identity.
+1. Read social media context + brand identity + **`plans/{run_date}/trend-research-brief.json`**.
 2. Ask discovery questions only if gaps remain (goals, performance, competitors, time budget).
 3. Write `clients/{client_slug}/plans/{run_date}/content-strategy.md`:
    - Content pillars + balance ratios
-   - Topic clusters per pillar
+   - Topic clusters per pillar — **seed from `topic_clusters_suggested[]` in trend brief**
    - Weekly content mix per platform — **every slot: single-image dark editorial 1:1**
-   - Differentiation (voice positioning, content gaps, underserved segments)
+   - Differentiation (voice positioning, content gaps from `emerging_trends[]`, underserved segments)
+   - Header line: `**Trend research ref:** plans/{run_date}/trend-research-brief.md`
 4. Under **Content formats**, allow only: `single-image editorial feed post (1:1, dark)`. Do not plan carousels, stat heroes, or KPI cards.
 5. Slug pattern for creatives: `{topic-kebab}-editorial`.
 
 ---
 
+## Phase 3b — Pre-calendar setup (mandatory before Phase 4)
+
+**Skill:** [references/pre-calendar-setup/SKILL.md](references/pre-calendar-setup/SKILL.md)
+
+Runs **after Phase 3**, **before Phase 4**. Prevents repeat headlines across runs.
+
+1. Load all prior `clients/{client_slug}/plans/*/content-calendar.md` (exclude current `{run_date}`).
+2. Build `used_headlines[]` from on-image copy + slugs in those files.
+3. Load `preferred_concepts[]` from webhook `creative_territory.preferred_concepts` or `BRAND_IDENTITY.md`.
+4. Remove concepts used in the last **N** runs (`concept_history_runs`, default **3**).
+5. Read this week's pillar mix from `plans/{run_date}/content-strategy.md`.
+6. Pick `posts_count` unused concepts matching pillar rotation (or dedupe-substitute webhook `campaign.posts`).
+7. Write `plans/{run_date}/pre-calendar-setup-brief.json` **before** `content-calendar.md`.
+
+**Webhook fields:**
+
+| Field | Default | Effect |
+|-------|---------|--------|
+| `calendar_mode` | `discover` (no `campaign.posts`) / `preset` (has `campaign.posts`) | Full setup vs preset-with-dedup |
+| `concept_history_runs` | `3` | How many prior plan folders to scan for used concepts |
+| `campaign.posts` | — | Preset slots; dedup in `preset` mode, verbatim only in `preset_strict` |
+
+**Gate:** Phase 4 blocked until `pre-calendar-setup-brief.json` exists and `selected_slots[]` has no headline collisions with `used_headlines[]` (unless `preset_strict`).
+
+---
+
 ## Phase 4 — Content Calendar
 
-**Skill:** `content-calendar-sms`  
-**Policy:** [references/single-image-post-policy.md](references/single-image-post-policy.md) — **single-image editorial only**
+**Skill:** `content-calendar-sms` (pipeline mode)  
+**Prerequisite:** [references/pre-calendar-setup/SKILL.md](references/pre-calendar-setup/SKILL.md) — Phase 3b must complete first
 
-1. Read strategy + context.
-2. Build **weekly** or **monthly** calendar per user request.
-3. Write `clients/{client_slug}/plans/{run_date}/content-calendar.md`.
-4. **One calendar row = one slug = one PNG** — no carousel slides, no stat cards.
+1. Run **pre-calendar-setup** → `plans/{run_date}/pre-calendar-setup-brief.json`.
+2. Invoke **content-calendar-sms** pipeline mode — read `selected_slots[]` from the brief and write `content-calendar.md`.
+3. Do not invent topics outside the brief. See `content-calendar-sms` for calendar file schema, pin refs, and asset checklist.
 
-Each calendar row must include:
+**Gate:** `pre-calendar-setup-brief.json` must exist before Phase 4 starts.
+
+Each content slot row must include:
 
 | Field | Example |
 |-------|---------|
-| Date / day | 2026-08-08 |
+| Slot | 1 |
 | Platform | instagram |
 | Pillar | educational |
 | Topic / angle | AI automation for admissions |
@@ -190,9 +258,18 @@ Each calendar row must include:
 | `creative_template_ref` | `{topic-kebab}-editorial` |
 | Copy type | post |
 
+**Do not include** publish dates, weekdays, or `calendar_start_date` in pipeline `content-calendar.md`.
+
 **Forbidden format values:** `stat-hero`, `carousel`, `carousel cover`, `kpi-grid`, `phone-mockup`, `dashboard-split`.
 
-On-image copy per row: headline + subheadline + footer URL (2–3 lines). No fake stats on image.
+On-image copy per row depends on **layout template** (default `editorial-minimal`):
+
+| Template | Copy zones |
+|----------|------------|
+| `editorial-minimal` | headline + subheadline + footer URL |
+| `brand-editorial-full` | logo, tagline, headline+highlight, body, insight callout, icon_row, footer |
+
+See [references/creative-layout-templates.md](references/creative-layout-templates.md). No fake stats on image.
 
 Reserve 20–30% slots as `[Flexible]`. Map visual slots to a `creative_template_ref` ending in `-editorial`.
 
@@ -312,7 +389,7 @@ For each calendar entry with a visual:
 **Creative ID:** `{slug}`
 **DNA merge:** reference-prompt + BRAND_DNA.json + {slug}.CREATIVE_DNA.json
 **Reference prompt:** {reference_prompt_ref}
-**Calendar ref:** content-calendar.md → [date row]
+**Calendar ref:** content-calendar.md → slot {slot_index}
 
 ## ON-IMAGE COPY — MANDATORY (exact)
 [Table from elements[] + Brand DNA hex per zone]
@@ -337,24 +414,59 @@ See [references/prompt-merge.md](references/prompt-merge.md) for merge algorithm
 
 ---
 
-## Phase 9 — Generate images
+## Phase 9 — Generate images (background layer)
 
 For each `{slug}-prompt.md`:
 
 1. Use the LLM's **image generation tool** (e.g. `GenerateImage`).
 2. Build `description` **only** from the **Generation prompt** section — prompt-driven, no reference image attachment. See [references/reference-fidelity.md](references/reference-fidelity.md).
-3. **Do not** pass `reference_image_paths` — the pin was reverse-engineered to text in Phase 6a.
-4. Match `creative_dna.canvas.ratio`:
+3. **Do not** pass `reference_image_paths` for layout pins — the pin was reverse-engineered to text in Phase 6a.
+4. **Do not** pass logo reference images — logo is composited in Phase 9a. See [references/brand-composition/SKILL.md](references/brand-composition/SKILL.md).
+5. Match `creative_dna.canvas.ratio`:
    - `4:5` → aspect_ratio `3:4` or `9:16` per tool support
    - `1:1` → `1:1`
    - `16:9` → `16:9`
-5. Save output to `{slug}.png` next to Creative DNA.
+6. **Output path:**
+   - When `BRAND_DNA.json` → `logo.composition.enabled` is `true`: save `{slug}-background.png` (AI visual only — no logo)
+   - Otherwise: save `{slug}.png` (legacy direct output)
 
 **Color gate:** If the prompt or description contains hex values not present in `BRAND_DNA.json`, stop and re-run Phase 8 merge.
+
+**Logo gate:** When composition is enabled, Generation prompt must include logo-safe zone reservation and must **not** instruct the model to render any brand logo.
 
 **Quality loop:** If generated copy drifts from the copy lock, note in prompt that exact text must appear; offer Figma composite for pixel-perfect type.
 
 **Do not** invent fake metrics unless provided in the calendar brief.
+
+---
+
+## Phase 9a — Deterministic brand composition (logo overlay)
+
+**Skill:** [references/brand-composition/SKILL.md](references/brand-composition/SKILL.md)  
+**Script:** `scripts/compose_brand_assets.py`
+
+Runs **after Phase 9** when `logo.composition.enabled` (or legacy `logo.overlay.enabled`) is `true`.
+
+```
+{slug}-background.png  +  layout_spec  +  BRAND_DNA logo asset
+        ↓
+compose_brand_assets.py
+        ↓
+{slug}.png  (+ {slug}.layout.json, optional {slug}-debug.png)
+```
+
+Per slug:
+
+1. Read `{slug}-background.png`, `BRAND_DNA.json`, `{slug}.CREATIVE_DNA.json` (or `{slug}.layout.json`).
+2. Resolve semantic logo position (`TOP_LEFT`, `TOP_RIGHT`, etc.) → normalized zone via `scripts/lib/logo_presets.py`.
+3. Load real logo asset (SVG preferred, else PNG). Crop to visible bounds. Contain-fit inside zone.
+4. Optional `--debug` writes zone/bbox overlay PNG.
+5. Validate aspect ratio, canvas bounds, safe zone — fail loudly on error.
+6. Write final `{slug}.png`. Mirror to `facebook/{run_date}/`.
+
+**Skip when:** `logo.composition.enabled` is `false` or absent (Phase 9 writes final PNG directly).
+
+**Hard rule:** The AI is never the source of truth for the logo. Only `compose_brand_assets.py` places the real brand file.
 
 ---
 
@@ -418,14 +530,17 @@ Copy and track:
 - [ ] Phase 1b: 5 Pinterest pins → references/pinterest/ (pinterest-reference-fetch)
 - [ ] Phase 6a: {pin}-reference-prompt.md per pin (reference-creative-prompt)
 - [ ] Phase 2: social-media-context (social-media-context-sms)
+- [ ] Phase 2a: trend-research-brief.md + .json (brand-trend-research)
 - [ ] Phase 3: content-strategy.md (content-strategy-sms)
-- [ ] Phase 4: content-calendar.md (content-calendar-sms)
+- [ ] Phase 3b: pre-calendar-setup-brief.json (pre-calendar-setup)
+- [ ] Phase 4: content-calendar.md (content-calendar-sms pipeline mode, from pre-calendar-setup brief)
 - [ ] Phase 5: BRAND_DNA.json
 - [ ] Phase 6: {slug}.CREATIVE_DNA.json per reference/template
 - [ ] Phase 7: captions/posts per calendar slot
 - [ ] Phase 7b: caption scores per slug (caption-score)
 - [ ] Phase 8: {slug}-prompt.md per visual
-- [ ] Phase 9: {slug}.png generated
+- [ ] Phase 9: {slug}-background.png (or {slug}.png when composition disabled)
+- [ ] Phase 9a: compose_brand_assets.py → {slug}.png (brand-composition)
 - [ ] Phase 9b: GCS upload + Firestore publish per slug (firestore-creative-publish)
 - [ ] Phase 10: Handoff summary
 ```
@@ -440,7 +555,7 @@ Copy and track:
 |--------------|----------|
 | "Brand only" | Phase 1 → 1b → 5 (still use new `{run_date}` folders) |
 | "Pinterest refs only" | Phase 1b into `references/pinterest/{run_date}/` |
-| "Calendar + creatives" | Phase 4 → 9 (new `{run_date}` plans + `{calendar_week}` creatives) |
+| "Calendar + creatives" | Phase 3b → 4 → 9 (new `{run_date}` plans + `{run_date}` creatives) |
 | "New creative from reference" | Phase 6 → 9 |
 | "New variant of existing template" | Phase 8 → 9 (swap variable_slots) |
 | "Copy only" | Phase 7 → 7b |
@@ -462,6 +577,8 @@ Copy and track:
 - [references/reference-creative-prompt/SKILL.md](references/reference-creative-prompt/SKILL.md) — Phase 6a pin → regeneration prompt
 - [references/reference-fidelity.md](references/reference-fidelity.md) — prompt-driven generation (Phase 6a text → Phase 8 merge → Phase 9, no reference image attachment)
 - [references/prompt-merge.md](references/prompt-merge.md) — three-layer merge (reference prompt + brand colors + content)
+- [references/pre-calendar-setup/SKILL.md](references/pre-calendar-setup/SKILL.md) — Phase 3b dedup + concept selection before calendar
+- [../brand-trend-research/SKILL.md](../brand-trend-research/SKILL.md) — Phase 2a Exa/RSS trend research before strategy
 - [references/caption-score/SKILL.md](references/caption-score/SKILL.md) — score post copy before Firestore publish
 - [references/firestore-creative-publish/SKILL.md](references/firestore-creative-publish/SKILL.md) — GCS upload + Firestore publish after Phase 9
 - `clients/swayam/` — canonical example

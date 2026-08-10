@@ -1,6 +1,6 @@
 # Client File Structure
 
-Canonical layout (Swayam reference: `clients/swayam/`).
+Canonical layout for any brand under `clients/{client_slug}/`. Worked examples: `clients/swayam/`, `clients/eduhexa/`.
 
 **Every pipeline invocation creates a new `{run_date}` folder** — never overwrite prior runs.
 
@@ -22,22 +22,28 @@ clients/{client_slug}/
 │
 ├── plans/{run_date}/              # Phase 2–4 — new folder per run
 │   ├── social-media-context.md
+│   ├── trend-research-brief.md        # Phase 2a
+│   ├── trend-research-brief.json      # Phase 2a — input to strategy + calendar
 │   ├── content-strategy.md
-│   └── content-calendar.md
+│   ├── pre-calendar-setup-brief.json   # Phase 3b — dedup + selected slots
+│   └── content-calendar.md          # Phase 4 — from brief only
 │
-├── instagram/{calendar_week}/     # Phase 6–9b — calendar week folder
+├── instagram/{run_date}/     # Phase 6–9b — same run_date as plans
 │   ├── {slug}.CREATIVE_DNA.json
 │   ├── {slug}-prompt.md           # Phase 8 — merged reference + brand + content
+│   ├── {slug}-background.png      # Phase 9 — AI visual (when logo composition enabled)
+│   ├── {slug}.layout.json         # Phase 9a — normalized layout + resolved pixels
+│   ├── {slug}-debug.png           # Phase 9a — optional debug overlay
 │   ├── {slug}-post.md
 │   ├── {slug}-caption-scores.json
 │   ├── {slug}.png
 │   └── publish-log.md
 │
-├── facebook/{calendar_week}/
+├── facebook/{run_date}/
 │   ├── {slug}-post.md
 │   └── {slug}.png
 │
-├── linkedin/{calendar_week}/
+├── linkedin/{run_date}/
 │   ├── {slug}-post.md
 │   └── {slug}.png
 │
@@ -49,9 +55,11 @@ clients/{client_slug}/
 
 | Variable | Value |
 |----------|-------|
-| `run_date` | UTC date when the agent is invoked (`YYYY-MM-DD`) |
-| `calendar_week` | First post date in calendar (webhook `calendar_start_date`, else next Monday) |
-| Creative folders | `instagram/{calendar_week}/` — not `run_date` |
+| `run_date` | UTC date when the agent is invoked (`YYYY-MM-DD`) — **only** folder key for plans, references, creatives, and runs |
+| `posts_count` | Number of creatives this run (`run.posts_per_week` or `run.posts_count`; default **3**) |
+| Creative folders | `instagram/{run_date}/`, `facebook/{run_date}/` — same `run_date` as `plans/{run_date}/` |
+
+**Deprecated:** `calendar_week`, `calendar_start_date` — do not use for folder names or slot assignment.
 
 Prior runs remain on disk under their own folders.
 
@@ -103,6 +111,13 @@ See [prompt-merge.md](./prompt-merge.md).
 After each `{slug}.png` is generated, run [firestore-creative-publish/SKILL.md](./firestore-creative-publish/SKILL.md).
 
 Phase 7b ([caption-score/SKILL.md](./caption-score/SKILL.md)) must complete before Phase 9b.
+
+## Pre-calendar setup (Phase 3b)
+
+Before `content-calendar.md`, run [pre-calendar-setup/SKILL.md](./pre-calendar-setup/SKILL.md) then [content-calendar-sms](../../../content-calendar-sms/SKILL.md) (pipeline mode):
+
+- Pre-calendar-setup scans prior calendars and writes `pre-calendar-setup-brief.json`
+- content-calendar-sms renders `content-calendar.md` from `selected_slots[]` exactly
 
 ## Schema copies
 

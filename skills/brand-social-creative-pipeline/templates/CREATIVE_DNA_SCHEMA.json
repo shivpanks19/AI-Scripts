@@ -91,7 +91,28 @@
       }
     },
 
-    "structure_type": "string — layout archetype for this specific image, e.g. stat-hero-human-product | editorial-search-hero | myth-truth-list | split-comparison",
+    "structure_type": "string — layout archetype for this specific image, e.g. stat-hero-human-product | editorial-search-hero | myth-truth-list | split-comparison | brand-editorial-full",
+
+    "layout_spec": {
+      "canvas": { "width": "number", "height": "number", "ratio": "string" },
+      "logo": {
+        "enabled": "boolean",
+        "position": "TOP_LEFT | ... | BOTTOM_RIGHT",
+        "size": "SMALL | MEDIUM | LARGE",
+        "variant": "LIGHT | DARK | AUTO",
+        "zone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+        "maxWidth": "number 0-1",
+        "maxHeight": "number 0-1",
+        "fit": "contain",
+        "margin": "number 0-1"
+      },
+      "logoZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+      "composition": {
+        "subjectZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+        "headlineZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+        "bodyZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" }
+      }
+    },
 
     "composition": {
       "layout_flow": "top-to-bottom | split | center-stack | editorial-grid",

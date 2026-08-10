@@ -1,0 +1,180 @@
+{
+  "_meta": {
+    "type": "brand_dna",
+    "version": "1.0",
+    "brand_id": "cybernetyx",
+    "brand_name": "Cybernetyx",
+    "schema_ref": "./BRAND_DNA_SCHEMA.json",
+    "source_ref": "./BRAND_IDENTITY.md",
+    "scope": "Invariant across all Cybernetyx creatives. Import into every render; never override per creative.",
+    "created": "2026-08-10",
+    "updated": "2026-08-10"
+  },
+  "brand": {
+    "name": "Cybernetyx",
+    "descriptor": "AI Smart Panel",
+    "agency": null,
+    "tagline_product": "Welcome to the Era of Interactive Intelligence",
+    "tagline_agency": null,
+    "promise": "EyeRIS combines interactive display technology, AI-powered teaching assistance, and classroom tools into one intelligent teaching environment.",
+    "website": "cybernetyx.com"
+  },
+  "strategy": {
+    "purpose": "Bring intelligence into physical spaces — transforming classrooms into interactive, AI-enabled learning environments.",
+    "positioning": "For education decision-makers evaluating smart classroom technology — Cybernetyx EyeRIS is the AI Smart Panel that moves institutions from smart boards to intelligent classrooms.",
+    "personality": [
+      "intelligent",
+      "forward-looking",
+      "educational",
+      "technological",
+      "human-centered"
+    ],
+    "values": [
+      {
+        "name": "Teacher empowerment",
+        "definition": "Technology assists educators; teachers remain the hero"
+      },
+      {
+        "name": "Practical intelligence",
+        "definition": "AI solves real teaching tasks — plans, quizzes, assessments"
+      },
+      {
+        "name": "Integrated simplicity",
+        "definition": "One panel replaces fragmented classroom tools"
+      },
+      {
+        "name": "Classroom proof",
+        "definition": "Show teaching outcomes, not just hardware specs"
+      },
+      {
+        "name": "Forward-looking credibility",
+        "definition": "Confident innovation without hype language"
+      }
+    ]
+  },
+  "visual_identity": {
+    "background": "#F8FAFC",
+    "primary": "#1565C0",
+    "primary_light": "#335AFB",
+    "primary_dark": "#0B1633",
+    "secondary": "#335AFB",
+    "secondary_light": "#5B7BFF",
+    "secondary_dark": "#0D47A1",
+    "revenue": "#F59E0B",
+    "revenue_light": "#FBBF24",
+    "revenue_dark": "#D97706",
+    "ai": "#6366F1",
+    "ai_muted": "#E7E3F4",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "text_muted": "#94A3B8",
+    "neutral_50": "#F8FAFC",
+    "neutral_100": "#F1F5F9",
+    "neutral_200": "#E2E8F0",
+    "success": "#22C55E",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "style": "premium education technology — dark editorial canvas, electric blue accents, classroom-forward"
+  },
+  "typography": {
+    "family": "Inter",
+    "fallback": ["DM Sans", "system-ui", "sans-serif"],
+    "mono": "JetBrains Mono",
+    "wordmark_weight": "bold",
+    "headline_weight": "bold",
+    "body_weight": "regular",
+    "letter_spacing_wordmark": "-1%",
+    "hierarchy": {
+      "display": { "size_px": "44-52", "weight": "bold" },
+      "h1": { "size_px": 36, "weight": "bold" },
+      "h2": { "size_px": 28, "weight": "bold" },
+      "h3": { "size_px": 20, "weight": "semibold" },
+      "body": { "size_px": "15-16", "weight": "regular" },
+      "small": { "size_px": 13, "weight": "regular" }
+    }
+  },
+  "logo": {
+    "wordmark": "Cybernetyx",
+    "descriptor_size_ratio": 0.45,
+    "icon_concept": "Modern tech wordmark with blue accent",
+    "clear_space": "minimum height of logo on all sides",
+    "min_digital_width_px": 100,
+    "min_icon_px": 40,
+    "assets": {
+      "wordmark": null
+    },
+    "overlay": {
+      "workflow": "Generate creative WITHOUT logo in AI prompt. Composite logo bottom-right post-generation if asset available.",
+      "placement": "bottom-right",
+      "width_ratio": 0.18
+    },
+    "dont": [
+      "stretch logo",
+      "recolor logo away from brand primary blue",
+      "place on busy imagery without scrim"
+    ]
+  },
+  "ui_patterns": {
+    "accent_rule": "#5B7BFF",
+    "ai_surface": "#6366F1",
+    "ai_surface_muted": "#E7E3F4",
+    "border_radius": { "sm": 4, "md": 8, "lg": 12 },
+    "ai_indicator": "Bright AI badge in ai color",
+    "classroom_motif": "subtle panel glow lines at 15% opacity"
+  },
+  "voice": {
+    "tone": "intelligent, practical, teacher-empowering — confident without hype",
+    "headline_tone": "category-reframing editorial — specific classroom moments",
+    "cta_primary": "Request a Demo",
+    "cta_secondary": "Explore EyeRIS",
+    "prefer": [
+      "intelligent classroom",
+      "AI-powered teaching",
+      "interactive learning",
+      "AI smart panel",
+      "teaching assistant",
+      "Bright AI",
+      "EyeRIS",
+      "classroom intelligence"
+    ],
+    "avoid": [
+      "revolutionary",
+      "game-changing",
+      "disruptive",
+      "cutting-edge",
+      "AI will replace teachers",
+      "teachers are outdated"
+    ]
+  },
+  "imagery": {
+    "prefer": [
+      "real classrooms with teachers using EyeRIS",
+      "interactive teaching moments",
+      "STEM visualization on large screens",
+      "dark editorial layouts with blue accents",
+      "teacher-as-hero compositions"
+    ],
+    "avoid": [
+      "generic AI brain graphics",
+      "generic corporate stock photography",
+      "handshake imagery",
+      "futuristic hologram clichés",
+      "robots replacing teachers",
+      "overly abstract AI visuals"
+    ],
+    "agent_presence": "Bright AI as teaching assistant — supportive UI, not autonomous teacher replacement"
+  },
+  "constraints": {
+    "accessibility": "White text on #0B1633 — AAA for headlines; muted #94A3B8 for secondary only",
+    "compliance": [
+      "Only use approved numerical claims from proof points",
+      "No guaranteed learning outcomes or ROI claims",
+      "Teacher empowerment messaging mandatory"
+    ],
+    "naming": [
+      "EyeRIS for product hardware",
+      "Bright AI for AI teaching features",
+      "BrightClass for app ecosystem"
+    ]
+  }
+}

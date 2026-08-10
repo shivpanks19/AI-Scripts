@@ -8,7 +8,7 @@
     "source_ref": "./BRAND_IDENTITY.md",
     "scope": "Invariant across all Cybernetyx creatives. Import into every render; never override per creative.",
     "created": "2026-08-10",
-    "updated": "2026-08-10"
+    "updated": "2026-08-11"
   },
   "brand": {
     "name": "Cybernetyx",
@@ -20,14 +20,15 @@
     "website": "cybernetyx.com"
   },
   "strategy": {
-    "purpose": "Bring intelligence into physical spaces — transforming classrooms into interactive, AI-enabled learning environments.",
+    "purpose": "Build intelligent technology for physical spaces — transforming classrooms into interactive, AI-enabled learning environments.",
     "positioning": "For education decision-makers evaluating smart classroom technology — Cybernetyx EyeRIS is the AI Smart Panel that moves institutions from smart boards to intelligent classrooms.",
     "personality": [
       "intelligent",
-      "forward-looking",
+      "thought-provoking",
+      "confident",
       "educational",
-      "technological",
-      "human-centered"
+      "human-centered",
+      "premium"
     ],
     "values": [
       {
@@ -54,12 +55,13 @@
   },
   "visual_identity": {
     "background": "#F8FAFC",
-    "primary": "#1565C0",
-    "primary_light": "#335AFB",
-    "primary_dark": "#0B1633",
-    "secondary": "#335AFB",
-    "secondary_light": "#5B7BFF",
-    "secondary_dark": "#0D47A1",
+    "primary": "#1746C7",
+    "primary_light": "#3D7BFF",
+    "primary_dark": "#020B2D",
+    "primary_mid": "#071642",
+    "secondary": "#1746C7",
+    "secondary_light": "#3D7BFF",
+    "secondary_dark": "#071642",
     "revenue": "#F59E0B",
     "revenue_light": "#FBBF24",
     "revenue_dark": "#D97706",
@@ -115,7 +117,7 @@
     ]
   },
   "ui_patterns": {
-    "accent_rule": "#5B7BFF",
+    "accent_rule": "#3D7BFF",
     "ai_surface": "#6366F1",
     "ai_surface_muted": "#E7E3F4",
     "border_radius": { "sm": 4, "md": 8, "lg": 12 },
@@ -123,7 +125,7 @@
     "classroom_motif": "subtle panel glow lines at 15% opacity"
   },
   "voice": {
-    "tone": "intelligent, practical, teacher-empowering — confident without hype",
+    "tone": "intelligent, thought-provoking, confident, educational, human-centered, premium — without hype",
     "headline_tone": "category-reframing editorial — specific classroom moments",
     "cta_primary": "Request a Demo",
     "cta_secondary": "Explore EyeRIS",
@@ -135,13 +137,17 @@
       "teaching assistant",
       "Bright AI",
       "EyeRIS",
-      "classroom intelligence"
+      "BrightClass",
+      "classroom intelligence",
+      "interactive teaching",
+      "GenAI for education"
     ],
     "avoid": [
       "revolutionary",
       "game-changing",
       "disruptive",
       "cutting-edge",
+      "AI replaces teachers",
       "AI will replace teachers",
       "teachers are outdated"
     ]
@@ -165,7 +171,7 @@
     "agent_presence": "Bright AI as teaching assistant — supportive UI, not autonomous teacher replacement"
   },
   "constraints": {
-    "accessibility": "White text on #0B1633 — AAA for headlines; muted #94A3B8 for secondary only",
+    "accessibility": "White text on #020B2D — AAA for headlines; muted #94A3B8 for secondary only",
     "compliance": [
       "Only use approved numerical claims from proof points",
       "No guaranteed learning outcomes or ROI claims",

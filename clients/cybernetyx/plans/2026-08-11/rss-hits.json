@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-08-10T19:58:06.670921+00:00",
+  "window_days": 14,
+  "keywords": [
+    "smart classroom",
+    "interactive panel",
+    "teacher AI",
+    "edtech"
+  ],
+  "hits": [
+    {
+      "title": "This\u00a0former\u00a0notorious red-light district\u00a0is now\u00a0one of the world\u2019s top AI hubs",
+      "url": "https://techcrunch.com/2026/08/09/this-former-notorious-red-light-district-is-now-one-of-the-worlds-top-ai-hubs/",
+      "description": "More than 20 years ago, King's Cross was one of the seediest area's in London. Now it's sprouting something new.",
+      "published": "2026-08-09T13:00:00+00:00",
+      "score": 3,
+      "feed": "https://techcrunch.com/feed/"
+    },
+    {
+      "title": "The AI safety test is becoming a safety risk",
+      "url": "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+      "description": "AI agents are escaping cybersecurity testing environments and reaching real-world systems, raising questions about whether safety infrastructure, industry standards, and regulation can keep pace with increasingly powerful models.",
+      "published": "2026-08-09T14:30:00+00:00",
+      "score": 3,
+      "feed": "https://techcrunch.com/feed/"
+    },
+    {
+      "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
+      "url": "https://techcrunch.com/2026/08/10/discovered-materials-is-playing-ai-whack-a-mole-to-hunt-cooler-chips/",
+      "description": "Discovered Materials raised $9 million to fund the hunt for more novel materials to build more efficient chips.",
+      "published": "2026-08-10T12:00:00+00:00",
+      "score": 3,
+      "feed": "https://techcrunch.com/feed/"
+    },
+    {
+      "title": "Mark Zuckerberg attacks 'closed' AI rivals as Meta returns to open models",
+      "url": "https://www.ft.com/content/4e3957f8-ea7c-4c46-a3de-cdce8e526878",
+      "description": "<p><a href=\"https://archive.is/20LOJ\" rel=\"nofollow\">https://archive.is/20LOJ</a><p><a href=\"https://www.meta.com/thefutureisforeveryone/\" rel=\"nofollow\">https://www.meta.com/thefutureisforeveryone/</a></p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=49243880\">https://news.ycombinator.com/item?id=49243880</a></p>\n<p>Points: 164</p>\n<p># Comments: 186</p>",
+      "published": "2026-08-10T14:06:22+00:00",
+      "score": 3,
+      "feed": "https://hnrss.org/frontpage"
+    },
+    {
+      "title": "Letter to Governor Abbott on responsible AI infrastructure in Texas",
+      "url": "https://openai.com/index/responsible-ai-infrastructure-texas/",
+      "description": "<p>Article URL: <a href=\"https://openai.com/index/responsible-ai-infrastructure-texas/\">https://openai.com/index/responsible-ai-infrastructure-texas/</a></p>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=49244308\">https://news.ycombinator.com/item?id=49244308</a></p>\n<p>Points: 60</p>\n<p># Comments: 85</p>",
+      "published": "2026-08-10T14:38:20+00:00",
+      "score": 3,
+      "feed": "https://hnrss.org/frontpage"
+    },
+    {
+      "title": "Meta\u2019s new Glimmer AI model offers a hint at Zuckerberg\u2019s personal intelligence vision",
+      "url": "https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/",
+      "description": "Meta\u2019s new open-weight Muse Glimmer model offers a glimpse of Mark Zuckerberg\u2019s personal superintelligence vision, as well as  the emerging divide between AI users can own and access.",
+      "published": "2026-08-10T16:20:13+00:00",
+      "score": 3,
+      "feed": "https://techcrunch.com/feed/"
+    },
+    {
+      "title": "Launch HN: Stoa Markets (YC S26) \u2013 A Marketplace for GPUs and AI Servers",
+      "url": "https://www.stoaexchange.com",
+      "description": "<p>Hi HN, we\u2019re Eren, Berat and Kaan. We\u2019re building Stoa (<a href=\"https://www.stoaexchange.com\">https://www.stoaexchange.com</a>), a marketplace for new and used GPUs and AI servers.<p>GPUs are the collateral in the data center buildout. Today, financing terms mostly depend on the offtaker, meaning the company that has committed to use the compute.<p>If that company is a hyperscaler, the financing can look investment grade. If it\u2019s a smaller cloud or startup, terms get expensive fast, even with the same hardware as collateral.<p>The lender\u2019s problem is pretty reasonable. If the borrower defaults and we need to sell these servers, what can we actually get for them? There isn\u2019t a good answer today.<p>We started brokering GPU deals to understand why. It was much more manual than we expected. The hardware is still traded through phone calls, forwarded spreadsheets and long email threads.<p>One week, a seller quoted us $200k for a server node and another quoted $240k for what looked like the same thing. Neither was necessarily wrong. They had different information and could only see their own corner of the market.<p>Before we could compare the quotes, we had to sort out the configuration, condition, warranty, location and delivery terms. It\u2019s the same information Kelley Blue Book attaches to a used-car price through the year, trim, mileage and condition. \u201cAn H100 server\u201d isn\u2019t enough information to know what something is worth, just as \u201ca used BMW\u201d isn\u2019t.<p>This is also just a bad way to buy or sell hardware. A buyer looking for the best price shouldn\u2019t have to contact several brokers and dealers separately, repeat the same request and then untangle a pile of different quotes. Sellers shouldn\u2019t have to search for demand one buyer at a time. A market of this size deserves better liquidity.<p>Stoa puts the request into one format and sends it to dealers that have gone through know-your-business (KYB) checks. We verify the company, who owns it and who is allowed to trade for it. Before the request goes out, the buyer confirms the exact configuration, quantity, condition, warranty, location, delivery terms and what will be checked during inspection. Dealers return firm quotes against that same request without seeing each other\u2019s bids. Once a quote is accepted, payment, shipping, delivery and inspection are then tracked through settlement. We don\u2019t take possession of the hardware.<p>We got more than $300M in requests for quotes (RFQs) during our first month.<p>The immediate goal is to make buying and selling this hardware less painful. As trades build up, they also leave lenders with actual resale evidence instead of list prices and one off appraisals.<p>We knew from the beginning that this couldn\u2019t be a software only marketplace. GPU trading runs on relationships, and inventory isn\u2019t shown to just anyone. Dealers need to trust the people bringing them clients, and clients need to trust that quotes will actually turn into trades. We built those relationships over time by brokering deals ourselves. Stoa gives people a cleaner way to trade, from the first RFQ through settlement, but it doesn\u2019t replace the trust underneath. Those relationships, and the history of who actually follows through, are a big part of our process.<p>We\u2019ve known each other for more than ten years. We have founded companies, traded interest rate derivatives, built trading and pricing systems for oil and gas. We learned GPU trading by doing the deals ourselves, and Stoa grew out of the problems we kept running into.<p>We charge a tiered fee on completed trades, with lower fees at higher volumes. It\u2019s free to sign up at <a href=\"https://www.stoaexchange.com/signup\">https://www.stoaexchange.com/signup</a>. If you\u2019ve bought, sold, financed or had to liquidate GPUs, would be great to hear your take!</p>\n<hr>\n<p>Comments URL: <a href=\"https://news.ycombinator.com/item?id=49246057\">https://news.ycombinator.com/item?id=49246057</a></p>\n<p>Points: 48</p>\n<p># Comments: 22</p>",
+      "published": "2026-08-10T16:35:27+00:00",
+      "score": 3,
+      "feed": "https://hnrss.org/frontpage"
+    }
+  ],
+  "errors": [
+    {
+      "feed": "https://www.edweek.org/rss/articles",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "feed": "https://www.edsurge.com/articles.rss",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ]
+}

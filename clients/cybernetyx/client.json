@@ -2,41 +2,43 @@
   "slug": "cybernetyx",
   "display_name": "Cybernetyx",
   "website": "https://www.cybernetyx.com",
+  "primary_product": "EyeRIS Interactive Flat Panel",
   "folders": {
     "root": "clients/cybernetyx",
     "brand": "clients/cybernetyx/BRAND_IDENTITY.md",
     "brand_dna": "clients/cybernetyx/BRAND_DNA.json",
-    "references_pinterest": "clients/cybernetyx/references/pinterest/2026-08-10",
-    "plans": "clients/cybernetyx/plans/2026-08-10",
+    "references_pinterest": "clients/cybernetyx/references/pinterest/2026-08-11",
+    "plans": "clients/cybernetyx/plans/2026-08-11",
     "instagram": "clients/cybernetyx/instagram/2026-08-11",
     "facebook": "clients/cybernetyx/facebook/2026-08-11",
-    "runs": "clients/cybernetyx/runs/2026-08-10"
+    "linkedin": "clients/cybernetyx/linkedin/2026-08-11",
+    "runs": "clients/cybernetyx/runs/2026-08-11"
   },
   "channels": {
     "instagram": {
       "handle": "@cybernetyx",
-      "cadence": "3 posts per week",
+      "cadence": "3 posts per batch",
       "formats": ["single-image editorial 1:1"]
     },
     "facebook": {
       "handle": "Cybernetyx",
-      "cadence": "3 posts per week",
+      "cadence": "3 posts per batch",
       "formats": ["single-image editorial 1:1"]
     }
   },
   "pipeline": {
-    "mode": "full",
-    "run_date": "2026-08-10",
-    "calendar_week": "2026-08-11",
-    "last_run": "2026-08-10T17:32:00Z",
+    "mode": "creative_generation",
+    "run_date": "2026-08-11",
+    "last_run": "2026-08-11T20:15:00Z",
     "horizon": "weekly",
-    "posts_per_week": 3,
+    "posts_count": 3,
     "platforms": ["instagram", "facebook"],
-    "goals": ["awareness", "engagement"],
-    "phases_completed": [0, 1, "1b", "6a", 2, 3, 4, 5, 6, 7, "7b", 8, 9, "9b", 10],
-    "webhook": {
-      "outlet_id": "NLQKPp1u8Nw2SQpIBq0R",
-      "triggered": "2026-08-10"
-    }
+    "goals": ["thought leadership", "qualified interest in EyeRIS"],
+    "theme": "From Smart Classrooms to Intelligent Classrooms",
+    "calendar_mode": "discover"
+  },
+  "trend_research": {
+    "method": "rss",
+    "window_days": 14
   }
 }

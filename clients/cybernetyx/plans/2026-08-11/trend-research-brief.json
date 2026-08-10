@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "run_date": "2026-08-11",
+    "method": "rss",
+    "window_days": 14,
+    "source": "plans/2026-08-11/rss-hits.json"
+  },
+  "key_trends": [
+    {
+      "title": "AI in education shifting from hype to responsible deployment",
+      "signal": "Rising discourse on AI safety, agent boundaries, and human oversight in AI systems",
+      "relevance": "Supports Cybernetyx positioning: AI assists teachers; does not replace them",
+      "content_angle": "Contrarian posts on intelligence vs more AI features"
+    },
+    {
+      "title": "Institutions evaluating smart classroom ROI beyond hardware installs",
+      "signal": "Buyer pain: hardware without teaching transformation",
+      "relevance": "Core ICP pain — smart boards without intelligent teaching outcomes",
+      "content_angle": "Smart vs intelligent classroom category framing"
+    },
+    {
+      "title": "Teacher workload and AI-assisted lesson preparation",
+      "signal": "Ongoing teacher pain around prep time and engagement",
+      "relevance": "Bright AI capability — plans, quizzes, assessments as assistant",
+      "content_angle": "Human-centered AI assistant narratives"
+    }
+  ],
+  "topic_clusters_suggested": [
+    "Interactive vs intelligent classroom",
+    "AI as teaching assistant",
+    "Teacher empowerment in AI-enabled classrooms",
+    "Information vs understanding in digital learning",
+    "Classroom intelligence without screen overload"
+  ],
+  "emerging_trends": [
+    "Responsible AI in schools",
+    "Category thought leadership over feature catalogs"
+  ]
+}

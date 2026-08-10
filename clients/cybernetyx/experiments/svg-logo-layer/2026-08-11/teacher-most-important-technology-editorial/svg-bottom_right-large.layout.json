@@ -1,0 +1,70 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 1080,
+    "ratio": "1:1"
+  },
+  "logo": {
+    "enabled": true,
+    "asset": "clients/cybernetyx/references/brand-assets/cnx-white-logo.svg",
+    "position": "BOTTOM_RIGHT",
+    "size": "LARGE",
+    "rotation": 0,
+    "opacity": 1,
+    "zone": {
+      "x": 0.73,
+      "y": 0.88,
+      "width": 0.24,
+      "height": 0.1
+    },
+    "maxWidth": 0.22,
+    "maxHeight": 0.08,
+    "fit": "contain",
+    "treatment": {
+      "type": "none"
+    }
+  },
+  "logoZone": {
+    "x": 0.73,
+    "y": 0.88,
+    "width": 0.24,
+    "height": 0.1
+  },
+  "composition": {
+    "subjectZone": {
+      "x": 0.45,
+      "y": 0.12,
+      "width": 0.52,
+      "height": 0.75
+    },
+    "headlineZone": {
+      "x": 0.05,
+      "y": 0.12,
+      "width": 0.55,
+      "height": 0.22
+    }
+  },
+  "resolved": {
+    "position": "BOTTOM_RIGHT",
+    "size": "LARGE",
+    "rotation": 0.0,
+    "opacity": 1.0,
+    "treatment": {
+      "type": "none"
+    },
+    "asset_format": "svg",
+    "asset_path": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/cybernetyx/references/brand-assets/cnx-white-logo.svg",
+    "logoPixels": {
+      "x": 809,
+      "y": 1005,
+      "width": 238,
+      "height": 53
+    },
+    "logoZonePixels": {
+      "x": 788,
+      "y": 950,
+      "width": 259,
+      "height": 108
+    }
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "experiment": "svg-logo-layer",
+  "client": "cybernetyx",
+  "slug": "teacher-most-important-technology-editorial",
+  "background": "clients/cybernetyx/instagram/2026-08-11/teacher-most-important-technology-editorial-background.png",
+  "svg_asset": "clients/cybernetyx/references/brand-assets/cnx-white-logo.svg",
+  "outputs": [
+    {
+      "file": "svg-top_left-small.png",
+      "position": "TOP_LEFT",
+      "size": "SMALL",
+      "logoPixels": {
+        "x": 32,
+        "y": 22,
+        "width": 130,
+        "height": 29
+      },
+      "zonePixels": {
+        "x": 32,
+        "y": 22,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-top_left-medium.png",
+      "position": "TOP_LEFT",
+      "size": "MEDIUM",
+      "logoPixels": {
+        "x": 32,
+        "y": 22,
+        "width": 184,
+        "height": 41
+      },
+      "zonePixels": {
+        "x": 32,
+        "y": 22,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-top_left-large.png",
+      "position": "TOP_LEFT",
+      "size": "LARGE",
+      "logoPixels": {
+        "x": 32,
+        "y": 22,
+        "width": 238,
+        "height": 53
+      },
+      "zonePixels": {
+        "x": 32,
+        "y": 22,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-top_right-small.png",
+      "position": "TOP_RIGHT",
+      "size": "SMALL",
+      "logoPixels": {
+        "x": 907,
+        "y": 22,
+        "width": 130,
+        "height": 29
+      },
+      "zonePixels": {
+        "x": 562,
+        "y": 22,
+        "width": 475,
+        "height": 151
+      }
+    },
+    {
+      "file": "svg-top_right-medium.png",
+      "position": "TOP_RIGHT",
+      "size": "MEDIUM",
+      "logoPixels": {
+        "x": 853,
+        "y": 22,
+        "width": 184,
+        "height": 41
+      },
+      "zonePixels": {
+        "x": 562,
+        "y": 22,
+        "width": 475,
+        "height": 151
+      }
+    },
+    {
+      "file": "svg-top_right-large.png",
+      "position": "TOP_RIGHT",
+      "size": "LARGE",
+      "logoPixels": {
+        "x": 799,
+        "y": 22,
+        "width": 238,
+        "height": 53
+      },
+      "zonePixels": {
+        "x": 562,
+        "y": 22,
+        "width": 475,
+        "height": 151
+      }
+    },
+    {
+      "file": "svg-center-small.png",
+      "position": "CENTER",
+      "size": "SMALL",
+      "logoPixels": {
+        "x": 474,
+        "y": 493,
+        "width": 130,
+        "height": 29
+      },
+      "zonePixels": {
+        "x": 410,
+        "y": 454,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-center-medium.png",
+      "position": "CENTER",
+      "size": "MEDIUM",
+      "logoPixels": {
+        "x": 447,
+        "y": 487,
+        "width": 184,
+        "height": 41
+      },
+      "zonePixels": {
+        "x": 410,
+        "y": 454,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-center-large.png",
+      "position": "CENTER",
+      "size": "LARGE",
+      "logoPixels": {
+        "x": 420,
+        "y": 481,
+        "width": 238,
+        "height": 53
+      },
+      "zonePixels": {
+        "x": 410,
+        "y": 454,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-bottom_left-small.png",
+      "position": "BOTTOM_LEFT",
+      "size": "SMALL",
+      "logoPixels": {
+        "x": 32,
+        "y": 1029,
+        "width": 130,
+        "height": 29
+      },
+      "zonePixels": {
+        "x": 32,
+        "y": 950,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-bottom_left-medium.png",
+      "position": "BOTTOM_LEFT",
+      "size": "MEDIUM",
+      "logoPixels": {
+        "x": 32,
+        "y": 1017,
+        "width": 184,
+        "height": 41
+      },
+      "zonePixels": {
+        "x": 32,
+        "y": 950,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-bottom_left-large.png",
+      "position": "BOTTOM_LEFT",
+      "size": "LARGE",
+      "logoPixels": {
+        "x": 32,
+        "y": 1005,
+        "width": 238,
+        "height": 53
+      },
+      "zonePixels": {
+        "x": 32,
+        "y": 950,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-bottom_right-small.png",
+      "position": "BOTTOM_RIGHT",
+      "size": "SMALL",
+      "logoPixels": {
+        "x": 917,
+        "y": 1029,
+        "width": 130,
+        "height": 29
+      },
+      "zonePixels": {
+        "x": 788,
+        "y": 950,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-bottom_right-medium.png",
+      "position": "BOTTOM_RIGHT",
+      "size": "MEDIUM",
+      "logoPixels": {
+        "x": 863,
+        "y": 1017,
+        "width": 184,
+        "height": 41
+      },
+      "zonePixels": {
+        "x": 788,
+        "y": 950,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-bottom_right-large.png",
+      "position": "BOTTOM_RIGHT",
+      "size": "LARGE",
+      "logoPixels": {
+        "x": 809,
+        "y": 1005,
+        "width": 238,
+        "height": 53
+      },
+      "zonePixels": {
+        "x": 788,
+        "y": 950,
+        "width": 259,
+        "height": 108
+      }
+    },
+    {
+      "file": "svg-top_right-medium-white_container.png",
+      "position": "TOP_RIGHT",
+      "size": "MEDIUM",
+      "treatment": "white_container",
+      "logoPixels": {
+        "x": 817,
+        "y": 22,
+        "width": 220,
+        "height": 77
+      }
+    },
+    {
+      "file": "svg-top_right-medium-dark_container.png",
+      "position": "TOP_RIGHT",
+      "size": "MEDIUM",
+      "treatment": "dark_container",
+      "logoPixels": {
+        "x": 817,
+        "y": 22,
+        "width": 220,
+        "height": 77
+      }
+    },
+    {
+      "file": "svg-top_right-medium-rounded_container.png",
+      "position": "TOP_RIGHT",
+      "size": "MEDIUM",
+      "treatment": "rounded_container",
+      "logoPixels": {
+        "x": 817,
+        "y": 22,
+        "width": 220,
+        "height": 77
+      }
+    }
+  ],
+  "primary": {
+    "output": "clients/cybernetyx/experiments/svg-logo-layer/2026-08-11/teacher-most-important-technology-editorial/svg-composited-logo.png",
+    "layout": {
+      "canvas": {
+        "width": 1080,
+        "height": 1080,
+        "ratio": "1:1"
+      },
+      "logo": {
+        "enabled": true,
+        "position": "TOP_RIGHT",
+        "size": "LARGE",
+        "variant": "AUTO",
+        "zone": {
+          "x": 0.52,
+          "y": 0.02,
+          "width": 0.44,
+          "height": 0.14
+        },
+        "maxWidth": 0.28,
+        "maxHeight": 0.12,
+        "fit": "contain",
+        "margin": 0.03,
+        "inferred": true,
+        "inferredFrom": "text-left-hero-right",
+        "asset": "clients/cybernetyx/references/brand-assets/cnx-white-logo.svg"
+      },
+      "logoZone": {
+        "x": 0.52,
+        "y": 0.02,
+        "width": 0.44,
+        "height": 0.14
+      },
+      "composition": {
+        "subjectZone": {
+          "x": 0.45,
+          "y": 0.12,
+          "width": 0.52,
+          "height": 0.75
+        },
+        "headlineZone": {
+          "x": 0.05,
+          "y": 0.12,
+          "width": 0.55,
+          "height": 0.22
+        },
+        "bodyZone": {
+          "x": 0.05,
+          "y": 0.34,
+          "width": 0.55,
+          "height": 0.18
+        }
+      },
+      "resolved": {
+        "position": "TOP_RIGHT",
+        "size": "LARGE",
+        "rotation": 0.0,
+        "opacity": 1.0,
+        "treatment": {
+          "type": "none"
+        },
+        "asset_format": "svg",
+        "asset_path": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/cybernetyx/references/brand-assets/cnx-white-logo.svg",
+        "logoPixels": {
+          "x": 735,
+          "y": 22,
+          "width": 302,
+          "height": 67
+        },
+        "logoZonePixels": {
+          "x": 562,
+          "y": 22,
+          "width": 475,
+          "height": 151
+        }
+      }
+    },
+    "logoPixels": {
+      "x": 735,
+      "y": 22,
+      "width": 302,
+      "height": 67
+    },
+    "logoZonePixels": {
+      "x": 562,
+      "y": 22,
+      "width": 475,
+      "height": 151
+    }
+  }
+}

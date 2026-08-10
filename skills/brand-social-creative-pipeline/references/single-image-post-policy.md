@@ -14,7 +14,9 @@ All social feed visuals in this pipeline are **one PNG per post** — dark edito
 | **Canvas** | 1:1 (1080×1080) |
 | **Structure** | `dark-bold-editorial` or `contrarian-editorial-hero` or `editorial-quote-hero` |
 | **Background mode** | `dark` only (`brand.visual_identity.primary_dark`) |
-| **Layout** | Match reference pin — headline + subhead + footer URL; **preserve photo/illustration hero when reference has one** |
+| **Layout** | Controlled by `creative_layout.default_template` — see [creative-layout-templates.md](./creative-layout-templates.md) |
+| **Default layout** | `editorial-minimal` — headline + subhead + footer URL (Pinterest contrarian pins) |
+| **Full brand layout** | `brand-editorial-full` — logo, tagline, headline+highlight, body, insight callout, icon_row, footer |
 | **Slug suffix** | `-editorial` (e.g. `not-agency-system-editorial`) |
 
 **Reference quality bar:** `not-agency-system-editorial` — contrarian headline on dark canvas, rich but single-frame composition, brand tagline as on-image copy.
@@ -51,7 +53,14 @@ When writing `content-calendar.md`:
 1. **Format column** must be exactly: `single-image editorial 1:1` (or `dark editorial 1:1`).
 2. **Never** use: `stat-hero`, `carousel`, `carousel cover`, `kpi-grid`, `phone-mockup`, `dashboard-split`.
 3. Each row = one slug = one PNG = one Firestore publish — no slide references.
-4. On-image copy: headline + subheadline + footer URL only (2–3 lines max). No fake stats on image.
+4. **On-image copy** depends on `layout_template` (webhook `creative_layout.default_template`):
+
+| Template | On-image zones |
+|----------|----------------|
+| `editorial-minimal` (default) | headline + subheadline + footer URL (2–3 lines) |
+| `brand-editorial-full` | logo, tagline, headline (+ highlight), body, insight callout, icon_row (3 features), footer URL |
+
+See [creative-layout-templates.md](./creative-layout-templates.md). Do not collapse `brand-editorial-full` slots to headline-only.
 5. `creative_template_ref` must end with `-editorial`.
 
 ### Calendar row example
@@ -75,7 +84,7 @@ When fetching 5 reference pins:
 
 ## Phase 6 — Creative DNA rules
 
-- `structure_type` must match the reference pin (e.g. `contrarian-editorial-hero`, `editorial-quote-hero`, `editorial-split-hero`, `dark-bold-editorial`).
+- `structure_type` must match the layout template or reference pin — e.g. `contrarian-editorial-hero`, `brand-editorial-full`, `dark-bold-editorial`. See [creative-layout-templates.md](./creative-layout-templates.md).
 - `hero.type` must reflect the reference: `photo_subject`, `illustration_subject`, `abstract_vector`, or `typography_only`.
 - When reference has a person or object, set `hero.match_reference: true` and copy pose/placement into `hero.description`. See [reference-fidelity.md](./reference-fidelity.md).
 - `visual_identity.background_mode` may be `dark`, `light`, or `primary` — match reference layout tone; colors still resolve from Brand DNA.

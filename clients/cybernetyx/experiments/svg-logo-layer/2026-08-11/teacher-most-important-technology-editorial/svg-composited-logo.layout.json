@@ -20,7 +20,8 @@
     "fit": "contain",
     "margin": 0.03,
     "inferred": true,
-    "inferredFrom": "text-left-hero-right"
+    "inferredFrom": "text-left-hero-right",
+    "asset": "clients/cybernetyx/references/brand-assets/cnx-white-logo.svg"
   },
   "logoZone": {
     "x": 0.52,
@@ -48,18 +49,21 @@
       "height": 0.18
     }
   },
-  "layers": {
-    "background": "teacher-most-important-technology-editorial-background.png",
-    "logo": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/cybernetyx/references/brand-assets/cybernetyx-logo-white.png",
-    "export": "teacher-most-important-technology-editorial.png"
-  },
   "resolved": {
-    "logoVariant": "LIGHT",
+    "position": "TOP_RIGHT",
+    "size": "LARGE",
+    "rotation": 0.0,
+    "opacity": 1.0,
+    "treatment": {
+      "type": "none"
+    },
+    "asset_format": "svg",
+    "asset_path": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/cybernetyx/references/brand-assets/cnx-white-logo.svg",
     "logoPixels": {
       "x": 735,
       "y": 22,
       "width": 302,
-      "height": 45
+      "height": 67
     },
     "logoZonePixels": {
       "x": 562,

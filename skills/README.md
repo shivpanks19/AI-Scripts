@@ -7,6 +7,8 @@ Skills for the [Swayam weekly cloud agent](../clients/swayam/swayam-weekly-autom
 | Phase | Skill | Path |
 |-------|-------|------|
 | 1 Research | reddit-posts | [reddit-posts/SKILL.md](./reddit-posts/SKILL.md) |
+| 1b Trend research | brand-trend-research | [brand-trend-research/SKILL.md](./brand-trend-research/SKILL.md) |
+| 2 Planning | content-calendar-sms | [content-calendar-sms/SKILL.md](./content-calendar-sms/SKILL.md) |
 | 2 Copy | caption-writer-sms, post-writer-sms, whatsapp-skill | [caption-writer-sms](./caption-writer-sms/SKILL.md), [post-writer-sms](./post-writer-sms/SKILL.md), [whatsapp-skill](./whatsapp-skill/SKILL.md) |
 | 2 Context | social-media-context-sms | Read [clients/swayam/social-media-context-sms.md](../clients/swayam/social-media-context-sms.md) |
 | 3–4 Creative | brand-social-creative-pipeline | [brand-social-creative-pipeline/SKILL.md](./brand-social-creative-pipeline/SKILL.md) |
@@ -34,5 +36,6 @@ See [brand-social-creative-pipeline/references/prompt-merge.md](./brand-social-c
 ## Bootstrap skills (quarterly / new client)
 
 - **design-brand-guardian** — Phase 1 brand identity (`BRAND_IDENTITY.md`)
+- **brand-trend-research** — Phase 2a: Exa/RSS trend brief → strategy + calendar inputs
 - **pinterest-reference-fetch** — Phase 1b: 5 Pinterest layout pins from brand identity → `clients/{slug}/references/pinterest/`
 - **creator-profile-teardown** — Instagram/social profile analysis before strategy

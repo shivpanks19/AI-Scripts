@@ -6,21 +6,26 @@
   },
   "logo": {
     "enabled": true,
+    "asset": "clients/cybernetyx/references/brand-assets/cnx-white-logo.svg",
     "position": "TOP_RIGHT",
-    "size": "LARGE",
-    "variant": "AUTO",
+    "size": "MEDIUM",
+    "rotation": 0,
+    "opacity": 1,
     "zone": {
       "x": 0.52,
       "y": 0.02,
       "width": 0.44,
       "height": 0.14
     },
-    "maxWidth": 0.28,
+    "maxWidth": 0.17,
     "maxHeight": 0.12,
     "fit": "contain",
-    "margin": 0.03,
-    "inferred": true,
-    "inferredFrom": "text-left-hero-right"
+    "treatment": {
+      "type": "rounded_container",
+      "padding": 18,
+      "cornerRadius": 16,
+      "opacity": 0.92
+    }
   },
   "logoZone": {
     "x": 0.52,
@@ -40,26 +45,26 @@
       "y": 0.12,
       "width": 0.55,
       "height": 0.22
-    },
-    "bodyZone": {
-      "x": 0.05,
-      "y": 0.34,
-      "width": 0.55,
-      "height": 0.18
     }
   },
-  "layers": {
-    "background": "teacher-most-important-technology-editorial-background.png",
-    "logo": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/cybernetyx/references/brand-assets/cybernetyx-logo-white.png",
-    "export": "teacher-most-important-technology-editorial.png"
-  },
   "resolved": {
-    "logoVariant": "LIGHT",
+    "position": "TOP_RIGHT",
+    "size": "MEDIUM",
+    "rotation": 0.0,
+    "opacity": 1.0,
+    "treatment": {
+      "type": "rounded_container",
+      "padding": 18,
+      "cornerRadius": 16,
+      "opacity": 0.92
+    },
+    "asset_format": "svg",
+    "asset_path": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/cybernetyx/references/brand-assets/cnx-white-logo.svg",
     "logoPixels": {
-      "x": 735,
+      "x": 817,
       "y": 22,
-      "width": 302,
-      "height": 45
+      "width": 220,
+      "height": 77
     },
     "logoZonePixels": {
       "x": 562,

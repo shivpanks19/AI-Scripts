@@ -33,7 +33,7 @@
     "posts_per_week": 3,
     "platforms": ["instagram", "facebook"],
     "goals": ["awareness", "engagement"],
-    "phases_completed": [],
+    "phases_completed": [0, 1, "1b", "6a", 2, 3, 4, 5, 6, 7, "7b", 8, 9, "9b", 10],
     "webhook": {
       "outlet_id": "NLQKPp1u8Nw2SQpIBq0R",
       "triggered": "2026-08-10"

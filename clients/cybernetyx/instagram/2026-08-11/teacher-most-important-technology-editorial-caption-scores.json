@@ -1,18 +1,20 @@
 {
   "slug": "teacher-most-important-technology-editorial",
   "platform": "instagram",
-  "captionScore": 85,
+  "captionScore": 86,
   "captionScores": {
-    "overall": 85,
+    "overall": 86,
     "hook": 88,
-    "clarity": 85,
-    "cta": 83,
-    "hashtagFit": 80,
-    "brandVoice": 89,
-    "platformFit": 84
+    "clarity": 87,
+    "cta": 81,
+    "hashtagFit": 84,
+    "brandVoice": 90,
+    "platformFit": 85
   },
   "notes": {
-    "hook": "Memorable teacher-first thesis",
-    "brandVoice": "Premium thought leadership without hype terms"
+    "hook": "Provocative reframe — teacher as technology",
+    "clarity": "Strong brand thought with clear implication",
+    "cta": "Explore CTA appropriate for thought-leadership slot",
+    "brandVoice": "Matches brand_thought and messaging principles"
   }
 }

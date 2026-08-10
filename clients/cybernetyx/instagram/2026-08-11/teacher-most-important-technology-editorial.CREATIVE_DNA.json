@@ -4,49 +4,57 @@
     "version": "1.0",
     "creative_id": "teacher-most-important-technology-editorial",
     "brand_dna": "../../BRAND_DNA.json",
-    "reference_asset": "../../references/pinterest/2026-08-11/pin-03-editorial-quote-hero.png",
-    "reference_prompt_ref": "../../references/pinterest/2026-08-11/pin-03-editorial-quote-hero-reference-prompt.md",
+    "reference_asset": "../../references/brand-layout/2026-08-11/cybernetyx-brand-editorial-reference.png",
+    "reference_prompt_ref": "../../references/brand-layout/2026-08-11/cybernetyx-brand-editorial-reference-prompt.md",
     "prompt_ref": "./teacher-most-important-technology-editorial-prompt.md",
-    "source": "reverse_engineered",
+    "source": "brand_layout_reference",
     "created": "2026-08-11",
     "channel": "instagram",
-    "slot_index": 3
+    "slot_index": 3,
+    "layout_template": "brand-editorial-full"
   },
   "concept": {
-    "topic": "Teacher empowerment",
-    "vertical": "teacher-hero",
-    "metaphor": "Educator as the decisive intelligence in the room",
-    "message": "Technology enables; the teacher leads the learning experience",
-    "persona": "Academic director investing in classroom technology"
+    "topic": "Teacher as classroom hero",
+    "vertical": "teacher-empowerment",
+    "message": "Human expertise remains central even as classroom technology advances",
+    "persona": "School owner investing in smart classroom infrastructure"
   },
   "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
-  "structure_type": "contrarian-editorial-hero",
+  "structure_type": "brand-editorial-full",
   "composition": {
-    "layout_flow": "quote-hero-right",
+    "layout_flow": "text-left-hero-right",
     "zones": {
+      "header": { "position": "top-left", "scale": "small", "z_index": "foreground" },
       "headline": { "position": "upper-left", "scale": "dominant", "z_index": "foreground" },
-      "subline": { "position": "left-bubble", "scale": "medium", "z_index": "foreground" },
-      "hero": { "position": "right-center", "scale": "large", "z_index": "midground" },
-      "footer": { "position": "top-left", "scale": "small", "z_index": "foreground" }
+      "body": { "position": "mid-left", "scale": "medium", "z_index": "foreground" },
+      "insight_callout": { "position": "mid-left-below", "scale": "small", "z_index": "foreground" },
+      "icon_row": { "position": "bottom-left", "scale": "small", "z_index": "foreground" },
+      "footer": { "position": "bottom-right", "scale": "small", "z_index": "foreground" },
+      "hero": { "position": "right-half", "scale": "large", "z_index": "midground" },
+      "decorative": { "position": "top-right", "scale": "subtle", "z_index": "background" }
     }
   },
   "visual_identity": {
     "background_mode": "dark",
-    "background_treatment": "paper grain on primary_dark navy"
+    "background_treatment": "deep navy grain with blue network linework"
   },
   "elements": [
-    { "type": "headline", "role": "headline", "content": "THE TEACHER IS STILL", "typography": "display", "color_role": "text_on_dark" },
-    { "type": "subheadline", "role": "subheadline", "content": "the most important technology.", "typography": "h1", "color_role": "primary_light", "emphasis_word": "technology" },
-    { "type": "footer", "role": "footer", "content": "cybernetyx.com", "typography": "small", "color_role": "text_muted" }
+    { "type": "logo", "role": "header", "content": "CYBERNETYX™", "typography": "wordmark", "color_role": "text_on_dark" },
+    { "type": "tagline", "role": "header", "content": "SMART. SECURE. FUTURE READY.", "typography": "small", "color_role": "text_muted" },
+    { "type": "headline", "role": "headline", "content": { "prefix": "The teacher is still ", "highlight": "the most important technology.", "highlight_color_role": "primary_light" }, "typography": "display", "color_role": "text_on_dark" },
+    { "type": "body", "role": "body", "content": "Panels display. AI assists. But the educator in the room is what turns information into understanding.", "typography": "body", "color_role": "text_on_dark" },
+    { "type": "insight_callout", "role": "callout", "content": { "icon": "educator_star", "prefix": "Hardware changes the tools. ", "highlight": "Teachers", "suffix": " change the experience." }, "typography": "small", "color_role": "text_muted" },
+    { "type": "icon_row", "role": "footer_features", "content": { "items": [{ "icon": "shield_check", "label": "Secure by Design" }, { "icon": "chart_up", "label": "Data that Drives Impact" }, { "icon": "educator_star", "label": "Built for Educators. Focused on Learners." }] }, "typography": "small", "color_role": "text_muted" },
+    { "type": "url", "role": "footer", "content": "cybernetyx.com", "typography": "small", "color_role": "primary_light" }
   ],
   "hero": {
     "type": "photo_subject",
     "match_reference": true,
-    "description": "Confident teacher waist-up, presenting gesture, cutout on dark panel, halftone accent"
+    "description": "Confident educator leading classroom, students engaged in background, warm cinematic lighting, human-centered composition, right-half placement"
   },
   "replication": {
-    "must_preserve": ["provocative headline left", "speech-bubble subline", "teacher hero right with gesture", "single frame"],
-    "variable_slots": ["headline", "bubble subline", "footer"]
+    "must_preserve": ["logo+tagline header", "two-part headline with blue highlight", "body+callout+icon row", "educator hero right half", "network graphics top-right"],
+    "variable_slots": ["tagline", "headline", "body", "insight_callout", "icon_row", "footer"]
   },
   "copy": {
     "post_ref": "./teacher-most-important-technology-editorial-post.md",

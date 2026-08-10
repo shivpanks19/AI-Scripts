@@ -1,18 +1,20 @@
 {
   "slug": "ai-assist-not-replace-editorial",
   "platform": "instagram",
-  "captionScore": 84,
+  "captionScore": 85,
   "captionScores": {
-    "overall": 84,
-    "hook": 85,
+    "overall": 85,
+    "hook": 87,
     "clarity": 86,
     "cta": 82,
-    "hashtagFit": 79,
-    "brandVoice": 88,
-    "platformFit": 83
+    "hashtagFit": 83,
+    "brandVoice": 89,
+    "platformFit": 84
   },
   "notes": {
-    "hook": "Clear human-centered AI positioning",
-    "brandVoice": "Matches teacher-as-hero and Bright AI messaging"
+    "hook": "Direct positioning on AI assist vs replace",
+    "clarity": "Bright AI mentioned naturally without feature dump",
+    "cta": "Demo CTA matches voice.cta_primary",
+    "brandVoice": "Teacher empowerment, no replacement language"
   }
 }

@@ -1,18 +1,20 @@
 {
   "slug": "interactive-not-intelligent-editorial",
   "platform": "instagram",
-  "captionScore": 83,
+  "captionScore": 84,
   "captionScores": {
-    "overall": 83,
+    "overall": 84,
     "hook": 86,
-    "clarity": 84,
+    "clarity": 85,
     "cta": 80,
-    "hashtagFit": 78,
-    "brandVoice": 87,
-    "platformFit": 82
+    "hashtagFit": 82,
+    "brandVoice": 88,
+    "platformFit": 83
   },
   "notes": {
-    "hook": "Strong contrarian opener on interactivity vs intelligence",
-    "cta": "Demo CTA aligned to brand DNA voice.cta_primary"
+    "hook": "Opens with contrarian tension — interactive vs intelligent",
+    "clarity": "Single idea with clear educational implication",
+    "cta": "Request a demo aligned to brand CTA",
+    "brandVoice": "Thought-provoking, educator-centered, no hype terms"
   }
 }

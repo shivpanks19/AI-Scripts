@@ -8,6 +8,7 @@
     "brand": "clients/cybernetyx/BRAND_IDENTITY.md",
     "brand_dna": "clients/cybernetyx/BRAND_DNA.json",
     "references_pinterest": "clients/cybernetyx/references/pinterest/2026-08-11",
+    "references_brand_layout": "clients/cybernetyx/references/brand-layout/2026-08-11",
     "plans": "clients/cybernetyx/plans/2026-08-11",
     "instagram": "clients/cybernetyx/instagram/2026-08-11",
     "facebook": "clients/cybernetyx/facebook/2026-08-11",
@@ -26,19 +27,25 @@
       "formats": ["single-image editorial 1:1"]
     }
   },
+  "creative_layout": {
+    "default_template": "brand-editorial-full",
+    "reference_image_url": "https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786382392451-image.png",
+    "per_slot_override": false
+  },
   "pipeline": {
     "mode": "creative_generation",
     "run_date": "2026-08-11",
-    "last_run": "2026-08-11T20:15:00Z",
+    "last_run": "2026-08-11T21:00:00Z",
     "horizon": "weekly",
     "posts_count": 3,
     "platforms": ["instagram", "facebook"],
     "goals": ["thought leadership", "qualified interest in EyeRIS"],
     "theme": "From Smart Classrooms to Intelligent Classrooms",
-    "calendar_mode": "discover"
+    "calendar_mode": "preset",
+    "layout_template": "brand-editorial-full"
   },
   "trend_research": {
-    "method": "rss",
+    "method": "both",
     "window_days": 14
   }
 }

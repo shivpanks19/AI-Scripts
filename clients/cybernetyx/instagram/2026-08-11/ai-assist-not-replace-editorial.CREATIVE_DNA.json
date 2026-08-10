@@ -4,49 +4,57 @@
     "version": "1.0",
     "creative_id": "ai-assist-not-replace-editorial",
     "brand_dna": "../../BRAND_DNA.json",
-    "reference_asset": "../../references/pinterest/2026-08-11/pin-02-dark-bold-editorial.png",
-    "reference_prompt_ref": "../../references/pinterest/2026-08-11/pin-02-dark-bold-editorial-reference-prompt.md",
+    "reference_asset": "../../references/brand-layout/2026-08-11/cybernetyx-brand-editorial-reference.png",
+    "reference_prompt_ref": "../../references/brand-layout/2026-08-11/cybernetyx-brand-editorial-reference-prompt.md",
     "prompt_ref": "./ai-assist-not-replace-editorial-prompt.md",
-    "source": "reverse_engineered",
+    "source": "brand_layout_reference",
     "created": "2026-08-11",
     "channel": "instagram",
-    "slot_index": 2
+    "slot_index": 2,
+    "layout_template": "brand-editorial-full"
   },
   "concept": {
     "topic": "AI as teaching assistant",
-    "vertical": "bright-ai",
-    "metaphor": "Teacher at center, AI as supporting layer",
-    "message": "Bright AI assists educators — it does not replace human judgment in the classroom",
-    "persona": "Teacher evaluating AI classroom tools"
+    "vertical": "bright-ai-positioning",
+    "message": "AI supports educators without replacing human judgment in the classroom",
+    "persona": "Academic director evaluating AI teaching tools"
   },
   "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
-  "structure_type": "dark-bold-editorial",
+  "structure_type": "brand-editorial-full",
   "composition": {
-    "layout_flow": "headline-hero-footer",
+    "layout_flow": "text-left-hero-right",
     "zones": {
-      "headline": { "position": "top-center", "scale": "dominant", "z_index": "foreground" },
-      "subline": { "position": "center-above-hero", "scale": "medium", "z_index": "foreground" },
-      "hero": { "position": "center", "scale": "large", "z_index": "midground" },
-      "footer": { "position": "bottom-left", "scale": "small", "z_index": "foreground" }
+      "header": { "position": "top-left", "scale": "small", "z_index": "foreground" },
+      "headline": { "position": "upper-left", "scale": "dominant", "z_index": "foreground" },
+      "body": { "position": "mid-left", "scale": "medium", "z_index": "foreground" },
+      "insight_callout": { "position": "mid-left-below", "scale": "small", "z_index": "foreground" },
+      "icon_row": { "position": "bottom-left", "scale": "small", "z_index": "foreground" },
+      "footer": { "position": "bottom-right", "scale": "small", "z_index": "foreground" },
+      "hero": { "position": "right-half", "scale": "large", "z_index": "midground" },
+      "decorative": { "position": "top-right", "scale": "subtle", "z_index": "background" }
     }
   },
   "visual_identity": {
     "background_mode": "dark",
-    "background_treatment": "faint grid texture on primary_dark"
+    "background_treatment": "deep navy grain with blue network linework"
   },
   "elements": [
-    { "type": "headline", "role": "headline", "content": "AI SHOULD ASSIST THE TEACHER,", "typography": "display", "color_role": "text_on_dark" },
-    { "type": "subheadline", "role": "subheadline", "content": "not become the teacher.", "typography": "h2", "color_role": "primary_light", "emphasis_word": "teacher" },
-    { "type": "footer", "role": "footer", "content": "cybernetyx.com", "typography": "small", "color_role": "text_muted" }
+    { "type": "logo", "role": "header", "content": "CYBERNETYX™", "typography": "wordmark", "color_role": "text_on_dark" },
+    { "type": "tagline", "role": "header", "content": "SMART. SECURE. FUTURE READY.", "typography": "small", "color_role": "text_muted" },
+    { "type": "headline", "role": "headline", "content": { "prefix": "AI should assist the teacher, ", "highlight": "not become the teacher.", "highlight_color_role": "primary_light" }, "typography": "display", "color_role": "text_on_dark" },
+    { "type": "body", "role": "body", "content": "AI can help with lesson plans, quizzes, and assessments — but the classroom still needs a human who understands the moment.", "typography": "body", "color_role": "text_on_dark" },
+    { "type": "insight_callout", "role": "callout", "content": { "icon": "teacher_star", "prefix": "Bright AI supports planning. ", "highlight": "Teachers", "suffix": " lead the classroom." }, "typography": "small", "color_role": "text_muted" },
+    { "type": "icon_row", "role": "footer_features", "content": { "items": [{ "icon": "shield_check", "label": "Secure by Design" }, { "icon": "chart_up", "label": "Data that Drives Impact" }, { "icon": "educator_star", "label": "Built for Educators. Focused on Learners." }] }, "typography": "small", "color_role": "text_muted" },
+    { "type": "url", "role": "footer", "content": "cybernetyx.com", "typography": "small", "color_role": "primary_light" }
   ],
   "hero": {
     "type": "photo_subject",
     "match_reference": true,
-    "description": "Black-and-white cutout educator centered, white stroke, surreal editorial crop"
+    "description": "Confident teacher in active classroom moment, engaging with students, natural teaching posture, cinematic lighting, right-half composition"
   },
   "replication": {
-    "must_preserve": ["all-caps headline top", "serif subline", "cutout photo hero center", "single frame"],
-    "variable_slots": ["headline", "subline", "footer"]
+    "must_preserve": ["logo+tagline header", "two-part headline with blue highlight", "body+callout+icon row", "educator hero right half", "network graphics top-right"],
+    "variable_slots": ["tagline", "headline", "body", "insight_callout", "icon_row", "footer"]
   },
   "copy": {
     "post_ref": "./ai-assist-not-replace-editorial-post.md",

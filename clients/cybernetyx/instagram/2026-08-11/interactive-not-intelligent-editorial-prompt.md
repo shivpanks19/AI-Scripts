@@ -1,38 +1,81 @@
 # Interactive Doesn't Always Mean Intelligent
 
-**Creative ID:** `interactive-not-intelligent-editorial`  
-**DNA merge:** reference-prompt + BRAND_DNA.json + interactive-not-intelligent-editorial.CREATIVE_DNA.json  
-**Reference prompt:** ../../references/pinterest/2026-08-11/pin-01-contrarian-editorial-reference-prompt.md  
+**Creative ID:** `interactive-not-intelligent-editorial`
+**DNA merge:** reference-prompt + BRAND_DNA.json + interactive-not-intelligent-editorial.CREATIVE_DNA.json
+**Reference prompt:** ../../references/brand-layout/2026-08-11/cybernetyx-brand-editorial-reference-prompt.md
 **Calendar ref:** content-calendar.md → slot 1
 
 ## ON-IMAGE COPY — MANDATORY (exact)
 
-| Zone | Text | Color (Brand DNA) |
-|------|------|-------------------|
-| Headline | Interactive | #FFFFFF |
-| Subheadline | doesn't always mean intelligent. | #3D7BFF (emphasis on "intelligent") |
-| Footer | cybernetyx.com | #94A3B8 |
+| Zone | Text | Brand hex |
+|------|------|-----------|
+| Logo | CYBERNETYX™ | #FFFFFF |
+| Tagline | SMART. SECURE. FUTURE READY. | #94A3B8 |
+| Headline prefix | Interactive | #FFFFFF |
+| Headline highlight | doesn't always mean intelligent. | #3D7BFF |
+| Body | A classroom can respond to touch without changing how teaching happens. Interactivity is input. Intelligence is what happens after. | #FFFFFF |
+| Callout prefix | Technology is the enabler. | #94A3B8 |
+| Callout highlight | Educators | #3D7BFF |
+| Callout suffix | are the differentiator. | #94A3B8 |
+| Icon row 1 | Secure by Design | #94A3B8 |
+| Icon row 2 | Data that Drives Impact | #94A3B8 |
+| Icon row 3 | Built for Educators. Focused on Learners. | #94A3B8 |
+| Footer URL | cybernetyx.com | #3D7BFF |
+
+## Zone map
+
+Text-left, hero-right brand editorial full layout. Logo+tagline top-left. Network graphics top-right. Headline+body+callout mid-left. Icon row bottom-left. URL bottom-right. Educator hero right half.
+
+## must_preserve
+
+- Cybernetyx logo + tagline header top-left
+- Two-part headline with blue highlight phrase
+- Body paragraph + insight callout with icon
+- Three-icon feature row bottom-left
+- URL bottom-right with rule
+- Educator hero right half — cinematic, human-centered
+- Subtle blue network graphics top-right
+- Single frame — no slide counter
 
 ## Generation prompt
 
-Create a 1080×1080 single-frame Instagram editorial post for Cybernetyx EdTech.
+Create a 1080×1080 premium B2B education editorial social post for Cybernetyx. Full-bleed #020B2D deep navy canvas with subtle grain and soft cinematic lighting.
 
 COLORS (mandatory — all from BRAND_DNA.json):
-- Background: #020B2D (primary_dark) with subtle grain
-- Accent: #3D7BFF (primary_light) for emphasized word "intelligent"
+- Background: #020B2D
+- Primary: #1746C7
+- Primary light / accent: #3D7BFF
 - Text on dark: #FFFFFF
-- Muted footer: #94A3B8
+- Muted text: #94A3B8
+All colors from brand palette — ignore reference image colors.
 
-Layout: Upper-left headline stack — "Interactive" in white bold sans-serif. Below: "doesn't always mean intelligent." with "intelligent" in electric blue #3D7BFF. Lower half: editorial photo hero — confident Indian educator among desaturated classroom crowd, subject with blue tint overlay at 40%, direct gaze. Footer bottom-left: "cybernetyx.com" in muted gray. Deep navy premium B2B education aesthetic. No carousel indicators. Single full-bleed dark frame.
+Header top-left: Cybernetyx hexagonal logo + "CYBERNETYX™" in white bold sans-serif. Below: "SMART. SECURE. FUTURE READY." in small caps #94A3B8.
+
+Top-right: subtle electric blue (#3D7BFF) network linework — concentric circles with education icons at 20% opacity.
+
+Headline upper-left: "Interactive" in white, then "doesn't always mean intelligent." in #3D7BFF bold display sans-serif.
+
+Body mid-left in white: "A classroom can respond to touch without changing how teaching happens. Interactivity is input. Intelligence is what happens after."
+
+Callout below body: small people icon + "Technology is the enabler. Educators are the differentiator." — "Educators" in #3D7BFF.
+
+Hero right half: confident Indian educator in professional attire, arms crossed, direct gaze, cinematic classroom with blurred audience, warm lighting.
+
+Footer bottom-left: three icon+label pairs — shield "Secure by Design", chart "Data that Drives Impact", educator star "Built for Educators. Focused on Learners." in #94A3B8.
+
+Footer bottom-right: thin rule + "cybernetyx.com" in #3D7BFF.
+
+Typography: bold modern sans-serif (Inter). Premium dark editorial. No product hero shot. No generic AI brain graphics.
 
 ## Do not
 
-- Carousel slide numbers or swipe text
-- Fake statistics
-- Generic stock smiles without conceptual story
-- Hardware product hero shot
-- Hype language (revolutionary, game-changing)
+- Generic AI brain graphics or holograms
+- Generic smiling teacher holding tablet
+- Product specification cards or feature grids
+- Pure black #000000 background
+- Robots replacing teachers
+- Invent statistics
 
 ## Post / caption
 
-See `interactive-not-intelligent-editorial-post.md`
+See interactive-not-intelligent-editorial-post.md

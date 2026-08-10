@@ -1,0 +1,25 @@
+{
+  "client_slug": "rigveda-classes-jodhpur",
+  "display_name": "Rigveda Classes",
+  "website": null,
+  "location": "Jodhpur, Rajasthan, India",
+  "instagram": "https://www.instagram.com/rigveda_classes_jodhpur/",
+  "channels": ["instagram", "facebook"],
+  "pipeline": {
+    "run_date": "2026-08-11",
+    "posts_count": 3,
+    "last_run": "2026-08-11",
+    "layout_template": "student-editorial-full",
+    "calendar_mode": "discover"
+  },
+  "folders": {
+    "plans": "clients/rigveda-classes-jodhpur/plans/2026-08-11",
+    "references_pinterest": "clients/rigveda-classes-jodhpur/references/pinterest/2026-08-11",
+    "instagram": "clients/rigveda-classes-jodhpur/instagram/2026-08-11",
+    "facebook": "clients/rigveda-classes-jodhpur/facebook/2026-08-11",
+    "runs": "clients/rigveda-classes-jodhpur/runs/2026-08-11"
+  },
+  "creative_layout": {
+    "default_template": "student-editorial-full"
+  }
+}

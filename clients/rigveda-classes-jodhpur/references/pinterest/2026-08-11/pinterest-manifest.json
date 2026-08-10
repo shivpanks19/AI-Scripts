@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "client_slug": "rigveda-classes-jodhpur",
+    "run_date": "2026-08-11",
+    "source": "editorial-layout-refs",
+    "phase_6a_status": "complete"
+  },
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "pin-01-contrarian-editorial.png",
+      "layout": "contrarian-editorial",
+      "reference_prompt_file": "pin-01-contrarian-editorial-reference-prompt.md"
+    },
+    {
+      "id": "pin-02",
+      "file": "pin-02-dark-bold-editorial.png",
+      "layout": "dark-bold-editorial",
+      "reference_prompt_file": "pin-02-dark-bold-editorial-reference-prompt.md"
+    },
+    {
+      "id": "pin-03",
+      "file": "pin-03-editorial-quote-hero.png",
+      "layout": "editorial-quote-hero",
+      "reference_prompt_file": "pin-03-editorial-quote-hero-reference-prompt.md"
+    },
+    {
+      "id": "pin-04",
+      "file": "pin-04-editorial-split-hero.png",
+      "layout": "editorial-split-hero",
+      "reference_prompt_file": "pin-04-editorial-split-hero-reference-prompt.md"
+    },
+    {
+      "id": "pin-05",
+      "file": "pin-05-dark-editorial-card.png",
+      "layout": "dark-editorial-card",
+      "reference_prompt_file": "pin-05-dark-editorial-card-reference-prompt.md"
+    }
+  ]
+}

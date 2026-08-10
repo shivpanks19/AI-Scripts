@@ -93,6 +93,40 @@ class TestLayoutResolver(unittest.TestCase):
         self.assertEqual(layout["logo"]["position"], "TOP_LEFT")
         validate_layout(layout)
 
+    def test_hero_right_flow_uses_top_right_large(self) -> None:
+        creative = {
+            "_meta": {"creative_id": "teacher-editorial", "layout_template": "brand-editorial-full"},
+            "structure_type": "brand-editorial-full",
+            "canvas": {"width": 1080, "height": 1080, "ratio": "1:1"},
+            "composition": {
+                "layout_flow": "text-left-hero-right",
+                "zones": {
+                    "headline": {"position": "upper-left"},
+                    "hero": {"position": "right-half"},
+                },
+            },
+            "layout_spec": {
+                "canvas": {"width": 1080, "height": 1080, "ratio": "1:1"},
+                "logo": {
+                    "enabled": True,
+                    "position": "TOP_LEFT",
+                    "size": "MEDIUM",
+                    "zone": {"x": 0.03, "y": 0.02, "width": 0.24, "height": 0.10},
+                    "maxWidth": 0.17,
+                    "maxHeight": 0.08,
+                },
+            },
+        }
+        brand = {
+            "_meta": {"brand_id": "test"},
+            "logo": {"composition": {"enabled": True, "defaultPosition": "TOP_LEFT", "defaultSize": "MEDIUM"}},
+        }
+        layout = layout_from_creative_dna(creative, brand)
+        self.assertEqual(layout["logo"]["position"], "TOP_RIGHT")
+        self.assertEqual(layout["logo"]["size"], "LARGE")
+        self.assertGreater(layout["logo"]["maxWidth"], 0.2)
+        validate_layout(layout)
+
 
 class TestComposition(unittest.TestCase):
     def test_compose_end_to_end(self) -> None:

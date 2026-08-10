@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from .logo_presets import LOGO_PRESETS, get_preset, resolve_size_fraction
+from .logo_presets import LOGO_PRESETS, get_preset, infer_layout_flow_logo_profile, resolve_size_fraction
 
 
 def normalized_to_pixels(zone: dict[str, float], canvas_width: int, canvas_height: int) -> dict[str, int]:
@@ -63,6 +63,50 @@ def anchor_position(
     raise ValueError(f"Unknown anchor: {anchor}")
 
 
+def apply_smart_logo_layout(
+    layout: dict[str, Any],
+    creative_dna: dict[str, Any] | None = None,
+    brand_dna: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Adjust logo position/size/zone for layout flows with open top-right space."""
+    if not creative_dna:
+        return layout
+
+    logo = layout.setdefault("logo", {})
+    if logo.get("lock") or logo.get("lockPosition"):
+        return layout
+
+    profile = infer_layout_flow_logo_profile(creative_dna)
+    if not profile:
+        return layout
+
+    position = str(profile["position"]).upper().replace("-", "_")
+    preset = get_preset(position)
+    size_key = str(profile.get("size", "LARGE")).upper()
+    brand_sizes = None
+    if brand_dna:
+        brand_sizes = brand_dna.get("logo", {}).get("composition", {}).get("sizes")
+
+    zone = dict(profile.get("zone") or preset["zone"])
+    max_width = float(profile.get("max_width", resolve_size_fraction(size_key, brand_sizes)))
+    max_height = float(profile.get("max_height", preset["max_height"]))
+
+    logo.update(
+        {
+            "position": position,
+            "size": size_key,
+            "zone": zone,
+            "maxWidth": max_width,
+            "maxHeight": max_height,
+            "inferred": True,
+            "inferredFrom": creative_dna.get("composition", {}).get("layout_flow")
+            or creative_dna.get("structure_type"),
+        }
+    )
+    layout["logoZone"] = zone
+    return layout
+
+
 def resolve_logo_zone(layout: dict[str, Any], brand_dna: dict[str, Any]) -> dict[str, float]:
     """Merge layout spec logo fields with brand defaults and presets."""
     logo = layout.get("logo", {})
@@ -114,7 +158,8 @@ def resolve_canvas(layout: dict[str, Any], background_width: int, background_hei
 def layout_from_creative_dna(creative_dna: dict[str, Any], brand_dna: dict[str, Any]) -> dict[str, Any]:
     """Build or merge layout spec from Creative DNA + Brand DNA."""
     if "layout_spec" in creative_dna:
-        return creative_dna["layout_spec"]
+        layout = dict(creative_dna["layout_spec"])
+        return apply_smart_logo_layout(layout, creative_dna, brand_dna)
 
     canvas = creative_dna.get("canvas", {})
     composition = creative_dna.get("composition", {})
@@ -123,16 +168,29 @@ def layout_from_creative_dna(creative_dna: dict[str, Any], brand_dna: dict[str, 
     brand_logo = brand_dna.get("logo", {})
     comp_rules = brand_logo.get("composition", {})
 
-    # Infer position from composition header zone or brand default
-    position = comp_rules.get("defaultPosition", "TOP_LEFT")
-    if zones.get("header", {}).get("position", "").startswith("top-left"):
-        position = "TOP_LEFT"
-    elif zones.get("header", {}).get("position", "").startswith("top-right"):
-        position = "TOP_RIGHT"
-    elif zones.get("footer", {}).get("position", "").startswith("bottom-right"):
-        position = "BOTTOM_RIGHT"
+    profile = infer_layout_flow_logo_profile(creative_dna)
+    if profile:
+        position = str(profile["position"]).upper().replace("-", "_")
+        size_key = str(profile.get("size", "LARGE")).upper()
+    else:
+        # Infer position from composition header zone or brand default
+        position = comp_rules.get("defaultPosition", "TOP_LEFT")
+        size_key = str(comp_rules.get("defaultSize", "MEDIUM")).upper()
+        if zones.get("header", {}).get("position", "").startswith("top-left"):
+            position = "TOP_LEFT"
+        elif zones.get("header", {}).get("position", "").startswith("top-right"):
+            position = "TOP_RIGHT"
+        elif zones.get("footer", {}).get("position", "").startswith("bottom-right"):
+            position = "BOTTOM_RIGHT"
 
     preset = LOGO_PRESETS[position.upper().replace("-", "_")]
+    zone = dict(profile.get("zone") if profile else preset["zone"])
+    max_width = float(
+        profile.get("max_width", comp_rules.get("sizes", {}).get(size_key, preset["max_width"]))
+        if profile
+        else comp_rules.get("sizes", {}).get(size_key, preset["max_width"])
+    )
+    max_height = float(profile.get("max_height", preset["max_height"]) if profile else preset["max_height"])
 
     layout = {
         "_meta": {
@@ -148,17 +206,16 @@ def layout_from_creative_dna(creative_dna: dict[str, Any], brand_dna: dict[str, 
         "logo": {
             "enabled": comp_rules.get("enabled", True),
             "position": position,
-            "size": comp_rules.get("defaultSize", "MEDIUM"),
+            "size": size_key,
             "variant": comp_rules.get("defaultVariant", "AUTO"),
-            "zone": preset["zone"],
-            "maxWidth": comp_rules.get("sizes", {}).get(
-                comp_rules.get("defaultSize", "MEDIUM"), preset["max_width"]
-            ),
-            "maxHeight": preset["max_height"],
+            "zone": zone,
+            "maxWidth": max_width,
+            "maxHeight": max_height,
             "fit": "contain",
             "margin": comp_rules.get("safeMargin", preset["margin"]),
+            "inferred": bool(profile),
         },
-        "logoZone": preset["zone"],
+        "logoZone": zone,
     }
 
     # Map known zones when present

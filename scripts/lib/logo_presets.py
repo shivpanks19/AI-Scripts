@@ -36,7 +36,17 @@ LOGO_SIZES = {
     "SMALL": 0.12,
     "MEDIUM": 0.17,
     "LARGE": 0.22,
+    "XL": 0.28,
 }
+
+# Layout flows where copy sits left and the hero photo occupies the right half.
+# Logo belongs in the open top-right band above the hero — not the cramped top-left strip.
+HERO_RIGHT_LAYOUT_FLOWS = frozenset(
+    {
+        "text-left-hero-right",
+        "headline-left-hero-right",
+    }
+)
 
 DEFAULT_SAFE_MARGIN = 0.03
 
@@ -65,9 +75,10 @@ LOGO_PRESETS: dict[str, LogoPreset] = {
     "TOP_RIGHT": {
         "anchor": "top-right",
         "margin": DEFAULT_SAFE_MARGIN,
-        "zone": _zone(0.73, 0.02, 0.24, 0.10),
-        "max_width": 0.22,
-        "max_height": 0.08,
+        # Wider band — landscape wordmarks use the open area above a right-half hero.
+        "zone": _zone(0.52, 0.02, 0.44, 0.14),
+        "max_width": 0.28,
+        "max_height": 0.12,
     },
     "CENTER_LEFT": {
         "anchor": "center-left",
@@ -114,6 +125,18 @@ LOGO_PRESETS: dict[str, LogoPreset] = {
 }
 
 
+# Per-flow logo placement tuned to match brand-editorial-full safe zones.
+LAYOUT_FLOW_LOGO_PROFILES: dict[str, dict] = {
+    "text-left-hero-right": {
+        "position": "TOP_RIGHT",
+        "size": "LARGE",
+        "zone": LOGO_PRESETS["TOP_RIGHT"]["zone"],
+        "max_width": LOGO_PRESETS["TOP_RIGHT"]["max_width"],
+        "max_height": LOGO_PRESETS["TOP_RIGHT"]["max_height"],
+    },
+}
+
+
 CANVAS_PRESETS = {
     "instagram_square": {"width": 1080, "height": 1080, "ratio": "1:1"},
     "instagram_portrait": {"width": 1080, "height": 1350, "ratio": "4:5"},
@@ -133,3 +156,28 @@ def get_preset(position: str) -> LogoPreset:
     if key not in LOGO_PRESETS:
         raise ValueError(f"Unknown logo position: {position}. Allowed: {', '.join(LOGO_POSITIONS)}")
     return LOGO_PRESETS[key]
+
+
+def infer_layout_flow_logo_profile(creative_dna: dict) -> dict | None:
+    """Return a layout-aware logo profile when composition leaves top-right open."""
+    structure = str(creative_dna.get("structure_type", "")).lower()
+    layout_template = str(creative_dna.get("_meta", {}).get("layout_template", "")).lower()
+    flow = str(creative_dna.get("composition", {}).get("layout_flow", "")).lower()
+    zones = creative_dna.get("composition", {}).get("zones", {}) or {}
+
+    is_brand_editorial = structure in ("brand-editorial-full", "student-editorial-full") or layout_template in (
+        "brand-editorial-full",
+        "student-editorial-full",
+    )
+    hero_right = flow in HERO_RIGHT_LAYOUT_FLOWS
+
+    if not hero_right and zones:
+        hero_pos = str(zones.get("hero", {}).get("position", "")).lower()
+        headline_pos = str(zones.get("headline", {}).get("position", "")).lower()
+        hero_right = "right" in hero_pos and "left" in headline_pos
+
+    if not (is_brand_editorial and hero_right):
+        return None
+
+    profile_key = flow if flow in LAYOUT_FLOW_LOGO_PROFILES else "text-left-hero-right"
+    return dict(LAYOUT_FLOW_LOGO_PROFILES[profile_key])

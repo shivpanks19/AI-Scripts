@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "run_date": "2026-08-11",
+    "posts_count": 3,
+    "calendar_mode": "discover",
+    "layout_template": "student-editorial-full",
+    "concept_history_runs": 3,
+    "prior_calendars_scanned": []
+  },
+  "used_headlines": [],
+  "blocked_concepts": [],
+  "available_concepts": [
+    "Studying longer doesn't always mean studying better.",
+    "Concept clarity beats memorisation.",
+    "Consistency beats last-minute preparation.",
+    "Motivation gets you started. Discipline keeps you going.",
+    "The goal isn't to finish the syllabus. It's to master it.",
+    "Confidence comes from preparation, not motivation alone."
+  ],
+  "selected_slots": [
+    {
+      "slot_index": 1,
+      "layout_template": "student-editorial-full",
+      "pillar": "smart_preparation",
+      "concept": "Studying longer doesn't always mean studying better.",
+      "slug": "studying-longer-not-better-editorial",
+      "pin_ref": "pin-04-editorial-split-hero",
+      "source": "preferred_concepts",
+      "substituted": false,
+      "on_image": {
+        "tagline": "STUDY SMARTER. STAY MOTIVATED. SUCCEED.",
+        "headline": {
+          "prefix": "Studying longer ",
+          "highlight": "doesn't always mean studying better."
+        },
+        "body": "More hours at the desk don't help if concepts stay unclear. Smart preparation is about focus, revision and understanding — not just time spent.",
+        "insight_callout": {
+          "icon": "target",
+          "prefix": "Hours measure effort. ",
+          "highlight": "Clarity",
+          "suffix": " measures preparation."
+        },
+        "icon_row": [
+          { "icon": "target", "label": "Focused Preparation" },
+          { "icon": "book_open", "label": "Concept Clarity" },
+          { "icon": "trending_up", "label": "Consistent Progress" }
+        ],
+        "footer_url": "Rigveda Classes, Jodhpur"
+      }
+    },
+    {
+      "slot_index": 2,
+      "layout_template": "student-editorial-full",
+      "pillar": "concept_clarity",
+      "concept": "Concept clarity beats memorisation.",
+      "slug": "concept-clarity-beats-memorisation-editorial",
+      "pin_ref": "pin-01-contrarian-editorial",
+      "source": "preferred_concepts",
+      "substituted": false,
+      "on_image": {
+        "tagline": "STUDY SMARTER. STAY MOTIVATED. SUCCEED.",
+        "headline": {
+          "prefix": "Concept clarity ",
+          "highlight": "beats memorisation."
+        },
+        "body": "Remembering formulas is not the same as knowing how to apply them. When basics are clear, difficult questions become easier to approach.",
+        "insight_callout": {
+          "icon": "book_open",
+          "prefix": "Memorisation fills notes. ",
+          "highlight": "Understanding",
+          "suffix": " builds confidence."
+        },
+        "icon_row": [
+          { "icon": "target", "label": "Focused Preparation" },
+          { "icon": "book_open", "label": "Concept Clarity" },
+          { "icon": "trending_up", "label": "Consistent Progress" }
+        ],
+        "footer_url": "Rigveda Classes, Jodhpur"
+      }
+    },
+    {
+      "slot_index": 3,
+      "layout_template": "student-editorial-full",
+      "pillar": "consistent_practice",
+      "concept": "Consistency beats last-minute preparation.",
+      "slug": "consistency-beats-last-minute-editorial",
+      "pin_ref": "pin-02-dark-bold-editorial",
+      "source": "preferred_concepts",
+      "substituted": false,
+      "on_image": {
+        "tagline": "STUDY SMARTER. STAY MOTIVATED. SUCCEED.",
+        "headline": {
+          "prefix": "Consistency ",
+          "highlight": "beats last-minute preparation."
+        },
+        "body": "Cramming before an exam rarely fixes months of gaps. Daily practice, revision and doubt-solving create the preparation students actually trust.",
+        "insight_callout": {
+          "icon": "trending_up",
+          "prefix": "Panic studies for a day. ",
+          "highlight": "Discipline",
+          "suffix": " prepares for months."
+        },
+        "icon_row": [
+          { "icon": "target", "label": "Focused Preparation" },
+          { "icon": "book_open", "label": "Concept Clarity" },
+          { "icon": "trending_up", "label": "Consistent Progress" }
+        ],
+        "footer_url": "Rigveda Classes, Jodhpur"
+      }
+    }
+  ]
+}

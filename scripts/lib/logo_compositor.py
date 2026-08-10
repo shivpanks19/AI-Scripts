@@ -12,6 +12,7 @@ from PIL import Image, ImageDraw, ImageFont
 from .image_bounds import crop_to_visible, visible_size
 from .layout_resolver import (
     anchor_position,
+    apply_smart_logo_layout,
     contain_fit,
     layout_from_creative_dna,
     normalized_to_pixels,
@@ -124,6 +125,8 @@ def compose_logo(
     max_h = max(1, round(max_height_fraction * canvas_height))
 
     visible = crop_to_visible(logo_image)
+    if visible.mode != "RGBA":
+        visible = visible.convert("RGBA")
     vis_w, vis_h = visible.size
     original_aspect = vis_w / vis_h
 
@@ -186,6 +189,7 @@ def compose_brand_assets(
     brand_dna = _load_json(brand_dna_path)
     brand_dna["_brand_root"] = str(_resolve_brand_root(brand_dna_path))
 
+    creative_dna: dict[str, Any] | None = None
     if layout is None and layout_path and layout_path.exists():
         layout = _load_json(layout_path)
     elif layout is None and creative_dna_path:
@@ -193,6 +197,10 @@ def compose_brand_assets(
         layout = layout_from_creative_dna(creative_dna, brand_dna)
     elif layout is None:
         raise CompositionValidationError("layout, layout_path, or creative_dna_path is required")
+    elif creative_dna_path and creative_dna_path.exists():
+        creative_dna = _load_json(creative_dna_path)
+
+    layout = apply_smart_logo_layout(layout, creative_dna, brand_dna)
 
     validate_layout(layout)
 

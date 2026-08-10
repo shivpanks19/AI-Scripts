@@ -1,0 +1,27 @@
+{
+  "key_trends": [
+    {
+      "title": "Smart study vs long study hours",
+      "relevance": "Students equate hours with progress; contrarian angle resonates"
+    },
+    {
+      "title": "NEET/JEE preparation anxiety",
+      "relevance": "Relatable pressure around syllabus, mocks and revision"
+    },
+    {
+      "title": "Concept-first coaching messaging",
+      "relevance": "Parents and students want clarity over memorisation hype"
+    }
+  ],
+  "contrarian_hooks": [
+    "Studying longer doesn't always mean studying better",
+    "More hours don't guarantee better preparation",
+    "Concept clarity beats memorisation"
+  ],
+  "topic_clusters_suggested": [
+    {
+      "pillar": "smart_preparation",
+      "angles": ["hours vs understanding", "effective revision", "focus over distraction"]
+    }
+  ]
+}

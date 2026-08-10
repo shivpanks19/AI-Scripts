@@ -1,0 +1,70 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 1080,
+    "ratio": "1:1"
+  },
+  "logo": {
+    "enabled": true,
+    "position": "TOP_RIGHT",
+    "size": "LARGE",
+    "variant": "PRIMARY",
+    "fit": "contain",
+    "zone": {
+      "x": 0.52,
+      "y": 0.02,
+      "width": 0.44,
+      "height": 0.14
+    },
+    "maxWidth": 0.28,
+    "maxHeight": 0.12,
+    "inferred": true,
+    "inferredFrom": "text-left-hero-right"
+  },
+  "composition": {
+    "subjectZone": {
+      "x": 0.45,
+      "y": 0.12,
+      "width": 0.52,
+      "height": 0.75
+    },
+    "headlineZone": {
+      "x": 0.05,
+      "y": 0.12,
+      "width": 0.55,
+      "height": 0.22
+    },
+    "bodyZone": {
+      "x": 0.05,
+      "y": 0.34,
+      "width": 0.55,
+      "height": 0.18
+    }
+  },
+  "logoZone": {
+    "x": 0.52,
+    "y": 0.02,
+    "width": 0.44,
+    "height": 0.14
+  },
+  "layers": {
+    "background": "concept-clarity-beats-memorisation-editorial-background.png",
+    "logo": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/rigveda-classes-jodhpur/references/brand-assets/rigveda-classes-logo.png",
+    "export": "concept-clarity-beats-memorisation-editorial.png"
+  },
+  "resolved": {
+    "logoVariant": "PRIMARY",
+    "logoPixels": {
+      "x": 842,
+      "y": 22,
+      "width": 195,
+      "height": 130
+    },
+    "logoZonePixels": {
+      "x": 562,
+      "y": 22,
+      "width": 475,
+      "height": 151
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "type": "layout_spec_schema",
+    "version": "1.0",
+    "purpose": "Normalized layout specification for deterministic brand composition (Phase 9a). AI plans zones; renderer enforces geometry.",
+    "file_naming": "{creative-slug}.layout.json",
+    "file_location": "Same folder as creative asset (e.g. instagram/{run_date}/)",
+    "pairs_with": ["{slug}.CREATIVE_DNA.json", "BRAND_DNA.json", "{slug}-background.png"]
+  },
+  "schema": {
+    "_meta": {
+      "creative_id": "string",
+      "brand_id": "string",
+      "source": "creative_dna | layout_planner | manual",
+      "created": "ISO date"
+    },
+    "canvas": {
+      "width": "number — pixel width, e.g. 1080",
+      "height": "number — pixel height, e.g. 1080 | 1350 | 1920",
+      "ratio": "string — 1:1 | 4:5 | 9:16 | 16:9"
+    },
+    "composition": {
+      "subjectZone": {
+        "x": "number 0-1",
+        "y": "number 0-1",
+        "width": "number 0-1",
+        "height": "number 0-1"
+      },
+      "headlineZone": {
+        "x": "number 0-1",
+        "y": "number 0-1",
+        "width": "number 0-1",
+        "height": "number 0-1"
+      },
+      "bodyZone": {
+        "x": "number 0-1",
+        "y": "number 0-1",
+        "width": "number 0-1",
+        "height": "number 0-1"
+      }
+    },
+    "logo": {
+      "enabled": "boolean",
+      "position": "TOP_LEFT | TOP_CENTER | TOP_RIGHT | CENTER_LEFT | CENTER | CENTER_RIGHT | BOTTOM_LEFT | BOTTOM_CENTER | BOTTOM_RIGHT",
+      "size": "SMALL | MEDIUM | LARGE",
+      "variant": "LIGHT | DARK | AUTO — optional; AUTO uses luminance check",
+      "zone": {
+        "x": "number 0-1 — resolved by renderer from position preset if omitted",
+        "y": "number 0-1",
+        "width": "number 0-1",
+        "height": "number 0-1"
+      },
+      "maxWidth": "number 0-1 — max logo width as fraction of canvas width",
+      "maxHeight": "number 0-1 — max logo height as fraction of canvas height",
+      "fit": "contain",
+      "margin": "number 0-1 — safe margin from canvas edge"
+    },
+    "logoZone": {
+      "x": "number 0-1 — alias for logo.zone; safe area reserved in AI background",
+      "y": "number 0-1",
+      "width": "number 0-1",
+      "height": "number 0-1"
+    },
+    "layers": {
+      "background": "{slug}-background.png",
+      "logo": "brand asset path resolved at compose time",
+      "export": "{slug}.png"
+    }
+  }
+}

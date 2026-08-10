@@ -1,0 +1,200 @@
+{
+  "_meta": {
+    "type": "creative_dna_schema",
+    "version": "1.0",
+    "brand_dna": "./BRAND_DNA.json",
+    "brand_dna_schema": "./BRAND_DNA_SCHEMA.json",
+    "purpose": "Replicable structure for ONE social media creative. Each image gets its own CREATIVE_DNA.json file. LLMs reverse-engineer or author this from a reference image + brief, then merge with BRAND_DNA.json at render time.",
+    "file_naming": "{creative-slug}.CREATIVE_DNA.json",
+    "file_location": "Same folder as the creative asset and prompt (e.g. instagram/, carousel/).",
+    "merge_order": ["reference_prompt", "BRAND_DNA.json", "{creative-slug}.CREATIVE_DNA.json"],
+    "merge_rules": {
+      "reference_prompt_wins_on": [
+        "composition",
+        "zone_map",
+        "must_preserve",
+        "typography_placement",
+        "decorative_structure",
+        "hero_placement",
+        "regeneration_layout_prose"
+      ],
+      "brand_dna_wins_on": [
+        "all_colors",
+        "visual_identity.background",
+        "visual_identity.primary_accent",
+        "visual_identity.secondary_accent",
+        "visual_identity.text",
+        "visual_identity.text_on_dark",
+        "elements[].style.color",
+        "elements[].style.background",
+        "effects.halo_color",
+        "effects.glow_accent",
+        "typography.family",
+        "logo",
+        "voice",
+        "constraints"
+      ],
+      "creative_dna_wins_on": [
+        "composition",
+        "elements (layout roles and copy only)",
+        "copy",
+        "hero",
+        "canvas",
+        "structure_type",
+        "visual_language (geometry, lighting, depth — not hex)",
+        "effects (boolean flags only)",
+        "visual_identity.background_mode",
+        "visual_identity.background_treatment (texture description only)"
+      ],
+      "color_resolution": "See brand-social-creative-pipeline/references/prompt-merge.md — never pass creative hex to image prompts"
+    },
+    "llm_workflow": [
+      "1. Receive reference image and/or creative brief.",
+      "2. Read BRAND_DNA.json for invariant brand rules.",
+      "3. Phase 6a: write pin reference-prompt.md (layout regeneration, color roles only).",
+      "4. Analyze the reference: map zones, text blocks, hero — link reference_prompt_ref.",
+      "5. Write {slug}.CREATIVE_DNA.json with elements[] for this post's on-image copy.",
+      "6. Phase 8: merge reference-prompt + brand_dna colors + elements[] → {slug}-prompt.md."
+    ]
+  },
+
+  "schema": {
+    "_meta": {
+      "type": "creative_dna",
+      "version": "1.0",
+      "creative_id": "string — unique slug, e.g. 2026-08-08-admissions-automation-stat-hero",
+      "brand_dna": "../BRAND_DNA.json",
+      "reference_asset": "./{creative-slug}.png",
+      "reference_prompt_ref": "../../references/pinterest/pin-01-{layout}-reference-prompt.md",
+      "prompt_ref": "./{creative-slug}-prompt.md",
+      "source": "generated | reference_upload | reverse_engineered",
+      "created": "ISO date",
+      "channel": "instagram | linkedin | meta_ads | tiktok"
+    },
+
+    "concept": {
+      "topic": "string — what this creative is about",
+      "vertical": "string | null — e.g. education-admissions",
+      "metaphor": "string — visual/conceptual frame",
+      "message": "string — one-line takeaway",
+      "persona": "string — who this speaks to"
+    },
+
+    "canvas": {
+      "ratio": "4:5 | 1:1 | 16:9 | 9:16",
+      "width": "number",
+      "height": "number",
+      "crop_safe": {
+        "ratio": "string",
+        "width": "number",
+        "height": "number"
+      }
+    },
+
+    "structure_type": "string — layout archetype for this specific image, e.g. stat-hero-human-product | editorial-search-hero | myth-truth-list | split-comparison | brand-editorial-full",
+
+    "layout_spec": {
+      "canvas": { "width": "number", "height": "number", "ratio": "string" },
+      "logo": {
+        "enabled": "boolean",
+        "position": "TOP_LEFT | ... | BOTTOM_RIGHT",
+        "size": "SMALL | MEDIUM | LARGE",
+        "variant": "LIGHT | DARK | AUTO",
+        "zone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+        "maxWidth": "number 0-1",
+        "maxHeight": "number 0-1",
+        "fit": "contain",
+        "margin": "number 0-1"
+      },
+      "logoZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+      "composition": {
+        "subjectZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+        "headlineZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" },
+        "bodyZone": { "x": "0-1", "y": "0-1", "width": "0-1", "height": "0-1" }
+      }
+    },
+
+    "composition": {
+      "layout_flow": "top-to-bottom | split | center-stack | editorial-grid",
+      "zones": {
+        "{zone_name}": {
+          "position": "top-left | top-right | upper-third | center | center-left | center-right | center-lower | bottom-left | bottom-right | footer",
+          "scale": "dominant | large | medium | small",
+          "z_index": "background | mid | foreground"
+        }
+      }
+    },
+
+    "visual_identity": {
+      "background_mode": "light | dark | primary — layout tone; resolved to brand.visual_identity at merge (light→background, dark→primary_dark, primary→primary)",
+      "background": "DEPRECATED at render — reference/documentation hex only; ignored at merge",
+      "background_treatment": "string — texture only (gradient direction, grain, blur); base hex always from brand via background_mode",
+      "primary_accent": "DEPRECATED at render — use brand secondary_light; role reference only",
+      "secondary_accent": "DEPRECATED at render — use brand revenue; role reference only",
+      "text": "DEPRECATED at render — use brand text or text_on_dark per background_mode",
+      "text_on_dark": "DEPRECATED at render — use brand text_on_dark",
+      "style": "string — creative-specific style descriptor (layout mood, not palette)"
+    },
+
+    "visual_language": {
+      "geometry": "string",
+      "lighting": "string",
+      "depth": "string",
+      "materials": ["string"]
+    },
+
+    "typography": {
+      "headline_weight": "bold | semibold",
+      "headline_scale": "dominant | large",
+      "body_weight": "regular",
+      "alignment": "left | center | editorial"
+    },
+
+    "hero": {
+      "type": "human | human_with_product | product | illustration | none",
+      "scale": "dominant | supporting | none",
+      "subject": "string",
+      "pose": "string",
+      "product": "string | null",
+      "lighting": "string",
+      "casting": "string | null"
+    },
+
+    "elements": [
+      {
+        "id": "string — unique element id",
+        "type": "headline | subheadline | stat | stat_label | card | search_bar | cta_button | logo | url | badge | icon_row | phone_ui | prop",
+        "zone": "string — matches composition.zones key",
+        "content": "string | object — exact on-image copy",
+        "style": {
+          "color": "DEPRECATED at render — resolved from brand by element.type + background_mode",
+          "background": "DEPRECATED at render — resolved from brand by element.type",
+          "scale": "string | null"
+        }
+      }
+    ],
+
+    "effects": {
+      "ribbons": "boolean",
+      "particles": "none | minimal",
+      "halo": "boolean",
+      "halo_color": "DEPRECATED at render — use brand ai",
+      "glow_accent": "DEPRECATED at render — use brand secondary_light",
+      "flow_orbits": "boolean"
+    },
+
+    "copy": {
+      "headline": "string",
+      "subheadline": "string | null",
+      "cta": "string",
+      "website": "string",
+      "caption": "string — social post caption"
+    },
+
+    "replication": {
+      "structure_summary": "string — 1-2 sentences describing layout for LLM re-use",
+      "must_preserve": ["string — structural elements that define this creative"],
+      "variable_slots": ["string — what can change per variant while keeping structure"]
+    }
+  }
+}

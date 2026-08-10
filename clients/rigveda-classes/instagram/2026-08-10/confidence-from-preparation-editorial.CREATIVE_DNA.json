@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "confidence-from-preparation-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-10/pin-02-dark-bold-editorial-reference-prompt.md",
+    "logo_asset": "../../references/brand-assets/rigveda-classes-logo.png",
+    "prompt_ref": "./confidence-from-preparation-editorial-prompt.md",
+    "source": "pre-calendar-setup-brief",
+    "created": "2026-08-10",
+    "channel": "instagram",
+    "slot_index": 3,
+    "layout_template": "student-editorial-full"
+  },
+  "layout_spec": {
+    "canvas": { "width": 1080, "height": 1080, "ratio": "1:1" },
+    "logo": { "enabled": true, "position": "TOP_RIGHT", "size": "LARGE", "variant": "PRIMARY", "fit": "contain" },
+    "composition": {
+      "subjectZone": { "x": 0.05, "y": 0.4, "width": 0.9, "height": 0.4 },
+      "headlineZone": { "x": 0.05, "y": 0.1, "width": 0.9, "height": 0.25 }
+    }
+  },
+  "concept": {
+    "topic": "Confidence comes from preparation, not motivation alone.",
+    "pillar": "consistent_practice",
+    "message": "Confidence comes from preparation, not motivation alone."
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "student-editorial-full",
+  "composition": {
+    "layout_flow": "bold-center-stack",
+    "zones": {
+      "header": { "position": "top-right", "scale": "small" },
+      "headline": { "position": "upper-center", "scale": "dominant" },
+      "body": { "position": "mid-center", "scale": "medium" },
+      "insight_callout": { "position": "mid-below", "scale": "small" },
+      "icon_row": { "position": "bottom-left", "scale": "small" },
+      "footer": { "position": "bottom-right", "scale": "small" },
+      "hero": { "position": "background-subtle", "scale": "medium" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "deep navy bold editorial with subtle grain"
+  },
+  "elements": [
+    { "type": "logo", "role": "header", "content": "Rigveda Classes", "typography": "wordmark", "color_role": "text_on_dark" },
+    { "type": "tagline", "role": "header", "content": "STUDY SMARTER. STAY MOTIVATED. SUCCEED.", "typography": "small", "color_role": "text_muted" },
+    { "type": "headline", "role": "headline", "content": { "prefix": "Confidence comes from preparation, ", "highlight": "not motivation alone.", "highlight_color_role": "primary_light" }, "typography": "display", "color_role": "text_on_dark" },
+    { "type": "body", "role": "body", "content": "Motivational videos can lift your mood for an hour. Steady revision, mock tests and doubt-solving are what make you trust yourself on exam day.", "typography": "body", "color_role": "text_on_dark" },
+    { "type": "insight_callout", "role": "callout", "content": { "icon": "target", "prefix": "Hype fades quickly. ", "highlight": "Preparation", "suffix": " stays with you." }, "typography": "small", "color_role": "text_muted" },
+    { "type": "icon_row", "role": "footer_features", "content": { "items": [{ "icon": "target", "label": "Focused Preparation" }, { "icon": "book_open", "label": "Concept Clarity" }, { "icon": "trending_up", "label": "Consistent Progress" }] }, "typography": "small", "color_role": "text_muted" },
+    { "type": "url", "role": "footer", "content": "Rigveda Classes, Jodhpur", "typography": "small", "color_role": "primary_light" }
+  ],
+  "hero": { "type": "photo_subject", "match_reference": true, "description": "Focused Indian student taking mock test or revising with confidence, cinematic deep blue coaching environment, subtle background, authentic exam preparation moment" },
+  "replication": {
+    "must_preserve": ["logo top-right composited", "bold headline stack", "body + callout + icon row", "dark bold editorial canvas"],
+    "variable_slots": ["tagline", "headline", "body", "insight_callout", "icon_row", "footer"]
+  },
+  "copy": { "post_ref": "./confidence-from-preparation-editorial-post.md", "caption_scores_ref": "./confidence-from-preparation-editorial-caption-scores.json" }
+}

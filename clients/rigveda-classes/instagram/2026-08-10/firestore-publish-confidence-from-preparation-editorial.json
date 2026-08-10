@@ -1,0 +1,13 @@
+{
+  "upload": {
+    "success": true,
+    "imageUrl": "https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786400184479-image.png"
+  },
+  "firestore": {
+    "success": true,
+    "documentId": "XHwxteKChQhHh3TsxNKA",
+    "outletId": "NLQKPp1u8Nw2SQpIBq0R",
+    "collection": "social-ai-poster",
+    "path": "OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/XHwxteKChQhHh3TsxNKA"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 1080,
+    "ratio": "1:1"
+  },
+  "logo": {
+    "enabled": true,
+    "position": "TOP_RIGHT",
+    "size": "LARGE",
+    "variant": "PRIMARY",
+    "fit": "contain"
+  },
+  "composition": {
+    "subjectZone": {
+      "x": 0.05,
+      "y": 0.4,
+      "width": 0.9,
+      "height": 0.4
+    },
+    "headlineZone": {
+      "x": 0.05,
+      "y": 0.1,
+      "width": 0.9,
+      "height": 0.25
+    }
+  },
+  "layers": {
+    "background": "confidence-from-preparation-editorial-background.png",
+    "logo": "/workspace/clients/rigveda-classes/references/brand-assets/rigveda-classes-logo.png",
+    "export": "confidence-from-preparation-editorial.png"
+  },
+  "resolved": {
+    "logoVariant": "PRIMARY",
+    "logoPixels": {
+      "x": 842,
+      "y": 22,
+      "width": 195,
+      "height": 130
+    },
+    "logoZonePixels": {
+      "x": 562,
+      "y": 22,
+      "width": 475,
+      "height": 151
+    }
+  }
+}

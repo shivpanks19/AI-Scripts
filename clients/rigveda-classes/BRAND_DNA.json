@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "type": "brand_dna",
+    "version": "1.0",
+    "brand_id": "rigveda-classes",
+    "brand_name": "Rigveda Classes",
+    "schema_ref": "./BRAND_DNA_SCHEMA.json",
+    "source_ref": "./BRAND_IDENTITY.md",
+    "scope": "Invariant across all Rigveda Classes creatives.",
+    "created": "2026-08-10",
+    "updated": "2026-08-10"
+  },
+  "brand": {
+    "name": "Rigveda Classes",
+    "descriptor": "NEET, JEE and School Coaching",
+    "agency": null,
+    "tagline_product": "STUDY SMARTER. STAY MOTIVATED. SUCCEED.",
+    "tagline_agency": null,
+    "promise": "Rigveda Classes combines academic guidance, focused preparation and consistent practice to help students prepare better for NEET, JEE and school academics.",
+    "website": null,
+    "location": "Jodhpur, Rajasthan, India"
+  },
+  "strategy": {
+    "purpose": "Help students in Jodhpur prepare for NEET, JEE and school academics through focused teaching, consistent practice and disciplined preparation.",
+    "positioning": "For students and parents in Jodhpur evaluating coaching — Rigveda Classes helps students study smarter, stay consistent and move closer to their academic goals.",
+    "personality": [
+      "motivational",
+      "intelligent",
+      "relatable",
+      "confident",
+      "educational",
+      "student-focused",
+      "mentor-like",
+      "aspirational",
+      "practical",
+      "energetic"
+    ],
+    "values": [
+      { "name": "Student-first", "definition": "Students are the heroes; coaching enables" },
+      { "name": "Smart preparation", "definition": "Clarity and consistency over brute-force hours" },
+      { "name": "Mentor guidance", "definition": "Teachers as guides, not gatekeepers" },
+      { "name": "Practical discipline", "definition": "Systems, revision and practice over hype" },
+      { "name": "Local trust", "definition": "Trusted academic partner in Jodhpur" }
+    ]
+  },
+  "visual_identity": {
+    "background": "#F8FAFC",
+    "primary": "#1746C7",
+    "primary_light": "#3D7BFF",
+    "primary_dark": "#071642",
+    "primary_mid": "#0B1F4D",
+    "secondary": "#1746C7",
+    "secondary_light": "#3D7BFF",
+    "secondary_dark": "#071642",
+    "text": "#0F172A",
+    "text_on_dark": "#FFFFFF",
+    "text_muted": "#94A3B8",
+    "neutral_50": "#F8FAFC",
+    "neutral_100": "#F1F5F9",
+    "neutral_200": "#E2E8F0",
+    "success": "#22C55E",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "style": "premium educational editorial — deep navy canvas, electric blue accents, authentic Indian student environments"
+  },
+  "typography": {
+    "family": "Inter",
+    "fallback": ["DM Sans", "system-ui", "sans-serif"],
+    "wordmark_weight": "bold",
+    "headline_weight": "bold",
+    "body_weight": "regular",
+    "hierarchy": {
+      "display": { "size_px": "44-52", "weight": "bold" },
+      "h1": { "size_px": 36, "weight": "bold" },
+      "body": { "size_px": "15-16", "weight": "regular" },
+      "small": { "size_px": 13, "weight": "regular" }
+    }
+  },
+  "logo": {
+    "wordmark": "Rigveda Classes",
+    "clear_space": "minimum height of logo on all sides",
+    "min_digital_width_px": 100,
+    "assets": {
+      "wordmark": "references/brand-assets/rigveda-classes-logo.png",
+      "light": "references/brand-assets/rigveda-classes-logo.png",
+      "primary": "references/brand-assets/rigveda-classes-logo.png"
+    },
+    "composition": {
+      "enabled": true,
+      "defaultPosition": "TOP_RIGHT",
+      "defaultSize": "LARGE",
+      "safeMargin": 0.03,
+      "autoVariant": false,
+      "allowedPositions": ["TOP_LEFT", "TOP_RIGHT", "BOTTOM_LEFT", "BOTTOM_RIGHT"],
+      "sizes": {
+        "SMALL": 0.12,
+        "MEDIUM": 0.17,
+        "LARGE": 0.22,
+        "XL": 0.28
+      }
+    },
+    "overlay": {
+      "enabled": true,
+      "phase": "9a",
+      "workflow": "Phase 9 generates background without logo. Phase 9a composites real logo via compose_brand_assets.py."
+    },
+    "dont": [
+      "stretch logo",
+      "recolor logo wordmark",
+      "place on busy imagery without clear space"
+    ]
+  },
+  "voice": {
+    "tone": ["motivational", "relatable", "mentor-like", "practical"],
+    "preferred_terms": [
+      "smart preparation",
+      "concept clarity",
+      "consistent practice",
+      "NEET preparation",
+      "JEE preparation",
+      "study smarter",
+      "Rigveda Classes",
+      "Jodhpur"
+    ],
+    "avoid_terms": [
+      "guaranteed selection",
+      "guaranteed rank",
+      "100% selection",
+      "best coaching in India",
+      "No. 1 coaching",
+      "revolutionary",
+      "game-changing"
+    ],
+    "cta_primary": "Join Rigveda Classes",
+    "cta_secondary": "Start Your Preparation"
+  },
+  "imagery": {
+    "style": "cinematic editorial photography of Indian students studying, revising and solving problems in coaching environments",
+    "prefer": [
+      "focused Indian students",
+      "classroom and study desk environments",
+      "subtle academic graphics",
+      "deep navy environments with blue accents"
+    ],
+    "avoid": [
+      "generic smiling student with books",
+      "fake toppers or unverified ranks",
+      "feature catalogue layouts",
+      "generic AI brain graphics",
+      "fear-based exam pressure"
+    ]
+  },
+  "social": {
+    "instagram": "@rigveda_classes_jodhpur",
+    "platforms": ["instagram", "facebook"]
+  }
+}

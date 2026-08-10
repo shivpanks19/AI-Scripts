@@ -1,0 +1,28 @@
+{
+  "client_slug": "rigveda-classes",
+  "display_name": "Rigveda Classes",
+  "website": "https://www.instagram.com/rigveda_classes_jodhpur/",
+  "location": "Jodhpur, Rajasthan, India",
+  "channels": ["instagram", "facebook"],
+  "folders": {
+    "plans": "clients/rigveda-classes/plans/2026-08-10",
+    "references_pinterest": "clients/rigveda-classes/references/pinterest/2026-08-10",
+    "instagram": "clients/rigveda-classes/instagram/2026-08-10",
+    "facebook": "clients/rigveda-classes/facebook/2026-08-10",
+    "runs": "clients/rigveda-classes/runs/2026-08-10"
+  },
+  "pipeline": {
+    "run_date": "2026-08-10",
+    "last_run": "2026-08-10T22:12:00Z",
+    "posts_count": 3,
+    "calendar": "weekly",
+    "calendar_mode": "preset",
+    "layout_template": "student-editorial-full",
+    "goals": ["awareness", "engagement"],
+    "platforms": ["instagram"]
+  },
+  "webhook": {
+    "outlet_id": "NLQKPp1u8Nw2SQpIBq0R",
+    "source": "brand-social-creative-pipeline"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "type": "pinterest_reference_manifest",
+    "version": "1.0",
+    "client_slug": "rigveda-classes",
+    "run_date": "2026-08-10",
+    "source": "../BRAND_IDENTITY.md",
+    "search_brief": "./search-brief.json",
+    "fetched": "2026-08-10",
+    "pin_count": 5,
+    "phase_6a_status": "complete"
+  },
+  "brand_signals": {
+    "product_category": "NEET JEE coaching",
+    "industry": "education",
+    "audience": "NEET and JEE aspirants in India",
+    "visual_tone": "dark editorial educational"
+  },
+  "searches_run": [
+    {
+      "query": "coaching institute instagram post design dark editorial",
+      "candidates_reviewed": 4
+    },
+    {
+      "query": "edtech social media post design contrarian headline",
+      "candidates_reviewed": 3
+    }
+  ],
+  "pins": [
+    {
+      "id": "pin-01",
+      "file": "./pin-01-contrarian-editorial.png",
+      "source_pin_url": "https://www.pinterest.com/search/pins/?q=coaching+institute+instagram+post+design",
+      "inferred_layout": "contrarian-editorial",
+      "layout_notes": "Bold contrarian headline stack on dark canvas",
+      "suggested_structure_type": "contrarian-editorial-hero",
+      "reference_prompt_file": "./pin-01-contrarian-editorial-reference-prompt.md",
+      "phase_6a_status": "complete"
+    },
+    {
+      "id": "pin-02",
+      "file": "./pin-02-dark-bold-editorial.png",
+      "inferred_layout": "dark-bold-editorial",
+      "reference_prompt_file": "./pin-02-dark-bold-editorial-reference-prompt.md",
+      "phase_6a_status": "complete"
+    },
+    {
+      "id": "pin-03",
+      "file": "./pin-03-editorial-quote-hero.png",
+      "inferred_layout": "editorial-quote-hero",
+      "reference_prompt_file": "./pin-03-editorial-quote-hero-reference-prompt.md",
+      "phase_6a_status": "complete"
+    },
+    {
+      "id": "pin-04",
+      "file": "./pin-04-editorial-split-hero.png",
+      "inferred_layout": "editorial-split-hero",
+      "reference_prompt_file": "./pin-04-editorial-split-hero-reference-prompt.md",
+      "phase_6a_status": "complete"
+    },
+    {
+      "id": "pin-05",
+      "file": "./pin-05-dark-editorial-card.png",
+      "inferred_layout": "dark-editorial-card",
+      "reference_prompt_file": "./pin-05-dark-editorial-card-reference-prompt.md",
+      "phase_6a_status": "complete"
+    }
+  ],
+  "selection_rationale": "Five dark editorial single-frame layouts matching coaching institute premium positioning — contrarian, bold, quote, split-hero and card archetypes for layout diversity."
+}

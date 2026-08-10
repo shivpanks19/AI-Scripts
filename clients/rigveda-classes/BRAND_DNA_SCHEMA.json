@@ -1,0 +1,191 @@
+{
+  "_meta": {
+    "type": "brand_dna_schema",
+    "version": "1.0",
+    "purpose": "Replicable structure for ONE brand/client. Each client gets its own BRAND_DNA.json. LLMs author or extract this from a brand identity doc, style guide, or website — then pair with per-image CREATIVE_DNA files.",
+    "file_naming": "BRAND_DNA.json",
+    "file_location": "clients/{client_slug}/BRAND_DNA.json",
+    "pairs_with": "{creative-slug}.CREATIVE_DNA.json — see CREATIVE_DNA_SCHEMA.json",
+    "merge_order": ["BRAND_DNA.json", "{creative-slug}.CREATIVE_DNA.json"],
+    "merge_rules": {
+      "brand_dna_wins_on": [
+        "brand",
+        "visual_identity",
+        "typography.family",
+        "logo",
+        "ui_patterns",
+        "voice",
+        "imagery",
+        "constraints"
+      ],
+      "creative_dna_wins_on": [
+        "composition",
+        "elements",
+        "copy",
+        "hero",
+        "canvas",
+        "structure_type",
+        "effects"
+      ]
+    },
+    "llm_workflow": [
+      "1. Receive brand identity doc, style guide, website, or client brief.",
+      "2. Write clients/{client_slug}/BRAND_DNA.json following this schema.",
+      "3. For each social creative: write {slug}.CREATIVE_DNA.json (see CREATIVE_DNA_SCHEMA.json).",
+      "4. At render time: merge brand_dna + creative_dna → never override brand colors, fonts, or voice in creative files."
+    ]
+  },
+
+  "schema": {
+    "_meta": {
+      "type": "brand_dna",
+      "version": "1.0",
+      "brand_id": "string — client slug, e.g. swayam",
+      "brand_name": "string — display name",
+      "schema_ref": "./BRAND_DNA_SCHEMA.json",
+      "source_ref": "string | null — path to brand identity doc, e.g. ./BRAND_IDENTITY.md",
+      "scope": "Invariant across all creatives for this brand. Import into every render.",
+      "created": "ISO date",
+      "updated": "ISO date"
+    },
+
+    "brand": {
+      "name": "string — product or company name",
+      "descriptor": "string — product category line, e.g. Agentic CRM",
+      "agency": "string | null — agency name if applicable",
+      "tagline_product": "string",
+      "tagline_agency": "string | null",
+      "promise": "string — brand promise in one sentence",
+      "website": "string — domain without protocol"
+    },
+
+    "strategy": {
+      "purpose": "string | null — why the brand exists",
+      "positioning": "string | null — for whom, what, unlike whom",
+      "personality": ["string — brand traits, e.g. confident operator, sharp, outcome-obsessed"],
+      "values": [
+        {
+          "name": "string",
+          "definition": "string"
+        }
+      ]
+    },
+
+    "visual_identity": {
+      "background": "hex — default light background",
+      "primary": "hex — trust, headlines, dark surfaces",
+      "primary_light": "hex | null",
+      "primary_dark": "hex | null",
+      "secondary": "hex — action, progress, agentic accent",
+      "secondary_light": "hex | null",
+      "secondary_dark": "hex | null",
+      "revenue": "hex — conversion, KPI, revenue emphasis",
+      "revenue_light": "hex | null",
+      "revenue_dark": "hex | null",
+      "ai": "hex — AI surfaces, briefing strips",
+      "ai_muted": "hex | null — AI background tint",
+      "text": "hex — body text on light",
+      "text_on_dark": "hex — text on dark surfaces",
+      "text_muted": "hex — captions, sublines",
+      "neutral_50": "hex | null",
+      "neutral_100": "hex | null",
+      "neutral_200": "hex | null",
+      "success": "hex | null",
+      "warning": "hex | null",
+      "error": "hex | null",
+      "whatsapp_ui_only": "hex | null — only inside WhatsApp UI mocks",
+      "style": "string — overall visual style descriptor"
+    },
+
+    "typography": {
+      "family": "string — primary font",
+      "fallback": ["string"],
+      "mono": "string | null — code, IDs, API",
+      "wordmark_weight": "semibold | bold",
+      "headline_weight": "bold | semibold",
+      "body_weight": "regular",
+      "letter_spacing_wordmark": "string — e.g. -1%",
+      "hierarchy": {
+        "display": { "size_px": "string | number", "weight": "string" },
+        "h1": { "size_px": "number", "weight": "string" },
+        "h2": { "size_px": "number", "weight": "string" },
+        "h3": { "size_px": "number", "weight": "string" },
+        "body": { "size_px": "string | number", "weight": "string" },
+        "small": { "size_px": "number", "weight": "string" }
+      }
+    },
+
+    "logo": {
+      "wordmark": "string",
+      "descriptor_size_ratio": "number — subline size relative to wordmark, e.g. 0.45",
+      "icon_concept": "string — what the mark represents",
+      "clear_space": "string",
+      "min_digital_width_px": "number",
+      "min_icon_px": "number",
+      "assets": {
+        "app_icon": "string — relative path",
+        "mark": "string | null — icon mark path",
+        "wordmark": "string | null — wordmark image path",
+        "light": "string | null — logo for dark backgrounds",
+        "dark": "string | null — logo for light backgrounds",
+        "primary": "string | null — default logo path"
+      },
+      "composition": {
+        "enabled": "boolean — when true, Phase 9 writes background only; Phase 9a composites logo",
+        "defaultPosition": "TOP_LEFT | TOP_CENTER | TOP_RIGHT | CENTER_LEFT | CENTER | CENTER_RIGHT | BOTTOM_LEFT | BOTTOM_CENTER | BOTTOM_RIGHT",
+        "defaultSize": "SMALL | MEDIUM | LARGE",
+        "safeMargin": "number 0-1 — normalized margin from canvas edge",
+        "autoVariant": "boolean — pick light/dark logo from background luminance",
+        "allowedPositions": ["string — subset of position enum"],
+        "sizes": {
+          "SMALL": "number — max width fraction",
+          "MEDIUM": "number",
+          "LARGE": "number"
+        }
+      },
+      "overlay": {
+        "enabled": "boolean — legacy alias for composition.enabled",
+        "phase": "9a",
+        "workflow": "string",
+        "placement": "string — legacy; prefer composition.defaultPosition",
+        "width_ratio": "number — legacy; prefer composition.sizes"
+      },
+      "dont": ["string — logo misuse rules"]
+    },
+
+    "ui_patterns": {
+      "pipeline_progress": "hex | null",
+      "revenue_kpi": "hex | null",
+      "ai_surface": "hex | null",
+      "ai_surface_muted": "hex | null",
+      "border_radius": {
+        "sm": "number",
+        "md": "number",
+        "lg": "number"
+      },
+      "ai_indicator": "string | null — how AI UI is marked",
+      "charts": "string | null — chart color rules"
+    },
+
+    "voice": {
+      "tone": "string — overall voice description",
+      "headline_tone": "string — how headlines should read",
+      "cta_primary": "string — default CTA label",
+      "cta_secondary": "string | null",
+      "prefer": ["string — vocabulary to use"],
+      "avoid": ["string — vocabulary to avoid"]
+    },
+
+    "imagery": {
+      "prefer": ["string — what to show in creatives"],
+      "avoid": ["string — what never to show"],
+      "agent_presence": "string | null — how to depict AI/automation"
+    },
+
+    "constraints": {
+      "accessibility": "string | null — contrast rules",
+      "compliance": ["string | null — legal, platform rules"],
+      "naming": ["string | null — naming rules across materials"]
+    }
+  }
+}

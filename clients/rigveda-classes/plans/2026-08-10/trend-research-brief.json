@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "run_date": "2026-08-10",
+    "client_slug": "rigveda-classes",
+    "method": "web_search",
+    "window_days": 14,
+    "created": "2026-08-10"
+  },
+  "key_trends": [
+    {
+      "title": "AI-augmented exam prep rising",
+      "summary": "Students increasingly combine coaching with AI tools for doubt-solving and adaptive practice — but still need human mentors for concept clarity and discipline.",
+      "relevance": "Position Rigveda as mentor-led smart preparation, not tech hype.",
+      "source": "Analytics India Mag, Notesly 2026"
+    },
+    {
+      "title": "Conceptual clarity over rote learning",
+      "summary": "Government platforms like SATHEE and educators emphasize understanding over memorisation for NEET/JEE success.",
+      "relevance": "Aligns with Rigveda's concept clarity pillar.",
+      "source": "Careers360 SATHEE coverage"
+    },
+    {
+      "title": "Mock tests and simulation analytics",
+      "summary": "Aspirants use data-driven mock tests to identify weak topics and improve time management under exam pressure.",
+      "relevance": "Content on consistent practice and exam simulation habits.",
+      "source": "CollegeDekho JEE 2026 prep"
+    }
+  ],
+  "emerging_trends": [
+    "Hybrid coaching + self-study with mentor check-ins",
+    "Personalized revision schedules over brute-force hours",
+    "Mental discipline and consistency as differentiators"
+  ],
+  "contrarian_hooks": [
+    "More AI tools don't replace the need for concept clarity",
+    "Finishing the syllabus isn't the same as being exam-ready",
+    "Motivation fades — discipline carries you through preparation"
+  ],
+  "topic_clusters_suggested": [
+    {
+      "pillar": "smart_preparation",
+      "angles": [
+        "Discipline vs motivation in long exam prep",
+        "Mastering concepts vs covering syllabus",
+        "Preparation confidence vs temporary motivation"
+      ]
+    },
+    {
+      "pillar": "consistent_practice",
+      "angles": [
+        "Daily practice habits over last-minute cramming",
+        "Revision systems that actually stick"
+      ]
+    }
+  ],
+  "reactive_slot_candidates": []
+}

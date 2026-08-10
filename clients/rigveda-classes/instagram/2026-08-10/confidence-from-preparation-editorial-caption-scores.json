@@ -1,0 +1,21 @@
+{
+  "slug": "confidence-from-preparation-editorial",
+  "platform": "instagram",
+  "captionScore": 83,
+  "captionScores": {
+    "overall": 83,
+    "hook": 85,
+    "clarity": 84,
+    "cta": 77,
+    "hashtagFit": 80,
+    "brandVoice": 86,
+    "platformFit": 82
+  },
+  "notes": {
+    "hook": "Relatable contrast between hype and preparation.",
+    "cta": "Join Rigveda implied through value framing."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-10T22:15:00Z",
+  "sourceFile": "confidence-from-preparation-editorial-post.md"
+}

@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "discipline-beats-motivation-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-10/pin-01-contrarian-editorial-reference-prompt.md",
+    "logo_asset": "../../references/brand-assets/rigveda-classes-logo.png",
+    "prompt_ref": "./discipline-beats-motivation-editorial-prompt.md",
+    "source": "pre-calendar-setup-brief",
+    "created": "2026-08-10",
+    "channel": "instagram",
+    "slot_index": 1,
+    "layout_template": "student-editorial-full"
+  },
+  "layout_spec": {
+    "canvas": { "width": 1080, "height": 1080, "ratio": "1:1" },
+    "logo": { "enabled": true, "position": "TOP_RIGHT", "size": "LARGE", "variant": "PRIMARY", "fit": "contain" },
+    "composition": {
+      "subjectZone": { "x": 0.05, "y": 0.35, "width": 0.9, "height": 0.45 },
+      "headlineZone": { "x": 0.05, "y": 0.12, "width": 0.9, "height": 0.22 }
+    }
+  },
+  "concept": {
+    "topic": "Motivation gets you started. Discipline keeps you going.",
+    "pillar": "smart_preparation",
+    "message": "Motivation gets you started. Discipline keeps you going."
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "student-editorial-full",
+  "composition": {
+    "layout_flow": "center-stack-contrarian",
+    "zones": {
+      "header": { "position": "top-right", "scale": "small" },
+      "headline": { "position": "upper-center", "scale": "dominant" },
+      "body": { "position": "mid-center", "scale": "medium" },
+      "insight_callout": { "position": "mid-below", "scale": "small" },
+      "icon_row": { "position": "bottom-left", "scale": "small" },
+      "footer": { "position": "bottom-right", "scale": "small" },
+      "hero": { "position": "background-subtle", "scale": "medium" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "deep navy grain with subtle academic linework"
+  },
+  "elements": [
+    { "type": "logo", "role": "header", "content": "Rigveda Classes", "typography": "wordmark", "color_role": "text_on_dark" },
+    { "type": "tagline", "role": "header", "content": "STUDY SMARTER. STAY MOTIVATED. SUCCEED.", "typography": "small", "color_role": "text_muted" },
+    { "type": "headline", "role": "headline", "content": { "prefix": "Motivation gets you started. ", "highlight": "Discipline keeps you going.", "highlight_color_role": "primary_light" }, "typography": "display", "color_role": "text_on_dark" },
+    { "type": "body", "role": "body", "content": "Feeling inspired on day one is easy. Showing up to revise, practise and solve doubts on ordinary days is what builds real exam preparation.", "typography": "body", "color_role": "text_on_dark" },
+    { "type": "insight_callout", "role": "callout", "content": { "icon": "trending_up", "prefix": "Inspiration starts the journey. ", "highlight": "Discipline", "suffix": " completes it." }, "typography": "small", "color_role": "text_muted" },
+    { "type": "icon_row", "role": "footer_features", "content": { "items": [{ "icon": "target", "label": "Focused Preparation" }, { "icon": "book_open", "label": "Concept Clarity" }, { "icon": "trending_up", "label": "Consistent Progress" }] }, "typography": "small", "color_role": "text_muted" },
+    { "type": "url", "role": "footer", "content": "Rigveda Classes, Jodhpur", "typography": "small", "color_role": "primary_light" }
+  ],
+  "hero": { "type": "photo_subject", "match_reference": true, "description": "Focused Indian student revising notes at study desk, cinematic deep blue coaching environment, subtle background placement, authentic preparation moment" },
+  "replication": {
+    "must_preserve": ["logo top-right composited", "contrarian headline stack", "body + insight callout + icon row", "dark editorial canvas"],
+    "variable_slots": ["tagline", "headline", "body", "insight_callout", "icon_row", "footer"]
+  },
+  "copy": { "post_ref": "./discipline-beats-motivation-editorial-post.md", "caption_scores_ref": "./discipline-beats-motivation-editorial-caption-scores.json" }
+}

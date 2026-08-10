@@ -7,7 +7,8 @@
 **Run date:** 2026-08-10  
 **Calendar week:** 2026-08-11  
 **Outlet ID:** NLQKPp1u8Nw2SQpIBq0R  
-**Mode:** Full (Phases 0–10)
+**Mode:** Full (Phases 0–10)  
+**Last completed:** 2026-08-10T17:32:00Z (Phase 9–9b re-run after webhook gap)
 
 ---
 
@@ -26,83 +27,39 @@
 - [x] Phase 7: 3× Instagram posts + 3× Facebook posts
 - [x] Phase 7b: 3× caption-scores.json
 - [x] Phase 8: 3× prompts (brand-color merged)
-- [x] Phase 9: 3× PNG generated
+- [x] Phase 9: 3× PNG generated (regenerated 2026-08-10T17:32Z)
 - [x] Phase 9b: 3× Firestore publish (outlet NLQKPp1u8Nw2SQpIBq0R)
 - [x] Phase 10: This handoff
 ```
 
 ---
 
-## Files
+## Week 2026-08-11 creatives
 
-### Brand
-| File | Purpose |
-|------|---------|
-| `client.json` | Intake + pipeline metadata |
-| `BRAND_IDENTITY.md` | Full brand foundation |
-| `BRAND_DNA.json` | Render tokens (#0B1633 + #335AFB) |
-| `BRAND_DNA_SCHEMA.json` | Schema copy |
-| `CREATIVE_DNA_SCHEMA.json` | Schema copy |
-
-### Pinterest (Phase 1b + 6a)
-| File | Purpose |
-|------|---------|
-| `references/pinterest/2026-08-10/pin-01` … `pin-05` | 5 layout references |
-| `references/pinterest/2026-08-10/pinterest-manifest.json` | Pin registry |
-| `references/pinterest/2026-08-10/search-brief.json` | Query log |
-| `references/pinterest/2026-08-10/pin-*-reference-prompt.md` | Phase 6a layout prompts |
-
-### Strategy
-| File | Purpose |
-|------|---------|
-| `plans/2026-08-10/social-media-context.md` | Voice, pillars, anti-patterns |
-| `plans/2026-08-10/content-strategy.md` | Weekly mix + differentiation |
-| `plans/2026-08-10/content-calendar.md` | 3-slot week plan |
-
-### Week 2026-08-11 creatives
 | Slug | DNA | Post | Scores | Prompt | PNG | Firestore |
 |------|-----|------|--------|--------|-----|-----------|
-| `smart-to-intelligent-classroom-editorial` | ✅ | ✅ | ✅ (83) | ✅ | ✅ | v9ZvJdmDMATtBkbOcxey |
-| `bright-ai-lesson-prep-editorial` | ✅ | ✅ | ✅ (82) | ✅ | ✅ | dpzZEdji8cDyXEPJvP5Y |
-| `teacher-hero-ai-assistant-editorial` | ✅ | ✅ | ✅ (84) | ✅ | ✅ | sd8R3lE6TCPcsU8A3u2v |
-
-All creatives in `instagram/2026-08-11/`; Facebook posts in `facebook/2026-08-11/` (shared PNGs).
+| `smart-to-intelligent-classroom-editorial` | ✅ | ✅ | ✅ (83) | ✅ | ✅ | KqageQAbn6UHqjUOABoS |
+| `bright-ai-lesson-prep-editorial` | ✅ | ✅ | ✅ (82) | ✅ | ✅ | 0eNxUNl8cNvYdf14xxIi |
+| `teacher-hero-ai-assistant-editorial` | ✅ | ✅ | ✅ (84) | ✅ | ✅ | Jlom3HCxLPGRGGHTlCXw |
 
 ---
 
-## Calendar execution
+## Final image URLs (GCS)
 
-| Date | Platform | Slug | Topic | Status |
-|------|----------|------|-------|--------|
-| 2026-08-11 | instagram, facebook | smart-to-intelligent-classroom-editorial | Smart → intelligent classroom | published |
-| 2026-08-13 | instagram, facebook | bright-ai-lesson-prep-editorial | Bright AI lesson prep | published |
-| 2026-08-15 | instagram, facebook | teacher-hero-ai-assistant-editorial | Teacher leads, EyeRIS assists | published |
+| Date | Slug | Image URL |
+|------|------|-----------|
+| 2026-08-11 | smart-to-intelligent-classroom-editorial | https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786383154303-image.png |
+| 2026-08-13 | bright-ai-lesson-prep-editorial | https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786383163942-image.png |
+| 2026-08-15 | teacher-hero-ai-assistant-editorial | https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786383166579-image.png |
 
 ---
 
 ## Publish log
 
-See `instagram/2026-08-11/publish-log.md` for GCS URLs, Firestore documentIds, and caption scores.
-
-| Slug | Firestore path |
-|------|----------------|
-| smart-to-intelligent-classroom-editorial | OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/v9ZvJdmDMATtBkbOcxey |
-| bright-ai-lesson-prep-editorial | OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/dpzZEdji8cDyXEPJvP5Y |
-| teacher-hero-ai-assistant-editorial | OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/sd8R3lE6TCPcsU8A3u2v |
+See `instagram/2026-08-11/publish-log.md` for full Firestore paths and caption scores.
 
 ---
 
-## Brand notes
+## Prior gap (resolved)
 
-1. **Campaign theme:** From Smart Classroom to Intelligent Classroom
-2. **Colors:** Deep navy `#0B1633` + electric blue `#335AFB` / `#5B7BFF` (from cybernetyx.com CSS)
-3. **Approved claims used:** 200,000+ classrooms, 15,000+ educational institutions (caption only)
-4. **Teacher empowerment:** All copy positions teacher as hero; EyeRIS/Bright AI as assistant
-
----
-
-## Next steps
-
-- Schedule posts via connected social scheduler
-- A/B variants: change `variable_slots` only, keep `must_preserve` layout
-- Next week: add ecosystem/proof pillar slot + 1 `[Flexible]` slot
+The 16:58 UTC webhook run was skipped — artifacts from the 16:27 run were reused without completing Phase 9 regeneration or gate updates. Resolved by regenerating PNGs and re-publishing at 17:32 UTC.

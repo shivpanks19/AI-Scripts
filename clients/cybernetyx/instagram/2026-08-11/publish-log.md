@@ -6,24 +6,24 @@
 
 ## smart-to-intelligent-classroom-editorial
 
-- **GCS imageUrl:** https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786382392451-image.png
-- **documentId:** EpWPvyNH4M1pnaZHbJyG
-- **path:** OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/EpWPvyNH4M1pnaZHbJyG
+- **GCS imageUrl:** https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786383154303-image.png
+- **documentId:** KqageQAbn6UHqjUOABoS
+- **path:** OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/KqageQAbn6UHqjUOABoS
 - **captionScore:** 83
 - **status:** success
 
 ## bright-ai-lesson-prep-editorial
 
-- **GCS imageUrl:** https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786382397869-image.png
-- **documentId:** WBb6S4KGUXX2sPLFrizw
-- **path:** OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/WBb6S4KGUXX2sPLFrizw
+- **GCS imageUrl:** https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786383163942-image.png
+- **documentId:** 0eNxUNl8cNvYdf14xxIi
+- **path:** OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/0eNxUNl8cNvYdf14xxIi
 - **captionScore:** 82
 - **status:** success
 
 ## teacher-hero-ai-assistant-editorial
 
-- **GCS imageUrl:** https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786382400342-image.png
-- **documentId:** U4LQwzR9V94sT4BLBc4O
-- **path:** OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/U4LQwzR9V94sT4BLBc4O
+- **GCS imageUrl:** https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1786383166579-image.png
+- **documentId:** Jlom3HCxLPGRGGHTlCXw
+- **path:** OUTLET/NLQKPp1u8Nw2SQpIBq0R/social-ai-poster/Jlom3HCxLPGRGGHTlCXw
 - **captionScore:** 84
 - **status:** success

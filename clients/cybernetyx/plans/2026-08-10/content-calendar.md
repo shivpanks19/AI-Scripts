@@ -65,6 +65,6 @@ None this week — all 3 assigned. Reserve 1 slot next week as `[Flexible]` for 
 
 | Slug | CREATIVE_DNA | Post | Scores | Prompt | PNG |
 |------|--------------|------|--------|--------|-----|
-| smart-to-intelligent-classroom-editorial | pending | pending | pending | pending | pending |
-| bright-ai-lesson-prep-editorial | pending | pending | pending | pending | pending |
-| teacher-hero-ai-assistant-editorial | pending | pending | pending | pending | pending |
+| smart-to-intelligent-classroom-editorial | complete | complete | complete (83) | complete | complete |
+| bright-ai-lesson-prep-editorial | complete | complete | complete (82) | complete | complete |
+| teacher-hero-ai-assistant-editorial | complete | complete | complete (84) | complete | complete |

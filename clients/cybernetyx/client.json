@@ -28,7 +28,7 @@
     "mode": "full",
     "run_date": "2026-08-10",
     "calendar_week": "2026-08-11",
-    "last_run": "2026-08-10",
+    "last_run": "2026-08-10T17:32:00Z",
     "horizon": "weekly",
     "posts_per_week": 3,
     "platforms": ["instagram", "facebook"],

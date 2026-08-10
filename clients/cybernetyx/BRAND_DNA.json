@@ -103,12 +103,29 @@
     "min_digital_width_px": 100,
     "min_icon_px": 40,
     "assets": {
-      "wordmark": null
+      "wordmark": "references/brand-assets/cybernetyx-logo-white.png",
+      "light": "references/brand-assets/cybernetyx-logo-white.png",
+      "primary": "references/brand-assets/cybernetyx-logo-white.png"
+    },
+    "composition": {
+      "enabled": true,
+      "defaultPosition": "TOP_LEFT",
+      "defaultSize": "MEDIUM",
+      "safeMargin": 0.03,
+      "autoVariant": true,
+      "allowedPositions": ["TOP_LEFT", "TOP_RIGHT", "BOTTOM_LEFT", "BOTTOM_RIGHT"],
+      "sizes": {
+        "SMALL": 0.12,
+        "MEDIUM": 0.17,
+        "LARGE": 0.22
+      }
     },
     "overlay": {
-      "workflow": "Generate creative WITHOUT logo in AI prompt. Composite logo bottom-right post-generation if asset available.",
-      "placement": "bottom-right",
-      "width_ratio": 0.18
+      "enabled": true,
+      "phase": "9a",
+      "workflow": "Phase 9 generates background without logo. Phase 9a composites real logo via compose_brand_assets.py.",
+      "placement": "top-left",
+      "width_ratio": 0.17
     },
     "dont": [
       "stretch logo",

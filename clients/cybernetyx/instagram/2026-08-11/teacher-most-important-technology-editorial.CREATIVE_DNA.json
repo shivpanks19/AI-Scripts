@@ -5,6 +5,7 @@
     "creative_id": "teacher-most-important-technology-editorial",
     "brand_dna": "../../BRAND_DNA.json",
     "reference_asset": "../../references/brand-layout/2026-08-11/cybernetyx-brand-editorial-reference.png",
+    "logo_asset": "../../references/brand-assets/cybernetyx-logo-white.png",
     "reference_prompt_ref": "../../references/brand-layout/2026-08-11/cybernetyx-brand-editorial-reference-prompt.md",
     "prompt_ref": "./teacher-most-important-technology-editorial-prompt.md",
     "source": "brand_layout_reference",
@@ -12,6 +13,26 @@
     "channel": "instagram",
     "slot_index": 3,
     "layout_template": "brand-editorial-full"
+  },
+  "layout_spec": {
+    "canvas": { "width": 1080, "height": 1080, "ratio": "1:1" },
+    "logo": {
+      "enabled": true,
+      "position": "TOP_LEFT",
+      "size": "MEDIUM",
+      "variant": "AUTO",
+      "zone": { "x": 0.03, "y": 0.02, "width": 0.24, "height": 0.10 },
+      "maxWidth": 0.17,
+      "maxHeight": 0.08,
+      "fit": "contain",
+      "margin": 0.03
+    },
+    "logoZone": { "x": 0.03, "y": 0.02, "width": 0.24, "height": 0.10 },
+    "composition": {
+      "subjectZone": { "x": 0.45, "y": 0.12, "width": 0.52, "height": 0.75 },
+      "headlineZone": { "x": 0.05, "y": 0.12, "width": 0.55, "height": 0.22 },
+      "bodyZone": { "x": 0.05, "y": 0.34, "width": 0.55, "height": 0.18 }
+    }
   },
   "concept": {
     "topic": "Teacher as classroom hero",

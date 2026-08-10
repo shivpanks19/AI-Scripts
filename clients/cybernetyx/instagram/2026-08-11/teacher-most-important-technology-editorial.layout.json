@@ -1,0 +1,69 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 1080,
+    "ratio": "1:1"
+  },
+  "logo": {
+    "enabled": true,
+    "position": "TOP_LEFT",
+    "size": "MEDIUM",
+    "variant": "AUTO",
+    "zone": {
+      "x": 0.03,
+      "y": 0.02,
+      "width": 0.24,
+      "height": 0.1
+    },
+    "maxWidth": 0.17,
+    "maxHeight": 0.08,
+    "fit": "contain",
+    "margin": 0.03
+  },
+  "logoZone": {
+    "x": 0.03,
+    "y": 0.02,
+    "width": 0.24,
+    "height": 0.1
+  },
+  "composition": {
+    "subjectZone": {
+      "x": 0.45,
+      "y": 0.12,
+      "width": 0.52,
+      "height": 0.75
+    },
+    "headlineZone": {
+      "x": 0.05,
+      "y": 0.12,
+      "width": 0.55,
+      "height": 0.22
+    },
+    "bodyZone": {
+      "x": 0.05,
+      "y": 0.34,
+      "width": 0.55,
+      "height": 0.18
+    }
+  },
+  "layers": {
+    "background": "teacher-most-important-technology-editorial-background.png",
+    "logo": "/Users/shivpanks/Marketing project/AI_cursor_agents/AI-Scripts/clients/cybernetyx/references/brand-assets/cybernetyx-logo-white.png",
+    "export": "teacher-most-important-technology-editorial.png"
+  },
+  "resolved": {
+    "logoVariant": "LIGHT",
+    "logoPixels": {
+      "x": 32,
+      "y": 22,
+      "width": 184,
+      "height": 27
+    },
+    "logoZonePixels": {
+      "x": 32,
+      "y": 22,
+      "width": 259,
+      "height": 108
+    }
+  }
+}

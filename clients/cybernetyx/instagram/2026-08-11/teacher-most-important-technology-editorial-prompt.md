@@ -9,7 +9,7 @@
 
 | Zone | Text | Brand hex |
 |------|------|-----------|
-| Logo | CYBERNETYX™ | #FFFFFF |
+| Logo | CYBERNETYX™ | COMPOSITE ONLY — Phase 9a |
 | Tagline | SMART. SECURE. FUTURE READY. | #94A3B8 |
 | Headline prefix | The teacher is still | #FFFFFF |
 | Headline highlight | the most important technology. | #3D7BFF |
@@ -49,7 +49,12 @@ COLORS (mandatory — all from BRAND_DNA.json):
 - Muted text: #94A3B8
 All colors from brand palette — ignore reference image colors.
 
-Header top-left: Cybernetyx hexagonal logo + "CYBERNETYX™" in white bold sans-serif. Below: "SMART. SECURE. FUTURE READY." in small caps #94A3B8.
+LOGO SAFE ZONE (reserved — do not render any logo):
+Reserve the top-left region (normalized x:0.03–0.27, y:0.02–0.12) as empty negative space for a separately composited brand logo.
+Do not generate any logo, watermark, brand mark, text-based brand identity, or substitute symbol in this area.
+Keep important visual subjects and critical details outside the reserved logo area.
+
+Header top-left: leave logo zone empty — tagline only below reserved zone: "SMART. SECURE. FUTURE READY." in small caps #94A3B8.
 
 Top-right: subtle electric blue (#3D7BFF) network linework — concentric circles with education icons at 20% opacity.
 

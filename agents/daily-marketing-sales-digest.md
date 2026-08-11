@@ -45,23 +45,63 @@ Optional (enable per client config): `user-clarity-*`, `user-spur-eduhexa-mcp`, 
 
 ## Webhook intake (Phase 0)
 
-Parse from payload. If missing, load `clients/{client_slug}/daily-digest-config.json` then fall back to `client.json` → `digest` block.
+**Merge order:** webhook payload → `clients/{client_slug}/daily-digest-config.json` → fail if required fields still missing.
 
-| Field | Required | Use |
-|-------|----------|-----|
-| `client_slug` | Yes | Folder under `clients/` |
-| `outletId` | Yes* | CRM + MSG91 outlet scope (*from config if omitted) |
-| `cadence` | No | `daily` (default) \| `weekly` |
-| `window_days` | No | Rolling lookback; default 1 (daily) or 7 (weekly) |
-| `mode` | No | `full` (default) \| `dry_run` (Phases 1–3 only; skip send) |
-| `email` | No | Override recipients — else config `delivery.email.to[]` |
-| `whatsapp` | No | Override `recipient_numbers[]` — else config |
-| `integrations` | No | Toggle data sources: `crm`, `meta`, `google_ads`, `whatsapp_delivery`, `clarity`, `spur` |
-| `meta_ad_account_id` | No | `act_…` — else config |
-| `google_customer_id` | No | 10-digit ID — else config |
-| `timezone` | No | Display timezone; default `Asia/Kolkata` |
+Do **not** guess account IDs, email addresses, or phone numbers. Do **not** send to defaults or the authenticated Gmail user unless explicitly listed in `delivery`.
 
-Do not ask clarifying questions — proceed with best-effort defaults and document gaps in the digest.
+### Step 0a — Load config
+
+1. Read webhook JSON.
+2. Load `clients/{client_slug}/daily-digest-config.json` if it exists.
+3. Deep-merge: webhook wins over config for any field present in both.
+
+### Step 0b — Resolve canonical `run_config`
+
+Build one object (write snapshot to `digests/{run_date}/run-config.json`):
+
+| Path | Required when | Example |
+|------|---------------|---------|
+| `client_slug` | Always | `eduhexa` |
+| `display_name` | Always | `EduHexa` |
+| `accounts.crm.outletId` | `integrations.crm` or send | `5qy4uU63AX6jLjDYvP19` |
+| `accounts.google_ads.customer_id` | `integrations.google_ads` | `2696255703` (10 digits, no dashes) |
+| `accounts.meta.ad_account_id` | `integrations.meta` | `act_926655825827186` |
+| `delivery.email.from` | `mode=full` | `reports@hexanovate.com` — Gmail MCP sender |
+| `delivery.email.to[]` | `mode=full` | `["principal@school.edu.in"]` |
+| `delivery.whatsapp.recipient_numbers[]` | `mode=full` | `["919876543210"]` |
+| `delivery.whatsapp.integrated_number` | `mode=full` (MSG91 send) | `917820932512` — WhatsApp Business sender |
+
+Optional: `delivery.email.cc[]`, `delivery.email.reply_to`, `delivery.whatsapp.recipients[]` (name + phone), `cadence`, `window_days`, `mode`, `timezone`, `integrations.*`.
+
+**Legacy aliases** (accept but normalize into `run_config`):
+
+- `outletId` → `accounts.crm.outletId`
+- `google_customer_id` → `accounts.google_ads.customer_id`
+- `meta_ad_account_id` → `accounts.meta.ad_account_id`
+
+### Step 0c — Validation gate (mandatory)
+
+Before Phase 1, verify every **required** row above for enabled integrations and `mode`.
+
+If anything is missing or placeholder (`REPLACE`, `0000000000`, `client@example.com`):
+
+1. Write `clients/{client_slug}/digests/{run_date}/intake-error.md` listing each missing field.
+2. **STOP** — do not collect data, do not send email or WhatsApp.
+3. Do not ask clarifying questions in automation; document fix in `intake-error.md`.
+
+Example `intake-error.md`:
+
+```markdown
+# Intake failed — {run_date}
+
+Missing or placeholder values. Fix webhook or daily-digest-config.json:
+
+- accounts.google_ads.customer_id
+- delivery.email.to[]
+- delivery.whatsapp.recipient_numbers[]
+```
+
+Do not ask clarifying questions — stop with `intake-error.md` when validation fails.
 
 ---
 
@@ -79,6 +119,8 @@ Do not ask clarifying questions — proceed with best-effort defaults and docume
 
 ```
 clients/{client_slug}/digests/{run_date}/
+├── run-config.json           # Phase 0 — merged accounts + delivery (audit)
+├── intake-error.md           # Phase 0 — only when validation fails
 ├── digest-data.json          # Phase 1 — raw MCP pulls (structured)
 ├── digest-analysis.md        # Phase 2 — narrative + action items
 ├── digest-email.html         # Phase 3 — HTML email body
@@ -88,12 +130,12 @@ clients/{client_slug}/digests/{run_date}/
 
 | Phase | Action |
 |-------|--------|
-| 0 | Resolve `client_slug`, `outletId`, recipients, integrations, `run_date` |
+| 0 | Merge webhook + config → `run-config.json`; validate accounts + delivery targets; stop on `intake-error.md` |
 | 1 | **Collect** — parallel MCP pulls per enabled integration (see skill) |
 | 2 | **Analyze** — compare vs prior period when data exists; rank 3–5 actions |
 | 3 | **Compose** — `digest-analysis.md`, `digest-email.html`, `digest-whatsapp.txt` |
-| 4 | **Email** — Gmail MCP `send_email` (or discovered equivalent) with HTML body |
-| 5 | **WhatsApp** — MSG91 MCP `msg91_send_text` to each configured number |
+| 4 | **Email** — Gmail MCP from `delivery.email.from` → `delivery.email.to[]` (and cc/reply_to) |
+| 5 | **WhatsApp** — MSG91 MCP `msg91_send_text` to each `delivery.whatsapp.recipient_numbers[]` using `delivery.whatsapp.integrated_number` |
 | 6 | **Log** — `delivery-log.md`; update `client.json` → `digest.last_run` (audit only) |
 
 **Dry run:** Stop after Phase 3. Write delivery log noting `mode=dry_run`.

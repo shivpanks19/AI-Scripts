@@ -1,26 +1,77 @@
 {
-  "description": "Example webhook payload for Cursor Automations — daily marketing & sales digest",
+  "description": "Full webhook payload for Cursor Automations. Every account ID and delivery target must be set here OR in clients/{client_slug}/daily-digest-config.json — the agent merges webhook over config and STOPS if anything required is still missing.",
   "agent": "agents/daily-marketing-sales-digest.md",
   "schedule": "0 8 * * 1-5",
-  "schedule_note": "08:00 Asia/Kolkata weekdays — adjust in Cursor Automations UI",
+  "schedule_note": "08:00 Asia/Kolkata weekdays",
   "payload": {
     "client_slug": "eduhexa",
-    "outletId": "REPLACE_WITH_OUTLET_ID",
+    "display_name": "EduHexa",
     "cadence": "daily",
     "window_days": 1,
     "mode": "full",
+    "timezone": "Asia/Kolkata",
+
+    "accounts": {
+      "crm": {
+        "outletId": "REPLACE_OUTLET_ID"
+      },
+      "google_ads": {
+        "customer_id": "0000000000",
+        "label": "EduHexa Google Ads"
+      },
+      "meta": {
+        "ad_account_id": "act_REPLACE",
+        "label": "EduHexa Meta Ads"
+      }
+    },
+
+    "delivery": {
+      "email": {
+        "from": "reports@hexanovate.com",
+        "to": ["client-principal@school.edu.in"],
+        "cc": ["agency@hexanovate.com"],
+        "reply_to": "agency@hexanovate.com"
+      },
+      "whatsapp": {
+        "integrated_number": "917820932512",
+        "recipient_numbers": ["919876543210"],
+        "recipients": [
+          { "name": "Client contact", "phone": "919876543210" }
+        ],
+        "template_type": "simple",
+        "use_template_outside_24h": true
+      }
+    },
+
     "integrations": {
       "crm": true,
       "meta": true,
       "google_ads": true,
-      "whatsapp_delivery": true
+      "whatsapp_delivery": true,
+      "clarity": false,
+      "spur": false
     }
   },
   "dry_run_payload": {
     "client_slug": "eduhexa",
-    "outletId": "REPLACE_WITH_OUTLET_ID",
+    "display_name": "EduHexa",
     "cadence": "daily",
     "window_days": 1,
-    "mode": "dry_run"
+    "mode": "dry_run",
+    "accounts": {
+      "crm": { "outletId": "REPLACE_OUTLET_ID" },
+      "google_ads": { "customer_id": "0000000000" },
+      "meta": { "ad_account_id": "act_REPLACE" }
+    },
+    "delivery": {
+      "email": {
+        "from": "reports@hexanovate.com",
+        "to": ["you@hexanovate.com"]
+      },
+      "whatsapp": {
+        "integrated_number": "917820932512",
+        "recipient_numbers": ["919876543210"]
+      }
+    }
   }
 }

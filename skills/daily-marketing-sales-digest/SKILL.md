@@ -21,11 +21,35 @@ metadata:
 
 ---
 
-## Client config
+## Client config & intake
 
-Load `clients/{client_slug}/daily-digest-config.json`. Schema: [references/client-digest-config.schema.json](./references/client-digest-config.schema.json). Example: [clients/_template/daily-digest-config.example.json](../../clients/_template/daily-digest-config.example.json).
+**Two places to set IDs and delivery targets** (webhook overrides config):
 
-Webhook fields override config for that run only.
+| What | Config path | Webhook path |
+|------|-------------|--------------|
+| CRM outlet | `accounts.crm.outletId` | `accounts.crm.outletId` |
+| Google Ads account | `accounts.google_ads.customer_id` | same |
+| Meta ad account | `accounts.meta.ad_account_id` | same |
+| Email sender (Gmail) | `delivery.email.from` | same |
+| Email recipients | `delivery.email.to[]` | same |
+| WhatsApp sender (MSG91) | `delivery.whatsapp.integrated_number` | same |
+| WhatsApp recipients | `delivery.whatsapp.recipient_numbers[]` | same |
+
+Schema: [references/client-digest-config.schema.json](./references/client-digest-config.schema.json).  
+Example: [clients/_template/daily-digest-config.example.json](../../clients/_template/daily-digest-config.example.json).  
+Full webhook: [agents/daily-marketing-sales-digest.webhook.example.json](../../agents/daily-marketing-sales-digest.webhook.example.json).
+
+### Phase 0 — Merge and validate
+
+1. Load webhook + `clients/{client_slug}/daily-digest-config.json`.
+2. Normalize legacy keys (`outletId`, `google_customer_id`, `meta_ad_account_id`).
+3. Write `clients/{client_slug}/digests/{run_date}/run-config.json`.
+4. Reject placeholders: `REPLACE`, `0000000000`, `client@example.com`, `act_REPLACE`.
+5. If validation fails → `intake-error.md` and **stop** (no send, no data pull).
+
+**Gmail `from`:** Must be the inbox authenticated in `user-gmail` MCP, or a verified send-as alias for that inbox. Log `from` in `delivery-log.md`.
+
+**MSG91 `integrated_number`:** Pass to every `msg91_send_text` / bulk send call. Defaults to MSG91 env only if config omits it — prefer explicit config.
 
 ---
 
@@ -37,7 +61,7 @@ Run only integrations enabled in config (`integrations.*: true`).
 
 | Tool | Args | Extract |
 |------|------|---------|
-| `crm_firebase_ping` | `{ outletId }` | Confirm connectivity |
+| `crm_firebase_ping` | `{ outletId: run_config.accounts.crm.outletId }` | Confirm connectivity |
 | `crm_report_recent_leads_by_stage` | `{ outletId, daysBack: window_days }` | Leads by stage, counts |
 | `crm_report_latest_leads` | `{ outletId, maxSample: 10 }` | Newest leads (name, source, stage) |
 | `crm_report_lead_activity_digest` | `{ outletId, daysBack: window_days }` | Activity by type/assignee |
@@ -47,7 +71,7 @@ Store under `digest-data.json` → `crm`.
 
 ### Meta (`user-meta`)
 
-When `integrations.meta` and `meta_ad_account_id` set:
+When `integrations.meta` and `run_config.accounts.meta.ad_account_id` set:
 
 | Tool | Args | Extract |
 |------|------|---------|
@@ -61,11 +85,11 @@ For cross-channel context, follow `~/.cursor/skills/cross-channel-ads-report/SKI
 
 ### Google Ads (`user-google-ads-py-mcp`)
 
-When `integrations.google_ads` and `google_customer_id` set:
+When `integrations.google_ads` and `run_config.accounts.google_ads.customer_id` set:
 
 | Tool | Args | Extract |
 |------|------|---------|
-| `get_campaign_performance` | `{ customer_id, days: window_days }` | Spend, clicks, conversions, CPL |
+| `get_campaign_performance` | `{ customer_id: run_config.accounts.google_ads.customer_id, days: window_days }` | Spend, clicks, conversions, CPL |
 | `get_account_currency` | `{ customer_id }` | Currency label |
 
 Store under `digest-data.json` → `google_ads`.
@@ -172,13 +196,16 @@ Follow [references/whatsapp-digest-format.md](./references/whatsapp-digest-forma
 
 ## Phase 4 — Send email (Gmail MCP)
 
+Use values from `run-config.json` only.
+
 1. `GetMcpTools` → `user-gmail` → find send tool.
 2. Common schemas:
-   - `send_email`: `{ to, subject, body, html?: true }` or `{ body_html }`
-   - `gmail_send`: `{ to, subject, body }`
+   - `send_email`: `{ from, to, cc, reply_to, subject, body, html?: true }` or `{ body_html }`
+   - `gmail_send`: `{ to, subject, body }` — `from` must match authenticated account
 3. Read `digest-email.html` as HTML body.
-4. `to`: config `delivery.email.to[]`; `cc` optional; `reply_to` optional.
-5. Log message id / thread id in `delivery-log.md`.
+4. **From:** `delivery.email.from` (required — which Google account sends).
+5. **To:** `delivery.email.to[]` (required). **Cc / reply_to:** optional from config.
+6. Log `from`, `to`, message id in `delivery-log.md`.
 
 **If send tool missing or server errored:** save draft path in log; do not retry more than once.
 
@@ -186,14 +213,15 @@ Follow [references/whatsapp-digest-format.md](./references/whatsapp-digest-forma
 
 ## Phase 5 — Send WhatsApp (MSG91 MCP)
 
-For each number in `delivery.whatsapp.recipient_numbers[]`:
+Use `run-config.json` only. For each entry in `delivery.whatsapp.recipient_numbers[]`:
 
 **Inside 24h session window (or internal ops numbers):**
 
 ```
 msg91_send_text({
   recipient_number: "91XXXXXXXXXX",
-  text: <contents of digest-whatsapp.txt>
+  text: <contents of digest-whatsapp.txt>,
+  integrated_number: <delivery.whatsapp.integrated_number>
 })
 ```
 
@@ -256,17 +284,7 @@ Audit only — never skip collection because `last_run` exists.
 
 ## Scheduling (Cursor Automations)
 
-Example webhook payload:
-
-```json
-{
-  "client_slug": "eduhexa",
-  "outletId": "YOUR_OUTLET_ID",
-  "cadence": "daily",
-  "window_days": 1,
-  "mode": "full"
-}
-```
+Minimum webhook must include **accounts** and **delivery** — see [agents/daily-marketing-sales-digest.webhook.example.json](../../agents/daily-marketing-sales-digest.webhook.example.json). Do not run with only `client_slug` and `outletId`.
 
 Recommended schedule: **08:00 Asia/Kolkata** weekdays (covers yesterday IST for ads + CRM).
 

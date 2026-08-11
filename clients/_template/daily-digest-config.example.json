@@ -22,7 +22,7 @@
 
   "delivery": {
     "email": {
-      "from": "reports@hexanovate.com",
+      "from": "swayamapp19@gmail.com",
       "to": ["client-principal@school.edu.in"],
       "cc": ["agency@hexanovate.com"],
       "reply_to": "agency@hexanovate.com"

@@ -66,7 +66,7 @@ Build one object (write snapshot to `digests/{run_date}/run-config.json`):
 | `accounts.crm.outletId` | `integrations.crm` or send | `5qy4uU63AX6jLjDYvP19` |
 | `accounts.google_ads.customer_id` | `integrations.google_ads` | `2696255703` (10 digits, no dashes) |
 | `accounts.meta.ad_account_id` | `integrations.meta` | `act_926655825827186` |
-| `delivery.email.from` | `mode=full` | `reports@hexanovate.com` — Gmail MCP sender |
+| `delivery.email.from` | `mode=full` | `swayamapp19@gmail.com` — Gmail MCP sender |
 | `delivery.email.to[]` | `mode=full` | `["principal@school.edu.in"]` |
 | `delivery.whatsapp.recipient_numbers[]` | `mode=full` | `["919876543210"]` |
 | `delivery.whatsapp.integrated_number` | `mode=full` (MSG91 send) | `917820932512` — WhatsApp Business sender |

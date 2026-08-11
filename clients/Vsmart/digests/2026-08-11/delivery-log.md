@@ -4,6 +4,7 @@
 |---------|--------|--------|
 | Email | sent | to: pankaj.dhamane@hexaonvate.com · message id: 19ff030ba912f25a |
 | WhatsApp | sent | to: 919730696887 · message_uuid: 5aa1799db26645d8a859c3476f12f037 |
+| WhatsApp (retry) | sent | to: 919730696887 · message_uuid: 12ba4fcb0031430e874766943bc39bb0 · 2026-08-11 retry |
 
 ## Report details
 

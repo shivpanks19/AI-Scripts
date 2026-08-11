@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "msg91-mcp": {
+      "url": "https://YOUR_FIREBASE_PROJECT.web.app/mcp/msg91?token=YOUR_MSG91_MCP_TOKEN"
+    },
+    "crm-mcp": {
+      "command": "npm",
+      "args": ["--prefix", "/absolute/path/to/CRM", "run", "mcp:crm:start"],
+      "env": {
+        "FIREBASE_API_KEY": "from packages/crm-mcp/.env",
+        "FIREBASE_AUTH_DOMAIN": "your-project.firebaseapp.com",
+        "FIREBASE_PROJECT_ID": "your-project-id",
+        "FIREBASE_APP_ID": "your-app-id"
+      }
+    }
+  }
+}

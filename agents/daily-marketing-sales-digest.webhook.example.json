@@ -1,0 +1,26 @@
+{
+  "description": "Example webhook payload for Cursor Automations — daily marketing & sales digest",
+  "agent": "agents/daily-marketing-sales-digest.md",
+  "schedule": "0 8 * * 1-5",
+  "schedule_note": "08:00 Asia/Kolkata weekdays — adjust in Cursor Automations UI",
+  "payload": {
+    "client_slug": "eduhexa",
+    "outletId": "REPLACE_WITH_OUTLET_ID",
+    "cadence": "daily",
+    "window_days": 1,
+    "mode": "full",
+    "integrations": {
+      "crm": true,
+      "meta": true,
+      "google_ads": true,
+      "whatsapp_delivery": true
+    }
+  },
+  "dry_run_payload": {
+    "client_slug": "eduhexa",
+    "outletId": "REPLACE_WITH_OUTLET_ID",
+    "cadence": "daily",
+    "window_days": 1,
+    "mode": "dry_run"
+  }
+}

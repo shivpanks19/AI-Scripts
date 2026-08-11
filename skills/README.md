@@ -1,4 +1,21 @@
-# Skills — Swayam weekly creative pipeline
+# Skills — AI-Scripts pipelines
+
+## Daily marketing & sales digest
+
+Agent: [agents/daily-marketing-sales-digest.md](../agents/daily-marketing-sales-digest.md)
+
+| Phase | Skill | Path |
+|-------|-------|------|
+| Collect → analyze → deliver | daily-marketing-sales-digest | [daily-marketing-sales-digest/SKILL.md](./daily-marketing-sales-digest/SKILL.md) |
+| Email HTML | email-html-template | [daily-marketing-sales-digest/references/email-html-template.md](./daily-marketing-sales-digest/references/email-html-template.md) |
+| WhatsApp copy | whatsapp-digest-format | [daily-marketing-sales-digest/references/whatsapp-digest-format.md](./daily-marketing-sales-digest/references/whatsapp-digest-format.md) |
+| Client config | daily-digest-config.example | [clients/_template/daily-digest-config.example.json](../clients/_template/daily-digest-config.example.json) |
+
+**MCP:** Gmail (`user-gmail`), MSG91 (`msg91-mcp`), CRM (`user-crm-mcp`), Meta (`user-meta`), Google Ads (`user-google-ads-py-mcp`). See [.cursor/mcp.json.example](../.cursor/mcp.json.example).
+
+---
+
+## Swayam weekly creative pipeline
 
 Skills for the [Swayam weekly cloud agent](../clients/swayam/swayam-weekly-automation.md).
 

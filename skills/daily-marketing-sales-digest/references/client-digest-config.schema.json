@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DailyDigestConfig",
+  "type": "object",
+  "required": ["client_slug", "display_name", "outletId", "delivery"],
+  "properties": {
+    "client_slug": { "type": "string" },
+    "display_name": { "type": "string" },
+    "outletId": { "type": "string", "description": "Firestore OUTLET id for CRM + MSG91" },
+    "agency_name": { "type": "string", "default": "Hexanovate" },
+    "timezone": { "type": "string", "default": "Asia/Kolkata" },
+    "cadence": { "type": "string", "enum": ["daily", "weekly"], "default": "daily" },
+    "window_days": { "type": "integer", "minimum": 1, "maximum": 90, "default": 1 },
+    "brand": {
+      "type": "object",
+      "properties": {
+        "accent_color": { "type": "string", "default": "#0066FF" },
+        "logo_url": { "type": "string", "format": "uri" }
+      }
+    },
+    "integrations": {
+      "type": "object",
+      "properties": {
+        "crm": { "type": "boolean", "default": true },
+        "meta": { "type": "boolean", "default": true },
+        "google_ads": { "type": "boolean", "default": true },
+        "whatsapp_delivery": { "type": "boolean", "default": true },
+        "clarity": { "type": "boolean", "default": false },
+        "spur": { "type": "boolean", "default": false }
+      }
+    },
+    "meta_ad_account_id": { "type": "string", "pattern": "^act_" },
+    "google_customer_id": { "type": "string", "pattern": "^[0-9]{10}$" },
+    "clarity_project": { "type": "string", "description": "Clarity MCP server suffix, e.g. Cybernetyx" },
+    "saved_reads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "alerts": {
+      "type": "object",
+      "properties": {
+        "min_spend_inr": { "type": "number", "default": 1000 },
+        "cpl_increase_pct": { "type": "number", "default": 25 },
+        "stale_lead_hours": { "type": "integer", "default": 48 }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "required": ["email", "whatsapp"],
+      "properties": {
+        "email": {
+          "type": "object",
+          "required": ["to"],
+          "properties": {
+            "to": { "type": "array", "items": { "type": "string", "format": "email" }, "minItems": 1 },
+            "cc": { "type": "array", "items": { "type": "string", "format": "email" } },
+            "reply_to": { "type": "string", "format": "email" }
+          }
+        },
+        "whatsapp": {
+          "type": "object",
+          "required": ["recipient_numbers"],
+          "properties": {
+            "recipient_numbers": {
+              "type": "array",
+              "items": { "type": "string", "pattern": "^[0-9]{10,15}$" },
+              "minItems": 1
+            },
+            "template_type": { "type": "string", "default": "simple" },
+            "template_name": { "type": "string" },
+            "language_code": { "type": "string", "default": "en" },
+            "redact_pii": { "type": "boolean", "default": false },
+            "use_template_outside_24h": { "type": "boolean", "default": true }
+          }
+        }
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "crm_dashboard": { "type": "string", "format": "uri" },
+        "meta_ads_manager": { "type": "string", "format": "uri" }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "run_date": "2026-08-11",
+  "cadence": "weekly",
+  "window_days": 7,
+  "period": {
+    "current": { "start": "2026-08-04", "end": "2026-08-10" },
+    "prior": { "start": "2026-07-28", "end": "2026-08-03" }
+  },
+  "google_ads": {
+    "customer_id": "9125228176",
+    "currency": "INR",
+    "account_summary": {
+      "current_week": {
+        "spend": 84578.51,
+        "impressions": 258924,
+        "clicks": 5048,
+        "ctr": 0.0195,
+        "avg_cpc": 16.75,
+        "conversions": 1491.41,
+        "cpa": 56.71,
+        "conversion_value": 117052.12
+      },
+      "prior_week": {
+        "spend": 68116.28,
+        "impressions": 178786,
+        "clicks": 3873,
+        "ctr": 0.0217,
+        "avg_cpc": 17.59,
+        "conversions": 1141.07,
+        "cpa": 59.69,
+        "conversion_value": 75555.55
+      },
+      "wow_delta_pct": {
+        "spend": 24.2,
+        "impressions": 44.9,
+        "clicks": 30.3,
+        "conversions": 30.7,
+        "cpa": -5.0,
+        "conversion_value": 54.9
+      }
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend": 11908.79,
+        "clicks": 331,
+        "conversions": 2.59,
+        "cpa": 4591.99,
+        "ctr": 0.0492
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend": 8518.08,
+        "clicks": 1025,
+        "conversions": 377.96,
+        "cpa": 22.54,
+        "ctr": 0.5535
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "status": "ENABLED",
+        "spend": 7346.34,
+        "clicks": 247,
+        "conversions": 3.72,
+        "cpa": 1975.14,
+        "ctr": 0.0311
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend": 7254.55,
+        "clicks": 894,
+        "conversions": 650.03,
+        "cpa": 11.16,
+        "ctr": 0.0726
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "status": "ENABLED",
+        "spend": 7210.63,
+        "clicks": 543,
+        "conversions": 2.09,
+        "cpa": 3451.34,
+        "ctr": 0.1141
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend": 7106.1,
+        "clicks": 818,
+        "conversions": 357.0,
+        "cpa": 19.91,
+        "ctr": 0.007
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend": 7045.87,
+        "clicks": 362,
+        "conversions": 84.25,
+        "cpa": 83.63,
+        "ctr": 0.0449
+      },
+      {
+        "name": "VIjay_Sarda_CMA_Inter_23/07/2026",
+        "status": "ENABLED",
+        "spend": 5199.13,
+        "clicks": 117,
+        "conversions": 0,
+        "cpa": null,
+        "ctr": 0.0406
+      },
+      {
+        "name": "Shubham_Singhal_Inter_13_03_2026(law gst)",
+        "status": "ENABLED",
+        "spend": 5023.04,
+        "clicks": 211,
+        "conversions": 1.02,
+        "cpa": 4928.87,
+        "ctr": 0.0087
+      },
+      {
+        "name": "CMA_Inter_VB_BB_22/07/2026",
+        "status": "ENABLED",
+        "spend": 4181.02,
+        "clicks": 115,
+        "conversions": 0.72,
+        "cpa": 5807.4,
+        "ctr": 0.2926
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId not configured" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp": { "status": "skipped", "reason": "CRM outletId not configured for delivery report" }
+}

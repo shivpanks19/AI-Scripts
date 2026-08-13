@@ -1,0 +1,135 @@
+{
+  "run_date": "2026-08-13",
+  "cadence": "weekly",
+  "window_days": 7,
+  "period_label": "Aug 6–12, 2026",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "account_totals_7d": {
+      "spend_inr": 91758.59,
+      "clicks": 5416,
+      "impressions": 307228,
+      "ctr_pct": 1.76,
+      "conversions": 1502.3,
+      "cpc_inr": 16.94,
+      "cpl_inr": 61.08
+    },
+    "account_totals_prior_7d_est": {
+      "spend_inr": 68012.58,
+      "clicks": 4105,
+      "conversions": 1251.29,
+      "cpl_inr": 54.35
+    },
+    "deltas_vs_prior_week": {
+      "spend_pct": 34.9,
+      "clicks_pct": 31.9,
+      "conversions_pct": 20.1,
+      "cpl_pct": 12.4
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 13263.86,
+        "clicks": 354,
+        "conversions": 3.11,
+        "cpl_inr": 4272
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 8779.2,
+        "clicks": 934,
+        "conversions": 274.35,
+        "cpl_inr": 32
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7247.45,
+        "clicks": 249,
+        "conversions": 2.11,
+        "cpl_inr": 3432
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend_inr": 7194.99,
+        "clicks": 1226,
+        "conversions": 777.02,
+        "cpl_inr": 9
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7131.86,
+        "clicks": 545,
+        "conversions": 2.09,
+        "cpl_inr": 3412
+      }
+    ],
+    "best_cpl_campaigns": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 7194.99,
+        "conversions": 777.02,
+        "cpl_inr": 9
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 7082.59,
+        "conversions": 354,
+        "cpl_inr": 20
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 8779.2,
+        "conversions": 274.35,
+        "cpl_inr": 32
+      }
+    ],
+    "zero_conversion_spenders": [
+      {
+        "name": "VIjay_Sarda_CMA_Inter_23/07/2026",
+        "spend_inr": 5133.97,
+        "clicks": 99,
+        "conversions": 0
+      },
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 4525.06,
+        "clicks": 101,
+        "conversions": 0
+      },
+      {
+        "name": "CMA_Inter_VB_BB_22/07/2026",
+        "spend_inr": 4387.25,
+        "clicks": 104,
+        "conversions": 0
+      },
+      {
+        "name": "Vijay_Sarda_Sir_CA_Inter_03/07/2026",
+        "spend_inr": 3606.43,
+        "clicks": 135,
+        "conversions": 0.05
+      }
+    ],
+    "mcp_notes": [
+      "get_account_currency failed (credentials); currency assumed INR from spend scale",
+      "Supabase snapshot persist failed (network)"
+    ]
+  },
+  "crm": {
+    "status": "skipped",
+    "reason": "outletId placeholder None in webhook config"
+  },
+  "meta": {
+    "status": "skipped",
+    "reason": "meta ad_account_id not configured"
+  },
+  "whatsapp_delivery": {
+    "status": "skipped",
+    "reason": "no valid CRM outletId for delivery report"
+  }
+}

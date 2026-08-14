@@ -1,0 +1,28 @@
+*Vsmart — weekly brief (4–10 Aug)*
+
+*Summary*
+• Spend ₹84.6k (+24% WoW), 1,547 conv (+35%)
+• CPA ₹54.7 (↓8%) — efficiency improved
+• VIjay_Sarda_CMA_Inter: ₹5.2k spend, 0 conv — pause candidate
+
+*Google Ads KPIs*
+Clicks: 5,049 (+30%) | Impr: 258.9k
+CTR: 1.95% | CPC: ₹16.75
+Spend: ₹84.6k | CPA: ₹54.7
+
+*Top performers*
+Best: CA_Final_IDT_VB_Sir — 650 conv, CPA ₹11
+Strong: Branded_Keywords — 419 conv, CPA ₹20
+
+*Watch*
+VIjay_Sarda_CMA_Inter — ₹5.2k, 0 conv
+CMA_Final_IDT_DT — ₹11.9k, 2.6 conv
+
+*Actions*
+1. Pause/cut VIjay_Sarda_CMA_Inter budget
+2. Scale CA_Final_IDT_VB_Sir + Branded (+10–15%)
+3. Audit CMA_Final_IDT_DT landing page & terms
+
+CRM pipeline not included — configure outletId for next run.
+
+Full breakdown in your email. Reply if you want a walkthrough.

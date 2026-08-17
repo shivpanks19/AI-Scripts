@@ -1,0 +1,23 @@
+*Vsmart — weekly brief (10–16 Aug)*
+
+*Summary*
+• ₹92.7k spend → 1,727 conv at ₹53.7 CPA (↓7% vs prior wk)
+• Best: CA_Final_IDT_VB_Sir (CPA ₹7) + Branded (CPA ₹27)
+• ⚠️ ₹15.6k wasted on Vijay Sarda CMA — 0 conversions
+
+*Google Ads KPIs*
+Spend: ₹92.7k (+13%) | Conv: 1,727 (+22%)
+Clicks: 5,683 | CTR: 1.65% | CPC: ₹16.3
+Conv value: ₹1.67L (+42%)
+
+*Top spend*
+1. Vijay_Sarda_CMA_Final — ₹10.3k, 0 conv
+2. Branded_Keywords — ₹8.2k, 303 conv ✅
+3. CA_Final_IDT_VB_Sir — ₹6.8k, 965 conv ✅
+
+*Actions*
+1. Pause Vijay Sarda CMA campaigns (₹15.6k waste)
+2. Scale CA_Final_IDT_VB_Sir + Branded
+3. Fix Bhanwar Borana CA Final (₹5.9k, ~0 conv)
+
+Full tables in your email. Reply if you want a walkthrough.

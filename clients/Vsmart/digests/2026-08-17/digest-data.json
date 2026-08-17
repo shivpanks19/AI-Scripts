@@ -1,0 +1,48 @@
+{
+  "collected_at": "2026-08-17T03:31:00Z",
+  "currency": "INR",
+  "report_period": { "start": "2026-08-10", "end": "2026-08-16" },
+  "google_ads": {
+    "account_id": "9125228176",
+    "current_week": {
+      "impressions": 343730,
+      "clicks": 5683,
+      "spend_inr": 92730.51,
+      "conversions": 1727.38,
+      "conversion_value_inr": 167491.14,
+      "ctr_pct": 1.65,
+      "avg_cpc_inr": 16.32,
+      "cpa_inr": 53.68
+    },
+    "prior_week": {
+      "period": { "start": "2026-08-03", "end": "2026-08-09" },
+      "impressions": 239092,
+      "clicks": 4805,
+      "spend_inr": 81742.64,
+      "conversions": 1411.76,
+      "conversion_value_inr": 118300.74,
+      "ctr_pct": 2.01,
+      "avg_cpc_inr": 17.01,
+      "cpa_inr": 57.90
+    },
+    "top_campaigns_by_spend": [
+      { "name": "Vijay_Sarda_CMA_Final_03/08/2026", "spend_inr": 10346.08, "clicks": 194, "conversions": 0, "cpa_inr": null, "status": "ENABLED" },
+      { "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)", "spend_inr": 8737.08, "clicks": 249, "conversions": 3.43, "cpa_inr": 2544.63, "status": "ENABLED" },
+      { "name": "Branded_Keywords_30/01/2026(inter)", "spend_inr": 8239.93, "clicks": 756, "conversions": 303.08, "cpa_inr": 27.19, "status": "ENABLED" },
+      { "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026", "spend_inr": 6952.94, "clicks": 235, "conversions": 1.31, "cpa_inr": 5314.46, "status": "ENABLED" },
+      { "name": "Pavan_Karmele_06/01/2026", "spend_inr": 6861.97, "clicks": 539, "conversions": 5.24, "cpa_inr": 1310.68, "status": "ENABLED" },
+      { "name": "CA_Final_IDT_VB_Sir_01/03/2026", "spend_inr": 6792.01, "clicks": 1638, "conversions": 964.64, "cpa_inr": 7.04, "status": "ENABLED" },
+      { "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026", "spend_inr": 6463.67, "clicks": 743, "conversions": 302.0, "cpa_inr": 21.40, "status": "ENABLED" },
+      { "name": "VB_Sir_Inter_GST_27/01/2026", "spend_inr": 6327.22, "clicks": 336, "conversions": 90.27, "cpa_inr": 70.09, "status": "ENABLED" },
+      { "name": "Bhanwar_Borana_CA_Final_20/05/2026", "spend_inr": 5887.13, "clicks": 188, "conversions": 0.07, "cpa_inr": 87342.86, "status": "ENABLED" },
+      { "name": "VIjay_Sarda_CMA_Inter_23/07/2026", "spend_inr": 5259.52, "clicks": 96, "conversions": 0, "cpa_inr": null, "status": "ENABLED" }
+    ],
+    "zero_conversion_spend_campaigns": [
+      { "name": "Vijay_Sarda_CMA_Final_03/08/2026", "spend_inr": 10346.08 },
+      { "name": "VIjay_Sarda_CMA_Inter_23/07/2026", "spend_inr": 5259.52 }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId not configured" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp": { "status": "skipped", "reason": "outletId not configured" }
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "meta-campaigns-in-crm-editorial",
+  "platform": "instagram",
+  "captionScore": 83,
+  "captionScores": {
+    "overall": 83,
+    "hook": 85,
+    "clarity": 84,
+    "cta": 80,
+    "hashtagFit": 80,
+    "brandVoice": 86,
+    "platformFit": 82
+  },
+  "notes": {
+    "hook": "Relatable pain — spreadsheets vs integrated CRM.",
+    "cta": "Clear Book a Demo with product proof."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-24T12:15:00+00:00",
+  "sourceFile": "meta-campaigns-in-crm-editorial-post.md"
+}

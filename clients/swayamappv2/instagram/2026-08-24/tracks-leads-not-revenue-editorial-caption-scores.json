@@ -1,0 +1,21 @@
+{
+  "slug": "tracks-leads-not-revenue-editorial",
+  "platform": "instagram",
+  "captionScore": 85,
+  "captionScores": {
+    "overall": 85,
+    "hook": 88,
+    "clarity": 86,
+    "cta": 82,
+    "hashtagFit": 81,
+    "brandVoice": 88,
+    "platformFit": 84
+  },
+  "notes": {
+    "hook": "Strong category POV — tracks vs grows revenue.",
+    "cta": "Book a Demo aligns with brand DNA."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-24T12:15:00+00:00",
+  "sourceFile": "tracks-leads-not-revenue-editorial-post.md"
+}

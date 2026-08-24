@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "tracks-leads-not-revenue-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-24/pin-01-editorial-quote-hero.png",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-24/pin-01-editorial-quote-hero-reference-prompt.md",
+    "prompt_ref": "./tracks-leads-not-revenue-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "created": "2026-08-24",
+    "channel": "instagram",
+    "slot_index": 1
+  },
+  "concept": {
+    "topic": "CRM tracks leads—not revenue",
+    "vertical": "category-positioning",
+    "metaphor": "Provocative POV — storage vs growth",
+    "message": "Traditional CRMs track activity; Swayam grows revenue",
+    "persona": "Growth owner frustrated with lead lists that don't convert"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "editorial-quote-hero",
+  "composition": {
+    "layout_flow": "headline-left-hero-right",
+    "zones": {
+      "headline": { "position": "upper-left", "scale": "dominant", "z_index": "foreground" },
+      "subline": { "position": "mid-left-bubble", "scale": "medium", "z_index": "foreground" },
+      "hero": { "position": "right-center", "scale": "large", "z_index": "midground" },
+      "footer": { "position": "top-left", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "subtle paper grain on primary_dark"
+  },
+  "elements": [
+    { "type": "headline", "role": "headline", "content": "TRACKS LEADS.\nNOT REVENUE.", "typography": "display", "color_role": "text_on_dark" },
+    { "type": "subheadline", "role": "subheadline", "content": "Your CRM was built for storage.", "typography": "h2", "color_role": "secondary_light" },
+    { "type": "footer", "role": "footer", "content": "swayamapp.com", "typography": "small", "color_role": "text_muted" }
+  ],
+  "hero": {
+    "type": "photo_subject",
+    "match_reference": true,
+    "description": "Professional person right-center, questioning palm-up gesture, cutout on teal-tinted panel, halftone accent corner"
+  },
+  "replication": {
+    "must_preserve": ["provocative all-caps headline left", "speech-bubble subline", "person hero right with gesture", "single frame"],
+    "variable_slots": ["headline", "subheadline", "footer"]
+  },
+  "copy": {
+    "post_ref": "./tracks-leads-not-revenue-editorial-post.md",
+    "caption_scores_ref": "./tracks-leads-not-revenue-editorial-caption-scores.json"
+  }
+}

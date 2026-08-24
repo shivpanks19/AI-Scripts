@@ -2,16 +2,15 @@
   "slug": "swayamappv2",
   "display_name": "Swayam",
   "website": "https://swayamapp.com/",
-  "outlet_id": "5qy4uU63AX6jLjDYvP19",
   "folders": {
     "root": "clients/swayamappv2",
     "brand": "clients/swayamappv2/BRAND_IDENTITY.md",
     "brand_dna": "clients/swayamappv2/BRAND_DNA.json",
-    "references_pinterest": "clients/swayamappv2/references/pinterest/2026-08-08",
-    "plans": "clients/swayamappv2/plans/2026-08-08",
-    "instagram": "clients/swayamappv2/instagram/2026-08-11",
-    "facebook": "clients/swayamappv2/facebook/2026-08-11",
-    "runs": "clients/swayamappv2/runs/2026-08-08"
+    "references_pinterest": "clients/swayamappv2/references/pinterest/2026-08-24",
+    "plans": "clients/swayamappv2/plans/2026-08-24",
+    "instagram": "clients/swayamappv2/instagram/2026-08-24",
+    "facebook": "clients/swayamappv2/facebook/2026-08-24",
+    "runs": "clients/swayamappv2/runs/2026-08-24"
   },
   "channels": {
     "instagram": {
@@ -27,16 +26,12 @@
   },
   "pipeline": {
     "mode": "full",
-    "run_date": "2026-08-08",
-    "calendar_week": "2026-08-11",
-    "last_run": "2026-08-08",
+    "run_date": "2026-08-24",
+    "last_run": "2026-08-24",
     "horizon": "weekly",
-    "posts_per_week": 3,
+    "posts_count": 3,
     "platforms": ["instagram", "facebook"],
     "goals": ["awareness", "leads"],
-    "phases_completed": [0, 1, "1b", "6a", 2, 3, 4, 5, 6, 7, "7b", 8, 9, "9b", "5a", 10],
-    "notion_page_id": "3b7c45f0-da5d-81f2-8b79-fbe1d91dd285",
-    "notion_page_url": "https://app.notion.com/p/3b7c45f0da5d81f28b79fbe1d91dd285"
     "webhook": {
       "outlet_id": "5qy4uU63AX6jLjDYvP19",
       "pinterest_urls": [

@@ -7,9 +7,9 @@
 | **Agency positioning** | Agentic AI Integration Agency |
 | **Product** | Swayam — Agentic CRM |
 | **Document owner** | Brand Guardian |
-| **Version** | 1.1 |
-| **Date** | 2026-08-08 |
-| **Source** | swayamapp.com + webhook brand brief |
+| **Version** | 1.2 |
+| **Date** | 2026-08-24 |
+| **Source** | swayamapp.com (re-fetched) + webhook brand brief |
 
 ---
 

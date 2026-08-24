@@ -1,0 +1,21 @@
+{
+  "slug": "ad-click-to-close-editorial",
+  "platform": "instagram",
+  "captionScore": 86,
+  "captionScores": {
+    "overall": 86,
+    "hook": 87,
+    "clarity": 85,
+    "cta": 84,
+    "hashtagFit": 82,
+    "brandVoice": 89,
+    "platformFit": 85
+  },
+  "notes": {
+    "hook": "Clear outcome framing — enquiry to closed deal.",
+    "cta": "Book a Demo with agency setup proof."
+  },
+  "rubricVersion": "1.0",
+  "scoredAt": "2026-08-24T12:15:00+00:00",
+  "sourceFile": "ad-click-to-close-editorial-post.md"
+}

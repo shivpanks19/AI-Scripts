@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "run_date": "2026-08-24",
+    "posts_count": 3,
+    "calendar_mode": "discover",
+    "layout_template": "editorial-minimal",
+    "concept_history_runs": 3,
+    "prior_calendars_scanned": ["2026-08-08"]
+  },
+  "used_headlines": [
+    {
+      "headline": "your crm stores leads",
+      "slug": "crm-stores-leads-editorial",
+      "from_run": "2026-08-08"
+    },
+    {
+      "headline": "replies on whatsapp pipeline elsewhere",
+      "slug": "whatsapp-pipeline-gap-editorial",
+      "from_run": "2026-08-08"
+    },
+    {
+      "headline": "revenue runs itself until you need a human",
+      "slug": "revenue-runs-itself-editorial",
+      "from_run": "2026-08-08"
+    }
+  ],
+  "blocked_concepts": [
+    {
+      "concept": "CRM stores leads — Swayam closes them",
+      "reason": "used in run 2026-08-08"
+    },
+    {
+      "concept": "WhatsApp replies vs pipeline gap",
+      "reason": "used in run 2026-08-08"
+    },
+    {
+      "concept": "Revenue runs itself brand promise",
+      "reason": "used in run 2026-08-08"
+    }
+  ],
+  "available_concepts": [
+    "Your CRM tracks leads—it doesn't grow revenue",
+    "Meta campaigns inside your CRM—not a separate tab",
+    "From ad click to closed deal—one revenue loop",
+    "Reports show activities. Revenue stalls.",
+    "Agency deploys agentic workflows on day one",
+    "AI briefs your team every morning on login",
+    "Ads in Meta. Pipeline elsewhere.",
+    "More tools ≠ more outcomes"
+  ],
+  "selected_slots": [
+    {
+      "slot_index": 1,
+      "layout_template": "editorial-minimal",
+      "pillar": "Revenue loop POV",
+      "concept": "Your CRM tracks leads—it doesn't grow revenue",
+      "headline": "TRACKS LEADS.\nNOT REVENUE.",
+      "subheadline": "Your CRM was built for storage.",
+      "slug": "tracks-leads-not-revenue-editorial",
+      "pin_ref": "pin-01",
+      "source": "preferred_concepts",
+      "substituted": false
+    },
+    {
+      "slot_index": 2,
+      "layout_template": "editorial-minimal",
+      "pillar": "Product capability",
+      "concept": "Meta campaigns inside your CRM—not a separate tab",
+      "headline": "META CAMPAIGNS\nIN YOUR CRM.",
+      "subheadline": "One tab. Full funnel.",
+      "slug": "meta-campaigns-in-crm-editorial",
+      "pin_ref": "pin-02",
+      "source": "preferred_concepts",
+      "substituted": false
+    },
+    {
+      "slot_index": 3,
+      "layout_template": "editorial-minimal",
+      "pillar": "Operator proof",
+      "concept": "From ad click to closed deal—one revenue loop",
+      "headline": "AD CLICK\nTO CLOSE.",
+      "subheadline": "One revenue loop.",
+      "slug": "ad-click-to-close-editorial",
+      "pin_ref": "pin-03",
+      "source": "preferred_concepts",
+      "substituted": false
+    }
+  ]
+}

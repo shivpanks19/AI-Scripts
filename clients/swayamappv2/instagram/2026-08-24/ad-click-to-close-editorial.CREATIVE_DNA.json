@@ -1,0 +1,55 @@
+{
+  "_meta": {
+    "type": "creative_dna",
+    "version": "1.0",
+    "creative_id": "ad-click-to-close-editorial",
+    "brand_dna": "../../BRAND_DNA.json",
+    "reference_asset": "../../references/pinterest/2026-08-24/pin-03-editorial-split-hero.jpg",
+    "reference_prompt_ref": "../../references/pinterest/2026-08-24/pin-03-editorial-split-hero-reference-prompt.md",
+    "prompt_ref": "./ad-click-to-close-editorial-prompt.md",
+    "source": "reverse_engineered",
+    "created": "2026-08-24",
+    "channel": "instagram",
+    "slot_index": 3
+  },
+  "concept": {
+    "topic": "Ad click to closed deal—one revenue loop",
+    "vertical": "operator-proof",
+    "metaphor": "Split editorial with character hero",
+    "message": "Swayam connects acquisition, nurture, and conversion in one system",
+    "persona": "Revenue leader tired of broken handoffs between ads and pipeline"
+  },
+  "canvas": { "ratio": "1:1", "width": 1080, "height": 1080 },
+  "structure_type": "editorial-split-hero",
+  "composition": {
+    "layout_flow": "headline-top-hero-center-footer-bar",
+    "zones": {
+      "headline": { "position": "upper", "scale": "dominant", "z_index": "foreground" },
+      "hero": { "position": "center", "scale": "large", "z_index": "midground" },
+      "subline": { "position": "mid-left", "scale": "medium", "z_index": "foreground" },
+      "footer": { "position": "bottom-bar", "scale": "small", "z_index": "foreground" }
+    }
+  },
+  "visual_identity": {
+    "background_mode": "dark",
+    "background_treatment": "subtle paper texture on primary_dark"
+  },
+  "elements": [
+    { "type": "headline", "role": "headline", "content": "AD CLICK\nTO CLOSE.", "typography": "display", "color_role": "text_on_dark" },
+    { "type": "subheadline", "role": "subheadline", "content": "One revenue loop.", "typography": "h2", "color_role": "secondary_light" },
+    { "type": "footer", "role": "footer", "content": "swayamapp.com", "typography": "small", "color_role": "text_on_dark" }
+  ],
+  "hero": {
+    "type": "photo_subject",
+    "match_reference": true,
+    "description": "Grayscale cutout character portrait center, teal outline stroke, intense direct expression, editorial crop"
+  },
+  "replication": {
+    "must_preserve": ["headline with accent keyword block", "centered cutout character hero with accent stroke", "full-width dark footer bar", "single frame"],
+    "variable_slots": ["headline", "subheadline", "footer"]
+  },
+  "copy": {
+    "post_ref": "./ad-click-to-close-editorial-post.md",
+    "caption_scores_ref": "./ad-click-to-close-editorial-caption-scores.json"
+  }
+}

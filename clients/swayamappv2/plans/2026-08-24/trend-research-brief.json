@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "run_date": "2026-08-24",
+    "window_days": 14,
+    "method": "websearch",
+    "source": "./trend-research-brief.md"
+  },
+  "key_trends": [
+    {
+      "title": "Agentic AI in sales ops",
+      "summary": "B2B buyers expect AI that executes workflows—briefings, next-step advice, automations—not chatbots that summarize dashboards.",
+      "relevance": "high",
+      "pillar": "product-capability"
+    },
+    {
+      "title": "WhatsApp-first nurture in India",
+      "summary": "Admissions and services teams convert on WhatsApp; CRMs without inbox-to-pipeline linking lose deals.",
+      "relevance": "high",
+      "pillar": "product-capability"
+    },
+    {
+      "title": "Meta ads ROI accountability",
+      "summary": "Growth owners demand source-wise conversion inside CRM, not exported spreadsheets.",
+      "relevance": "high",
+      "pillar": "revenue-loop-pov"
+    },
+    {
+      "title": "Revenue ops consolidation",
+      "summary": "SMBs consolidating ads, messaging, and pipeline into one stack vs point tools held together manually.",
+      "relevance": "medium",
+      "pillar": "revenue-loop-pov"
+    },
+    {
+      "title": "Human-in-the-loop AI positioning",
+      "summary": "Shift from AI replaces sales to AI runs repetitive ops until you need a human.",
+      "relevance": "medium",
+      "pillar": "thought-leadership"
+    }
+  ],
+  "emerging_trends": [
+    "Social AI Poster from CRM",
+    "GMB review reply drafts with safety preview",
+    "MCP agents for CRM tooling",
+    "Managed ads + CRM agency retainer"
+  ],
+  "contrarian_hooks": [
+    "Your CRM tracks leads. It doesn't grow revenue.",
+    "Ads in Meta. Pipeline elsewhere.",
+    "Reports show activities. Revenue stalls.",
+    "More tools ≠ more outcomes.",
+    "Revenue runs itself—until you need a human."
+  ],
+  "topic_clusters_suggested": [
+    {
+      "cluster": "Category POV",
+      "angles": ["CRM storage vs revenue loop", "Activity reports vs win/loss"]
+    },
+    {
+      "cluster": "Meta + CRM",
+      "angles": ["Campaign insights in-product", "UTM capture", "Source drilldown"]
+    },
+    {
+      "cluster": "WhatsApp ops",
+      "angles": ["Inbox linked to lead", "Stage automations", "Template campaigns"]
+    },
+    {
+      "cluster": "AI layer",
+      "angles": ["Daily briefing", "Next-step advice", "Natural-language CRM chat"]
+    },
+    {
+      "cluster": "Agency setup",
+      "angles": ["Live in days", "Agentic workflows on day one"]
+    }
+  ],
+  "reactive_slot_candidates": [
+    "Meta ads reporting in CRM",
+    "Education admissions season India",
+    "AI automation consulting retainer"
+  ]
+}

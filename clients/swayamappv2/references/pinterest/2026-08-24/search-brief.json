@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "source": "../../BRAND_IDENTITY.md",
+    "client_slug": "swayamappv2",
+    "created": "2026-08-24"
+  },
+  "brand_signals": {
+    "product_category": "Agentic CRM",
+    "industry": "B2B SaaS",
+    "audience": "growth owners, revenue leaders, admissions directors",
+    "visual_tone": "dark editorial, contrarian headlines, operator-grade",
+    "platforms": ["instagram", "facebook"]
+  },
+  "search_queries": [
+    "webhook pinterest_urls (3 provided)",
+    "saas crm social media post design dark editorial",
+    "B2B CRM instagram post contrarian headline"
+  ]
+}

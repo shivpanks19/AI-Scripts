@@ -1,0 +1,101 @@
+{
+  "run_date": "2026-08-24",
+  "client_slug": "Vsmart",
+  "cadence": "weekly",
+  "currency": "INR",
+  "report_period": { "start": "2026-08-17", "end": "2026-08-23" },
+  "prior_period": { "start": "2026-08-10", "end": "2026-08-16" },
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current": {
+      "spend_inr": 83746.08,
+      "clicks": 5706,
+      "impressions": 346962,
+      "conversions": 1837.1,
+      "ctr_pct": 1.64,
+      "avg_cpc_inr": 14.68,
+      "cpa_inr": 45.59
+    },
+    "prior": {
+      "spend_inr": 92731.61,
+      "clicks": 5684,
+      "impressions": 343729,
+      "conversions": 1783.55,
+      "ctr_pct": 1.65,
+      "avg_cpc_inr": 16.31,
+      "cpa_inr": 52.01
+    },
+    "wow_delta": {
+      "spend_pct": -9.7,
+      "conversions_pct": 3.0,
+      "cpa_pct": -12.3,
+      "clicks_pct": 0.4,
+      "impressions_pct": 0.9
+    },
+    "top_campaigns": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 7539.34,
+        "conversions": 1229.01,
+        "cpa_inr": 6.13,
+        "clicks": 2013,
+        "status": "ENABLED"
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 7308.57,
+        "conversions": 348.0,
+        "cpa_inr": 21.0,
+        "clicks": 837,
+        "status": "ENABLED"
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 8717.25,
+        "conversions": 195.76,
+        "cpa_inr": 44.53,
+        "clicks": 600,
+        "status": "ENABLED"
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 7609.38,
+        "conversions": 48.2,
+        "cpa_inr": 157.87,
+        "clicks": 328,
+        "status": "ENABLED"
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 7963.1,
+        "conversions": 2.02,
+        "cpa_inr": 3942.13,
+        "clicks": 191,
+        "status": "ENABLED"
+      }
+    ],
+    "underperformers": [
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 5584.28,
+        "conversions": 0,
+        "clicks": 128
+      },
+      {
+        "name": "Shubham_Singhal_Inter_13_03_2026(law gst)",
+        "spend_inr": 4648.07,
+        "conversions": 0.01,
+        "clicks": 208
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 7963.1,
+        "conversions": 2.02,
+        "clicks": 191
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId placeholder (None)" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp": { "status": "skipped", "reason": "outletId placeholder (None)" }
+}

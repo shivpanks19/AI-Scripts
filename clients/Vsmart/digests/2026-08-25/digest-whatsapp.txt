@@ -1,0 +1,20 @@
+*Vsmart — weekly brief (18–24 Aug)*
+
+*Summary*
+• CPA ₹44.91 (↓17.4% WoW) — 1,791 conv on ₹80.4k spend
+• CA_Final_IDT_VB_Sir: 1,183 conv at ₹6.19 CPA — top performer
+• ₹22k wasted on 4 campaigns with near-zero conversions
+
+*Google Ads*
+Spend: ₹80.4k (↓14.1%) | Conv: 1,791 (↑4.0%)
+CPA: ₹44.91 | Clicks: 5,519 | CTR: 1.56%
+
+Best: CA_Final_IDT_VB_Sir (1,183 conv, ₹6.19 CPA)
+Watch: CMA_Final_IDT_DT (₹8.4k, 2 conv)
+
+*Actions*
+1. Pause/cap CMA Final, Vijay Sarda CMA, Shubham Singhal
+2. Scale CA_Final_IDT_VB_Sir (+15–20% budget)
+3. Set CRM outletId for pipeline data next week
+
+Full breakdown in your email. Reply if you want a walkthrough.

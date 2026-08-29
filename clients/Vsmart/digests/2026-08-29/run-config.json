@@ -1,0 +1,60 @@
+{
+  "run_date": "2026-08-29",
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "cadence": "weekly",
+  "window_days": 7,
+  "report_window": {
+    "start": "2026-08-22",
+    "end": "2026-08-28",
+    "label": "22–28 Aug 2026 (IST)",
+    "comparison_window": "15–21 Aug 2026"
+  },
+  "mode": "full",
+  "timezone": "Asia/Kolkata",
+  "accounts": {
+    "crm": {
+      "outletId": "None",
+      "status": "skipped_invalid"
+    },
+    "google_ads": {
+      "customer_id": "9125228176",
+      "label": "Vsmart Google Ads",
+      "override_note": "Runtime override from user request (webhook had placeholder 0000000000)"
+    },
+    "meta": {
+      "ad_account_id": null,
+      "status": "not_configured"
+    }
+  },
+  "delivery": {
+    "email": {
+      "from": "swayamapp19@gmail.com",
+      "to": ["pankaj.dhamane@hexaonvate.com"],
+      "cc": [],
+      "reply_to": ""
+    },
+    "whatsapp": {
+      "integrated_number": "917820932512",
+      "recipient_numbers": ["919730696887"],
+      "recipients": [
+        { "name": "Pankaj", "phone": "919730696887" }
+      ],
+      "template_type": "simple",
+      "use_template_outside_24h": true
+    }
+  },
+  "integrations": {
+    "crm": false,
+    "meta": false,
+    "google_ads": true,
+    "whatsapp_delivery": false,
+    "clarity": false,
+    "spur": false
+  },
+  "validation_notes": [
+    "Google Ads customer_id overridden at runtime to 9125228176",
+    "CRM outletId is placeholder 'None' — pipeline section skipped",
+    "Meta ad_account_id not configured — Meta section skipped"
+  ]
+}

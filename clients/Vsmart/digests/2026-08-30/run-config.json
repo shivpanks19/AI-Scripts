@@ -1,0 +1,52 @@
+{
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "cadence": "weekly",
+  "window_days": 7,
+  "mode": "full",
+  "timezone": "Asia/Kolkata",
+  "report_period": {
+    "start": "2026-08-23",
+    "end": "2026-08-29",
+    "label": "23–29 Aug 2026"
+  },
+  "accounts": {
+    "crm": {
+      "outletId": "None"
+    },
+    "google_ads": {
+      "customer_id": "9125228176",
+      "label": "Vsmart Google Ads"
+    }
+  },
+  "delivery": {
+    "email": {
+      "from": "swayamapp19@gmail.com",
+      "to": ["pankaj.dhamane@hexaonvate.com"],
+      "cc": [],
+      "reply_to": ""
+    },
+    "whatsapp": {
+      "integrated_number": "917820932512",
+      "recipient_numbers": ["919730696887"],
+      "recipients": [
+        { "name": "Pankaj", "phone": "919730696887" }
+      ],
+      "template_type": "simple",
+      "use_template_outside_24h": true
+    }
+  },
+  "integrations": {
+    "crm": false,
+    "meta": false,
+    "google_ads": true,
+    "whatsapp_delivery": false,
+    "clarity": false,
+    "spur": false
+  },
+  "notes": [
+    "Google Ads customer_id overridden from webhook placeholder to 9125228176 per automation request.",
+    "CRM skipped: outletId is None.",
+    "Meta skipped: ad_account_id not configured."
+  ]
+}

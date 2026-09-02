@@ -1,0 +1,25 @@
+*Vsmart — weekly brief (2 Sep)*
+
+*Summary*
+• Google Ads: ₹72.4k spend, 2,004 conv, CPA ₹36 (↓19% WoW)
+• Best: CA_Final_IDT_VB_Sir — 1,485 conv at ₹5 CPA
+• Watch: 3 campaigns with ₹20k+ spend, ≤1 conv each
+
+*Google Ads (912-522-8176)*
+Spend: ₹72,372 (↓11% WoW)
+Conversions: 2,004 (↑10% WoW)
+CPA: ₹36.12 | CPC: ₹14.46
+Clicks: 5,006 | Impr: 262,584
+
+Top by results:
+1. CA_Final_IDT_VB_Sir — 1,485 conv, CPA ₹5
+2. CA_Inter Law Combo — 331 conv, CPA ₹20
+3. Branded Keywords — 109 conv, CPA ₹70
+
+*Actions*
+1. Pause CMA_Final + Pavan_Karmele (CPA >₹6k)
+2. Scale CA_Final_IDT_VB_Sir budget +10%
+3. Fix CRM outletId for pipeline data
+
+CRM & Meta data unavailable this week.
+Full breakdown in your email. Reply if you want a walkthrough.

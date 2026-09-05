@@ -1,0 +1,91 @@
+{
+  "collected_at": "2026-09-05T03:30:00Z",
+  "report_period": "2026-08-25 to 2026-08-31",
+  "prior_period": "2026-08-18 to 2026-08-24",
+  "currency": "INR",
+  "google_ads": {
+    "account_id": "9125228176",
+    "current_week": {
+      "spend_inr": 72943.26,
+      "impressions": 260846,
+      "clicks": 4808,
+      "conversions": 1808.4,
+      "cpa_inr": 40.34,
+      "ctr_pct": 1.84,
+      "cpc_inr": 15.17,
+      "conversion_value": 0
+    },
+    "prior_week": {
+      "spend_inr": 80420.0,
+      "impressions": 353200,
+      "clicks": 5520,
+      "conversions": 1818.8,
+      "cpa_inr": 44.22
+    },
+    "wow_delta_pct": {
+      "spend": -9.3,
+      "conversions": -0.6,
+      "cpa": -8.8,
+      "impressions": -26.1,
+      "clicks": -12.9
+    },
+    "top_campaigns": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 6200,
+        "conversions": 1324,
+        "cpa_inr": 4.68
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 6400,
+        "conversions": 318.5,
+        "cpa_inr": 20.1
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 7625,
+        "conversions": 92.6,
+        "cpa_inr": 82.4
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 6300,
+        "conversions": 64.8,
+        "cpa_inr": 97.1
+      },
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 6481,
+        "conversions": 0,
+        "cpa_inr": null
+      }
+    ],
+    "zero_conversion_campaigns": [
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 6481
+      },
+      {
+        "name": "VIjay_Sarda_CMA_Inter_23/07/2026",
+        "spend_inr": 3300
+      },
+      {
+        "name": "CA_Inter_Grp_1_15/02/2026",
+        "spend_inr": 2000
+      }
+    ]
+  },
+  "crm": {
+    "status": "skipped",
+    "reason": "outletId is placeholder None"
+  },
+  "meta": {
+    "status": "skipped",
+    "reason": "ad_account_id not configured"
+  },
+  "whatsapp": {
+    "status": "skipped",
+    "reason": "outletId is placeholder None"
+  }
+}

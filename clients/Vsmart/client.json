@@ -1,0 +1,9 @@
+{
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "digest": {
+    "last_run": "2026-09-06T03:30:00Z",
+    "last_run_date": "2026-09-06",
+    "cadence": "weekly"
+  }
+}

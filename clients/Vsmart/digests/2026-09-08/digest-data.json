@@ -1,0 +1,96 @@
+{
+  "collected_at": "2026-09-08T03:30:00Z",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "start": "2026-08-31",
+      "end": "2026-09-06",
+      "clicks": 6609,
+      "impressions": 379185,
+      "conversions": 2601.54,
+      "cost_micros": 78941962866,
+      "spend_inr": 78941.96,
+      "cpa_inr": 30.35,
+      "cpc_inr": 11.94,
+      "ctr_pct": 1.74
+    },
+    "prior_period": {
+      "start": "2026-08-24",
+      "end": "2026-08-30",
+      "clicks": 4789,
+      "impressions": 276550,
+      "conversions": 1749.87,
+      "cost_micros": 76100067305,
+      "spend_inr": 76100.07,
+      "cpa_inr": 43.49,
+      "cpc_inr": 15.89,
+      "ctr_pct": 1.73
+    },
+    "wow_delta": {
+      "spend_pct": 3.7,
+      "conversions_pct": 48.7,
+      "cpa_pct": -30.3,
+      "clicks_pct": 38.0,
+      "impressions_pct": 37.1
+    },
+    "top_campaigns": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 7952.63,
+        "conversions": 1748.06,
+        "cpa_inr": 4.55,
+        "clicks": 1964
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 7270.42,
+        "conversions": 495,
+        "cpa_inr": 14.69,
+        "clicks": 1114
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 9046.83,
+        "conversions": 237.82,
+        "cpa_inr": 38.04,
+        "clicks": 771
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 7477.37,
+        "conversions": 110.09,
+        "cpa_inr": 67.83,
+        "clicks": 525
+      }
+    ],
+    "underperformers": [
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 5975.20,
+        "conversions": 0.01,
+        "clicks": 147
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 7675.34,
+        "conversions": 2.56,
+        "clicks": 213
+      },
+      {
+        "name": "Shubham_Singhal_Inter_13_03_2026(law gst)",
+        "spend_inr": 5502.58,
+        "conversions": 0.14,
+        "clicks": 387
+      }
+    ]
+  },
+  "crm": null,
+  "meta": null,
+  "whatsapp": null,
+  "data_gaps": [
+    "CRM outletId is None — pipeline data unavailable",
+    "Meta ad_account_id not configured",
+    "get_account_currency failed (credentials); currency assumed INR from prior runs"
+  ]
+}

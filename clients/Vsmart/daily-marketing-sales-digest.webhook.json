@@ -6,8 +6,8 @@
   "payload": {
     "client_slug": "Vsmart",
     "display_name": "Vsmart",
-    "cadence": "daily",
-    "window_days": 1,
+    "cadence": "weekly",
+    "window_days": 7,
     "mode": "full",
     "timezone": "Asia/Kolkata",
 
@@ -16,8 +16,8 @@
         "outletId": "None"
       },
       "google_ads": {
-        "customer_id": "0000000000",
-        "label": "Vsmart Google Ads"
+        "customer_id": "9125228176",
+        "label": "Vsmart Google Ads (912-522-8176)"
       }
     },
 

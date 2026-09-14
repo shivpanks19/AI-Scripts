@@ -1,0 +1,74 @@
+{
+  "collected_at_utc": "2026-09-14T03:35:00Z",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "currency": "INR",
+    "current_week": {
+      "start": "2026-09-07",
+      "end": "2026-09-13",
+      "cost_inr": 64220.53,
+      "clicks": 6060,
+      "impressions": 324866,
+      "conversions": 2236.73,
+      "conversion_value_inr": 96976.16,
+      "ctr_pct": 1.87,
+      "avg_cpc_inr": 10.6,
+      "cpa_inr": 28.71
+    },
+    "prior_week": {
+      "start": "2026-08-31",
+      "end": "2026-09-06",
+      "cost_inr": 78941.96,
+      "clicks": 6609,
+      "impressions": 379185,
+      "conversions": 2643.73,
+      "conversion_value_inr": 144652.9,
+      "ctr_pct": 1.74,
+      "avg_cpc_inr": 11.94,
+      "cpa_inr": 29.86
+    },
+    "wow_delta": {
+      "spend_pct": -18.6,
+      "conversions_pct": -15.4,
+      "cpa_pct": -3.9,
+      "clicks_pct": -8.3,
+      "impressions_pct": -14.3
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "cost_inr": 7098.26,
+        "conversions": 534.01,
+        "cpa_inr": 13.29
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "cost_inr": 7058.19,
+        "conversions": 2.04,
+        "cpa_inr": 3461.08
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "cost_inr": 7055.05,
+        "conversions": 126.02,
+        "cpa_inr": 55.98
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "cost_inr": 6973.39,
+        "conversions": 3.12,
+        "cpa_inr": 2232.09
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "cost_inr": 6845.22,
+        "conversions": 1307.02,
+        "cpa_inr": 5.24
+      }
+    ],
+    "errors": []
+  },
+  "crm": { "skipped": true, "reason": "outletId None" },
+  "meta": { "skipped": true, "reason": "ad_account_id not set" },
+  "whatsapp_delivery": { "skipped": true, "reason": "invalid outletId" }
+}

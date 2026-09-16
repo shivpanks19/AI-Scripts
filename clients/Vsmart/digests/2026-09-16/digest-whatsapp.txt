@@ -1,0 +1,21 @@
+*Vsmart — weekly brief (8–14 Sep)*
+
+*Summary*
+• Google Ads: ₹60.3k spend (−26% WoW), 2,229 conv (−17%)
+• CPA ₹27.04 (−10% vs ₹30.08 prior week) — efficiency up
+• CMA Final campaigns: ~₹11.8k spend, ~0 conv — review
+
+*Google Ads KPIs*
+Spend ₹60.3k | Conv 2,229 | CPA ₹27.04
+Clicks 5,903 | CTR 1.91% | CPC ₹10.21
+
+*Top performers*
+Best: CA_Final_IDT_VB_Sir (1,356 conv)
+Watch: CMA_Final_IDT_DT (0.6 conv on ₹6.8k)
+
+*Actions*
+1. Cap/pause CMA Final + Vijay Sarda CMA until tracking fixed
+2. Protect budget on CA Final IDT + Inter Law combo
+3. Confirm −26% spend is planned vs budget limits
+
+Full tables in your email. Reply if you want a walkthrough.

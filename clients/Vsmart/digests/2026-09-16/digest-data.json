@@ -1,0 +1,77 @@
+{
+  "collected_at": "2026-09-16T03:40:00Z",
+  "run_date": "2026-09-16",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_week": {
+      "date_range": "2026-09-08 to 2026-09-14",
+      "clicks": 5903,
+      "impressions": 309683,
+      "conversions": 2229.45,
+      "cost_micros": 60282092668,
+      "cost_inr": 60282.09,
+      "cpa_inr": 27.04,
+      "ctr": 0.0191,
+      "average_cpc_inr": 10.21
+    },
+    "prior_week": {
+      "date_range": "2026-09-01 to 2026-09-07",
+      "clicks": 6848,
+      "impressions": 395885,
+      "conversions": 2694.68,
+      "cost_micros": 81059150564,
+      "cost_inr": 81059.15,
+      "cpa_inr": 30.08,
+      "ctr": 0.0173,
+      "average_cpc_inr": 11.84
+    },
+    "wow_delta_pct": {
+      "spend": -25.6,
+      "conversions": -17.3,
+      "cpa": -10.1,
+      "clicks": -13.8,
+      "impressions": -21.8
+    },
+    "top_campaigns_current_week": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend_inr": 6970.7,
+        "conversions": 1356.02,
+        "clicks": 2062
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend_inr": 6896.63,
+        "conversions": 529.01,
+        "clicks": 998
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 6778.66,
+        "conversions": 0.6,
+        "clicks": 204
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 6683.75,
+        "conversions": 116.76,
+        "clicks": 504
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 6057.45,
+        "conversions": 220.29,
+        "clicks": 719
+      }
+    ]
+  },
+  "crm": { "skipped": true, "reason": "outletId not configured" },
+  "meta": { "skipped": true, "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "skipped": true, "reason": "no CRM outletId for MSG91 delivery report" }
+}

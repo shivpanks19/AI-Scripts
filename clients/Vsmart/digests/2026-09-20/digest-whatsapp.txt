@@ -1,0 +1,19 @@
+*Vsmart — weekly brief (8–14 Sep)*
+
+*Summary*
+• Google spend ₹60.3k (−26% WoW), 2,263 conv (−17%)
+• CPA ₹26.64 (−11% vs ₹30.03 prior week)
+• CRM/Meta not in report — fix outletId & Meta ID
+
+*Google Ads*
+Spend: ₹60.3k | Conv: 2,263 | CPA: ₹26.64
+Clicks: 5,903 | CTR: 1.91%
+Best: CA Final IDT VB Sir (~1,357 conv)
+Watch: CMA Final IDT DT, CA Inter Grp 1 (low/zero conv)
+
+*Actions*
+1. Protect budget on CA Final IDT VB Sir
+2. Review/pause CMA Final & CA Inter Grp 1 waste
+3. Add CRM outletId for pipeline in next digest
+
+Full KPI tables in your email. Reply if you want a walkthrough.

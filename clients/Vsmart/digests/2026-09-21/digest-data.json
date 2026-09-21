@@ -1,0 +1,99 @@
+{
+  "collected_at": "2026-09-21T03:31:10Z",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "start": "2026-09-08",
+      "end": "2026-09-14",
+      "impressions": 309683,
+      "clicks": 5903,
+      "cost_inr": 60282.09,
+      "cost_micros": 60282092668,
+      "conversions": 2269.9,
+      "conversion_value_inr": 93109.13,
+      "ctr": 0.0191,
+      "avg_cpc_inr": 10.21,
+      "cpa_inr": 26.56
+    },
+    "prior_period": {
+      "start": "2026-09-01",
+      "end": "2026-09-07",
+      "impressions": 395885,
+      "clicks": 6848,
+      "cost_inr": 81059.15,
+      "cost_micros": 81059150564,
+      "conversions": 2700.65,
+      "conversion_value_inr": 151768.89,
+      "ctr": 0.0173,
+      "avg_cpc_inr": 11.84,
+      "cpa_inr": 30.01
+    },
+    "wow_delta_pct": {
+      "spend": -25.6,
+      "conversions": -15.9,
+      "cpa": -11.5,
+      "clicks": -13.8,
+      "impressions": -21.7
+    },
+    "daily": [
+      { "date": "2026-09-08", "cost_inr": 11629.81, "conversions": 343.09, "clicks": 989 },
+      { "date": "2026-09-09", "cost_inr": 10025.21, "conversions": 328.59, "clicks": 852 },
+      { "date": "2026-09-10", "cost_inr": 8944.47, "conversions": 343.12, "clicks": 872 },
+      { "date": "2026-09-11", "cost_inr": 7151.37, "conversions": 258.62, "clicks": 721 },
+      { "date": "2026-09-12", "cost_inr": 7129.41, "conversions": 249.42, "clicks": 730 },
+      { "date": "2026-09-13", "cost_inr": 7935.23, "conversions": 394.54, "clicks": 922 },
+      { "date": "2026-09-14", "cost_inr": 7466.6, "conversions": 352.53, "clicks": 817 }
+    ],
+    "top_campaigns_by_spend": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "cost_inr": 6970.7,
+        "conversions": 1357.02,
+        "cpa_inr": 5.14,
+        "clicks": 2062,
+        "impressions": 134137
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "cost_inr": 6896.63,
+        "conversions": 530.01,
+        "cpa_inr": 13.01,
+        "clicks": 998,
+        "impressions": 119398
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "cost_inr": 6778.66,
+        "conversions": 0.6,
+        "cpa_inr": 11381.5,
+        "clicks": 204,
+        "impressions": 2725
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "cost_inr": 6683.75,
+        "conversions": 145.86,
+        "cpa_inr": 45.82,
+        "clicks": 504,
+        "impressions": 6055
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "cost_inr": 6057.45,
+        "conversions": 229.65,
+        "cpa_inr": 26.38,
+        "clicks": 719,
+        "impressions": 1309
+      }
+    ]
+  },
+  "crm": { "skipped": true, "reason": "outletId not configured" },
+  "meta": { "skipped": true, "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "skipped": true, "reason": "no CRM outlet for delivery report" }
+}

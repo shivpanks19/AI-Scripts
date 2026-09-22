@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "documentId": "8nBk9KKNL2QsuVkUJbsc",
+  "outletId": "5qy4uU63AX6jLjDYvP19",
+  "collection": "AI_CONTENT",
+  "path": "OUTLET/5qy4uU63AX6jLjDYvP19/AI_CONTENT/8nBk9KKNL2QsuVkUJbsc",
+  "primaryEndpointError": "POST https://msg91whatspp-454181684966.europe-west1.run.app/ai-content → 404 Cannot POST /ai-content (retried once)",
+  "publishedVia": "https://crm-demo-2fc0c.web.app/ai-content"
+}

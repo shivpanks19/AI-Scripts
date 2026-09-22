@@ -1,0 +1,89 @@
+{
+  "collected_at_utc": "2026-09-22T03:35:00Z",
+  "run_date": "2026-09-22",
+  "crm": {
+    "status": "skipped",
+    "error": "accounts.crm.outletId is placeholder \"None\" — pipeline and MSG91 delivery report unavailable"
+  },
+  "meta": {
+    "status": "skipped",
+    "error": "accounts.meta.ad_account_id not configured"
+  },
+  "whatsapp_delivery": {
+    "status": "skipped",
+    "error": "requires valid CRM outletId"
+  },
+  "google_ads": {
+    "status": "ok",
+    "customer_id": "9125228176",
+    "currency": "INR",
+    "currency_note": "get_account_currency MCP failed; INR inferred from account billing history",
+    "current_period": {
+      "start": "2026-09-15",
+      "end": "2026-09-21",
+      "spend_inr": 52355.84,
+      "clicks": 5179,
+      "impressions": 207423,
+      "conversions": 2162.84,
+      "conversion_value": 69670.48,
+      "cpa_inr": 24.21,
+      "cpc_inr": 10.11,
+      "ctr_pct": 2.5
+    },
+    "prior_period": {
+      "start": "2026-09-08",
+      "end": "2026-09-14",
+      "spend_inr": 60282.09,
+      "clicks": 6003,
+      "impressions": 309683,
+      "conversions": 2288.27,
+      "cpa_inr": 26.34
+    },
+    "wow_delta_pct": {
+      "spend": -13.1,
+      "conversions": -5.5,
+      "cpa": -8.1
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 6737.2,
+        "conversions": 1184.02,
+        "cpa_inr": 5.69
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 7141.42,
+        "conversions": 516.47,
+        "cpa_inr": 13.83
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 7383.46,
+        "conversions": 183.17,
+        "cpa_inr": 40.31
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 6344.45,
+        "conversions": 274.59,
+        "cpa_inr": 23.11
+      }
+    ],
+    "watch_campaigns": [
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "spend_inr": 7321.45,
+        "conversions": 2.58,
+        "cpa_inr": 2833.83,
+        "note": "High spend, near-zero conversions"
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 6832.75,
+        "conversions": 0.99,
+        "note": "Spend with negligible conversions"
+      }
+    ]
+  }
+}

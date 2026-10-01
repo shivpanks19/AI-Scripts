@@ -1,0 +1,37 @@
+{
+  "primaryAttempts": [
+    {
+      "attempt": 1,
+      "endpoint": "https://msg91whatspp-454181684966.europe-west1.run.app/ai-content",
+      "status": 404,
+      "response": {
+        "error": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /ai-content</pre>\n</body>\n</html>\n"
+      }
+    },
+    {
+      "attempt": 2,
+      "endpoint": "https://msg91whatspp-454181684966.europe-west1.run.app/ai-content",
+      "status": 404,
+      "response": {
+        "error": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /ai-content</pre>\n</body>\n</html>\n"
+      }
+    }
+  ],
+  "final": {
+    "attempt": 3,
+    "endpoint": "https://crm-demo-2fc0c.web.app/ai-content",
+    "status": 201,
+    "response": {
+      "success": true,
+      "documentId": "6IFICXdlhAgAXI17Z4JN",
+      "outletId": "5qy4uU63AX6jLjDYvP19",
+      "collection": "AI_CONTENT",
+      "path": "OUTLET/5qy4uU63AX6jLjDYvP19/AI_CONTENT/6IFICXdlhAgAXI17Z4JN"
+    }
+  },
+  "notionPageId": "3ecc45f0-da5d-8160-a8c3-d737d1d8d78f",
+  "notionUrl": "https://app.notion.com/p/3ecc45f0da5d8160a8c3d737d1d8d78f",
+  "imageUrl": "https://storage.googleapis.com/crm-demo-2fc0c.firebasestorage.app/eduhexa/1790826334974-image.png",
+  "slug": "proof-students-standards-adults-oct-2026",
+  "title": "Proof for Students, Standards for Adults: When AI Slop Meets In-Class Integrity"
+}

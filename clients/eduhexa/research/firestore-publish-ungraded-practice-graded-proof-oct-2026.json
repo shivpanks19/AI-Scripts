@@ -1,0 +1,12 @@
+{
+  "primary": "404 after retry",
+  "fallback": "https://crm-demo-2fc0c.web.app/ai-content",
+  "HTTP": 201,
+  "body": {
+    "success": true,
+    "documentId": "p6o37NenvRUSfSN3JjOV",
+    "outletId": "5qy4uU63AX6jLjDYvP19",
+    "collection": "AI_CONTENT",
+    "path": "OUTLET/5qy4uU63AX6jLjDYvP19/AI_CONTENT/p6o37NenvRUSfSN3JjOV"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "HTTP": 201,
+  "body": {
+    "success": true,
+    "documentId": "M0V9XRtZ7G6hwVC4jmQI",
+    "outletId": "5qy4uU63AX6jLjDYvP19",
+    "collection": "AI_CONTENT",
+    "path": "OUTLET/5qy4uU63AX6jLjDYvP19/AI_CONTENT/M0V9XRtZ7G6hwVC4jmQI"
+  },
+  "primary": "https://msg91whatspp-454181684966.europe-west1.run.app/ai-content"
+}

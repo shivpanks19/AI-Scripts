@@ -1,0 +1,58 @@
+{
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "cadence": "weekly",
+  "window_days": 7,
+  "mode": "full",
+  "timezone": "Asia/Kolkata",
+  "run_date": "2026-09-01",
+  "report_period": {
+    "start": "2026-08-25",
+    "end": "2026-08-31",
+    "label": "25 Aug – 31 Aug 2026"
+  },
+  "comparison_period": {
+    "start": "2026-08-18",
+    "end": "2026-08-24",
+    "label": "18 Aug – 24 Aug 2026"
+  },
+  "accounts": {
+    "crm": {
+      "outletId": "None"
+    },
+    "google_ads": {
+      "customer_id": "9125228176",
+      "label": "Vsmart Google Ads"
+    }
+  },
+  "delivery": {
+    "email": {
+      "from": "swayamapp19@gmail.com",
+      "to": ["pankaj.dhamane@hexaonvate.com"],
+      "cc": [],
+      "reply_to": ""
+    },
+    "whatsapp": {
+      "integrated_number": "917820932512",
+      "recipient_numbers": ["919730696887"],
+      "recipients": [
+        { "name": "Pankaj", "phone": "919730696887" }
+      ],
+      "template_type": "simple",
+      "use_template_outside_24h": true
+    }
+  },
+  "integrations": {
+    "crm": false,
+    "meta": false,
+    "google_ads": true,
+    "whatsapp_delivery": false,
+    "clarity": false,
+    "spur": false
+  },
+  "notes": [
+    "CRM outletId is None — pipeline section skipped.",
+    "Meta ad_account_id not configured — Meta section skipped.",
+    "Google Ads customer_id set from automation request (912-522-8176)."
+  ]
+}

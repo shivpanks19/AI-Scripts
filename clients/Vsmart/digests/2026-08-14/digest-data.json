@@ -1,0 +1,104 @@
+{
+  "collected_at": "2026-08-14T03:38:00Z",
+  "run_date": "2026-08-14",
+  "cadence": "weekly",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "period_start": "2026-08-04",
+      "period_end": "2026-08-10",
+      "clicks": 5049,
+      "impressions": 258918,
+      "conversions": 1546.49,
+      "cost_inr": 84579.30,
+      "ctr_pct": 1.95,
+      "avg_cpc_inr": 16.75,
+      "cpa_inr": 54.72
+    },
+    "prior_period": {
+      "period_start": "2026-07-28",
+      "period_end": "2026-08-03",
+      "clicks": 3873,
+      "impressions": 178786,
+      "conversions": 1148.62,
+      "cost_inr": 68116.28,
+      "cpa_inr": 59.31
+    },
+    "top_campaigns": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "clicks": 331,
+        "conversions": 2.59,
+        "cost_inr": 11908.79,
+        "cpa_inr": 4594.12
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "clicks": 1025,
+        "conversions": 418.68,
+        "cost_inr": 8518.08,
+        "cpa_inr": 20.33
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "clicks": 247,
+        "conversions": 4.72,
+        "cost_inr": 7346.34,
+        "cpa_inr": 1556.85
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "clicks": 894,
+        "conversions": 650.03,
+        "cost_inr": 7254.55,
+        "cpa_inr": 11.16
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "clicks": 544,
+        "conversions": 2.09,
+        "cost_inr": 7214.12,
+        "cpa_inr": 3456.45
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "clicks": 818,
+        "conversions": 362,
+        "cost_inr": 7106.10,
+        "cpa_inr": 19.63
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "clicks": 362,
+        "conversions": 93.28,
+        "cost_inr": 7045.87,
+        "cpa_inr": 75.48
+      },
+      {
+        "name": "VIjay_Sarda_CMA_Inter_23/07/2026",
+        "clicks": 117,
+        "conversions": 0,
+        "cost_inr": 5199.13,
+        "cpa_inr": null
+      },
+      {
+        "name": "Shubham_Singhal_Inter_13_03_2026(law gst)",
+        "clicks": 211,
+        "conversions": 1.02,
+        "cost_inr": 5023.04,
+        "cpa_inr": 4924.55
+      },
+      {
+        "name": "CMA_Inter_VB_BB_22/07/2026",
+        "clicks": 115,
+        "conversions": 0.72,
+        "cost_inr": 4181.02,
+        "cpa_inr": 5793.08
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "integrations.crm disabled — no valid outletId" },
+  "meta": { "status": "skipped", "reason": "integrations.meta disabled — no ad account configured" },
+  "whatsapp": { "status": "skipped", "reason": "integrations.whatsapp_delivery disabled" }
+}

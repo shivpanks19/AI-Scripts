@@ -1,0 +1,61 @@
+{
+  "collected_at_utc": "2026-09-13T03:50:00Z",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "currency": "INR",
+    "current_week": {
+      "start": "2026-09-01",
+      "end": "2026-09-07",
+      "cost_inr": 81059.15,
+      "clicks": 6848,
+      "impressions": 395885,
+      "conversions": 2692.24,
+      "conversion_value_inr": 151060.77,
+      "ctr_pct": 1.73,
+      "avg_cpc_inr": 11.84,
+      "cpa_inr": 30.11
+    },
+    "prior_week": {
+      "start": "2026-08-25",
+      "end": "2026-08-31",
+      "cost_inr": 72943.26,
+      "clicks": 4808,
+      "impressions": 260846,
+      "conversions": 1827.38,
+      "conversion_value_inr": 61631.27,
+      "ctr_pct": 1.84,
+      "avg_cpc_inr": 15.17,
+      "cpa_inr": 39.97
+    },
+    "wow_delta": {
+      "spend_pct": 11.1,
+      "conversions_pct": 47.3,
+      "cpa_pct": -24.7,
+      "clicks_pct": 42.4
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "cost_inr": 9149.29,
+        "conversions": 278.8,
+        "cpa_inr": 32.82
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "cost_inr": 8106.32,
+        "conversions": 1731.05,
+        "cpa_inr": 4.68
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "cost_inr": 7738.12,
+        "conversions": 2.37,
+        "cpa_inr": 3269.34
+      }
+    ],
+    "errors": []
+  },
+  "crm": { "skipped": true, "reason": "outletId None" },
+  "meta": { "skipped": true, "reason": "ad_account_id not set" },
+  "whatsapp_delivery": { "skipped": true, "reason": "invalid outletId" }
+}

@@ -1,0 +1,23 @@
+*Vsmart — weekly brief (16–22 Aug)*
+
+*Summary*
+• Spend ₹85.8k (↓7.8%) · Conversions 1,869 (↑7.5%)
+• CPA ₹45.89 (↓14.2%) — best week efficiency
+• CA_Final_IDT_VB_Sir: 1,229 conv at ₹6 CPA
+
+*Google Ads KPIs*
+Spend: ₹85,774 | Conv: 1,869 | CPA: ₹45.89
+Clicks: 5,645 | CTR: 1.70% | Avg CPC: ₹15.19
+
+*Top campaigns*
+Best: CA_Final_IDT_VB_Sir — ₹7.5k, 1,229 conv, CPA ₹6
+Strong: Branded_Keywords — ₹8.8k, 222 conv, CPA ₹39
+Watch: Vijay_Sarda_CMA_Final — ₹6.6k, 0 conv
+Watch: CMA_Final_IDT_DT — ₹8.2k, 1 conv, CPA ₹7,880
+
+*Actions*
+1. Scale CA_Final_IDT_VB_Sir budget +15–20%
+2. Pause/cut Vijay_Sarda_CMA_Final & CMA_Final_IDT_DT
+3. Reallocate from Pavan_Karmele to CA_Inter_DT_IDT_Combo
+
+Full HTML report emailed. Reply if you want a walkthrough.

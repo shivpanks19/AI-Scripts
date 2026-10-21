@@ -1,0 +1,101 @@
+{
+  "run_date": "2026-08-23",
+  "report_period": { "start": "2026-08-16", "end": "2026-08-22" },
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_week": {
+      "impressions": 331545,
+      "clicks": 5645,
+      "spend_inr": 85774.08,
+      "conversions": 1869.03,
+      "cpa_inr": 45.89,
+      "ctr_pct": 1.70,
+      "avg_cpc_inr": 15.19,
+      "conversion_value_inr": 77276.96
+    },
+    "prior_week": {
+      "period": "2026-08-09 to 2026-08-15",
+      "impressions": 363555,
+      "clicks": 5663,
+      "spend_inr": 93009.08,
+      "conversions": 1739.26,
+      "cpa_inr": 53.48,
+      "ctr_pct": 1.56,
+      "avg_cpc_inr": 16.42
+    },
+    "top_campaigns": [
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 8766.16,
+        "conversions": 222.38,
+        "cpa_inr": 39.42,
+        "clicks": 622,
+        "impressions": 1444
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 8157.66,
+        "conversions": 1.04,
+        "cpa_inr": 7880.0,
+        "clicks": 192,
+        "impressions": 8780
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 7540.84,
+        "conversions": 55.72,
+        "cpa_inr": 135.35,
+        "clicks": 327,
+        "impressions": 12817
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 7498.19,
+        "conversions": 1229.02,
+        "cpa_inr": 6.10,
+        "clicks": 1945,
+        "impressions": 106378
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 7027.58,
+        "conversions": 338.0,
+        "cpa_inr": 20.79,
+        "clicks": 792,
+        "impressions": 106204
+      }
+    ],
+    "watch_campaigns": [
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 6581.66,
+        "conversions": 0,
+        "note": "Zero conversions on ₹6.6k spend"
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "spend_inr": 6903.75,
+        "conversions": 2.97,
+        "cpa_inr": 2327.88,
+        "note": "Very high CPA"
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend_inr": 6794.86,
+        "conversions": 1.04,
+        "cpa_inr": 6523.19,
+        "note": "Very high CPA"
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId is placeholder None" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "status": "skipped", "reason": "invalid outletId" },
+  "data_gaps": [
+    "CRM pipeline data unavailable (outletId=None)",
+    "Meta Ads not configured",
+    "WhatsApp delivery report skipped (no valid outletId)",
+    "get_account_currency MCP call failed; currency inferred as INR from account spend"
+  ]
+}

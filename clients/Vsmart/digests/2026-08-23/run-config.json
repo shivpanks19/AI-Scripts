@@ -1,0 +1,58 @@
+{
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "cadence": "weekly",
+  "window_days": 7,
+  "mode": "full",
+  "timezone": "Asia/Kolkata",
+  "run_date": "2026-08-23",
+  "report_period": {
+    "start": "2026-08-16",
+    "end": "2026-08-22",
+    "label": "16 Aug – 22 Aug 2026"
+  },
+  "accounts": {
+    "crm": {
+      "outletId": "None",
+      "skipped": true,
+      "skip_reason": "Invalid outletId placeholder"
+    },
+    "google_ads": {
+      "customer_id": "9125228176",
+      "label": "Vsmart Google Ads"
+    },
+    "meta": {
+      "ad_account_id": null,
+      "skipped": true,
+      "skip_reason": "Not configured"
+    }
+  },
+  "delivery": {
+    "email": {
+      "from": "swayamapp19@gmail.com",
+      "to": ["pankaj.dhamane@hexaonvate.com"],
+      "cc": [],
+      "reply_to": ""
+    },
+    "whatsapp": {
+      "integrated_number": "917820932512",
+      "recipient_numbers": ["919730696887"],
+      "recipients": [
+        { "name": "Pankaj", "phone": "919730696887" }
+      ],
+      "template_type": "simple",
+      "use_template_outside_24h": true
+    }
+  },
+  "integrations": {
+    "crm": false,
+    "meta": false,
+    "google_ads": true,
+    "whatsapp_delivery": false,
+    "clarity": false,
+    "spur": false
+  },
+  "overrides": {
+    "google_ads_customer_id": "9125228176 (user-provided; webhook had placeholder 0000000000)"
+  }
+}

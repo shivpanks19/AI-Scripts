@@ -1,0 +1,42 @@
+{
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "run_date": "2026-09-15",
+  "cadence": "weekly",
+  "window_days": 7,
+  "report_period": {
+    "start": "2026-09-08",
+    "end": "2026-09-14",
+    "label": "Mon 8 Sep – Sun 14 Sep 2026 (IST)"
+  },
+  "prior_period": {
+    "start": "2026-09-01",
+    "end": "2026-09-07",
+    "label": "Mon 1 Sep – Sun 7 Sep 2026 (IST)"
+  },
+  "mode": "full",
+  "timezone": "Asia/Kolkata",
+  "accounts": {
+    "google_ads": {
+      "customer_id": "9125228176",
+      "label": "Vsmart Google Ads"
+    }
+  },
+  "delivery": {
+    "email": {
+      "from": "swayamapp19@gmail.com",
+      "to": ["pankaj.dhamane@hexaonvate.com"]
+    },
+    "whatsapp": {
+      "integrated_number": "917820932512",
+      "recipient_numbers": ["919730696887"]
+    }
+  },
+  "integrations": {
+    "crm": false,
+    "meta": false,
+    "google_ads": true,
+    "whatsapp_delivery": false
+  },
+  "source": "webhook + user override (weekly last week, Google Ads 912-522-8176)"
+}

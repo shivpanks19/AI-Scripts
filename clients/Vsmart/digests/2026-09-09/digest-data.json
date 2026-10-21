@@ -1,0 +1,102 @@
+{
+  "run_date": "2026-09-09",
+  "cadence": "weekly",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "start": "2026-09-01",
+      "end": "2026-09-07",
+      "clicks": 6848,
+      "impressions": 395885,
+      "conversions": 2662.47,
+      "cost_inr": 81059.15,
+      "cpa_inr": 30.45,
+      "cpc_inr": 11.84,
+      "ctr_pct": 1.73
+    },
+    "prior_period": {
+      "start": "2026-08-25",
+      "end": "2026-08-31",
+      "clicks": 4808,
+      "impressions": 260846,
+      "conversions": 1816.44,
+      "cost_inr": 72943.26,
+      "cpa_inr": 40.16,
+      "cpc_inr": 15.17,
+      "ctr_pct": 1.84
+    },
+    "wow_delta": {
+      "spend_pct": 11.1,
+      "conversions_pct": 46.6,
+      "cpa_pct": -24.2,
+      "clicks_pct": 42.4,
+      "impressions_pct": 51.8
+    },
+    "top_campaigns": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 8106.32,
+        "conversions": 1731.05,
+        "cpa_inr": 4.68,
+        "clicks": 2033,
+        "impressions": 94888
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 9149.29,
+        "conversions": 266.99,
+        "cpa_inr": 34.27,
+        "clicks": 797,
+        "impressions": 1519
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 7611.1,
+        "conversions": 526,
+        "cpa_inr": 14.47,
+        "clicks": 1144,
+        "impressions": 168183
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 7626.58,
+        "conversions": 126.9,
+        "cpa_inr": 60.1,
+        "clicks": 547,
+        "impressions": 19161
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend_inr": 7738.12,
+        "conversions": 2.37,
+        "cpa_inr": 3265.45,
+        "clicks": 263,
+        "impressions": 7289
+      }
+    ],
+    "underperformers": [
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend_inr": 7738.12,
+        "conversions": 2.37,
+        "note": "₹7.7k spend, near-zero conversions"
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 7681.76,
+        "conversions": 2.44,
+        "note": "₹7.7k spend, near-zero conversions"
+      },
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 6034.02,
+        "conversions": 0.01,
+        "note": "₹6k spend, zero conversions"
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId is None" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp": { "status": "skipped", "reason": "outletId is None" }
+}

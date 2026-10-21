@@ -1,0 +1,127 @@
+{
+  "collected_at": "2026-09-10T03:30:00Z",
+  "run_date": "2026-09-10",
+  "client_slug": "Vsmart",
+  "cadence": "weekly",
+  "report_period": { "start": "2026-09-01", "end": "2026-09-07" },
+  "comparison_period": { "start": "2026-08-25", "end": "2026-08-31" },
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_week": {
+      "impressions": 395885,
+      "clicks": 6848,
+      "cost_inr": 81059.15,
+      "cost_micros": 81059150564,
+      "conversions": 2682.44,
+      "all_conversions": 5290.06,
+      "ctr_pct": 1.73,
+      "avg_cpc_inr": 11.84,
+      "cpa_inr": 30.22
+    },
+    "prior_week": {
+      "impressions": 260846,
+      "clicks": 4808,
+      "cost_inr": 72943.26,
+      "cost_micros": 72943261808,
+      "conversions": 1819.80,
+      "all_conversions": 3698.13,
+      "ctr_pct": 1.84,
+      "avg_cpc_inr": 15.17,
+      "cpa_inr": 40.08
+    },
+    "wow_delta": {
+      "spend_pct": 11.1,
+      "conversions_pct": 47.4,
+      "cpa_pct": -24.6,
+      "clicks_pct": 42.4,
+      "impressions_pct": 51.8,
+      "ctr_pp": -0.11
+    },
+    "top_campaigns": [
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 9149.29,
+        "conversions": 271.8,
+        "cpa_inr": 33.66,
+        "clicks": 797,
+        "impressions": 1519,
+        "ctr_pct": 52.47
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend_inr": 8106.32,
+        "conversions": 1731.05,
+        "cpa_inr": 4.68,
+        "clicks": 2033,
+        "impressions": 94888,
+        "ctr_pct": 2.14
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7738.12,
+        "conversions": 2.37,
+        "cpa_inr": 3265.45,
+        "clicks": 263,
+        "impressions": 7289,
+        "ctr_pct": 3.61
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 7681.76,
+        "conversions": 2.44,
+        "cpa_inr": 3148.26,
+        "clicks": 215,
+        "impressions": 4995,
+        "ctr_pct": 4.30
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7626.58,
+        "conversions": 136.62,
+        "cpa_inr": 55.82,
+        "clicks": 547,
+        "impressions": 19161,
+        "ctr_pct": 2.85
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend_inr": 7611.10,
+        "conversions": 531.44,
+        "cpa_inr": 14.32,
+        "clicks": 1144,
+        "impressions": 168183,
+        "ctr_pct": 0.68
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7531.46,
+        "conversions": 3.81,
+        "cpa_inr": 1976.76,
+        "clicks": 588,
+        "impressions": 9165,
+        "ctr_pct": 6.42
+      },
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "status": "ENABLED",
+        "spend_inr": 6034.02,
+        "conversions": 0.01,
+        "cpa_inr": null,
+        "clicks": 151,
+        "impressions": 782,
+        "ctr_pct": 19.31
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId is None" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "status": "skipped", "reason": "outletId is None" }
+}

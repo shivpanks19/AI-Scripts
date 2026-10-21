@@ -1,0 +1,27 @@
+*Vsmart — weekly brief (1–7 Sep)*
+
+*Summary*
+• 2,682 conv at CPA ₹30 (↓25% WoW) — best efficiency week
+• Spend ₹81.1k (+11%) — scaling with lower CPC ₹11.84
+• CA_Final_IDT_VB_Sir: 1,731 conv at ₹4.7 CPA
+
+*Google Ads KPIs*
+Spend: ₹81.1k (↑11%) | Conv: 2,682 (↑47%)
+CPA: ₹30 (↓25%) | Clicks: 6,848 (↑42%)
+Impressions: 395,885 | CTR: 1.73% | CPC: ₹11.84
+
+*Top performer*
+CA_Final_IDT_VB_Sir — ₹8.1k, 1,731 conv, CPA ₹4.7
+
+*Watch (high spend, low conv)*
+VB/BB Combo ₹7.7k (2 conv)
+CMA_Final ₹7.7k (2 conv)
+Pavan_Karmele ₹7.5k (4 conv)
+Vijay_Sarda ₹6.0k (0 conv)
+
+*Actions*
+1. Scale CA_Final_IDT_VB_Sir budget +20–30%
+2. Pause/cut 50% on 4 waste campaigns (~₹34k)
+3. Connect CRM outletId for pipeline data
+
+Full breakdown in your email. Reply if you want a walkthrough.

@@ -1,0 +1,85 @@
+{
+  "run_date": "2026-08-22",
+  "report_period": "2026-08-15 to 2026-08-21",
+  "window_days": 7,
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "account_label": "912-522-8176",
+    "totals": {
+      "spend_inr": 87557.66,
+      "clicks": 5534,
+      "impressions": 324818,
+      "conversions": 1832.2,
+      "cpa_inr": 47.79,
+      "cpc_inr": 15.82,
+      "ctr_pct": 1.7
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 8631.53,
+        "clicks": 208,
+        "conversions": 0.63,
+        "cpa_inr": 13809.0
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 7945.05,
+        "clicks": 615,
+        "conversions": 243.55,
+        "cpa_inr": 32.64
+      },
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "status": "ENABLED",
+        "spend_inr": 7858.49,
+        "clicks": 154,
+        "conversions": 0,
+        "cpa_inr": null
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7324.35,
+        "clicks": 314,
+        "conversions": 74.65,
+        "cpa_inr": 98.12
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7093.19,
+        "clicks": 471,
+        "conversions": 3.13,
+        "cpa_inr": 2267.0
+      }
+    ],
+    "best_performer": {
+      "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+      "spend_inr": 7062.71,
+      "conversions": 1172.03,
+      "cpa_inr": 6.02
+    },
+    "watch_list": [
+      "Vijay_Sarda_CMA_Final_03/08/2026 — ₹7,858 spend, 0 conversions",
+      "CMA_Final_IDT_DT_31/07/2026(VB BB) — ₹8,632 spend, 0.6 conversions",
+      "Pavan_Karmele_06/01/2026 — ₹7,093 spend, 3.1 conversions",
+      "VIjay_Sarda_CMA_Inter — ₹5,031 spend, near-zero conversions"
+    ]
+  },
+  "prior_period": {
+    "report_period": "2026-08-11 to 2026-08-17",
+    "source": "automation_memory",
+    "totals": {
+      "spend_inr": 93600,
+      "conversions": 1702,
+      "cpa_inr": 55
+    }
+  },
+  "crm": { "status": "skipped", "reason": "outletId is None" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "status": "skipped", "reason": "outletId is None" }
+}

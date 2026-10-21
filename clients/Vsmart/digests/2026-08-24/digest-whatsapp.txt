@@ -1,0 +1,28 @@
+*Vsmart — weekly brief (17–23 Aug)*
+
+*Summary*
+• CPA ₹45.59 (↓12.3% WoW) — 1,837 conv on ₹83.7k spend
+• Best: CA_Final_IDT_VB_Sir — 1,229 conv at ₹6.13 CPA
+• Watch: 3 campaigns spent ₹18.2k with near-zero conv
+
+*Google Ads KPIs*
+Spend: ₹83,746 (↓9.7%) | Conv: 1,837 (↑3.0%)
+CPA: ₹45.59 (↓12.3%) | Clicks: 5,706
+CTR: 1.64% | Avg CPC: ₹14.68
+
+*Top campaigns*
+1. CA_Final_IDT_VB_Sir — ₹7.5k | 1,229 conv | CPA ₹6.13 ✅
+2. CA_Inter_Law_Combo — ₹7.3k | 348 conv | CPA ₹21
+3. Branded_Keywords — ₹8.7k | 196 conv | CPA ₹44.53
+
+*Watch*
+• CMA_Final_IDT_DT — ₹7,963 | 2 conv
+• Vijay_Sarda_CMA_Final — ₹5,584 | 0 conv
+• Shubham_Singhal_Inter — ₹4,648 | 0 conv
+
+*Actions*
+1. Scale CA_Final_IDT_VB_Sir (+15-20% budget)
+2. Pause CMA_Final_IDT_DT & zero-conv campaigns
+3. Tighten VB_Sir_Inter_GST (CPA ₹158)
+
+Full breakdown in your email. Reply if you want a walkthrough.

@@ -1,0 +1,92 @@
+{
+  "collected_at": "2026-09-24T03:31:45Z",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "start": "2026-09-15",
+      "end": "2026-09-21",
+      "impressions": 207423,
+      "clicks": 5179,
+      "cost_inr": 52355.84,
+      "conversions": 2217.84,
+      "conversion_value_inr": 95249.73,
+      "ctr_pct": 2.5,
+      "avg_cpc_inr": 10.11,
+      "cpa_inr": 23.61
+    },
+    "prior_period": {
+      "start": "2026-09-08",
+      "end": "2026-09-14",
+      "impressions": 309683,
+      "clicks": 5903,
+      "cost_inr": 60282.09,
+      "conversions": 2294.97,
+      "conversion_value_inr": 94037.92,
+      "ctr_pct": 1.91,
+      "avg_cpc_inr": 10.21,
+      "cpa_inr": 26.27
+    },
+    "wow_delta_pct": {
+      "spend": -13.1,
+      "conversions": -3.4,
+      "cpa": -10.1,
+      "clicks": -12.3,
+      "impressions": -33.0
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 7383.46,
+        "conversions": 198.31,
+        "cpa_inr": 37.23,
+        "clicks": 512,
+        "impressions": 5045
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "spend_inr": 7321.45,
+        "conversions": 3.49,
+        "cpa_inr": 2097.84,
+        "clicks": 479,
+        "impressions": 8327
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 7141.42,
+        "conversions": 518.85,
+        "cpa_inr": 13.76,
+        "clicks": 803,
+        "impressions": 68700
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 6832.75,
+        "conversions": 0.99,
+        "cpa_inr": 6901.77,
+        "clicks": 193,
+        "impressions": 1749
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 6737.2,
+        "conversions": 1182.02,
+        "cpa_inr": 5.7,
+        "clicks": 1881,
+        "impressions": 97921
+      }
+    ]
+  },
+  "crm": {
+    "status": "skipped",
+    "reason": "accounts.crm.outletId is placeholder None"
+  },
+  "meta": {
+    "status": "skipped",
+    "reason": "accounts.meta.ad_account_id not configured"
+  },
+  "whatsapp_delivery": {
+    "status": "skipped",
+    "reason": "invalid CRM outletId for delivery report"
+  }
+}

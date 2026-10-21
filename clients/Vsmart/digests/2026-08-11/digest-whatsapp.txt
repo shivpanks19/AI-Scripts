@@ -1,0 +1,23 @@
+*Vsmart — weekly brief (4–10 Aug)*
+
+*Summary*
+• Spend ₹84.6k (+24% WoW) | 1,491 conv (+31%)
+• CPA ₹57 (−5%) — efficiency improved
+• Best: CA_Final_IDT_VB_Sir (CPA ₹11), Branded (₹23)
+
+*Google Ads KPIs*
+Spend: ₹84,579 | Clicks: 5,048 | CTR: 1.95%
+Conv: 1,491 | CPA: ₹57 | Value: ₹1.17L
+
+*Top spend*
+1. Branded_Keywords — ₹8.5k, 378 conv ✅
+2. CA_Final_IDT_VB_Sir — ₹7.3k, 650 conv ✅
+3. CMA_Final_IDT — ₹11.9k, 2.6 conv ⚠️
+4. Vijay_Sarda_CMA — ₹5.2k, 0 conv ⚠️
+
+*Actions*
+1. Pause Vijay_Sarda_CMA_Inter (0 conv)
+2. Cut budget on Pavan_Karmele & CMA Final IDT
+3. Scale Branded + CA_Final_IDT_VB_Sir
+
+Full tables in your email. Reply if you want a walkthrough.

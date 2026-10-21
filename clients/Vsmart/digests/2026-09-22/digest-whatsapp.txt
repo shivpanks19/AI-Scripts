@@ -1,0 +1,18 @@
+*Vsmart — weekly brief (22 Sep 2026)*
+
+*Summary*
+• Google Ads 15–21 Sep: ₹52.4k spend (−13% WoW), 2,163 conv (−5%), CPA ₹24.21 (−8%)
+• Best: CA_Final_IDT_VB_Sir — ~1,184 conv @ ~₹5.7 CPA
+• Watch: Pavan_Karmele ₹7.3k / ~3 conv; CMA_Final ₹6.8k / ~1 conv
+
+*Ads KPIs*
+Spend ₹52,356 | Conv 2,163 | CPA ₹24.21
+Clicks 5,179 | CTR 2.5% | CPC ₹10.11
+Prior wk: ₹60,282 spend, 2,288 conv, CPA ₹26.34
+
+*Actions*
+1. Scale CA_Final_IDT_VB_Sir; cap Pavan_Karmele spend
+2. Fix CRM outletId for pipeline in next digest
+3. Add Meta ad account for cross-channel view
+
+Full HTML breakdown emailed. Reply if you want a deeper campaign review.

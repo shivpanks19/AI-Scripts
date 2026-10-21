@@ -1,0 +1,28 @@
+*Vsmart — weekly brief (Aug 6–12)*
+
+*Summary*
+• Google Ads: ₹91,759 spend (+35%), 1,502 conv (+20%)
+• Best: CA_Final_IDT_VB_Sir — 777 conv at ₹9 CPL
+• Risk: ₹13.6k on Vijay Sarda CMA — near-zero conversions
+
+*Google Ads KPIs*
+Spend: ₹91,759 (+35%) | Conv: 1,502 (+20%)
+CPL: ₹61 (+12%) | Clicks: 5,416 | CTR: 1.76%
+
+*Top campaigns*
+1. CA_Final_IDT_VB_Sir — ₹7,195 | 777 conv | ₹9 CPL
+2. Branded_Keywords — ₹8,779 | 274 conv | ₹32 CPL
+3. Law_Combo — ₹7,083 | 354 conv | ₹20 CPL
+
+*Watch*
+Vijay Sarda CMA Inter/Final — ₹9.6k, 0 conv
+CMA_Final_IDT_DT — ₹13k, only 3 conv
+
+*Actions*
+1. Pause/cut Vijay Sarda CMA campaigns today
+2. Scale CA_Final_IDT_VB_Sir (+15% budget)
+3. Audit CMA_Final_IDT_DT keywords & landing page
+
+CRM/Meta not configured — pipeline data unavailable.
+
+Full tables in your email. Reply if you want a walkthrough.

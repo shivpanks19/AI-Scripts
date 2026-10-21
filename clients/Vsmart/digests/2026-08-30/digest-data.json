@@ -1,0 +1,115 @@
+{
+  "run_date": "2026-08-30",
+  "cadence": "weekly",
+  "window_days": 7,
+  "report_period": "2026-08-23 to 2026-08-29",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "clicks": 4867,
+      "conversions": 1685.0,
+      "spend_inr": 77140.35,
+      "cpa_inr": 45.78,
+      "cpc_inr": 15.85,
+      "impressions_note": "Pulled via get_campaign_performance days=7"
+    },
+    "prior_period": {
+      "clicks": 5647,
+      "conversions": 1887.1,
+      "spend_inr": 85778.45,
+      "cpa_inr": 45.46,
+      "cpc_inr": 15.19,
+      "method": "14-day minus 7-day aggregate"
+    },
+    "wow_delta": {
+      "spend_pct": -10.1,
+      "conversions_pct": -10.7,
+      "cpa_pct": 0.7
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 7875.35,
+        "conversions": 2.03,
+        "cpa_inr": 3878.0
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 7855.95,
+        "conversions": 123.54,
+        "cpa_inr": 63.6
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 6716.72,
+        "conversions": 1.29,
+        "cpa_inr": 5213.0
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 6675.99,
+        "conversions": 66.99,
+        "cpa_inr": 99.6
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend_inr": 6567.84,
+        "conversions": 310.63,
+        "cpa_inr": 21.1
+      }
+    ],
+    "best_performers": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 6090.1,
+        "conversions": 1169.01,
+        "cpa_inr": 5.21
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 6567.84,
+        "conversions": 310.63,
+        "cpa_inr": 21.1
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 7855.95,
+        "conversions": 123.54,
+        "cpa_inr": 63.6
+      }
+    ],
+    "watch_list": [
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 6052.28,
+        "conversions": 0,
+        "issue": "Zero conversions with ₹6k+ spend"
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend_inr": 6716.72,
+        "conversions": 1.29,
+        "issue": "CPA ₹5,213 — well above account average"
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 7875.35,
+        "conversions": 2.03,
+        "issue": "CPA ₹3,878 — review targeting and landing page"
+      }
+    ],
+    "mcp_source": "get_campaign_performance",
+    "mcp_errors": [
+      "get_account_currency failed: Invalid credentials and no refresh token available (currency assumed INR from account history)"
+    ]
+  },
+  "crm": { "skipped": true, "reason": "outletId is None" },
+  "meta": { "skipped": true, "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "skipped": true, "reason": "CRM outletId unavailable" }
+}

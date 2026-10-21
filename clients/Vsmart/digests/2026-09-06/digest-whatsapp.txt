@@ -1,0 +1,23 @@
+*Vsmart — weekly brief (25–31 Aug)*
+
+*Summary*
+• Google Ads: ₹72.9k spend (↓9.3%), 1,810 conv (flat), CPA ₹40 (↓8.8%)
+• CA_Final_IDT_VB_Sir: 1,324 conv at ₹4.7 CPA — top performer
+• ₹19k+ at risk on 3 campaigns with near-zero returns
+
+*Google Ads KPIs*
+Spend: ₹72.9k | Conv: 1,810 | CPA: ₹40
+Clicks: 4,808 (↓13%) | CTR: 1.84% (↑0.3 pts)
+vs prior week: spend ↓9.3%, CPA ↓8.8%
+
+*Top campaigns*
+Best: CA_Final_IDT_VB_Sir — 1,324 conv, CPA ₹4.7
+Watch: Vijay_Sarda_CMA_Final — ₹6.5k, 0 conv
+Watch: CMA_Final_IDT_DT — ₹7.4k, CPA ₹6,466
+
+*Actions*
+1. Pause Vijay_Sarda_CMA_Final (zero conv)
+2. Review CMA_Final + Pavan_Karmele (₹13.9k, ~3 conv)
+3. Scale CA_Final_IDT_VB_Sir (+15–20% budget test)
+
+Full tables in your email. Reply if you want a walkthrough.

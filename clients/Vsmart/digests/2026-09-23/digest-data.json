@@ -1,0 +1,98 @@
+{
+  "collected_at": "2026-09-23T03:30:00Z",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "start": "2026-09-15",
+      "end": "2026-09-21",
+      "impressions": 207423,
+      "clicks": 5179,
+      "cost_inr": 52355.84,
+      "conversions": 2207.76,
+      "conversion_value": 95233.1,
+      "ctr_pct": 2.5,
+      "avg_cpc_inr": 10.11,
+      "cpa_inr": 23.71
+    },
+    "prior_period": {
+      "start": "2026-09-08",
+      "end": "2026-09-14",
+      "impressions": 309683,
+      "clicks": 5903,
+      "cost_inr": 60282.09,
+      "conversions": 2291.74,
+      "conversion_value": 94037.92,
+      "ctr_pct": 1.91,
+      "avg_cpc_inr": 10.21,
+      "cpa_inr": 26.3
+    },
+    "wow_delta_pct": {
+      "spend": -13.1,
+      "conversions": -3.7,
+      "cpa": -9.8,
+      "clicks": -12.3,
+      "impressions": -33.0
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7383.46,
+        "conversions": 196.3,
+        "cpa_inr": 37.61,
+        "clicks": 512,
+        "impressions": 5045
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 7321.45,
+        "conversions": 3.49,
+        "cpa_inr": 2099.73,
+        "clicks": 479,
+        "impressions": 8327
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend_inr": 7141.42,
+        "conversions": 517.85,
+        "cpa_inr": 13.79,
+        "clicks": 803,
+        "impressions": 68700
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 6832.75,
+        "conversions": 0.99,
+        "cpa_inr": 6936.7,
+        "clicks": 193,
+        "impressions": 1749
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend_inr": 6737.2,
+        "conversions": 1186.02,
+        "cpa_inr": 5.68,
+        "clicks": 1881,
+        "impressions": 97921
+      }
+    ],
+    "mcp_errors": []
+  },
+  "crm": {
+    "skipped": true,
+    "reason": "accounts.crm.outletId is placeholder None"
+  },
+  "meta": {
+    "skipped": true,
+    "reason": "accounts.meta.ad_account_id not configured"
+  },
+  "whatsapp": {
+    "skipped": true,
+    "reason": "msg91_whatsapp_delivery_report requires valid outletId"
+  }
+}

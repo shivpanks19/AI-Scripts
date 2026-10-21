@@ -1,0 +1,19 @@
+*Vsmart — weekly brief (15–21 Sep)*
+
+*Summary*
+• Google: 2,208 conv | ₹52.4k spend | CPA ₹23.71 (−10% WoW)
+• Best: CA_Final_IDT_VB_Sir (~1,186 conv @ ~₹5.7 CPA)
+• Risk: Pavan_Karmele ₹7.3k spend, ~3 conv
+
+*Google Ads (912-522-8176)*
+Spend ₹52,356 (−13% vs prior wk)
+Conv 2,208 (−4%) | Clicks 5,179 | CTR 2.5%
+CPA ₹23.71 (was ₹26.30)
+
+*Actions*
+1. Pause/cap Pavan_Karmele campaign
+2. Fix CMA_Final + CA_Inter_Grp zero-conv spend
+3. Protect budget on CA_Final_IDT_VB_Sir & Inter Law Combo
+
+CRM/Meta not in this run (config gap).
+Full HTML report emailed. Reply if you want a walkthrough.

@@ -1,0 +1,88 @@
+{
+  "collected_at": "2026-09-19T03:35:00Z",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_week": {
+      "start": "2026-09-08",
+      "end": "2026-09-14",
+      "cost_inr": 60282.09,
+      "clicks": 5903,
+      "impressions": 309683,
+      "conversions": 2261.42,
+      "cpa_inr": 26.66,
+      "ctr_pct": 1.91
+    },
+    "prior_week": {
+      "start": "2026-09-01",
+      "end": "2026-09-07",
+      "cost_inr": 81059.15,
+      "clicks": 6848,
+      "impressions": 395885,
+      "conversions": 2699.56,
+      "cpa_inr": 30.03,
+      "ctr_pct": 1.73
+    },
+    "wow_pct": {
+      "cost": -25.6,
+      "conversions": -16.3,
+      "cpa": -11.2,
+      "clicks": -13.8
+    },
+    "top_campaigns": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "cost_inr": 6970.7,
+        "conversions": 1357.02,
+        "cpa_inr": 5.14,
+        "clicks": 2062
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "cost_inr": 6896.63,
+        "conversions": 530.01,
+        "cpa_inr": 13.01,
+        "clicks": 998
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "cost_inr": 6057.45,
+        "conversions": 227.63,
+        "cpa_inr": 26.61,
+        "clicks": 719
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "cost_inr": 6683.75,
+        "conversions": 139.39,
+        "cpa_inr": 47.95,
+        "clicks": 504
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "cost_inr": 6778.66,
+        "conversions": 0.6,
+        "cpa_inr": 11377.0,
+        "clicks": 204
+      }
+    ],
+    "source": "google-ads-py-mcp execute_gaql_query"
+  },
+  "crm": {
+    "skipped": true,
+    "reason": "accounts.crm.outletId is None"
+  },
+  "meta": {
+    "skipped": true,
+    "reason": "accounts.meta.ad_account_id not configured"
+  },
+  "whatsapp_delivery": {
+    "skipped": true,
+    "reason": "CRM outletId required for msg91_whatsapp_delivery_report"
+  }
+}

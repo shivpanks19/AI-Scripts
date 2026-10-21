@@ -1,0 +1,76 @@
+{
+  "collected_at_utc": "2026-09-17T03:45:00Z",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_week": {
+      "date_range": "2026-09-08 to 2026-09-14",
+      "impressions": 309683,
+      "clicks": 5903,
+      "cost_inr": 60282.09,
+      "conversions": 2249.91,
+      "conversion_value_inr": 92763.45,
+      "ctr": 0.0191,
+      "avg_cpc_inr": 10.21,
+      "cpa_inr": 26.79
+    },
+    "prior_week": {
+      "date_range": "2026-09-01 to 2026-09-07",
+      "impressions": 395885,
+      "clicks": 6848,
+      "cost_inr": 81059.15,
+      "conversions": 2695.68,
+      "conversion_value_inr": 151064.65,
+      "ctr": 0.0173,
+      "avg_cpc_inr": 11.84,
+      "cpa_inr": 30.07
+    },
+    "wow_delta_pct": {
+      "spend": -25.6,
+      "conversions": -16.5,
+      "clicks": -13.8,
+      "impressions": -21.8,
+      "cpa": -10.9
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend_inr": 6970.7,
+        "conversions": 1356.02,
+        "clicks": 2062
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend_inr": 6896.63,
+        "conversions": 530.01,
+        "clicks": 998
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 6778.66,
+        "conversions": 0.6,
+        "clicks": 204
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 6683.75,
+        "conversions": 132.22,
+        "clicks": 504
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 6057.45,
+        "conversions": 224.29,
+        "clicks": 719
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId not configured" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "status": "skipped", "reason": "CRM outletId not configured" }
+}

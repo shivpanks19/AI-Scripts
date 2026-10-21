@@ -1,0 +1,43 @@
+{
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "cadence": "weekly",
+  "window_days": 7,
+  "mode": "full",
+  "timezone": "Asia/Kolkata",
+  "run_date": "2026-09-17",
+  "report_period": {
+    "start": "2026-09-08",
+    "end": "2026-09-14",
+    "label": "8–14 Sep 2026 (IST)"
+  },
+  "comparison_period": {
+    "start": "2026-09-01",
+    "end": "2026-09-07",
+    "label": "1–7 Sep 2026 (IST)"
+  },
+  "accounts": {
+    "crm": { "outletId": "None" },
+    "google_ads": {
+      "customer_id": "9125228176",
+      "label": "Vsmart Google Ads"
+    }
+  },
+  "delivery": {
+    "email": {
+      "from": "swayamapp19@gmail.com",
+      "to": ["pankaj.dhamane@hexaonvate.com"]
+    },
+    "whatsapp": {
+      "integrated_number": "917820932512",
+      "recipient_numbers": ["919730696887"]
+    }
+  },
+  "integrations": {
+    "crm": false,
+    "meta": false,
+    "google_ads": true,
+    "whatsapp_delivery": false
+  },
+  "notes": "CRM outletId None and Meta ad_account_id missing — Google Ads only for this run."
+}

@@ -1,0 +1,52 @@
+{
+  "client_slug": "Vsmart",
+  "display_name": "Vsmart",
+  "cadence": "weekly",
+  "window_days": 7,
+  "mode": "full",
+  "timezone": "Asia/Kolkata",
+  "run_date": "2026-09-14",
+  "report_period": {
+    "label": "Last week (Mon–Sun)",
+    "start": "2026-09-07",
+    "end": "2026-09-13",
+    "prior_start": "2026-08-31",
+    "prior_end": "2026-09-06"
+  },
+  "accounts": {
+    "crm": { "outletId": "None" },
+    "google_ads": {
+      "customer_id": "9125228176",
+      "label": "Vsmart Google Ads (912-522-8176)"
+    },
+    "meta": { "ad_account_id": null }
+  },
+  "delivery": {
+    "email": {
+      "from": "swayamapp19@gmail.com",
+      "to": ["pankaj.dhamane@hexaonvate.com"],
+      "cc": [],
+      "reply_to": ""
+    },
+    "whatsapp": {
+      "integrated_number": "917820932512",
+      "recipient_numbers": ["919730696887"],
+      "recipients": [{ "name": "Pankaj", "phone": "919730696887" }],
+      "template_type": "simple",
+      "use_template_outside_24h": true
+    }
+  },
+  "integrations": {
+    "crm": false,
+    "meta": false,
+    "google_ads": true,
+    "whatsapp_delivery": false,
+    "clarity": false,
+    "spur": false
+  },
+  "notes": {
+    "crm_skipped": "accounts.crm.outletId is None",
+    "meta_skipped": "meta ad_account_id not configured",
+    "google_ads_source": "Google Ads API via service account (google-ads-py-mcp unavailable)"
+  }
+}

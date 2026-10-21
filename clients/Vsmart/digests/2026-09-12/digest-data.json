@@ -1,0 +1,71 @@
+{
+  "collected_at_utc": "2026-09-12T03:40:00Z",
+  "run_date": "2026-09-12",
+  "client_slug": "Vsmart",
+  "window_days": 7,
+  "google_ads": {
+    "customer_id": "9125228176",
+    "currency": "INR",
+    "current_period": {
+      "start": "2026-09-01",
+      "end": "2026-09-07",
+      "spend": 81059.15,
+      "clicks": 6848,
+      "impressions": 395885,
+      "conversions": 2689.45,
+      "cpa": 30.14,
+      "ctr_percent": 1.73
+    },
+    "prior_period": {
+      "start": "2026-08-25",
+      "end": "2026-08-31",
+      "spend": 72943.26,
+      "clicks": 4808,
+      "impressions": 260846,
+      "conversions": 1826.38,
+      "cpa": 39.94
+    },
+    "wow_deltas": {
+      "spend_pct": 11.1,
+      "conversions_pct": 47.3,
+      "cpa_pct": -24.5,
+      "clicks_pct": 42.4
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend": 9149.29,
+        "conversions": 277.8,
+        "clicks": 797
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend": 8106.32,
+        "conversions": 1731.05,
+        "clicks": 2033
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend": 7738.12,
+        "conversions": 2.37,
+        "clicks": 263
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend": 7681.76,
+        "conversions": 2.44,
+        "clicks": 215
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend": 7626.58,
+        "conversions": 136.62,
+        "clicks": 547
+      }
+    ],
+    "source": "google.ads.googleads API (service account)"
+  },
+  "crm": { "status": "skipped", "reason": "outletId placeholder None" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp": { "status": "skipped", "reason": "invalid outletId for delivery report" }
+}

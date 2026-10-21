@@ -1,0 +1,124 @@
+{
+  "collected_at": "2026-09-04T03:31:00Z",
+  "window_days": 7,
+  "report_period": {
+    "start": "2026-08-28",
+    "end": "2026-09-03",
+    "timezone": "Asia/Kolkata"
+  },
+  "google_ads": {
+    "customer_id": "9125228176",
+    "currency": "INR",
+    "currency_note": "Inferred from account geography; get_account_currency MCP call failed (auth)",
+    "account_totals": {
+      "spend_inr": 72113.65,
+      "clicks": 5581,
+      "impressions": 303564,
+      "conversions": 2206.43,
+      "ctr_pct": 1.84,
+      "cpc_inr": 12.92,
+      "cpa_inr": 32.68
+    },
+    "active_campaigns_with_spend": 15,
+    "top_campaigns_by_spend": [
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 7978.11,
+        "clicks": 647,
+        "conversions": 151.21,
+        "cpa_inr": 52.77,
+        "impressions": 1268
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend_inr": 7071.72,
+        "clicks": 1713,
+        "conversions": 1578.04,
+        "cpa_inr": 4.48,
+        "impressions": 63083
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 6945.16,
+        "clicks": 181,
+        "conversions": 0.18,
+        "cpa_inr": 38443.11,
+        "impressions": 5069
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend_inr": 6881.11,
+        "clicks": 887,
+        "conversions": 382.0,
+        "cpa_inr": 18.01,
+        "impressions": 119636
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 6785.86,
+        "clicks": 484,
+        "conversions": 1.42,
+        "cpa_inr": 4773.14,
+        "impressions": 9098
+      }
+    ],
+    "best_cpa_campaigns_min_5_conv": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 7071.72,
+        "conversions": 1578.04,
+        "cpa_inr": 4.48
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 6881.11,
+        "conversions": 382.0,
+        "cpa_inr": 18.01
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 7978.11,
+        "conversions": 151.21,
+        "cpa_inr": 52.77
+      }
+    ],
+    "underperformers_high_spend_low_conv": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 6945.16,
+        "conversions": 0.18
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "spend_inr": 6785.86,
+        "conversions": 1.42
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend_inr": 6610.64,
+        "conversions": 1.95
+      },
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 5940.28,
+        "conversions": 0.01
+      }
+    ],
+    "raw_mcp": "get_campaign_performance(customer_id=9125228176, days=7)"
+  },
+  "crm": null,
+  "meta": null,
+  "whatsapp": null,
+  "data_gaps": [
+    "CRM skipped — outletId was None in webhook config",
+    "Meta skipped — no ad_account_id configured",
+    "WhatsApp delivery report skipped — no CRM outletId",
+    "get_account_currency failed (auth); currency assumed INR",
+    "No prior-period digest for WoW comparison"
+  ]
+}

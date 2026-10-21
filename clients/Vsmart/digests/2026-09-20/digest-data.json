@@ -1,0 +1,101 @@
+{
+  "collected_at": "2026-09-20T03:45:00Z",
+  "period": {
+    "current": "2026-09-08 to 2026-09-14",
+    "prior": "2026-09-01 to 2026-09-07"
+  },
+  "crm": {
+    "status": "skipped",
+    "error": "accounts.crm.outletId is placeholder \"None\" — CRM tools not invoked"
+  },
+  "meta": {
+    "status": "skipped",
+    "error": "accounts.meta.ad_account_id not configured"
+  },
+  "google_ads": {
+    "customer_id": "9125228176",
+    "currency": "INR",
+    "current": {
+      "impressions": 309683,
+      "clicks": 5903,
+      "ctr": 0.0191,
+      "cost_inr": 60282.09,
+      "conversions": 2263.47,
+      "conversion_value_inr": 93102.7,
+      "cpa_inr": 26.64,
+      "avg_cpc_inr": 10.21
+    },
+    "prior": {
+      "impressions": 395885,
+      "clicks": 6848,
+      "ctr": 0.0173,
+      "cost_inr": 81059.15,
+      "conversions": 2699.65,
+      "conversion_value_inr": 151767.89,
+      "cpa_inr": 30.03,
+      "avg_cpc_inr": 11.84
+    },
+    "wow_pct": {
+      "spend": -25.6,
+      "conversions": -16.2,
+      "cpa": -11.3,
+      "clicks": -13.8,
+      "impressions": -21.8
+    },
+    "top_campaigns_by_spend": [
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "status": "ENABLED",
+        "spend_inr": 6970.7,
+        "conversions": 1357.02,
+        "cpa_inr": 5.14
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "status": "ENABLED",
+        "spend_inr": 6896.63,
+        "conversions": 530.01,
+        "cpa_inr": 13.01
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "status": "ENABLED",
+        "spend_inr": 6778.66,
+        "conversions": 0.6,
+        "cpa_inr": 11381.5
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "status": "ENABLED",
+        "spend_inr": 6683.75,
+        "conversions": 141.45,
+        "cpa_inr": 47.25
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "status": "ENABLED",
+        "spend_inr": 6057.45,
+        "conversions": 227.63,
+        "cpa_inr": 26.61
+      }
+    ],
+    "watch_campaigns": [
+      {
+        "name": "CA_Inter_Grp_1_15/02/2026",
+        "spend_inr": 2106.94,
+        "conversions": 0,
+        "note": "₹2.1k spend, zero conversions"
+      },
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 6778.66,
+        "conversions": 0.6,
+        "note": "High spend vs negligible conversions"
+      }
+    ]
+  },
+  "whatsapp_delivery": {
+    "status": "skipped",
+    "error": "msg91_whatsapp_delivery_report requires valid CRM outletId"
+  }
+}

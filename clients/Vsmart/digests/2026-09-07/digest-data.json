@@ -1,0 +1,92 @@
+{
+  "run_date": "2026-09-07",
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_period": {
+      "start": "2026-08-31",
+      "end": "2026-09-06",
+      "clicks": 6609,
+      "conversions": 2589.83,
+      "spend_inr": 78942,
+      "cpa_inr": 30,
+      "active_campaigns": 14,
+      "top_campaigns": [
+        {
+          "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+          "clicks": 1964,
+          "conversions": 1747.06,
+          "spend_inr": 7953,
+          "cpa_inr": 5
+        },
+        {
+          "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+          "clicks": 1114,
+          "conversions": 491,
+          "spend_inr": 7270,
+          "cpa_inr": 15
+        },
+        {
+          "name": "Branded_Keywords_30/01/2026(inter)",
+          "clicks": 771,
+          "conversions": 231.1,
+          "spend_inr": 9047,
+          "cpa_inr": 39
+        },
+        {
+          "name": "VB_Sir_Inter_GST_27/01/2026",
+          "clicks": 525,
+          "conversions": 110.07,
+          "spend_inr": 7477,
+          "cpa_inr": 68
+        }
+      ],
+      "watch_list": [
+        {
+          "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+          "conversions": 2.6,
+          "spend_inr": 7675,
+          "cpa_inr": 2998
+        },
+        {
+          "name": "Pavan_Karmele_06/01/2026",
+          "conversions": 2.8,
+          "spend_inr": 7447,
+          "cpa_inr": 2656
+        },
+        {
+          "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+          "conversions": 0.01,
+          "spend_inr": 5975,
+          "cpa_inr": null
+        }
+      ]
+    },
+    "prior_period": {
+      "start": "2026-08-24",
+      "end": "2026-08-30",
+      "clicks": 4789,
+      "conversions": 1749.37,
+      "spend_inr": 76100,
+      "cpa_inr": 44
+    },
+    "wow_deltas": {
+      "spend_pct": 3.7,
+      "conversions_pct": 48.0,
+      "cpa_pct": -29.9,
+      "clicks_pct": 38.0
+    }
+  },
+  "crm": {
+    "status": "skipped",
+    "reason": "outletId is None"
+  },
+  "meta": {
+    "status": "skipped",
+    "reason": "ad_account_id not configured"
+  },
+  "whatsapp_delivery": {
+    "status": "skipped",
+    "reason": "outletId is None"
+  }
+}

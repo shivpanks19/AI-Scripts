@@ -1,0 +1,138 @@
+{
+  "run_date": "2026-08-26",
+  "cadence": "weekly",
+  "currency": "INR",
+  "report_period": { "start": "2026-08-18", "end": "2026-08-24" },
+  "comparison_period": { "start": "2026-08-11", "end": "2026-08-17" },
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current": {
+      "impressions": 352887,
+      "clicks": 5519,
+      "spend_inr": 80440.73,
+      "conversions": 1796.19,
+      "conversion_value_inr": 76378.06,
+      "ctr_pct": 1.56,
+      "avg_cpc_inr": 14.58,
+      "cpa_inr": 44.78
+    },
+    "prior": {
+      "impressions": 334263,
+      "clicks": 5674,
+      "spend_inr": 93650.24,
+      "conversions": 1722.63,
+      "conversion_value_inr": 187620.58,
+      "ctr_pct": 1.70,
+      "avg_cpc_inr": 16.51,
+      "cpa_inr": 54.36
+    },
+    "wow_delta": {
+      "spend_pct": -14.1,
+      "conversions_pct": 4.3,
+      "cpa_pct": -17.6,
+      "clicks_pct": -2.7,
+      "impressions_pct": 5.6,
+      "ctr_pp": -0.14
+    },
+    "top_campaigns": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 8407.03,
+        "conversions": 2.03,
+        "cpa_inr": 4141.89,
+        "clicks": 204,
+        "impressions": 9829,
+        "ctr_pct": 2.08
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 8078.79,
+        "conversions": 207.07,
+        "cpa_inr": 39.01,
+        "clicks": 556,
+        "impressions": 1267,
+        "ctr_pct": 43.88
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 7326.60,
+        "conversions": 1184.01,
+        "cpa_inr": 6.19,
+        "clicks": 1989,
+        "impressions": 130514,
+        "ctr_pct": 1.52
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend_inr": 7003.98,
+        "conversions": 1.27,
+        "cpa_inr": 5514.95,
+        "clicks": 202,
+        "impressions": 7296,
+        "ctr_pct": 2.77
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "spend_inr": 6859.84,
+        "conversions": 2.07,
+        "cpa_inr": 3313.93,
+        "clicks": 457,
+        "impressions": 6920,
+        "ctr_pct": 6.60
+      },
+      {
+        "name": "CA_Inter_DT_IDT_Law_Combo_19/02/2026",
+        "spend_inr": 6847.99,
+        "conversions": 347.13,
+        "cpa_inr": 19.73,
+        "clicks": 832,
+        "impressions": 111128,
+        "ctr_pct": 0.75
+      },
+      {
+        "name": "VB_Sir_Inter_GST_27/01/2026",
+        "spend_inr": 6834.49,
+        "conversions": 42.95,
+        "cpa_inr": 159.13,
+        "clicks": 299,
+        "impressions": 12852,
+        "ctr_pct": 2.33
+      },
+      {
+        "name": "Shubham_Singhal_Inter_13_03_2026(law gst)",
+        "spend_inr": 4754.16,
+        "conversions": 0.41,
+        "cpa_inr": 11595.51,
+        "clicks": 197,
+        "impressions": 22869,
+        "ctr_pct": 0.86
+      },
+      {
+        "name": "VIjay_Sarda_CMA_Inter_23/07/2026",
+        "spend_inr": 4719.88,
+        "conversions": 0.01,
+        "cpa_inr": 347342.57,
+        "clicks": 87,
+        "impressions": 2436,
+        "ctr_pct": 3.57
+      },
+      {
+        "name": "Bhanwar_Borana_CA_Final_20/05/2026",
+        "spend_inr": 4461.74,
+        "conversions": 2.20,
+        "cpa_inr": 2028.06,
+        "clicks": 185,
+        "impressions": 6089,
+        "ctr_pct": 3.04
+      }
+    ]
+  },
+  "crm": { "status": "skipped", "reason": "outletId is None" },
+  "meta": { "status": "skipped", "reason": "ad_account_id not configured" },
+  "whatsapp_delivery": { "status": "skipped", "reason": "outletId is None" },
+  "data_gaps": [
+    "CRM pipeline data unavailable (outletId=None)",
+    "Meta Ads not configured",
+    "WhatsApp delivery report skipped (no CRM outlet)"
+  ]
+}

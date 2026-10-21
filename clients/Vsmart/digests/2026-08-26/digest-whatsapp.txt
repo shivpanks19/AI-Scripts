@@ -1,0 +1,22 @@
+*Vsmart — weekly brief (18–24 Aug)*
+
+*Summary*
+• 1,796 conv at ₹44.78 CPA (↑4.3% conv, ↓14.1% spend WoW)
+• CA_Final_VB_Sir + Branded drove ~78% of conversions
+• ₹25k+ wasted on 4 low-conv faculty campaigns
+
+*Google Ads*
+Spend: ₹80.4k (↓14.1%) | Conv: 1,796 (↑4.3%)
+CPA: ₹44.78 (↓17.6%) | Clicks: 5,519 | CTR: 1.56%
+
+Best: CA_Final_VB_Sir (1,184 conv, ₹6 CPA)
+Best: Branded_Keywords (207 conv, ₹39 CPA)
+Watch: CMA_Final (₹8.4k, 2 conv)
+Watch: VIjay_Sarda_CMA (₹4.7k, 0 conv)
+
+*Actions*
+1. Pause/cut CMA_Final, VB&BB Combo, VIjay_Sarda, Shubham_Singhal
+2. Scale CA_Final_VB_Sir + Branded (+15-20% budget)
+3. Fix CRM outletId for pipeline data next run
+
+Full tables in your email. Reply if you want a walkthrough.

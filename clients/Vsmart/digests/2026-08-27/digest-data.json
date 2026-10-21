@@ -1,0 +1,107 @@
+{
+  "collected_at": "2026-08-27T03:30:00Z",
+  "report_period": {
+    "current": { "start": "2026-08-18", "end": "2026-08-24" },
+    "prior": { "start": "2026-08-11", "end": "2026-08-17" }
+  },
+  "currency": "INR",
+  "google_ads": {
+    "customer_id": "9125228176",
+    "current_week": {
+      "clicks": 5519,
+      "impressions": 352887,
+      "conversions": 1801.33,
+      "cost_inr": 80440.73,
+      "ctr_pct": 1.56,
+      "avg_cpc_inr": 14.58,
+      "cpa_inr": 44.66
+    },
+    "prior_week": {
+      "clicks": 5674,
+      "impressions": 334263,
+      "conversions": 1728.63,
+      "cost_inr": 93650.24,
+      "ctr_pct": 1.70,
+      "avg_cpc_inr": 16.51,
+      "cpa_inr": 54.17
+    },
+    "wow_delta": {
+      "spend_pct": -14.1,
+      "conversions_pct": 4.2,
+      "cpa_pct": -17.6,
+      "clicks_pct": -2.7,
+      "impressions_pct": 5.6
+    },
+    "top_campaigns": [
+      {
+        "name": "CMA_Final_IDT_DT_31/07/2026(VB BB)",
+        "spend_inr": 8407.03,
+        "conversions": 2.03,
+        "clicks": 204,
+        "cpa_inr": 4141.39
+      },
+      {
+        "name": "Branded_Keywords_30/01/2026(inter)",
+        "spend_inr": 8078.79,
+        "conversions": 211.09,
+        "clicks": 556,
+        "cpa_inr": 38.27
+      },
+      {
+        "name": "CA_Final_IDT_VB_Sir_01/03/2026",
+        "spend_inr": 7326.60,
+        "conversions": 1184.01,
+        "clicks": 1989,
+        "cpa_inr": 6.19
+      },
+      {
+        "name": "VB Sir & BB SirCA_Final_DT_IDT_Combo_MN251_29/01/2026",
+        "spend_inr": 7003.98,
+        "conversions": 1.27,
+        "clicks": 202,
+        "cpa_inr": 5514.95
+      },
+      {
+        "name": "Pavan_Karmele_06/01/2026",
+        "spend_inr": 6859.84,
+        "conversions": 2.07,
+        "clicks": 457,
+        "cpa_inr": 3309.10
+      }
+    ],
+    "underperformers": [
+      {
+        "name": "Vijay_Sarda_CMA_Final_03/08/2026",
+        "spend_inr": 4394.56,
+        "conversions": 0,
+        "clicks": 101
+      },
+      {
+        "name": "VIjay_Sarda_CMA_Inter_23/07/2026",
+        "spend_inr": 4719.88,
+        "conversions": 0.01,
+        "clicks": 87
+      },
+      {
+        "name": "Vijay_Sarda_Sir_CA_Inter_03/07/2026",
+        "spend_inr": 4196.74,
+        "conversions": 0.02,
+        "clicks": 218
+      },
+      {
+        "name": "Shubham_Singhal_Inter_13_03_2026(law gst)",
+        "spend_inr": 4754.16,
+        "conversions": 0.41,
+        "clicks": 197
+      }
+    ]
+  },
+  "crm": null,
+  "meta": null,
+  "whatsapp": null,
+  "data_gaps": [
+    "CRM: outletId is 'None' — pipeline data unavailable",
+    "Meta: ad_account_id not configured",
+    "WhatsApp delivery report: skipped (no valid CRM outletId)"
+  ]
+}

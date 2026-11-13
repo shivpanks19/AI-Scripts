@@ -14,7 +14,8 @@
 - **imageUrl:** *not obtained — workflow blocked at Firestore per automation rules*
 
 ## Notion
-- See publish run output (parent: Reddit EduHexa Research `35bc45f0da5d81e6acd2e196888b3922`)
+- **Page:** https://app.notion.com/p/417c45f0da5d81b0aa6adb987832f201
+- **Parent:** Reddit EduHexa Research (`35bc45f0da5d81e6acd2e196888b3922`)
 
 ## Firestore
 - **Outlet:** `5qy4uU63AX6jLjDYvP19`

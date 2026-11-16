@@ -1,0 +1,20 @@
+{
+  "slug": "judgment-before-ai-mandates-nov-2026",
+  "title": "Judgment Before AI Mandates",
+  "status": "skipped",
+  "reason": "image-function upload API returned HTTP 503/500 after retries (GitHub raw and base64). Workflow requires imageUrl before Firestore save.",
+  "imageUploadAttempts": [
+    {
+      "endpoint": "https://image-function-926896730665.europe-west1.run.app",
+      "imageUrlSource": "github-raw",
+      "error": "HTTP 500 then 503"
+    },
+    {
+      "endpoint": "https://image-function-926896730665.europe-west1.run.app",
+      "imageUrlSource": "data:image/png;base64,...",
+      "error": "HTTP 503 twice"
+    }
+  ],
+  "localImage": "clients/assets/eduhexa/eduhexa-message-judgment-before-ai-mandates-nov-2026.png",
+  "outletId": "5qy4uU63AX6jLjDYvP19"
+}

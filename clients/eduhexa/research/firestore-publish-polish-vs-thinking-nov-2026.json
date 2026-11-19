@@ -1,0 +1,23 @@
+{
+  "slug": "polish-vs-thinking-nov-2026",
+  "title": "Grade the Thinking, Not the Polish",
+  "status": "blocked",
+  "reason": "image_upload_failed",
+  "imageUpload": {
+    "endpoint": "https://image-function-926896730665.europe-west1.run.app",
+    "attempts": [
+      { "method": "base64_jpeg", "error": "HTTP 503 Service Unavailable" },
+      { "method": "base64_jpeg_retry", "error": "HTTP 503 Service Unavailable" },
+      { "method": "github_raw", "error": "HTTP 503" },
+      { "method": "github_raw_retry", "error": "HTTP 503" }
+    ]
+  },
+  "firestore": {
+    "endpoint": "https://msg91whatspp-454181684966.europe-west1.run.app/ai-content",
+    "outletId": "5qy4uU63AX6jLjDYvP19",
+    "skipped": true,
+    "note": "Per workflow, Firestore save requires Firebase imageUrl from upload API"
+  },
+  "notionPageUrl": "https://app.notion.com/p/41dc45f0da5d81229bbfe1a341254aa8",
+  "localImage": "clients/assets/eduhexa/eduhexa-message-polish-vs-thinking-nov-2026.jpg"
+}
